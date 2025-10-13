@@ -14,6 +14,7 @@ export default function Button({ children, bg, onClick, className }: ButtonProps
 				'flex items-center justify-center text-base font-medium',
 				'border border-solid rounded-full py-[max(1.1rem,_14px)] px-[max(1.25rem,_16px)]',
 				bg === 'lemon' && 'bg-lemon text-[#0A182D] border-[#EFEFEF]',
+				bg === 'blue' && 'bg-blue text-white border-[#192A4D99]',
 				className
 			)}
 			onClick={onClick}>

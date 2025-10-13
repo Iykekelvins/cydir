@@ -24,6 +24,7 @@
 	--color-blue: var(--blue);
 	--font-inter: var(--font-inter);
 	--font-outfit: var(--font-outfit);
+	--font-chronicle-display: var(--font-chronicle-display);
 	--breakpoint-des: 75rem;
 	--spacing-gutter: max(5rem, 20px);
 	--text-base: max(1rem, 14px);
@@ -88,4 +89,22 @@ button,
 
 a {
 	outline: none;
+}
+
+.track {
+	will-change: transform;
+	animation: marquee 40s linear infinite;
+}
+
+.track:hover {
+	animation-play-state: paused;
+}
+
+@keyframes marquee {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		transform: translate3d(-50%, 0, 0);
+	}
 }

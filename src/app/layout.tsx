@@ -6,6 +6,8 @@ import { metaDataOptions } from '@/utils/metadata';
 import ScrollWrapper from '@/shared/scroll-wrapper';
 import Navbar from '@/shared/navbar';
 
+import localFont from 'next/font/local';
+
 import './globals.css';
 
 const inter = Inter({
@@ -18,6 +20,13 @@ const outfit = Outfit({
 	variable: '--font-outfit',
 	subsets: ['latin'],
 	weight: ['400', '500', '600', '700'],
+});
+
+export const ChronicleDisplay = localFont({
+	src: './fonts/Chronicle Display Light Italic.otf',
+	weight: '300',
+	style: 'italic',
+	variable: '--font-chronicle-display',
 });
 
 export const metadata: Metadata = {
@@ -41,7 +50,8 @@ export default function RootLayout({
 					options={{
 						wheelMultiplier: 0.9,
 					}}>
-					<body className={`${inter.variable} ${outfit.variable} antialiased`}>
+					<body
+						className={`${inter.variable} ${outfit.variable} ${ChronicleDisplay.variable} antialiased`}>
 						<Navbar />
 						<main>{children}</main>
 					</body>
