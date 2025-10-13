@@ -4,6 +4,7 @@ import { Lenis } from 'lenis/react';
 import { metaDataOptions } from '@/utils/metadata';
 
 import ScrollWrapper from '@/shared/scroll-wrapper';
+import Navbar from '@/shared/navbar';
 
 import './globals.css';
 
@@ -41,6 +42,7 @@ export default function RootLayout({
 						wheelMultiplier: 0.9,
 					}}>
 					<body className={`${inter.variable} ${outfit.variable} antialiased`}>
+						<Navbar />
 						<main>{children}</main>
 					</body>
 				</Lenis>
