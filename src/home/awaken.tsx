@@ -15,7 +15,7 @@ export default function Awaken() {
 					<Tag color='blue'>Awaken</Tag>
 					<h2
 						className={cn(
-							'text-blue text-[max(3.75rem,_30px)] font-outfit font-medium tracking-tight',
+							'!text-blue text-60 font-outfit font-medium tracking-tight',
 							'mt-[max(1rem,_16px)] max-w-[max(52.5rem,_600px)]',
 							'leading-[1.2]'
 						)}>

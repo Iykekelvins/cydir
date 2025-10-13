@@ -11,6 +11,7 @@
 	--foreground: #0b192dcc;
 	--lemon: #c8d72c;
 	--blue: #1b3864;
+	--white-80: #ffffffcc;
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -22,6 +23,7 @@
 	--color-foreground: var(--foreground);
 	--color-lemon: var(--lemon);
 	--color-blue: var(--blue);
+	--color-white-80: var(--white-80);
 	--font-inter: var(--font-inter);
 	--font-outfit: var(--font-outfit);
 	--font-chronicle-display: var(--font-chronicle-display);
@@ -29,6 +31,7 @@
 	--spacing-gutter: max(5rem, 20px);
 	--text-base: max(1rem, 14px);
 	--text-20: max(1.25rem, 16px);
+	--text-60: max(3.75rem, 30px);
 }
 
 html {
