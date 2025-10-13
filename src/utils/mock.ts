@@ -10,27 +10,27 @@ export const NAV_LINKS = [
 export const AWAKEN_CARDS = [
 	{
 		title: 'Family',
-		info: 'Healing starts where connection begins.',
+		info: 'Those who you are most connected to.',
 	},
 	{
-		title: 'Career',
-		info: 'Purpose isn’t in the job, but the clarity behind it.',
+		title: 'Sprituality',
+		info: 'Connection to Spirit Source, Energy and God.',
+	},
+	{
+		title: 'Relationship',
+		info: 'Your Most Intimate/ Romantic Relationship',
 	},
 	{
 		title: 'Growth',
 		info: 'Growth isn’t a ladder it’s a return to self.',
 	},
 	{
-		title: 'Relationship',
-		info: 'Love deepens when the masks come off.',
-	},
-	{
-		title: 'Spirituality',
-		info: 'Stillness is where your real voice speaks.',
+		title: 'Career',
+		info: 'Where you bring in your income/wealth',
 	},
 	{
 		title: 'Health',
-		info: "Your body keeps score and it's ready to reset",
+		info: 'Your Physical and Mental State',
 	},
 ];
 

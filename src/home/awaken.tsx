@@ -20,7 +20,7 @@ export default function Awaken() {
 							'leading-[1.2]'
 						)}>
 						Anything is possible when you decide to{' '}
-						<span className='font-chronicle-display'>“Manifest it”</span>
+						<span className='font-chronicle-display'>Dream it”</span>
 					</h2>
 					<p
 						className={cn(
