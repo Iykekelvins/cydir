@@ -3,7 +3,7 @@ import Button from '@/components/button';
 export default function Hero() {
 	return (
 		<section id='hero' className='relative overflow-hidden'>
-			<figure className='h-[max(50.625rem,_650px)]'>
+			<figure className='h-[max(50.625rem,_650px)] des:h-screen'>
 				<video
 					className='w-full h-full object-cover'
 					autoPlay
