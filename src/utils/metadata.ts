@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 
 const title = 'Cydir - Awaken What’s Possible';
-const description = 'Transforming Event Management & Ticketing in the 21st Century';
+const description =
+	'Discover the power of manifestation, NLP, and coaching designed to help you break through barriers and create the life you truly desire.';
 export const url = 'https://cydir.vercel.app';
 
 export const metaDataOptions: Metadata = {
