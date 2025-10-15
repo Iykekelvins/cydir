@@ -4,6 +4,7 @@ import Breakthrough from './breakthrough';
 import Transform from './transform';
 import Origin from './origin';
 import Events from './events';
+import Thrive from './thrive';
 
 const Homepage = () => {
 	return (
@@ -14,6 +15,7 @@ const Homepage = () => {
 			<Transform />
 			<Origin />
 			<Events />
+			<Thrive />
 		</div>
 	);
 };

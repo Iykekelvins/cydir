@@ -12,7 +12,7 @@ export default function Tag({ children, color }: TagProps) {
 				'flex items-center justify-center gap-[max(0.5rem,_8px)]',
 				'pl-[max(0.75rem,_12px)] pr-[max(1rem,_16px)]',
 				'h-[max(2.325rem,_30px)] text-base rounded-full',
-				'border border-solid',
+				'border border-solid w-max',
 				color === 'blue' && 'text-blue border-blue',
 				color === 'lemon' && 'text-lemon border-lemon'
 			)}>
