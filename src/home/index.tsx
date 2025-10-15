@@ -5,6 +5,7 @@ import Transform from './transform';
 import Origin from './origin';
 import Events from './events';
 import Thrive from './thrive';
+import Affirmations from './affirmations';
 
 const Homepage = () => {
 	return (
@@ -16,6 +17,7 @@ const Homepage = () => {
 			<Origin />
 			<Events />
 			<Thrive />
+			<Affirmations />
 		</div>
 	);
 };
