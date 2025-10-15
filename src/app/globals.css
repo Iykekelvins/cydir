@@ -109,10 +109,6 @@ a {
 	animation: marquee 40s linear infinite;
 }
 
-.track:hover {
-	animation-play-state: paused;
-}
-
 @keyframes marquee {
 	0% {
 		transform: translate3d(0, 0, 0);
