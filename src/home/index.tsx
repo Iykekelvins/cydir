@@ -3,6 +3,7 @@ import Awaken from './awaken';
 import Breakthrough from './breakthrough';
 import Transform from './transform';
 import Origin from './origin';
+import Events from './events';
 
 const Homepage = () => {
 	return (
@@ -12,6 +13,7 @@ const Homepage = () => {
 			<Breakthrough />
 			<Transform />
 			<Origin />
+			<Events />
 		</div>
 	);
 };
