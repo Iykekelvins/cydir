@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
@@ -13,6 +13,44 @@ export default function Affirmations() {
 	const targetRef = useRef<HTMLDivElement>(null);
 	const textRef = useRef<HTMLParagraphElement>(null);
 	const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
+
+	const [mousePos1, setMousePos1] = useState({ x: 0, y: 0 });
+	const [mousePos2, setMousePos2] = useState({ x: 0, y: 0 });
+	const [mousePos3, setMousePos3] = useState({ x: 0, y: 0 });
+
+	const textRef1 = useRef<HTMLDivElement>(null);
+	const textRef2 = useRef<HTMLDivElement>(null);
+	const textRef3 = useRef<HTMLDivElement>(null);
+
+	const handleMouseMove1 = (e: React.MouseEvent<HTMLDivElement>) => {
+		if (textRef1.current) {
+			const rect = textRef1.current.getBoundingClientRect();
+			setMousePos1({
+				x: e.clientX - rect.left,
+				y: e.clientY - rect.top,
+			});
+		}
+	};
+
+	const handleMouseMove2 = (e: React.MouseEvent<HTMLDivElement>) => {
+		if (textRef2.current) {
+			const rect = textRef2.current.getBoundingClientRect();
+			setMousePos2({
+				x: e.clientX - rect.left,
+				y: e.clientY - rect.top,
+			});
+		}
+	};
+
+	const handleMouseMove3 = (e: React.MouseEvent<HTMLDivElement>) => {
+		if (textRef3.current) {
+			const rect = textRef3.current.getBoundingClientRect();
+			setMousePos3({
+				x: e.clientX - rect.left,
+				y: e.clientY - rect.top,
+			});
+		}
+	};
 
 	useGSAP(
 		() => {
@@ -31,7 +69,7 @@ export default function Affirmations() {
 
 			scrollTriggerRef.current = ScrollTrigger.create({
 				trigger: targetRef.current,
-				start: 'top 50%',
+				start: 'top 45%',
 				end: '+=500',
 				scrub: 1,
 				animation,
@@ -64,7 +102,7 @@ export default function Affirmations() {
 	return (
 		<section
 			className='bg-[#0A182D] px-gutter pt-[max(6rem,70px)] 
-    pb-[max(75rem,84px)]'>
+    pb-[max(7.5rem,84px)]'>
 			<div className='flex flex-col items-center justify-center'>
 				<svg
 					width='32'
@@ -123,6 +161,82 @@ export default function Affirmations() {
 						awaken possibility, to break cycles, to live limitless. <br /> This is
 						your invitation to remember who you are.
 					</p>
+				</div>
+
+				<div
+					className='mt-[max(3.375rem,36px)] flex flex-col items-center 
+  justify-center text-center gap-[max(1.25rem,16px)]'>
+					<div
+						className='relative inline-block cursor-default'
+						ref={textRef1}
+						onMouseMove={handleMouseMove1}>
+						<h2
+							className='text-[max(10rem,42px)] text-[#192A4D] 
+      tracking-tighter font-semibold select-none'>
+							You are not stuck
+						</h2>
+						<h2
+							className='text-[max(10rem,42px)]
+      				tracking-tighter font-semibold select-none 
+							pointer-events-none absolute top-0 left-0
+							hidden des:block
+							'
+							style={{
+								color: '#C8D72C',
+								WebkitMaskImage: `radial-gradient(circle 80px at ${mousePos1.x}px ${mousePos1.y}px, black 60%, transparent 100%)`,
+								maskImage: `radial-gradient(circle 80px at ${mousePos1.x}px ${mousePos1.y}px, black 60%, transparent 100%)`,
+							}}>
+							You are not stuck
+						</h2>
+					</div>
+
+					<div
+						className='relative inline-block cursor-default'
+						ref={textRef2}
+						onMouseMove={handleMouseMove2}>
+						<h2
+							className='text-[max(10rem,42px)] text-[#192A4D] 
+      				tracking-tighter font-semibold select-none'>
+							You are not broken
+						</h2>
+						<h2
+							className='text-[max(10rem,42px)]
+      				tracking-tighter font-semibold select-none 
+							pointer-events-none absolute top-0 left-0
+							hidden des:block
+							'
+							style={{
+								color: '#C8D72C',
+								WebkitMaskImage: `radial-gradient(circle 80px at ${mousePos2.x}px ${mousePos2.y}px, black 60%, transparent 100%)`,
+								maskImage: `radial-gradient(circle 80px at ${mousePos2.x}px ${mousePos2.y}px, black 60%, transparent 100%)`,
+							}}>
+							You are not broken
+						</h2>
+					</div>
+
+					<div
+						className='relative inline-block cursor-default'
+						ref={textRef3}
+						onMouseMove={handleMouseMove3}>
+						<h2
+							className='text-[max(10rem,42px)] text-[#192A4D] 
+      tracking-tighter font-semibold select-none'>
+							You are limitless
+						</h2>
+						<h2
+							className='text-[max(10rem,42px)]
+      				tracking-tighter font-semibold select-none 
+							pointer-events-none absolute top-0 left-0
+							hidden des:block
+							'
+							style={{
+								color: '#C8D72C',
+								WebkitMaskImage: `radial-gradient(circle 80px at ${mousePos3.x}px ${mousePos3.y}px, black 60%, transparent 100%)`,
+								maskImage: `radial-gradient(circle 80px at ${mousePos3.x}px ${mousePos3.y}px, black 60%, transparent 100%)`,
+							}}>
+							You are limitless
+						</h2>
+					</div>
 				</div>
 			</div>
 		</section>
