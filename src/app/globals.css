@@ -109,6 +109,10 @@ a {
 	animation: marquee 40s linear infinite;
 }
 
+.hide-scroll {
+	scrollbar-width: none;
+}
+
 @keyframes marquee {
 	0% {
 		transform: translate3d(0, 0, 0);

@@ -167,14 +167,14 @@ export default function Affirmations() {
 
 				<div
 					className='mt-[max(3.375rem,36px)] flex flex-col items-center 
-  justify-center text-center gap-[max(1.25rem,16px)]'>
+  				justify-center text-center gap-[max(1.25rem,16px)]'>
 					<div
 						className='relative inline-block cursor-default'
 						ref={textRef1}
 						onMouseMove={handleMouseMove1}>
 						<h2
 							className='text-[max(10rem,42px)] text-[#192A4D] 
-      tracking-tighter font-semibold select-none'>
+      				tracking-tighter font-semibold select-none'>
 							You are not stuck
 						</h2>
 						<h2
@@ -222,7 +222,7 @@ export default function Affirmations() {
 						onMouseMove={handleMouseMove3}>
 						<h2
 							className='text-[max(10rem,42px)] text-[#192A4D] 
-      tracking-tighter font-semibold select-none'>
+      			 tracking-tighter font-semibold select-none'>
 							You are limitless
 						</h2>
 						<h2

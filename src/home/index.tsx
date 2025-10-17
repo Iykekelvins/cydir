@@ -6,6 +6,7 @@ import Origin from './origin';
 import Events from './events';
 import Thrive from './thrive';
 import Affirmations from './affirmations';
+import IgFeed from './ig-feed';
 
 const Homepage = () => {
 	return (
@@ -18,6 +19,7 @@ const Homepage = () => {
 			<Events />
 			<Thrive />
 			<Affirmations />
+			<IgFeed />
 		</div>
 	);
 };

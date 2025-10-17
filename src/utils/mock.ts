@@ -46,3 +46,11 @@ export const BREAKTHROUGH_ITEMS = [
 		info: 'Mental and Emotional Release® is a clinically researched approach to help you release stress, anxiety, fear and other negative emotions. You will be able to utilize MER to overcome procrastination, depression and phobias.',
 	},
 ];
+
+export const FEED = [
+	'/videos/ig-1.mp4',
+	'/videos/ig-2.mp4',
+	'/videos/ig-3.mp4',
+	'/images/ig-4.jpg',
+	'/videos/ig-5.mp4',
+];
