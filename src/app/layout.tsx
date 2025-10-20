@@ -5,6 +5,7 @@ import { metaDataOptions } from '@/utils/metadata';
 
 import ScrollWrapper from '@/shared/scroll-wrapper';
 import Navbar from '@/shared/navbar';
+import Footer from '@/shared/footer';
 
 import localFont from 'next/font/local';
 
@@ -54,6 +55,7 @@ export default function RootLayout({
 						className={`${inter.variable} ${outfit.variable} ${ChronicleDisplay.variable} antialiased`}>
 						<Navbar />
 						<main>{children}</main>
+						<Footer />
 					</body>
 				</Lenis>
 			</ScrollWrapper>
