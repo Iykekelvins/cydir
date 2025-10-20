@@ -8,6 +8,7 @@ import Thrive from './thrive';
 import Affirmations from './affirmations';
 import IgFeed from './ig-feed';
 import Faqs from './faqs';
+import JoinUs from './join-us';
 
 const Homepage = () => {
 	return (
@@ -22,6 +23,7 @@ const Homepage = () => {
 			<Affirmations />
 			<IgFeed />
 			<Faqs />
+			<JoinUs />
 		</div>
 	);
 };

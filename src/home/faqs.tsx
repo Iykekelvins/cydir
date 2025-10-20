@@ -10,6 +10,12 @@ import gsap from 'gsap';
 export default function Faqs() {
 	const [active, setActive] = useState(0);
 
+	const [isMounted, setIsMounted] = useState(false);
+
+	useEffect(() => {
+		setIsMounted(true);
+	}, []);
+
 	const [emblaRef, emblaApi] = useEmblaCarousel({ slidesToScroll: 'auto' });
 
 	useEffect(() => {
@@ -20,8 +26,10 @@ export default function Faqs() {
 		});
 	}, [emblaApi]);
 
+	if (!isMounted) return;
+
 	return (
-		<section className='pt-[max(4.2rem,30px)]'>
+		<section className='pt-[max(4.2rem,30px)] relative'>
 			<div className='px-gutter'>
 				<h2
 					className='text-56 text-blue font-medium 
@@ -43,18 +51,18 @@ export default function Faqs() {
 								<div
 									className='bg-white rounded-[20px]'
 									style={{
-										width: 'max(1rem,16px)',
-										margin: 'max(0.25rem,4px)',
+										width: '1rem',
+										margin: '0.25rem',
 									}}
 								/>
 							)}
 							renderTrackVertical={() => (
 								<div
 									style={{
-										width: 'max(1.5rem,24px)',
+										width: '1.5rem',
 										backgroundColor: '#F1F1F1',
 										height: '95%',
-										borderRadius: '20px',
+										borderRadius: '1.25rem',
 										position: 'absolute',
 										right: '0px',
 									}}
