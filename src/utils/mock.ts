@@ -54,3 +54,46 @@ export const FEED = [
 	'/images/ig-4.jpg',
 	'/videos/ig-5.mp4',
 ];
+
+export const FAQS = [
+	{
+		qstn: 'What makes Cydir coaching different from other programs?',
+		ans: '',
+	},
+	{
+		qstn: 'Who is coaching best suited for?',
+		ans: '',
+	},
+	{
+		qstn: 'Do I need to know anything about NLP or manifestation before joining?',
+		ans: '',
+	},
+	{
+		qstn: 'How long does it take to see results?',
+		ans: '',
+	},
+	{
+		qstn: 'What happens during a breakthrough session?',
+		ans: '',
+	},
+	{
+		qstn: 'Can I attend sessions virtually?',
+		ans: '',
+	},
+	{
+		qstn: 'Do I need to know anything about NLP or manifestation before joining?',
+		ans: '',
+	},
+	{
+		qstn: 'What happens during a breakthrough session?',
+		ans: '',
+	},
+	{
+		qstn: 'Can I attend sessions virtually?',
+		ans: '',
+	},
+	{
+		qstn: 'Do I need to know anything about NLP or manifestation before joining?',
+		ans: '',
+	},
+];
