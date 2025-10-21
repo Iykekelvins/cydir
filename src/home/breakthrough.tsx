@@ -1,11 +1,17 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
+import { useGSAP } from '@gsap/react';
 import { cn } from '@/utils';
 import { BREAKTHROUGH_ITEMS } from '@/utils/mock';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Tag from '@/components/tag';
 import Image from 'next/image';
 import Button from '@/components/button';
+import gsap from 'gsap';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Breakthrough() {
 	return (
@@ -120,8 +126,95 @@ export default function Breakthrough() {
 }
 
 const Journey = () => {
+	const sectionRef = useRef<HTMLDivElement>(null);
+	const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
+
+	useGSAP(
+		() => {
+			const mm = gsap.matchMedia();
+			const animation = gsap.timeline();
+
+			animation.to("[data-selector='spinning-wheel']", {
+				rotate: '270deg',
+			});
+
+			if (scrollTriggerRef.current) {
+				scrollTriggerRef.current.kill();
+			}
+
+			mm.add('(min-width:1199px)', () => {
+				scrollTriggerRef.current = ScrollTrigger.create({
+					trigger: sectionRef.current,
+					start: 'top top',
+					end: `+=${window.innerHeight * 3}`,
+					scrub: 1,
+					pin: sectionRef.current,
+					animation,
+					anticipatePin: 1,
+					pinSpacing: true,
+					onUpdate: () => {
+						const SPINNING_WHEEL = document.querySelector(
+							"[data-selector='spinning-wheel']"
+						);
+						const BUILD = document.querySelector("[data-selector='build']");
+						const RELEASE = document.querySelector("[data-selector='release']");
+
+						const rotation = gsap.getProperty(SPINNING_WHEEL, 'rotate') as number;
+
+						if (rotation >= 90) {
+							gsap.to(BUILD, {
+								opacity: 1,
+							});
+						}
+						if (rotation >= 265) {
+							gsap.to(RELEASE, {
+								opacity: 1,
+							});
+						}
+						if (rotation < 265) {
+							gsap.to(RELEASE, {
+								opacity: 0.4,
+							});
+						}
+						if (rotation < 90) {
+							gsap.to(BUILD, {
+								opacity: 0.4,
+							});
+						}
+					},
+				});
+			});
+
+			mm.add('(max-width:1198px)', () => {
+				const BUILD = document.querySelector("[data-selector='build']");
+				const RELEASE = document.querySelector("[data-selector='release']");
+
+				gsap.set([BUILD, RELEASE], {
+					opacity: 1,
+				});
+			});
+
+			return () => {
+				if (scrollTriggerRef.current) {
+					scrollTriggerRef.current.kill();
+				}
+			};
+		},
+		{
+			scope: sectionRef,
+		}
+	);
+
+	useEffect(() => {
+		return () => {
+			if (scrollTriggerRef.current) {
+				scrollTriggerRef.current.kill();
+			}
+		};
+	}, []);
+
 	return (
-		<div className='mt-[max(9.625rem,_84px)]'>
+		<div className='mt-[max(9.625rem,_84px)]' ref={sectionRef}>
 			<div className='flex flex-col items-center justify-center text-center'>
 				<span className='size-[max(2rem,_24px)] bg-lemon rounded-full' />
 				<div className='mt-[max(1.5rem,_18px)]'>
@@ -141,7 +234,10 @@ const Journey = () => {
 			<div
 				className='mt-[max(6.625rem,_90px)] flex flex-col md:flex-row items-center 
       justify-between gap-[max(6.625rem,_90px)] md:gap-0'>
-				<div className='flex flex-col items-center justify-center text-center des:opacity-40'>
+				{/* start of release */}
+				<div
+					className='flex flex-col items-center justify-center text-center des:opacity-40'
+					data-selector='release'>
 					<span className='size-[max(2rem,_24px)] des:size-[max(1.25rem,_18px)] bg-lemon rounded-full' />
 					<div className='mt-[max(1.5rem,_18px)]'>
 						<h3 className='text-[max(2.25rem,_24px)] text-white font-medium tracking-tight'>
@@ -155,8 +251,9 @@ const Journey = () => {
 						</p>
 					</div>
 				</div>
+				{/* end of release */}
 
-				<figure className='hidden des:block'>
+				<figure className='hidden des:block' data-selector='spinning-wheel'>
 					<Image
 						src='/wheel.svg'
 						width={362}
@@ -166,7 +263,10 @@ const Journey = () => {
 					/>
 				</figure>
 
-				<div className='flex flex-col items-center justify-center text-center des:opacity-40'>
+				{/* start of build */}
+				<div
+					className='flex flex-col items-center justify-center text-center des:opacity-40'
+					data-selector='build'>
 					<span className='size-[max(2rem,_24px)] des:size-[max(1.25rem,_18px)] bg-lemon rounded-full' />
 					<div className='mt-[max(1.5rem,_18px)]'>
 						<h3 className='text-[max(2.25rem,_24px)] text-white font-medium tracking-tight'>
@@ -181,6 +281,8 @@ const Journey = () => {
 						</p>
 					</div>
 				</div>
+
+				{/* end of build */}
 			</div>
 		</div>
 	);
