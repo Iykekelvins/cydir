@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
@@ -52,52 +52,40 @@ export default function Affirmations() {
 		}
 	};
 
-	useGSAP(
-		() => {
-			const split = SplitText.create(textRef.current, { type: 'lines,chars' });
+	useGSAP(() => {
+		const split = SplitText.create(textRef.current, { type: 'lines,chars' });
 
-			const animation = gsap.timeline().fromTo(
-				split.chars,
-				{
-					color: '#192A4D',
-				},
-				{
-					color: '#ffffff',
-					stagger: 0.1,
-				}
-			);
+		const animation = gsap.timeline().fromTo(
+			split.chars,
+			{
+				color: '#192A4D',
+			},
+			{
+				color: '#ffffff',
+				stagger: 0.1,
+			}
+		);
 
-			scrollTriggerRef.current = ScrollTrigger.create({
-				trigger: targetRef.current,
-				start: 'top 40%',
-				end: '+=500',
-				scrub: 1,
-				animation,
-				refreshPriority: 1,
-				anticipatePin: 1,
-				pin: targetRef.current,
-				pinSpacing: true,
-				onEnter: () => ScrollTrigger.refresh(),
-			});
-
-			return () => {
-				if (scrollTriggerRef.current) {
-					scrollTriggerRef.current.kill();
-				}
-			};
-		},
-		{
-			scope: targetRef,
+		if (scrollTriggerRef.current) {
+			scrollTriggerRef.current.kill();
 		}
-	);
 
-	useEffect(() => {
+		scrollTriggerRef.current = ScrollTrigger.create({
+			trigger: targetRef.current,
+			start: 'top 40%',
+			end: '+=900',
+			scrub: 1,
+			animation,
+			pin: targetRef.current,
+			pinSpacing: true,
+		});
+
 		return () => {
 			if (scrollTriggerRef.current) {
 				scrollTriggerRef.current.kill();
 			}
 		};
-	}, []);
+	});
 
 	return (
 		<section

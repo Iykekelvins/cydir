@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { cn } from '@/utils';
 import { BREAKTHROUGH_ITEMS } from '@/utils/mock';
@@ -204,14 +204,6 @@ const Journey = () => {
 			scope: sectionRef,
 		}
 	);
-
-	useEffect(() => {
-		return () => {
-			if (scrollTriggerRef.current) {
-				scrollTriggerRef.current.kill();
-			}
-		};
-	}, []);
 
 	return (
 		<div className='mt-[max(9.625rem,_84px)]' ref={sectionRef}>

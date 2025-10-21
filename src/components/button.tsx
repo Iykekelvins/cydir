@@ -22,12 +22,17 @@ export default function Button({ children, bg, onClick, className }: ButtonProps
 					before:transition-all before:duration-300
 					before:ease-in-out hover:text-white
 					transition-all duration-300 ease-in-out
-					hover:before:h-full
+					hover:before:h-full	hover:scale-95
 				`,
 				bg === 'blue' &&
 					`bg-blue text-white border-[#192A4D99]
 					transition-all duration-300 ease-in-out
-					hover:scale-95
+					before:bg-lemon before:absolute before:bottom-0
+					before:left-0 before:w-full before:h-0
+					before:rounded-full before:pointer-events-none
+					before:transition-all before:duration-300
+					before:ease-in-out hover:text-white
+					hover:before:h-full	hover:scale-95 hover:border-lemon
 				`,
 				className
 			)}
