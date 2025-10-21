@@ -41,9 +41,7 @@ export default function JoinUs() {
                   '
 									placeholder='Jessica@email.com'
 								/>
-								<Button
-									bg='blue'
-									className='h-[max(3rem,40px)] md:flex-[0.1] max-sm:w-full'>
+								<Button bg='blue' className='h-[max(3rem,40px)] max-sm:w-full'>
 									Subscribe
 								</Button>
 							</div>

@@ -81,7 +81,7 @@ export default function Awaken() {
 					<h2
 						className={cn(
 							'!text-blue text-60 font-outfit font-medium tracking-tight',
-							'mt-[max(1rem,_16px)] max-w-[max(52.5rem,_600px)]',
+							'mt-[max(1rem,_16px)] max-w-[max(52.5rem,_435px)]',
 							'leading-[1.2]'
 						)}>
 						Anything is possible when you decide to{' '}
