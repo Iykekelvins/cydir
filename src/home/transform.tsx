@@ -1,8 +1,35 @@
+'use client';
+
 import Button from '@/components/button';
 import Tag from '@/components/tag';
+import gsap from 'gsap';
 import Image from 'next/image';
 
 export default function Transform() {
+	const mm = gsap.matchMedia();
+
+	const handleMouseOver = (e: React.MouseEvent<HTMLDivElement>) => {
+		const IMAGE = e.currentTarget.querySelector('img');
+
+		mm.add('(min-width: 1200px)', () => {
+			gsap.to(IMAGE, {
+				scale: 1.25,
+				duration: 0.7,
+			});
+		});
+	};
+
+	const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+		const IMAGE = e.currentTarget.querySelector('img');
+
+		mm.add('(min-width: 1200px)', () => {
+			gsap.to(IMAGE, {
+				scale: 1,
+				duration: 0.7,
+			});
+		});
+	};
+
 	return (
 		<section
 			className='px-gutter pt-[max(6.25rem,_74px)] pb-[max(5rem,_64px)]'
@@ -21,14 +48,18 @@ export default function Transform() {
 			</div>
 
 			<div className='grid md:grid-cols-2 gap-[max(1.5rem,_20px)] mt-[max(2.25rem,_28px)]'>
-				<div className='relative'>
+				<div
+					className='relative overflow-hidden rounded-[max(0.75rem,12px)]'
+					onMouseOver={(e) => handleMouseOver(e)}
+					onMouseLeave={(e) => handleMouseLeave(e)}>
 					<figure>
 						<Image
 							src='/images/one-on-one.jpg'
 							width={628}
 							height={552}
 							alt='two hands around a red sun'
-							className='w-full'
+							className='w-full rounded-[max(0.75rem,12px)]
+							'
 						/>
 					</figure>
 					<div
@@ -50,14 +81,19 @@ export default function Transform() {
 						</Button>
 					</div>
 				</div>
-				<div className='relative'>
+
+				<div
+					className='relative overflow-hidden rounded-[max(0.75rem,12px)]'
+					onMouseOver={(e) => handleMouseOver(e)}
+					onMouseLeave={(e) => handleMouseLeave(e)}>
 					<figure>
 						<Image
 							src='/images/event-and-workshops.jpg'
 							width={628}
 							height={552}
 							alt='a man on stage addressing an audience'
-							className='w-full'
+							className='w-full rounded-[max(0.75rem,12px)]
+							'
 						/>
 					</figure>
 
