@@ -13,7 +13,7 @@ export default function Transform() {
 
 		mm.add('(min-width: 1200px)', () => {
 			gsap.to(IMAGE, {
-				scale: 1.25,
+				scale: 1.15,
 				duration: 0.7,
 			});
 		});
