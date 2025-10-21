@@ -1,15 +1,80 @@
 'use client';
 
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
 import { cn } from '@/utils';
 import { AWAKEN_CARDS } from '@/utils/mock';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Button from '@/components/button';
 import Tag from '@/components/tag';
 import Image from 'next/image';
+import gsap from 'gsap';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Awaken() {
+	const secionRef = useRef<HTMLElement>(null);
+
+	useGSAP(() => {
+		const animation = gsap.timeline({ paused: true });
+		const targets = gsap.utils.toArray('.translating-text');
+		const duration = 0.75;
+		const pause = 1;
+		const stagger = duration + pause;
+		const repeatDelay = stagger * (targets.length - 1) + pause;
+
+		animation
+			.from(targets, {
+				y: '100%',
+				duration,
+				stagger: {
+					each: stagger,
+					repeat: -1,
+					repeatDelay,
+				},
+			})
+			.to(
+				targets,
+				{
+					y: 0,
+					duration,
+					stagger: {
+						each: stagger,
+						repeat: -1,
+						repeatDelay,
+					},
+				},
+				stagger
+			)
+			.to(
+				targets,
+				{
+					y: '-100%',
+					duration,
+					stagger: {
+						each: stagger,
+						repeat: -1,
+						repeatDelay,
+					},
+				},
+				stagger
+			);
+
+		ScrollTrigger.create({
+			trigger: secionRef.current,
+			start: 'top 90%',
+			onEnter: () => {
+				animation.play();
+			},
+		});
+	});
+
 	return (
-		<section id='awaken' className='pt-[max(5rem,_44px)] pb-[max(4.45rem,_48px)]'>
+		<section
+			id='awaken'
+			className='pt-[max(5rem,_44px)] pb-[max(4.45rem,_48px)]'
+			ref={secionRef}>
 			<div className='px-gutter'>
 				<div className='flex flex-col items-center justify-center text-center'>
 					<Tag color='blue'>Awaken</Tag>
@@ -20,7 +85,22 @@ export default function Awaken() {
 							'leading-[1.2]'
 						)}>
 						Anything is possible when you decide to{' '}
-						<span className='font-chronicle-display'>Dream it”</span>
+						<span className='inline-flex'>
+							<span className='font-chronicle-display grid overflow-hidden place-items-start'>
+								<span className='translating-text col-start-1 row-start-1'>
+									“Dream it”
+								</span>
+								<span className='translating-text col-start-1 row-start-1'>
+									“Be it”
+								</span>
+								<span className='translating-text col-start-1 row-start-1'>
+									“Do it”
+								</span>
+								<span className='translating-text col-start-1 row-start-1 pr-[10px]'>
+									“Manifest it”
+								</span>
+							</span>
+						</span>
 					</h2>
 					<p
 						className={cn(
