@@ -20,6 +20,7 @@ const ScrollWrapper = ({ children }: { children: React.ReactNode }) => {
 
 		if (!lenis) return;
 		lenis.on('scroll', ScrollTrigger.update);
+		lenis.scrollTo(0, { immediate: true });
 	}, [lenis]);
 
 	return <>{children}</>;
