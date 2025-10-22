@@ -14,44 +14,6 @@ export default function Affirmations() {
 	const textRef = useRef<HTMLParagraphElement>(null);
 	const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
 
-	const [mousePos1, setMousePos1] = useState({ x: 0, y: 0 });
-	const [mousePos2, setMousePos2] = useState({ x: 0, y: 0 });
-	const [mousePos3, setMousePos3] = useState({ x: 0, y: 0 });
-
-	const textRef1 = useRef<HTMLDivElement>(null);
-	const textRef2 = useRef<HTMLDivElement>(null);
-	const textRef3 = useRef<HTMLDivElement>(null);
-
-	const handleMouseMove1 = (e: React.MouseEvent<HTMLDivElement>) => {
-		if (textRef1.current) {
-			const rect = textRef1.current.getBoundingClientRect();
-			setMousePos1({
-				x: e.clientX - rect.left,
-				y: e.clientY - rect.top,
-			});
-		}
-	};
-
-	const handleMouseMove2 = (e: React.MouseEvent<HTMLDivElement>) => {
-		if (textRef2.current) {
-			const rect = textRef2.current.getBoundingClientRect();
-			setMousePos2({
-				x: e.clientX - rect.left,
-				y: e.clientY - rect.top,
-			});
-		}
-	};
-
-	const handleMouseMove3 = (e: React.MouseEvent<HTMLDivElement>) => {
-		if (textRef3.current) {
-			const rect = textRef3.current.getBoundingClientRect();
-			setMousePos3({
-				x: e.clientX - rect.left,
-				y: e.clientY - rect.top,
-			});
-		}
-	};
-
 	useGSAP(() => {
 		const split = SplitText.create(textRef.current, { type: 'lines,chars' });
 
@@ -156,79 +118,39 @@ export default function Affirmations() {
 				<div
 					className='mt-[max(3.375rem,36px)] flex flex-col items-center 
   				justify-center text-center gap-[max(1.25rem,16px)]'>
-					<div
-						className='relative inline-block cursor-default'
-						ref={textRef1}
-						onMouseMove={handleMouseMove1}>
-						<h2
-							className='text-[max(10rem,42px)] text-[#192A4D] 
-      				tracking-tighter font-semibold select-none'>
-							You are not stuck
-						</h2>
-						<h2
-							className='text-[max(10rem,42px)]
-      				tracking-tighter font-semibold select-none 
-							pointer-events-none absolute top-0 left-0
-							hidden des:block
-							'
-							style={{
-								color: '#C8D72C',
-								WebkitMaskImage: `radial-gradient(circle 80px at ${mousePos1.x}px ${mousePos1.y}px, black 60%, transparent 100%)`,
-								maskImage: `radial-gradient(circle 80px at ${mousePos1.x}px ${mousePos1.y}px, black 60%, transparent 100%)`,
-							}}>
-							You are not stuck
-						</h2>
-					</div>
-
-					<div
-						className='relative inline-block cursor-default'
-						ref={textRef2}
-						onMouseMove={handleMouseMove2}>
-						<h2
-							className='text-[max(10rem,42px)] text-[#192A4D] 
-      				tracking-tighter font-semibold select-none'>
-							You are not broken
-						</h2>
-						<h2
-							className='text-[max(10rem,42px)]
-      				tracking-tighter font-semibold select-none 
-							pointer-events-none absolute top-0 left-0
-							hidden des:block
-							'
-							style={{
-								color: '#C8D72C',
-								WebkitMaskImage: `radial-gradient(circle 80px at ${mousePos2.x}px ${mousePos2.y}px, black 60%, transparent 100%)`,
-								maskImage: `radial-gradient(circle 80px at ${mousePos2.x}px ${mousePos2.y}px, black 60%, transparent 100%)`,
-							}}>
-							You are not broken
-						</h2>
-					</div>
-
-					<div
-						className='relative inline-block cursor-default'
-						ref={textRef3}
-						onMouseMove={handleMouseMove3}>
-						<h2
-							className='text-[max(10rem,42px)] text-[#192A4D] 
-      			 tracking-tighter font-semibold select-none'>
-							You are limitless
-						</h2>
-						<h2
-							className='text-[max(10rem,42px)]
-      				tracking-tighter font-semibold select-none 
-							pointer-events-none absolute top-0 left-0
-							hidden des:block
-							'
-							style={{
-								color: '#C8D72C',
-								WebkitMaskImage: `radial-gradient(circle 80px at ${mousePos3.x}px ${mousePos3.y}px, black 60%, transparent 100%)`,
-								maskImage: `radial-gradient(circle 80px at ${mousePos3.x}px ${mousePos3.y}px, black 60%, transparent 100%)`,
-							}}>
-							You are limitless
-						</h2>
-					</div>
+					<ClipText text='You are not stuck' />
+					<ClipText text='You are not broken' />
+					<ClipText text='You are limitless' />
 				</div>
 			</div>
 		</section>
 	);
 }
+
+const ClipText = ({ text }: { text: string }) => {
+	const [isHovered, setIsHovered] = useState(false);
+
+	return (
+		<div
+			className='relative'
+			onMouseEnter={() => setIsHovered(true)}
+			onMouseLeave={() => setIsHovered(false)}>
+			<h2
+				className='text-[max(10rem,42px)] text-[#192A4D] 
+      				tracking-tighter font-semibold'>
+				{text}
+			</h2>
+			<h2
+				className='text-[max(10rem,42px)] text-lemon
+      				tracking-tighter font-semibold
+							absolute top-0 left-0 transition-all 
+							duration-[2000ms] ease-out
+							'
+				style={{
+					clipPath: isHovered ? 'circle(150% at 50% 50%)' : 'circle(0% at 50% 100%)',
+				}}>
+				{text}
+			</h2>
+		</div>
+	);
+};
