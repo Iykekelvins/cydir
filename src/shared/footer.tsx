@@ -1,9 +1,14 @@
+'use client';
+
+import { NAV_LINKS } from '@/utils/mock';
+import { useLenis } from 'lenis/react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
-const FOOTER_LINKS = ['About', 'Our Methods', 'Services', 'Events'];
-
 export default function Footer() {
+	const lenis = useLenis();
+
 	const SOCIAL_LINKS = [
 		{
 			icon: (
@@ -132,9 +137,19 @@ export default function Footer() {
 				<div className='mt-[64px]  lg:mt-[max(1.5rem,24px)]'>
 					<div className='grid grid-cols-2 gap-[2.5rem] des:gap-[max(10.875rem,80px)]'>
 						<ul className='grid gap-[max(1rem,16px)]'>
-							{FOOTER_LINKS.map((link) => (
-								<li key={link} className='text-20 text-[#0B192DCC] font-medium'>
-									{link}
+							{NAV_LINKS.slice(0, NAV_LINKS.length - 1).map((link) => (
+								<li key={link}>
+									<button
+										className='text-20 text-[#0B192DCC] font-medium
+									transition-colors duration-300 ease-in hover:text-[#0A182D]
+									'
+										onClick={() =>
+											lenis?.scrollTo(`#${link.toLocaleLowerCase()}`, {
+												offset: -100,
+											})
+										}>
+										{link}
+									</button>
 								</li>
 							))}
 						</ul>
@@ -144,7 +159,9 @@ export default function Footer() {
 								<h3 className='text-20 text-[#0B192DCC] font-medium'>Contact</h3>
 								<Link
 									href='mailto:cydir@example.com'
-									className='text-[#0B192DCC] text-18 mt-[max(1rem,16px)] block'
+									className='text-[#0B192DCC] text-18 mt-[max(1rem,16px)] block
+									transition-colors duration-300 ease-in hover:text-[#0A182D]
+									'
 									target='_blank'
 									rel='noopener'>
 									cydir@example.com
@@ -168,10 +185,18 @@ export default function Footer() {
 					<div
 						className='grid grid-cols-2 gap-[2.5rem] 
           des:gap-[max(10.875rem,80px)] mt-[max(4.625rem,54px)]'>
-						<Link href='' className='text-base text-[#0B192DCC]'>
+						<Link
+							href=''
+							className='text-base text-[#0B192DCC]
+						transition-colors duration-300 ease-in hover:text-[#0A182D]
+						'>
 							Privacy and Cookies Policy
 						</Link>
-						<Link href='' className='text-base text-[#0B192DCC]'>
+						<Link
+							href=''
+							className='text-base text-[#0B192DCC]
+						transition-colors duration-300 ease-in hover:text-[#0A182D]
+						'>
 							Accessibility Statement
 						</Link>
 					</div>
