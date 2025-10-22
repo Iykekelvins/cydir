@@ -1,8 +1,8 @@
 export const NAV_LINKS = [
 	'Awaken',
 	'Breakthrough',
-	'Origin',
 	'Transform',
+	'Origin',
 	'Thrive',
 	'Manifest Now',
 ];
