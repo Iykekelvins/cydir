@@ -10,11 +10,13 @@ import Button from '@/components/button';
 import Tag from '@/components/tag';
 import Image from 'next/image';
 import gsap from 'gsap';
+import Paragraph from '@/animations/paragraph';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Awaken() {
 	const secionRef = useRef<HTMLElement>(null);
+	const trackRef = useRef<HTMLDivElement>(null);
 
 	useGSAP(() => {
 		const animation = gsap.timeline({ paused: true });
@@ -70,6 +72,34 @@ export default function Awaken() {
 		});
 	});
 
+	useGSAP(() => {
+		gsap.set(trackRef.current, {
+			y: '50%',
+			x: '50%',
+			willChange: 'transform',
+		});
+
+		ScrollTrigger.create({
+			trigger: trackRef.current,
+			start: 'top bottom',
+			onEnter: () => {
+				gsap.to(trackRef.current, {
+					y: 0,
+					x: 0,
+					duration: 1.5,
+					ease: 'power2.out',
+					onComplete: () => {
+						const TRACK = document.querySelector("[data-selector='track']");
+
+						if (TRACK) {
+							TRACK.classList.add('track');
+						}
+					},
+				});
+			},
+		});
+	});
+
 	return (
 		<section
 			id='awaken'
@@ -87,22 +117,22 @@ export default function Awaken() {
 						Anything is possible when you decide to{' '}
 						<span className='inline-flex'>
 							<span className='font-chronicle-display grid overflow-hidden place-items-start'>
-								<span className='translating-text col-start-1 row-start-1'>
+								<span className='translating-text col-start-1 row-start-1 will-change-transform'>
 									“Dream it”
 								</span>
-								<span className='translating-text col-start-1 row-start-1'>
+								<span className='translating-text col-start-1 row-start-1 will-change-transform'>
 									“Be it”
 								</span>
-								<span className='translating-text col-start-1 row-start-1'>
+								<span className='translating-text col-start-1 row-start-1 will-change-transform'>
 									“Do it”
 								</span>
-								<span className='translating-text col-start-1 row-start-1 pr-[10px]'>
+								<span className='translating-text col-start-1 row-start-1 pr-[10px] will-change-transform'>
 									“Manifest it”
 								</span>
 							</span>
 						</span>
 					</h2>
-					<p
+					<Paragraph
 						className={cn(
 							'!text-20 text-[#0A182D99] mt-[max(0.75rem,_12px)]',
 							'max-w-[max(36.75rem,_458px)] leading-[1.4]'
@@ -110,7 +140,7 @@ export default function Awaken() {
 						Manifestation isn&apos;t just an idea, it&apos;s a practice of clarity,
 						belief, and action that helps you create the life you&apos;ve been
 						imagining.
-					</p>
+					</Paragraph>
 					<Button bg='blue' className='mt-[max(1.5rem,_20px)]'>
 						Manifest Today
 					</Button>
@@ -118,8 +148,10 @@ export default function Awaken() {
 			</div>
 
 			<div className='mt-[max(6.5rem,_74px)] overflow-hidden'>
-				<div className='w-fit'>
-					<div className='flex items-center gap-[max(1.5rem,_16px)] track'>
+				<div className='w-fit' ref={trackRef}>
+					<div
+						className='flex items-center gap-[max(1.5rem,_16px)] '
+						data-selector='track'>
 						<div className='flex items-center gap-[max(1.5rem,_16px)]'>
 							{AWAKEN_CARDS.map((card, i) => (
 								<figure key={card.title}>

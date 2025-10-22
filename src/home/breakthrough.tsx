@@ -10,6 +10,8 @@ import Tag from '@/components/tag';
 import Image from 'next/image';
 import Button from '@/components/button';
 import gsap from 'gsap';
+import Words from '@/animations/words';
+import Paragraph from '@/animations/paragraph';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,7 +49,7 @@ export default function Breakthrough() {
 							fillOpacity='0.8'
 						/>
 					</svg>
-					<span>Awaken and step into limitless possibilities.</span>
+					<Words as='p'>Awaken and step into limitless possibilities.</Words>
 					<svg
 						width='61'
 						height='60'
@@ -72,18 +74,19 @@ export default function Breakthrough() {
 			<div className='flex flex-col items-center justify-center text-center mt-[max(6rem,_54px)]'>
 				<Tag color='lemon'>Breakthrough</Tag>
 
-				<h2
+				<Words
+					as='h2'
 					className='text-60 text-white font-medium font-outfit 
         leading-[1.3] tracking-tight mt-[max(1rem,_16px)]'>
 					This is Where the <br /> Shift Happens
-				</h2>
+				</Words>
 
-				<p
+				<Paragraph
 					className='text-20 text-white-80 tracking-tight leading-[1.4] 
           max-w-[max(34.75rem,_380px)] mt-[max(1.25rem,_18px)]'>
 					Our methods combine Neuro-Linguistic Programming (NLP) and Mental Emotional
 					Release (MER) to help you
-				</p>
+				</Paragraph>
 
 				<ul className='mt-[max(5rem,_64px)] flex flex-col items-center gap-[max(7.075rem,_80px)]'>
 					{BREAKTHROUGH_ITEMS.map((item) => (
@@ -99,17 +102,18 @@ export default function Breakthrough() {
 							</figure>
 
 							<div className='mt-[max(4rem,_32px)]'>
-								<h3
+								<Words
+									as='h3'
 									className='text-[max(3rem,_28px)] text-white font-outfit 
                 font-medium tracking-tight leading-[1.3]'>
 									{item.title}
-								</h3>
-								<p
+								</Words>
+								<Paragraph
 									className='text-20 text-white-80 leading-[1.5] tracking-tight
                 max-w-[max(41rem,_440px)] mt-[max(1.25rem,_18px)]
                 '>
 									{item.info}
-								</p>
+								</Paragraph>
 							</div>
 
 							<Button bg='lemon' className='mt-[max(3rem,_36px)]'>

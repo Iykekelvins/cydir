@@ -1,5 +1,7 @@
 'use client';
 
+import Paragraph from '@/animations/paragraph';
+import Words from '@/animations/words';
 import Button from '@/components/button';
 import Tag from '@/components/tag';
 
@@ -17,18 +19,21 @@ export default function JoinUs() {
 				className='bg-[#EBEBEB] py-[max(4.875rem,36px)]
         rounded-[max(1.25rem,20px)] px-[max(4.5rem,28px)]'>
 				<div className='flex items-center justify-between'>
-					<div className='max-w-[max(30rem,320px)]'>
+					<div
+						className='max-w-[max(30rem,320px)] 
+					min-w-[max(30rem,320px)] w-full'>
 						<Tag color='blue'>Join Us</Tag>
-						<h2
+						<Words
+							as='h2'
 							className='text-blue font-medium font-outfit text-48 tracking-tight
             leading-[1.2] mt-[max(1rem,14px)]
             '>
 							Growth is a journey best taken together.
-						</h2>
-						<p className='text-base text-[#0A182DCC] leading-[1.5] mt-[max(1rem,14px)]'>
+						</Words>
+						<Paragraph className='text-base text-[#0A182DCC] leading-[1.5] mt-[max(1rem,14px)]'>
 							Join our bi-weekly newsletter for practical tools, inspiration, and
 							exclusive invites to events.
-						</p>
+						</Paragraph>
 
 						<form onSubmit={handleSubmit} className='mt-[max(2.5rem,30px)]'>
 							<div className='flex flex-col sm:flex-row items-center gap-[max(0.5rem,8px)]'>

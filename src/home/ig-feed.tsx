@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { FEED } from '@/utils/mock';
 
 import Image from 'next/image';
+import Words from '@/animations/words';
+import Paragraph from '@/animations/paragraph';
 
 export default function IgFeed() {
 	return (
@@ -48,19 +50,20 @@ export default function IgFeed() {
 						</defs>
 					</svg>
 
-					<h2
+					<Words
+						as='h2'
 						className='text-56 text-blue font-medium font-outfit 
         tracking-tight leading-[1.3] max-w-[max(35rem,480px)]
         mt-[max(0.875rem,12px)]
         '>
 						The Everyday Work of Becoming
-					</h2>
-					<p
+					</Words>
+					<Paragraph
 						className='text-[#0B192DCC] text-20 mt-[max(0.75rem,12px)] 
           max-w-[max(39.625rem,500px)] leading-[1.3]'>
 						Follow Abhinav on Instagram for real-life reflections, coaching in
 						action, and reminders that growth can start anywhere
-					</p>
+					</Paragraph>
 				</div>
 			</div>
 

@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import Tag from '@/components/tag';
 import Image from 'next/image';
 import gsap from 'gsap';
+import Paragraph from '@/animations/paragraph';
 
 export default function Thrive() {
 	const [active, setActive] = useState(0);
@@ -84,14 +85,15 @@ export default function Thrive() {
 								${i == active ? 'opacity-100' : 'opacity-0'}
 								`}
 									key={i}>
-									<p
+									<Paragraph
+										large
 										className='text-[max(2.25rem,20px)] text-white 
                 font-medium tracking-tight leading-[1.3]'>
 										“Working with Abinhav was a game-changer for our team. His
 										training went far beyond motivation, it gave us practical tools
 										to shift the way we think, communicate, and approach challenges
 										together.”
-									</p>
+									</Paragraph>
 
 									<div className='mt-[max(1.75rem,18px)]'>
 										<h2 className='text-white-80 text-24 tracking-tight'>

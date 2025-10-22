@@ -6,6 +6,7 @@ import { Scrollbars } from 'react-custom-scrollbars-2';
 
 import useEmblaCarousel from 'embla-carousel-react';
 import gsap from 'gsap';
+import Words from '@/animations/words';
 
 export default function Faqs() {
 	const [active, setActive] = useState(0);
@@ -31,12 +32,13 @@ export default function Faqs() {
 	return (
 		<section className='pt-[max(4.2rem,30px)] relative'>
 			<div className='px-gutter'>
-				<h2
+				<Words
+					as='h2'
 					className='text-56 text-blue font-medium 
         font-outfit tracking-tight text-center 
         leading-[1.2]'>
 					Frequently Asked <br /> Questions
-				</h2>
+				</Words>
 
 				<div
 					className='border-2 border-[#0A182D4D] 

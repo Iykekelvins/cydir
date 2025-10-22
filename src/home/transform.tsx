@@ -1,5 +1,7 @@
 'use client';
 
+import Paragraph from '@/animations/paragraph';
+import Words from '@/animations/words';
 import Button from '@/components/button';
 import Tag from '@/components/tag';
 import gsap from 'gsap';
@@ -36,15 +38,17 @@ export default function Transform() {
 			id='transform'>
 			<div className='flex flex-col items-center justify-center text-center'>
 				<Tag color='blue'>Transform</Tag>
-				<h2 className='text-60 text-blue font-medium font-outfit tracking-tight mt-[max(1rem,_16px)]'>
+				<Words
+					as='h2'
+					className='text-60 text-blue font-medium font-outfit tracking-tight mt-[max(1rem,_16px)]'>
 					Our Services
-				</h2>
-				<p
+				</Words>
+				<Paragraph
 					className='text-20 text-[#0B192DCC] tracking-tight 
         leading-[1.4] max-w-[max(38.75rem,_400px)] mt-[max(1.5rem,_20px)]'>
 					Manifestation is more than wishing it&apos;s about aligning your thoughts,
 					beliefs, and actions with your highest vision.
-				</p>
+				</Paragraph>
 			</div>
 
 			<div className='grid md:grid-cols-2 gap-[max(1.5rem,_20px)] mt-[max(2.25rem,_28px)]'>

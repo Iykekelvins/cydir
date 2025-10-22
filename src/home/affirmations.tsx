@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 
 import gsap from 'gsap';
+import Paragraph from '@/animations/paragraph';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -40,6 +41,7 @@ export default function Affirmations() {
 			animation,
 			pin: targetRef.current,
 			pinSpacing: true,
+			anticipatePin: 1,
 		});
 
 		return () => {
@@ -135,11 +137,12 @@ const ClipText = ({ text }: { text: string }) => {
 			className='relative'
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}>
-			<h2
+			<Paragraph
+				as='h2'
 				className='text-[max(10rem,42px)] text-[#192A4D] 
       				tracking-tighter font-semibold'>
 				{text}
-			</h2>
+			</Paragraph>
 			<h2
 				className='text-[max(10rem,42px)] text-lemon
       				tracking-tighter font-semibold

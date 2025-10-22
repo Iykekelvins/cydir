@@ -1,3 +1,5 @@
+import Paragraph from '@/animations/paragraph';
+import Words from '@/animations/words';
 import Tag from '@/components/tag';
 import Image from 'next/image';
 
@@ -10,11 +12,12 @@ export default function Origin() {
       '>
 			<div className='flex flex-col items-center justify-center text-center'>
 				<Tag color='lemon'>The Origin</Tag>
-				<h2
+				<Words
+					as='h2'
 					className='text-[max(3.5rem,_32px)] text-white font-medium 
         font-outfit tracking-tight leading-[1.3] max-w-[max(40.95rem,_465px)] mt-[max(1.5rem,_20px)]'>
 					“He sees your potential and shows you how to live it.”
-				</h2>
+				</Words>
 			</div>
 
 			<div
@@ -31,23 +34,27 @@ export default function Origin() {
 				</figure>
 
 				<div className='max-w-[max(38.625rem,490px)] w-full'>
-					<p className='text-white-80 text-[max(1.375rem,18px)] tracking-tight leading-[1.6]'>
+					<Paragraph className='text-white-80 text-[max(1.375rem,18px)] tracking-tight leading-[1.6]'>
 						Abhinav&apos;s journey began with a personal search for meaning and
 						fulfillment. Facing his own challenges and setbacks, he discovered the
 						transformative power of manifestation, Neuro-Linguistic Programming
 						(NLP), and Mental Emotional Release (MER). Through these tools, Abhinav
 						not only changed his own life but uncovered a deep passion for helping
 						others do the same.
-					</p>
+					</Paragraph>
 
 					<div className='flex justify-between mt-[max(3rem,44px)] des:mt-0'>
 						<div className='des:mt-[max(3rem,44px)]'>
-							<h3 className='text-white text-28 font-medium tracking-tight'>
+							<Words
+								as='h3'
+								className='text-white text-28 font-medium tracking-tight'>
 								Abinhav
-							</h3>
-							<p className='text-20 text-[#D3D3D3] font-medium tracking-tight mt-[max(0.25rem,_4px)]'>
+							</Words>
+							<Words
+								as='p'
+								className='text-20 text-[#D3D3D3] font-medium tracking-tight mt-[max(0.25rem,_4px)]'>
 								Manifestation Coach
-							</p>
+							</Words>
 						</div>
 
 						<figure>

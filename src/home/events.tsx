@@ -4,6 +4,8 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
 import Button from '@/components/button';
+import Words from '@/animations/words';
+import Paragraph from '@/animations/paragraph';
 
 const EVENTS = [
 	{
@@ -31,15 +33,17 @@ export default function Events() {
     bg-cover bg-no-repeat relative overflow-hidden pb-[max(3.25rem,40px)]'>
 			<div className='relative z-[2]'>
 				<div className='px-gutter'>
-					<h2 className='text-white text-64 font-medium font-outfit tracking-tight'>
+					<Words
+						as='h2'
+						className='text-white text-64 font-medium font-outfit tracking-tight'>
 						Upcoming events
-					</h2>
-					<p
+					</Words>
+					<Paragraph
 						className='text-20 text-white leading-[1.4] tracking-tight 
           mt-[max(1.25rem,18px)] max-w-[max(34.5rem,400px)]'>
 						I regularly host events open to all types of people, geared towards
 						becoming their best self
-					</p>
+					</Paragraph>
 
 					<div className='flex items-center justify-between mt-[max(2.5rem,32px)]'>
 						<div
