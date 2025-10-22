@@ -1,8 +1,8 @@
 import { NAV_LINKS } from '@/utils/mock';
 
-import Button from '@/components/button';
 import Image from 'next/image';
 import Link from 'next/link';
+import NavItem from './nav-item';
 
 export default function Navbar() {
 	return (
@@ -15,13 +15,7 @@ export default function Navbar() {
 				<ul className='hidden lg:flex items-center gap-[max(2.5rem,_32px)]'>
 					{NAV_LINKS.map((link) => (
 						<li key={link}>
-							{link !== 'Manifest Now' ? (
-								<button className='text-white text-base font-medium'>{link}</button>
-							) : (
-								<Button bg='lemon' className='h-[max(2.5rem,_32px)]'>
-									{link}
-								</Button>
-							)}
+							<NavItem link={link} />
 						</li>
 					))}
 				</ul>
