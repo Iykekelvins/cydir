@@ -7,6 +7,7 @@ import { SplitText } from 'gsap/SplitText';
 
 import gsap from 'gsap';
 import Paragraph from '@/animations/paragraph';
+import Scale from '@/animations/scale';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -57,7 +58,8 @@ export default function Affirmations() {
     pb-[max(7.5rem,84px)]'>
 			<div className='flex flex-col items-center justify-center'>
 				<div className='hidden des:block' ref={targetRef}>
-					<svg
+					<Scale
+						as='svg'
 						width='32'
 						height='32'
 						viewBox='0 0 32 32'
@@ -92,7 +94,7 @@ export default function Affirmations() {
 								/>
 							</clipPath>
 						</defs>
-					</svg>
+					</Scale>
 					<p
 						ref={textRef}
 						className='text-[max(2.25rem,20px)] font-medium tracking-tight 

@@ -6,6 +6,7 @@ import { FEED } from '@/utils/mock';
 import Image from 'next/image';
 import Words from '@/animations/words';
 import Paragraph from '@/animations/paragraph';
+import Scale from '@/animations/scale';
 
 export default function IgFeed() {
 	return (
@@ -14,7 +15,8 @@ export default function IgFeed() {
 				<div
 					className='flex flex-col items-center justify-center 
         text-center'>
-					<svg
+					<Scale
+						as='svg'
 						width='32'
 						height='32'
 						viewBox='0 0 32 32'
@@ -48,7 +50,7 @@ export default function IgFeed() {
 								/>
 							</clipPath>
 						</defs>
-					</svg>
+					</Scale>
 
 					<Words
 						as='h2'

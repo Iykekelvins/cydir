@@ -12,6 +12,7 @@ import Button from '@/components/button';
 import gsap from 'gsap';
 import Words from '@/animations/words';
 import Paragraph from '@/animations/paragraph';
+import Scale from '@/animations/scale';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +32,8 @@ export default function Breakthrough() {
 						'text-center text-[#F4F4F4] !text-[max(4rem,_24px)]',
 						'md:whitespace-nowrap font-medium tracking-tight leading-[1.2]'
 					)}>
-					<svg
+					<Scale
+						as='svg'
 						width='61'
 						height='60'
 						viewBox='0 0 61 60'
@@ -48,9 +50,10 @@ export default function Breakthrough() {
 							fill='white'
 							fillOpacity='0.8'
 						/>
-					</svg>
+					</Scale>
 					<Words as='p'>Awaken and step into limitless possibilities.</Words>
-					<svg
+					<Scale
+						as='svg'
 						width='61'
 						height='60'
 						viewBox='0 0 61 60'
@@ -67,7 +70,7 @@ export default function Breakthrough() {
 							fill='white'
 							fillOpacity='0.8'
 						/>
-					</svg>
+					</Scale>
 				</h3>
 			</div>
 

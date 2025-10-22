@@ -1,5 +1,7 @@
 import { cn } from '@/utils';
 
+import Scale from '@/animations/scale';
+
 interface TagProps {
 	children: React.ReactNode;
 	color: 'blue' | 'lemon';
@@ -7,7 +9,8 @@ interface TagProps {
 
 export default function Tag({ children, color }: TagProps) {
 	return (
-		<div
+		<Scale
+			as='div'
 			className={cn(
 				'flex items-center justify-center gap-[max(0.5rem,_8px)]',
 				'pl-[max(0.75rem,_12px)] pr-[max(1rem,_16px)]',
@@ -62,6 +65,6 @@ export default function Tag({ children, color }: TagProps) {
 				</svg>
 			)}
 			{children}
-		</div>
+		</Scale>
 	);
 }
