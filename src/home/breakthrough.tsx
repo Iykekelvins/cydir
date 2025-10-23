@@ -13,6 +13,7 @@ import gsap from 'gsap';
 import Words from '@/animations/words';
 import Paragraph from '@/animations/paragraph';
 import Scale from '@/animations/scale';
+import Starfield from 'react-starfield';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +26,7 @@ export default function Breakthrough() {
 				'bg-[linear-gradient(180deg,_#000000_0%,_#091529_100%)]',
 				'relative overflow-hidden'
 			)}>
+			<Starfield starCount={1000} starColor={[255, 255, 255]} speedFactor={0.05} />
 			<div className='py-[max(2rem,_24px)]'>
 				<h3
 					className={cn(

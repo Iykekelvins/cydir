@@ -103,7 +103,7 @@ export default function Awaken() {
 	return (
 		<section
 			id='awaken'
-			className='pt-[max(5rem,_44px)] pb-[max(4.45rem,_48px)]'
+			className='pt-[max(5rem,_44px)] pb-[max(4.45rem,_48px)] relative z-[12]'
 			ref={secionRef}>
 			<div className='px-gutter'>
 				<div className='flex flex-col items-center justify-center text-center'>

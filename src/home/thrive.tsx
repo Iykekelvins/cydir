@@ -71,6 +71,7 @@ export default function Thrive() {
 			id='thrive'
 			className='bg-[linear-gradient(180deg,#000000_0%,#0A182D_100%)] 
       px-gutter pt-[max(7.5rem,84px)] pb-[max(5.25rem,48px)]
+			relative z-[12]
   '>
 			<Tag color='lemon'>Thrive</Tag>
 

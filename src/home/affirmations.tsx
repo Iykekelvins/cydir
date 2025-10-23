@@ -55,7 +55,7 @@ export default function Affirmations() {
 	return (
 		<section
 			className='bg-[#0A182D] px-gutter pt-[max(6rem,70px)] 
-    pb-[max(7.5rem,84px)]'>
+    pb-[max(7.5rem,84px)] relative z-[12]'>
 			<div className='flex flex-col items-center justify-center'>
 				<div className='hidden des:block' ref={targetRef}>
 					<Scale

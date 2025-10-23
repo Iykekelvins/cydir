@@ -30,7 +30,7 @@ export default function Faqs() {
 	if (!isMounted) return;
 
 	return (
-		<section className='pt-[max(4.2rem,30px)] relative'>
+		<section className='pt-[max(4.2rem,30px)] relative z-[13]'>
 			<div className='px-gutter'>
 				<Words
 					as='h2'

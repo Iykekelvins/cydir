@@ -30,7 +30,7 @@ export default function Events() {
 	return (
 		<section
 			className='pt-[max(6.825rem,74px)] bg-[url(/images/events-bg.jpg)] 
-    bg-cover bg-no-repeat relative overflow-hidden pb-[max(3.25rem,40px)]'>
+    bg-cover bg-no-repeat relative overflow-hidden pb-[max(3.25rem,40px)] z-[12]'>
 			<div className='relative z-[2]'>
 				<div className='px-gutter'>
 					<Words

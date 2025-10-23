@@ -10,7 +10,7 @@ import Scale from '@/animations/scale';
 
 export default function IgFeed() {
 	return (
-		<section className='py-[max(5rem,40px)]'>
+		<section className='py-[max(5rem,40px)] relative z-[12]'>
 			<div className='px-gutter'>
 				<div
 					className='flex flex-col items-center justify-center 

@@ -13,7 +13,7 @@ export default function JoinUs() {
 	return (
 		<section
 			className='px-gutter bg-[#0A182D] pt-[max(34.075rem,450px)] pb-[max(4.2rem,30px)]
-    mt-[min(-30rem,-400px)]
+    mt-[min(-30rem,-400px)] relative z-[12]
     '>
 			<div
 				className='bg-[#EBEBEB] py-[max(4.875rem,36px)]

@@ -34,7 +34,9 @@ export default function Transform() {
 
 	return (
 		<section
-			className='px-gutter pt-[max(6.25rem,_74px)] pb-[max(5rem,_64px)]'
+			className='px-gutter pt-[max(6.25rem,_74px)] pb-[max(5rem,_64px)]
+			relative z-[12]
+			'
 			id='transform'>
 			<div className='flex flex-col items-center justify-center text-center'>
 				<Tag color='blue'>Transform</Tag>

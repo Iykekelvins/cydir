@@ -9,6 +9,7 @@ export default function Origin() {
 			id='origin'
 			className='bg-[linear-gradient(180deg,#0A182D_0%,#000000_100%)]
       px-gutter pt-[max(5.625rem,_74px)] pb-[40px] md:pb-0
+			relative z-[12]
       '>
 			<div className='flex flex-col items-center justify-center text-center'>
 				<Tag color='lemon'>The Origin</Tag>
