@@ -1,32 +1,165 @@
+'use client';
+
+import { useLenis } from 'lenis/react';
+import { useEffect, useRef, useState } from 'react';
+import { useGSAP } from '@gsap/react';
+import { SplitText } from 'gsap/SplitText';
+
 import Button from '@/components/button';
+import gsap from 'gsap';
+
+gsap.registerPlugin(SplitText);
 
 export default function Hero() {
+	const heroTitle = useRef<HTMLHeadingElement>(null);
+	const heroInfo = useRef<HTMLParagraphElement>(null);
+	const heroTl = useRef<GSAPTimeline>(null);
+
+	const lenis = useLenis();
+
+	const [playTl, setPlayTl] = useState(false);
+
+	const videoRef = useRef<HTMLVideoElement>(null);
+
+	useEffect(() => {
+		if (document.readyState === 'complete') {
+			setPlayTl(true);
+		}
+	}, []);
+
+	useGSAP(() => {
+		const heroTitleSplit = SplitText.create(heroTitle.current, {
+			type: 'lines,chars',
+			linesClass: 'line',
+			charsClass: 'char',
+			mask: 'lines',
+		});
+
+		const heroInfoSplit = SplitText.create(heroInfo.current, {
+			type: 'lines',
+			mask: 'lines',
+		});
+
+		gsap.set([heroTitle.current, heroInfo.current], {
+			opacity: 1,
+		});
+
+		gsap.set(heroTitleSplit.chars, {
+			scale: 0,
+			transformOrigin: 'bottom left',
+			willChange: 'transform',
+		});
+
+		gsap.set('.hero-btn-box', {
+			scale: 0,
+			transformOrigin: '50% 50%',
+			willChange: 'transform',
+			onComplete: () => {
+				setTimeout(() => {
+					gsap.set('.hero-btn-box', {
+						opacity: 1,
+					});
+				}, 1500);
+			},
+		});
+
+		gsap.set(heroInfoSplit.lines, {
+			y: '100%',
+			willChange: 'transform',
+		});
+
+		heroTl.current = gsap.timeline({ paused: true, delay: 3 });
+
+		heroTitleSplit.lines.forEach((line) => {
+			heroTl.current?.to(
+				line.querySelectorAll('.char'),
+				{
+					scale: 1,
+					stagger: 0.05,
+					duration: 1,
+					ease: 'back.out(2)',
+					onComplete: () => {
+						setTimeout(() => {
+							heroTitleSplit.revert();
+						}, 3500);
+					},
+				},
+				0
+			);
+		});
+
+		heroTl.current
+			.to(
+				heroInfoSplit.lines,
+				{
+					y: 0,
+					stagger: 0.1,
+					ease: 'power2.out',
+					delay: 0.25,
+					onComplete: () => {
+						heroInfoSplit.revert();
+					},
+				},
+				0
+			)
+			.to(
+				'.hero-btn-box',
+				{
+					scale: 1,
+					ease: 'back.out(2)',
+					duration: 1,
+					delay: 0.5,
+				},
+				0
+			);
+	});
+
+	useEffect(() => {
+		if (!lenis) return;
+
+		if (!playTl) {
+			lenis?.stop();
+		} else {
+			lenis?.start();
+			heroTl.current?.play();
+		}
+	}, [playTl, lenis]);
+
 	return (
 		<section id='hero' className='relative overflow-hidden z-[12]'>
 			<figure className='h-[max(50.625rem,_650px)] des:h-screen'>
 				<video
+					ref={videoRef}
 					className='w-full h-full object-cover'
 					autoPlay
 					loop
 					muted
 					playsInline>
-					<source src='/cydir-vid.mp4' type='video/mp4' />
+					<source src='/videos/cydir-hero-video.mp4' type='video/mp4' />
 				</video>
 			</figure>
 
 			<div className='absolute px-gutter bottom-[max(3.75rem,_36px)]'>
-				<h1 className='text-white text-[max(5rem,_36px)] font-outfit font-bold tracking-tight leading-[1.2]'>
+				<h1
+					className='text-white text-[max(5rem,_36px)] font-outfit 
+					font-bold tracking-tight leading-[1.2] opacity-0'
+					ref={heroTitle}>
 					Awaken What&apos;s <br /> Possible
 				</h1>
 				<p
-					className='text-20 text-white leading-[1.4] tracking-tight mt-[max(0.5rem,_8px)] 
-				max-w-[max(43.825rem,_450px)] w-full'>
+					className='text-20 text-white leading-[1.4] tracking-tight 
+					mt-[max(0.5rem,_8px)] max-w-[max(43.825rem,_450px)] w-full
+					opacity-0
+					'
+					ref={heroInfo}>
 					Discover the power of manifestation, NLP, and coaching designed to help you
 					break through barriers and create the life you truly desire.
 				</p>
-				<Button bg='lemon' className='mt-[max(1.5rem,_20px)]'>
-					Become Limitless
-				</Button>
+				<div className='hero-btn-box opacity-0 w-max'>
+					<Button bg='lemon' className='mt-[max(1.5rem,_20px)]'>
+						Become Limitless
+					</Button>
+				</div>
 			</div>
 
 			<button className='absolute right-gutter bottom-[max(2.5rem,_24px)]'>
