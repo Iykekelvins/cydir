@@ -21,12 +21,6 @@ export default function Hero() {
 
 	const videoRef = useRef<HTMLVideoElement>(null);
 
-	useEffect(() => {
-		if (document.readyState === 'complete') {
-			setPlayTl(true);
-		}
-	}, []);
-
 	useGSAP(() => {
 		const heroTitleSplit = SplitText.create(heroTitle.current, {
 			type: 'lines,chars',
@@ -52,7 +46,7 @@ export default function Hero() {
 
 		gsap.set('.hero-btn-box', {
 			scale: 0,
-			transformOrigin: '50% 50%',
+			transformOrigin: 'bottom left',
 			willChange: 'transform',
 			onComplete: () => {
 				setTimeout(() => {
@@ -108,7 +102,7 @@ export default function Hero() {
 					scale: 1,
 					ease: 'back.out(2)',
 					duration: 1,
-					delay: 0.5,
+					delay: 0.3,
 				},
 				0
 			);
@@ -124,6 +118,23 @@ export default function Hero() {
 			heroTl.current?.play();
 		}
 	}, [playTl, lenis]);
+
+	useEffect(() => {
+		const video = videoRef.current;
+		if (!video) return;
+
+		const handleCanPlay = () => {
+			setPlayTl(true);
+		};
+
+		if (video.readyState) {
+			setPlayTl(true);
+		} else {
+			video.addEventListener('canplaythrough', handleCanPlay);
+		}
+
+		return () => video.removeEventListener('canplaythrough', handleCanPlay);
+	}, []);
 
 	return (
 		<section id='hero' className='relative overflow-hidden z-[12]'>
