@@ -12,8 +12,8 @@ export default function Button({ children, bg, onClick, className }: ButtonProps
 		<button
 			className={cn(
 				'flex items-center justify-center text-base font-medium',
-				`border border-solid rounded-full py-[max(1.1rem,_14px)] 
-				px-[max(1.25rem,_16px)] relative overflow-hidden`,
+				`border border-solid rounded-full py-[max(1.1rem,14px)] 
+				px-[max(1.25rem,16px)] relative overflow-hidden`,
 				bg === 'lemon' &&
 					`bg-lemon text-[#0A182D] border-[#EFEFEF]
 					before:bg-blue before:absolute before:bottom-0

@@ -37,13 +37,13 @@ export const AWAKEN_CARDS = [
 export const BREAKTHROUGH_ITEMS = [
 	{
 		img: '/images/nlp.jpeg',
-		title: 'What is NLP?',
-		info: 'Neuro Linguistic Programming (NLP) is the study of excellent communication both with yourself and with others, and is often described as a user manual for your conscious and unconscious mind. It was developed by modeling excellent communicators and therapists who got results with their clients',
+		title: 'Why Unconscious Change',
+		info: 'All transformation is unconscious. It’s the part of the mind that holds your memories, emotions, and patterns, quietly shaping the way you think, feel, and act every day. When you try to change only the conscious level, it rarely lasts. But when you shift the unconscious programming, the transformation becomes effortless, natural, and permanent.',
 	},
 	{
 		img: '/images/mer.jpeg',
-		title: 'What is MER?',
-		info: 'Mental and Emotional Release® is a clinically researched approach to help you release stress, anxiety, fear and other negative emotions. You will be able to utilize MER to overcome procrastination, depression and phobias.',
+		title: 'Reprogramming the Mind',
+		info: 'Abhinav applies his techniques to reprogram the unconscious mind - It’s the part driving 95% of our life on autopilot, according to neuroscience. Shaping our actions, behaviors, and the results we experience in life.',
 	},
 ];
 

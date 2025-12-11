@@ -22,16 +22,16 @@ export default function Breakthrough() {
 		<section
 			id='breakthrough'
 			className={cn(
-				'px-gutter pb-[max(9rem,_80px)]',
-				'bg-[linear-gradient(180deg,_#000000_0%,_#091529_100%)]',
+				'px-gutter pb-[max(9rem,80px)]',
+				'bg-[linear-gradient(180deg,#000000_0%,#091529_100%)]',
 				'relative overflow-hidden'
 			)}>
 			<Starfield starCount={1000} starColor={[255, 255, 255]} speedFactor={0.05} />
-			<div className='py-[max(2rem,_24px)]'>
+			<div className='py-[max(2rem,24px)]'>
 				<h3
 					className={cn(
-						'flex items-center justify-center gap-[max(1.5rem,_16px)]',
-						'text-center text-[#F4F4F4] !text-[max(4rem,_24px)]',
+						'flex items-center justify-center gap-[max(1.5rem,16px)]',
+						'text-center text-[#F4F4F4] text-[max(4rem,24px)]!',
 						'md:whitespace-nowrap font-medium tracking-tight leading-[1.2]'
 					)}>
 					<Scale
@@ -41,7 +41,7 @@ export default function Breakthrough() {
 						viewBox='0 0 61 60'
 						fill='none'
 						xmlns='http://www.w3.org/2000/svg'
-						className='min-w-[max(3.75rem,_24px)]'>
+						className='min-w-[max(3.75rem,24px)]'>
 						<path
 							d='M60.1505 29.6191L60.0012 29.6237L60.1505 29.5984C60.1505 29.4284 60.1459 29.2608 60.1391 29.0954C60.1345 28.9508 60.1276 28.8061 60.123 28.6637L60.1184 28.5764C60.1115 28.4019 60.1 28.2274 60.0885 28.0551C60.0656 27.6854 60.038 27.3478 60.0058 27.024C59.9921 26.8862 59.9783 26.7507 59.9622 26.6175L59.9553 26.5601C59.9461 26.4728 59.9369 26.3878 59.9255 26.312L59.8703 25.8734C59.852 25.7471 59.8336 25.6185 59.8152 25.4899C59.7945 25.3498 59.7716 25.212 59.7486 25.0742L59.6338 24.4197C59.6062 24.2796 59.5809 24.1372 59.5442 23.965C59.5166 23.8318 59.4891 23.6986 59.4592 23.5723C59.4294 23.4322 59.3972 23.2944 59.3651 23.1589L59.3559 23.1176C59.3352 23.0234 59.3145 22.9292 59.2893 22.8351C59.2686 22.7455 59.2456 22.6582 59.225 22.5825C59.2135 22.5296 59.1997 22.4768 59.1882 22.4378C59.1606 22.3275 59.1308 22.2196 59.1032 22.1163C59.0803 22.0313 59.0573 21.944 59.032 21.8545L58.7748 20.9933C58.7335 20.8578 58.6898 20.72 58.6462 20.5914C58.6094 20.4765 58.5704 20.3594 58.5313 20.2492C58.49 20.1275 58.4487 20.0057 58.4073 19.8886C58.3683 19.7784 58.3269 19.6681 58.2879 19.5671C58.2442 19.4454 58.1983 19.3237 58.1432 19.1836C58.0697 18.993 57.9939 18.8024 57.9158 18.6163L57.7252 18.1593C57.6838 18.0675 57.6448 17.9756 57.6012 17.8746L57.5828 17.8332C57.5552 17.7689 57.5277 17.7069 57.4978 17.6449L57.3646 17.3578C57.2934 17.2063 57.2222 17.0547 57.151 16.91C56.7238 16.0281 56.2461 15.1554 55.7316 14.3218C50.3067 5.48701 40.8878 0.13607 30.5456 0.00516722C30.286 -0.00172241 30.0173 -0.00172241 29.7716 0.00516722C19.3949 0.133774 9.9645 5.50538 4.5419 14.3723C1.73988 18.9516 0.224031 24.2222 0.157426 29.6099C0.152832 29.7385 0.152832 29.8717 0.152832 30.0003C0.152832 30.1289 0.152832 30.2621 0.157426 30.3861C0.226328 35.9254 1.81797 41.3199 4.76468 45.9865C10.2194 54.633 19.5672 59.8714 29.7647 59.9954C29.8933 60 30.0242 60 30.1551 60C30.286 60 30.417 60 30.541 59.9954C40.8556 59.8668 50.2585 54.5434 55.6926 45.7546C55.874 45.4606 56.0532 45.1575 56.2392 44.8336C56.4114 44.5305 56.5516 44.2802 56.6756 44.0367L56.6939 44.0023C56.8134 43.7772 56.9351 43.5384 57.0867 43.2284C57.1533 43.0929 57.2199 42.9551 57.298 42.792L57.337 42.7093C57.4082 42.5578 57.4771 42.4062 57.5414 42.2592C57.6103 42.1076 57.6769 41.9538 57.739 41.8068C57.8033 41.6598 57.8653 41.5151 57.9388 41.3337C57.9939 41.2005 58.049 41.0627 58.0973 40.9318C58.2305 40.5965 58.3545 40.2612 58.4647 39.942C58.5199 39.7881 58.5727 39.6366 58.6232 39.4781L58.637 39.4391C58.6875 39.2875 58.7357 39.1359 58.7817 38.9866C58.8322 38.8259 58.8827 38.6628 58.9287 38.5044C58.9746 38.3505 59.0182 38.1989 59.0619 38.0382L59.1997 37.5283C59.2824 37.2022 59.3605 36.8784 59.4408 36.5271C59.4776 36.364 59.512 36.2009 59.5396 36.0517C59.5672 35.9345 59.5901 35.8151 59.6062 35.7141C59.6338 35.5901 59.6567 35.4661 59.6751 35.3489C59.6958 35.2387 59.7142 35.1285 59.7371 34.9976C59.7624 34.8483 59.79 34.6944 59.8129 34.5176C59.8359 34.366 59.8589 34.2167 59.8818 34.0399L59.8956 33.9389C59.914 33.7942 59.9323 33.6518 59.9461 33.5163C59.9668 33.3441 59.9875 33.1695 60.0035 32.9996C60.0196 32.8434 60.0334 32.6849 60.0472 32.5104C60.0518 32.4553 60.0587 32.4002 60.0587 32.3611C60.0679 32.2601 60.077 32.1544 60.0793 32.0649C60.0885 31.9569 60.0954 31.8467 60.1 31.7388L60.1368 30.912C60.1414 30.7444 60.1459 30.5767 60.1482 30.3861C60.1528 30.2575 60.1528 30.1266 60.1528 29.998C60.1528 29.8694 60.1528 29.7385 60.1482 29.6168L60.1505 29.6191ZM59.1813 32.2922L59.1675 32.4645C59.1561 32.6138 59.1423 32.7607 59.1262 32.9123C59.1101 33.0777 59.094 33.243 59.0711 33.4152C59.055 33.5622 59.0366 33.7069 59.0205 33.8378C59.0137 33.8768 59.0091 33.9182 59.0045 33.948C58.9861 34.0927 58.9654 34.2351 58.9425 34.3752C58.9379 34.3982 58.9356 34.4188 58.9356 34.428C58.9149 34.5704 58.8919 34.7105 58.8644 34.8667C58.846 34.9723 58.8276 35.0802 58.8069 35.1928C58.7886 35.3053 58.7679 35.4155 58.7403 35.5418C58.722 35.6475 58.7013 35.7508 58.676 35.8679C58.6485 36.0218 58.614 36.1757 58.5819 36.3204C58.575 36.341 58.5727 36.3617 58.5681 36.3755C58.5015 36.6763 58.4257 36.9887 58.3453 37.301L58.2075 37.8062C58.1685 37.9532 58.1248 38.1002 58.0812 38.2472C58.0352 38.4033 57.9893 38.5595 57.9365 38.718C57.8974 38.8466 57.8561 38.9729 57.8148 39.0992L57.801 39.1451C57.7918 39.1704 57.7826 39.1933 57.7803 39.2048C57.7344 39.3495 57.6838 39.4919 57.6287 39.6412C57.5208 39.9535 57.4013 40.2773 57.2704 40.608C57.2222 40.7366 57.1717 40.8629 57.1005 41.0329C57.0453 41.1707 56.9902 41.3062 56.9259 41.4485C56.8639 41.5955 56.7996 41.7425 56.733 41.8918C56.6687 42.0388 56.6021 42.1834 56.5355 42.3258L56.4964 42.4062C56.4298 42.5463 56.3632 42.6864 56.2943 42.8288C56.145 43.1319 56.0279 43.3639 55.9199 43.566C55.9062 43.5889 55.8947 43.6096 55.8901 43.6211C55.7684 43.8507 55.6352 44.0942 55.4698 44.3881C55.2883 44.705 55.1161 44.9967 54.9369 45.2838C49.6636 53.8154 40.5364 58.9826 30.5203 59.1066C30.4009 59.1112 30.2837 59.1112 30.1643 59.1112H30.0977C29.9921 59.1112 29.891 59.1112 29.7808 59.1066C19.8772 58.9849 10.8051 53.9004 5.50883 45.5088C2.64939 40.98 1.10368 35.7439 1.03708 30.3631C1.03248 30.2391 1.03248 30.1174 1.03248 29.9957C1.03248 29.874 1.03248 29.7523 1.03708 29.6237C1.10139 24.3898 2.57359 19.2731 5.29293 14.8293C10.5571 6.2265 19.7119 1.01335 29.7877 0.889335C29.9048 0.887039 30.0242 0.884742 30.1528 0.884742C30.2815 0.884742 30.3986 0.884742 30.5272 0.889335C40.5708 1.01565 49.7142 6.21042 54.9829 14.7834C55.4813 15.5941 55.9452 16.4392 56.3609 17.2981C56.4298 17.4382 56.4987 17.5806 56.5653 17.7276L56.6985 18.0169C56.7261 18.0744 56.7514 18.1318 56.7766 18.1892L56.8019 18.2466C56.8409 18.3339 56.88 18.4188 56.9167 18.5061L57.1028 18.9516C57.1786 19.1308 57.2521 19.3122 57.3278 19.5166C57.3715 19.6314 57.4174 19.7462 57.4611 19.8725C57.5001 19.9759 57.5391 20.0769 57.5759 20.1849C57.6081 20.2744 57.6402 20.3663 57.6724 20.4582L57.6999 20.5385C57.739 20.6465 57.7734 20.7544 57.8102 20.8669C57.8538 20.9956 57.8951 21.1265 57.9365 21.2551L58.1937 22.114L58.258 22.3528C58.2856 22.4516 58.3109 22.5503 58.3407 22.6651C58.3522 22.7042 58.3614 22.7432 58.3752 22.796C58.3981 22.881 58.4188 22.9637 58.4395 23.0578C58.4601 23.1405 58.4785 23.2232 58.4992 23.3082L58.5107 23.361C58.5405 23.4919 58.5727 23.6251 58.6025 23.7652C58.6324 23.8938 58.66 24.0247 58.6852 24.1556L58.6944 24.1946C58.7174 24.3072 58.7403 24.4197 58.761 24.5322L58.8827 25.2212C58.9057 25.3567 58.9264 25.4922 58.947 25.6277C58.9654 25.7494 58.9838 25.8734 58.9999 25.9974L59.0205 26.1559C59.0297 26.2271 59.0389 26.296 59.0481 26.3672L59.055 26.4292C59.0688 26.5233 59.078 26.6198 59.0894 26.7208C59.1055 26.8517 59.1193 26.9803 59.1308 27.1135C59.1629 27.4282 59.1882 27.7566 59.2112 28.1148C59.2204 28.2802 59.2318 28.4501 59.2387 28.6178L59.2433 28.705C59.2502 28.8451 59.2548 28.9852 59.2594 29.1276C59.264 29.2884 59.2686 29.4491 59.2709 29.642C59.2755 29.7637 59.2755 29.8855 59.2755 30.0049C59.2755 30.1243 59.2755 30.2506 59.2709 30.3723V30.4045C59.2709 30.5675 59.264 30.7283 59.2594 30.8868L59.2227 31.6974C59.2181 31.7962 59.2135 31.8949 59.202 32.0052C59.1974 32.097 59.1905 32.1912 59.1813 32.2945V32.2922Z'
 							fill='white'
@@ -61,7 +61,7 @@ export default function Breakthrough() {
 						viewBox='0 0 61 60'
 						fill='none'
 						xmlns='http://www.w3.org/2000/svg'
-						className='min-w-[max(3.75rem,_24px)]'>
+						className='min-w-[max(3.75rem,24px)]'>
 						<path
 							d='M60.1505 29.6191L60.0012 29.6237L60.1505 29.5984C60.1505 29.4284 60.1459 29.2608 60.1391 29.0954C60.1345 28.9508 60.1276 28.8061 60.123 28.6637L60.1184 28.5764C60.1115 28.4019 60.1 28.2274 60.0885 28.0551C60.0656 27.6854 60.038 27.3478 60.0058 27.024C59.9921 26.8862 59.9783 26.7507 59.9622 26.6175L59.9553 26.5601C59.9461 26.4728 59.9369 26.3878 59.9255 26.312L59.8703 25.8734C59.852 25.7471 59.8336 25.6185 59.8152 25.4899C59.7945 25.3498 59.7716 25.212 59.7486 25.0742L59.6338 24.4197C59.6062 24.2796 59.5809 24.1372 59.5442 23.965C59.5166 23.8318 59.4891 23.6986 59.4592 23.5723C59.4294 23.4322 59.3972 23.2944 59.3651 23.1589L59.3559 23.1176C59.3352 23.0234 59.3145 22.9292 59.2893 22.8351C59.2686 22.7455 59.2456 22.6582 59.225 22.5825C59.2135 22.5296 59.1997 22.4768 59.1882 22.4378C59.1606 22.3275 59.1308 22.2196 59.1032 22.1163C59.0803 22.0313 59.0573 21.944 59.032 21.8545L58.7748 20.9933C58.7335 20.8578 58.6898 20.72 58.6462 20.5914C58.6094 20.4765 58.5704 20.3594 58.5313 20.2492C58.49 20.1275 58.4487 20.0057 58.4073 19.8886C58.3683 19.7784 58.3269 19.6681 58.2879 19.5671C58.2442 19.4454 58.1983 19.3237 58.1432 19.1836C58.0697 18.993 57.9939 18.8024 57.9158 18.6163L57.7252 18.1593C57.6838 18.0675 57.6448 17.9756 57.6012 17.8746L57.5828 17.8332C57.5552 17.7689 57.5277 17.7069 57.4978 17.6449L57.3646 17.3578C57.2934 17.2063 57.2222 17.0547 57.151 16.91C56.7238 16.0281 56.2461 15.1554 55.7316 14.3218C50.3067 5.48701 40.8878 0.13607 30.5456 0.00516722C30.286 -0.00172241 30.0173 -0.00172241 29.7716 0.00516722C19.3949 0.133774 9.9645 5.50538 4.5419 14.3723C1.73988 18.9516 0.224031 24.2222 0.157426 29.6099C0.152832 29.7385 0.152832 29.8717 0.152832 30.0003C0.152832 30.1289 0.152832 30.2621 0.157426 30.3861C0.226328 35.9254 1.81797 41.3199 4.76468 45.9865C10.2194 54.633 19.5672 59.8714 29.7647 59.9954C29.8933 60 30.0242 60 30.1551 60C30.286 60 30.417 60 30.541 59.9954C40.8556 59.8668 50.2585 54.5434 55.6926 45.7546C55.874 45.4606 56.0532 45.1575 56.2392 44.8336C56.4114 44.5305 56.5516 44.2802 56.6756 44.0367L56.6939 44.0023C56.8134 43.7772 56.9351 43.5384 57.0867 43.2284C57.1533 43.0929 57.2199 42.9551 57.298 42.792L57.337 42.7093C57.4082 42.5578 57.4771 42.4062 57.5414 42.2592C57.6103 42.1076 57.6769 41.9538 57.739 41.8068C57.8033 41.6598 57.8653 41.5151 57.9388 41.3337C57.9939 41.2005 58.049 41.0627 58.0973 40.9318C58.2305 40.5965 58.3545 40.2612 58.4647 39.942C58.5199 39.7881 58.5727 39.6366 58.6232 39.4781L58.637 39.4391C58.6875 39.2875 58.7357 39.1359 58.7817 38.9866C58.8322 38.8259 58.8827 38.6628 58.9287 38.5044C58.9746 38.3505 59.0182 38.1989 59.0619 38.0382L59.1997 37.5283C59.2824 37.2022 59.3605 36.8784 59.4408 36.5271C59.4776 36.364 59.512 36.2009 59.5396 36.0517C59.5672 35.9345 59.5901 35.8151 59.6062 35.7141C59.6338 35.5901 59.6567 35.4661 59.6751 35.3489C59.6958 35.2387 59.7142 35.1285 59.7371 34.9976C59.7624 34.8483 59.79 34.6944 59.8129 34.5176C59.8359 34.366 59.8589 34.2167 59.8818 34.0399L59.8956 33.9389C59.914 33.7942 59.9323 33.6518 59.9461 33.5163C59.9668 33.3441 59.9875 33.1695 60.0035 32.9996C60.0196 32.8434 60.0334 32.6849 60.0472 32.5104C60.0518 32.4553 60.0587 32.4002 60.0587 32.3611C60.0679 32.2601 60.077 32.1544 60.0793 32.0649C60.0885 31.9569 60.0954 31.8467 60.1 31.7388L60.1368 30.912C60.1414 30.7444 60.1459 30.5767 60.1482 30.3861C60.1528 30.2575 60.1528 30.1266 60.1528 29.998C60.1528 29.8694 60.1528 29.7385 60.1482 29.6168L60.1505 29.6191ZM59.1813 32.2922L59.1675 32.4645C59.1561 32.6138 59.1423 32.7607 59.1262 32.9123C59.1101 33.0777 59.094 33.243 59.0711 33.4152C59.055 33.5622 59.0366 33.7069 59.0205 33.8378C59.0137 33.8768 59.0091 33.9182 59.0045 33.948C58.9861 34.0927 58.9654 34.2351 58.9425 34.3752C58.9379 34.3982 58.9356 34.4188 58.9356 34.428C58.9149 34.5704 58.8919 34.7105 58.8644 34.8667C58.846 34.9723 58.8276 35.0802 58.8069 35.1928C58.7886 35.3053 58.7679 35.4155 58.7403 35.5418C58.722 35.6475 58.7013 35.7508 58.676 35.8679C58.6485 36.0218 58.614 36.1757 58.5819 36.3204C58.575 36.341 58.5727 36.3617 58.5681 36.3755C58.5015 36.6763 58.4257 36.9887 58.3453 37.301L58.2075 37.8062C58.1685 37.9532 58.1248 38.1002 58.0812 38.2472C58.0352 38.4033 57.9893 38.5595 57.9365 38.718C57.8974 38.8466 57.8561 38.9729 57.8148 39.0992L57.801 39.1451C57.7918 39.1704 57.7826 39.1933 57.7803 39.2048C57.7344 39.3495 57.6838 39.4919 57.6287 39.6412C57.5208 39.9535 57.4013 40.2773 57.2704 40.608C57.2222 40.7366 57.1717 40.8629 57.1005 41.0329C57.0453 41.1707 56.9902 41.3062 56.9259 41.4485C56.8639 41.5955 56.7996 41.7425 56.733 41.8918C56.6687 42.0388 56.6021 42.1834 56.5355 42.3258L56.4964 42.4062C56.4298 42.5463 56.3632 42.6864 56.2943 42.8288C56.145 43.1319 56.0279 43.3639 55.9199 43.566C55.9062 43.5889 55.8947 43.6096 55.8901 43.6211C55.7684 43.8507 55.6352 44.0942 55.4698 44.3881C55.2883 44.705 55.1161 44.9967 54.9369 45.2838C49.6636 53.8154 40.5364 58.9826 30.5203 59.1066C30.4009 59.1112 30.2837 59.1112 30.1643 59.1112H30.0977C29.9921 59.1112 29.891 59.1112 29.7808 59.1066C19.8772 58.9849 10.8051 53.9004 5.50883 45.5088C2.64939 40.98 1.10368 35.7439 1.03708 30.3631C1.03248 30.2391 1.03248 30.1174 1.03248 29.9957C1.03248 29.874 1.03248 29.7523 1.03708 29.6237C1.10139 24.3898 2.57359 19.2731 5.29293 14.8293C10.5571 6.2265 19.7119 1.01335 29.7877 0.889335C29.9048 0.887039 30.0242 0.884742 30.1528 0.884742C30.2815 0.884742 30.3986 0.884742 30.5272 0.889335C40.5708 1.01565 49.7142 6.21042 54.9829 14.7834C55.4813 15.5941 55.9452 16.4392 56.3609 17.2981C56.4298 17.4382 56.4987 17.5806 56.5653 17.7276L56.6985 18.0169C56.7261 18.0744 56.7514 18.1318 56.7766 18.1892L56.8019 18.2466C56.8409 18.3339 56.88 18.4188 56.9167 18.5061L57.1028 18.9516C57.1786 19.1308 57.2521 19.3122 57.3278 19.5166C57.3715 19.6314 57.4174 19.7462 57.4611 19.8725C57.5001 19.9759 57.5391 20.0769 57.5759 20.1849C57.6081 20.2744 57.6402 20.3663 57.6724 20.4582L57.6999 20.5385C57.739 20.6465 57.7734 20.7544 57.8102 20.8669C57.8538 20.9956 57.8951 21.1265 57.9365 21.2551L58.1937 22.114L58.258 22.3528C58.2856 22.4516 58.3109 22.5503 58.3407 22.6651C58.3522 22.7042 58.3614 22.7432 58.3752 22.796C58.3981 22.881 58.4188 22.9637 58.4395 23.0578C58.4601 23.1405 58.4785 23.2232 58.4992 23.3082L58.5107 23.361C58.5405 23.4919 58.5727 23.6251 58.6025 23.7652C58.6324 23.8938 58.66 24.0247 58.6852 24.1556L58.6944 24.1946C58.7174 24.3072 58.7403 24.4197 58.761 24.5322L58.8827 25.2212C58.9057 25.3567 58.9264 25.4922 58.947 25.6277C58.9654 25.7494 58.9838 25.8734 58.9999 25.9974L59.0205 26.1559C59.0297 26.2271 59.0389 26.296 59.0481 26.3672L59.055 26.4292C59.0688 26.5233 59.078 26.6198 59.0894 26.7208C59.1055 26.8517 59.1193 26.9803 59.1308 27.1135C59.1629 27.4282 59.1882 27.7566 59.2112 28.1148C59.2204 28.2802 59.2318 28.4501 59.2387 28.6178L59.2433 28.705C59.2502 28.8451 59.2548 28.9852 59.2594 29.1276C59.264 29.2884 59.2686 29.4491 59.2709 29.642C59.2755 29.7637 59.2755 29.8855 59.2755 30.0049C59.2755 30.1243 59.2755 30.2506 59.2709 30.3723V30.4045C59.2709 30.5675 59.264 30.7283 59.2594 30.8868L59.2227 31.6974C59.2181 31.7962 59.2135 31.8949 59.202 32.0052C59.1974 32.097 59.1905 32.1912 59.1813 32.2945V32.2922Z'
 							fill='white'
@@ -76,215 +76,238 @@ export default function Breakthrough() {
 				</h3>
 			</div>
 
-			<div className='flex flex-col items-center justify-center text-center mt-[max(6rem,_54px)]'>
+			<div className='flex flex-col items-center justify-center text-center mt-[max(6rem,54px)]'>
 				<Tag color='lemon'>Breakthrough</Tag>
 
 				<Words
 					as='h2'
 					className='text-60 text-white font-medium font-outfit 
-        leading-[1.3] tracking-tight mt-[max(1rem,_16px)]'>
-					This is Where the <br /> Shift Happens
+        leading-[1.3] tracking-tight mt-[max(1rem,16px)]'>
+					Recode the Mind
 				</Words>
 
 				<Paragraph
 					className='text-20 text-white-80 tracking-tight leading-[1.4] 
-          max-w-[max(34.75rem,_380px)] mt-[max(1.25rem,_18px)]'>
-					Our methods combine Neuro-Linguistic Programming (NLP) and Mental Emotional
-					Release (MER) to help you
+          max-w-[max(34.75rem,380px)] mt-[max(1.25rem,18px)]'>
+					Go beneath the surface to dissolve old patterns, quiet the noise, and
+					awaken your full potential. Every step is guided and grounded, bridging who
+					you are today with the version of you that&apos;s ready to emerge.
+					It&apos;s time to unlock who you&apos;re meant to be.
 				</Paragraph>
 
-				<ul className='mt-[max(5rem,_64px)] flex flex-col items-center gap-[max(7.075rem,_80px)]'>
-					{BREAKTHROUGH_ITEMS.map((item) => (
+				<ul className='mt-[max(5rem,64px)] flex flex-col items-center gap-[max(7.075rem,80px)]'>
+					{BREAKTHROUGH_ITEMS.map((item, i) => (
 						<li key={item.img} className='flex flex-col items-center'>
 							<figure>
 								<Image
 									src={item.img}
-									width={540}
-									height={540}
+									width={480}
+									height={480}
 									alt={`Image depicting ${item.title}`}
-									className='rounded-full min-w-[33.75rem]'
+									className='rounded-full min-w-120'
 								/>
 							</figure>
 
-							<div className='mt-[max(4rem,_32px)]'>
+							<div className='mt-[max(2rem,24px)]'>
 								<Words
 									as='h3'
-									className='text-[max(3rem,_28px)] text-white font-outfit 
+									className='text-[max(3rem,28px)] text-white font-outfit 
                 font-medium tracking-tight leading-[1.3]'>
 									{item.title}
 								</Words>
 								<Paragraph
-									className='text-20 text-white-80 leading-[1.5] tracking-tight
-                max-w-[max(41rem,_440px)] mt-[max(1.25rem,_18px)]
+									className='text-20 text-white-80 leading-normal tracking-tight
+                max-w-[max(41rem,440px)] mt-[max(1.25rem,18px)]
                 '>
 									{item.info}
 								</Paragraph>
 							</div>
 
-							<Button bg='lemon' className='mt-[max(3rem,_36px)]'>
-								Begin Your Journey
-							</Button>
+							{i == 0 && (
+								<Button bg='lemon' className='mt-[max(3rem,36px)]'>
+									Unleash Your Best
+								</Button>
+							)}
 						</li>
 					))}
 				</ul>
 			</div>
 
-			<Journey />
+			<div className='mt-[max(6.563rem,64px)] flex flex-col items-center text-center'>
+				<Tag color='lemon'>Releasing the Emotional Past</Tag>
+				<Paragraph
+					className='text-36 tracking-tighter leading-normal font-medium
+				mt-[max(2.7rem,26px)] text-white px-16
+				'>
+					Emotions that haven&apos;t been expressed don&apos;t disappear. They settle
+					in the body and shape how we live, driving inappropriate reactions and
+					behaviours that harm the body and hold us back from moving forward. <br />{' '}
+					The process to release the emotions is gentle yet profound. It helps you
+					see new possibilities, gain control over yourself and your reactions, and
+					free yourself from unwarranted negative emotions
+				</Paragraph>
+
+				<Button bg='lemon' className='mt-[max(2.5rem,28px)]'>
+					Begin your Emotional Reset
+				</Button>
+			</div>
+
+			{/* <Journey /> */}
 		</section>
 	);
 }
 
-const Journey = () => {
-	const sectionRef = useRef<HTMLDivElement>(null);
-	const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
+// const Journey = () => {
+// 	const sectionRef = useRef<HTMLDivElement>(null);
+// 	const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
 
-	useGSAP(
-		() => {
-			const mm = gsap.matchMedia();
-			const animation = gsap.timeline();
+// 	useGSAP(
+// 		() => {
+// 			const mm = gsap.matchMedia();
+// 			const animation = gsap.timeline();
 
-			animation.to("[data-selector='spinning-wheel']", {
-				rotate: '270deg',
-			});
+// 			animation.to("[data-selector='spinning-wheel']", {
+// 				rotate: '270deg',
+// 			});
 
-			if (scrollTriggerRef.current) {
-				scrollTriggerRef.current.kill();
-			}
+// 			if (scrollTriggerRef.current) {
+// 				scrollTriggerRef.current.kill();
+// 			}
 
-			mm.add('(min-width:1199px)', () => {
-				scrollTriggerRef.current = ScrollTrigger.create({
-					trigger: sectionRef.current,
-					start: 'top top',
-					end: `+=${window.innerHeight * 3}`,
-					scrub: 1,
-					pin: sectionRef.current,
-					animation,
-					anticipatePin: 1,
-					pinSpacing: true,
-					onUpdate: () => {
-						const SPINNING_WHEEL = document.querySelector(
-							"[data-selector='spinning-wheel']"
-						);
-						const BUILD = document.querySelector("[data-selector='build']");
-						const RELEASE = document.querySelector("[data-selector='release']");
+// 			mm.add('(min-width:1199px)', () => {
+// 				scrollTriggerRef.current = ScrollTrigger.create({
+// 					trigger: sectionRef.current,
+// 					start: 'top top',
+// 					end: `+=${window.innerHeight * 3}`,
+// 					scrub: 1,
+// 					pin: sectionRef.current,
+// 					animation,
+// 					anticipatePin: 1,
+// 					pinSpacing: true,
+// 					onUpdate: () => {
+// 						const SPINNING_WHEEL = document.querySelector(
+// 							"[data-selector='spinning-wheel']"
+// 						);
+// 						const BUILD = document.querySelector("[data-selector='build']");
+// 						const RELEASE = document.querySelector("[data-selector='release']");
 
-						const rotation = gsap.getProperty(SPINNING_WHEEL, 'rotate') as number;
+// 						const rotation = gsap.getProperty(SPINNING_WHEEL, 'rotate') as number;
 
-						if (rotation >= 90) {
-							gsap.to(BUILD, {
-								opacity: 1,
-							});
-						}
-						if (rotation >= 265) {
-							gsap.to(RELEASE, {
-								opacity: 1,
-							});
-						}
-						if (rotation < 265) {
-							gsap.to(RELEASE, {
-								opacity: 0.4,
-							});
-						}
-						if (rotation < 90) {
-							gsap.to(BUILD, {
-								opacity: 0.4,
-							});
-						}
-					},
-				});
-			});
+// 						if (rotation >= 90) {
+// 							gsap.to(BUILD, {
+// 								opacity: 1,
+// 							});
+// 						}
+// 						if (rotation >= 265) {
+// 							gsap.to(RELEASE, {
+// 								opacity: 1,
+// 							});
+// 						}
+// 						if (rotation < 265) {
+// 							gsap.to(RELEASE, {
+// 								opacity: 0.4,
+// 							});
+// 						}
+// 						if (rotation < 90) {
+// 							gsap.to(BUILD, {
+// 								opacity: 0.4,
+// 							});
+// 						}
+// 					},
+// 				});
+// 			});
 
-			mm.add('(max-width:1198px)', () => {
-				const BUILD = document.querySelector("[data-selector='build']");
-				const RELEASE = document.querySelector("[data-selector='release']");
+// 			mm.add('(max-width:1198px)', () => {
+// 				const BUILD = document.querySelector("[data-selector='build']");
+// 				const RELEASE = document.querySelector("[data-selector='release']");
 
-				gsap.set([BUILD, RELEASE], {
-					opacity: 1,
-				});
-			});
+// 				gsap.set([BUILD, RELEASE], {
+// 					opacity: 1,
+// 				});
+// 			});
 
-			return () => {
-				if (scrollTriggerRef.current) {
-					scrollTriggerRef.current.kill();
-				}
-			};
-		},
-		{
-			scope: sectionRef,
-		}
-	);
+// 			return () => {
+// 				if (scrollTriggerRef.current) {
+// 					scrollTriggerRef.current.kill();
+// 				}
+// 			};
+// 		},
+// 		{
+// 			scope: sectionRef,
+// 		}
+// 	);
 
-	return (
-		<div className='mt-[max(9.625rem,_84px)]' ref={sectionRef}>
-			<div className='flex flex-col items-center justify-center text-center'>
-				<span className='size-[max(2rem,_24px)] bg-lemon rounded-full' />
-				<div className='mt-[max(1.5rem,_18px)]'>
-					<h3 className='text-[max(2.25rem,_24px)] text-white font-medium tracking-tight'>
-						Rewire
-					</h3>
-					<p
-						className='text-white-80 text-20 leading-[1.5] tracking-tight 
-          max-w-[max(28.75rem,_300px)] mt-[max(0.625rem,_10px)]'>
-						Shift old patterns into empowering beliefs. Through NLP techniques,
-						you&apos;ll retrain your mind to think, act, and respond with clarity and
-						confidence.
-					</p>
-				</div>
-			</div>
+// 	return (
+// 		<div className='mt-[max(9.625rem,84px)]' ref={sectionRef}>
+// 			<div className='flex flex-col items-center justify-center text-center'>
+// 				<span className='size-[max(2rem,24px)] bg-lemon rounded-full' />
+// 				<div className='mt-[max(1.5rem,18px)]'>
+// 					<h3 className='text-[max(2.25rem,24px)] text-white font-medium tracking-tight'>
+// 						Rewire
+// 					</h3>
+// 					<p
+// 						className='text-white-80 text-20 leading-normal tracking-tight
+//           max-w-[max(28.75rem,300px)] mt-[max(0.625rem,10px)]'>
+// 						Shift old patterns into empowering beliefs. Through NLP techniques,
+// 						you&apos;ll retrain your mind to think, act, and respond with clarity and
+// 						confidence.
+// 					</p>
+// 				</div>
+// 			</div>
 
-			<div
-				className='mt-[max(6.625rem,_90px)] flex flex-col md:flex-row items-center 
-      justify-between gap-[max(6.625rem,_90px)] md:gap-0'>
-				{/* start of release */}
-				<div
-					className='flex flex-col items-center justify-center text-center des:opacity-40'
-					data-selector='release'>
-					<span className='size-[max(2rem,_24px)] des:size-[max(1.25rem,_18px)] bg-lemon rounded-full' />
-					<div className='mt-[max(1.5rem,_18px)]'>
-						<h3 className='text-[max(2.25rem,_24px)] text-white font-medium tracking-tight'>
-							Release
-						</h3>
-						<p
-							className='text-white-80 text-20 leading-[1.5] tracking-tight 
-          max-w-[max(24.875rem,_300px)] mt-[max(0.625rem,_10px)]'>
-							Understanding your deepest motivations is the first step toward
-							meaningful change. Through guided reflection and powerful coaching.
-						</p>
-					</div>
-				</div>
-				{/* end of release */}
+// 			<div
+// 				className='mt-[max(6.625rem,90px)] flex flex-col md:flex-row items-center
+//       justify-between gap-[max(6.625rem,90px)] md:gap-0'>
+// 				{/* start of release */}
+// 				<div
+// 					className='flex flex-col items-center justify-center text-center des:opacity-40'
+// 					data-selector='release'>
+// 					<span className='size-[max(2rem,24px)] des:size-[max(1.25rem,18px)] bg-lemon rounded-full' />
+// 					<div className='mt-[max(1.5rem,18px)]'>
+// 						<h3 className='text-[max(2.25rem,24px)] text-white font-medium tracking-tight'>
+// 							Release
+// 						</h3>
+// 						<p
+// 							className='text-white-80 text-20 leading-normal tracking-tight
+//           max-w-[max(24.875rem,300px)] mt-[max(0.625rem,10px)]'>
+// 							Understanding your deepest motivations is the first step toward
+// 							meaningful change. Through guided reflection and powerful coaching.
+// 						</p>
+// 					</div>
+// 				</div>
+// 				{/* end of release */}
 
-				<figure className='hidden des:block' data-selector='spinning-wheel'>
-					<Image
-						src='/wheel.svg'
-						width={362}
-						height={362}
-						alt='spinning wheel'
-						className='min-w-[22.625rem]'
-					/>
-				</figure>
+// 				<figure className='hidden des:block' data-selector='spinning-wheel'>
+// 					<Image
+// 						src='/wheel.svg'
+// 						width={362}
+// 						height={362}
+// 						alt='spinning wheel'
+// 						className='min-w-90.5'
+// 					/>
+// 				</figure>
 
-				{/* start of build */}
-				<div
-					className='flex flex-col items-center justify-center text-center des:opacity-40'
-					data-selector='build'>
-					<span className='size-[max(2rem,_24px)] des:size-[max(1.25rem,_18px)] bg-lemon rounded-full' />
-					<div className='mt-[max(1.5rem,_18px)]'>
-						<h3 className='text-[max(2.25rem,_24px)] text-white font-medium tracking-tight'>
-							Build
-						</h3>
-						<p
-							className='text-white-80 text-20 leading-[1.5] tracking-tight 
-          max-w-[max(24.875rem,_300px)] mt-[max(0.625rem,_10px)]'>
-							Create a foundation for success by setting meaningful goals and
-							actionable steps. With structured coaching, you&apos;ll develop habits
-							that last.
-						</p>
-					</div>
-				</div>
+// 				{/* start of build */}
+// 				<div
+// 					className='flex flex-col items-center justify-center text-center des:opacity-40'
+// 					data-selector='build'>
+// 					<span className='size-[max(2rem,24px)] des:size-[max(1.25rem,18px)] bg-lemon rounded-full' />
+// 					<div className='mt-[max(1.5rem,18px)]'>
+// 						<h3 className='text-[max(2.25rem,24px)] text-white font-medium tracking-tight'>
+// 							Build
+// 						</h3>
+// 						<p
+// 							className='text-white-80 text-20 leading-normal tracking-tight
+//           max-w-[max(24.875rem,300px)] mt-[max(0.625rem,10px)]'>
+// 							Create a foundation for success by setting meaningful goals and
+// 							actionable steps. With structured coaching, you&apos;ll develop habits
+// 							that last.
+// 						</p>
+// 					</div>
+// 				</div>
 
-				{/* end of build */}
-			</div>
-		</div>
-	);
-};
+// 				{/* end of build */}
+// 			</div>
+// 		</div>
+// 	);
+// };
