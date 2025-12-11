@@ -103,56 +103,55 @@ export default function Awaken() {
 	return (
 		<section
 			id='awaken'
-			className='pt-[max(5rem,_44px)] pb-[max(4.45rem,_48px)] relative z-[12]'
+			className='pt-[max(5rem,44px)] pb-[max(4.45rem,48px)] relative z-12'
 			ref={secionRef}>
 			<div className='px-gutter'>
 				<div className='flex flex-col items-center justify-center text-center'>
 					<Tag color='blue'>Awaken</Tag>
 					<h2
 						className={cn(
-							'!text-blue text-60 font-outfit font-medium tracking-tight',
-							'mt-[max(1rem,_16px)] max-w-[max(52.5rem,_435px)]',
+							'text-blue! text-60 font-outfit font-medium tracking-tight',
+							'mt-[max(1rem,16px)] max-w-[max(52.5rem,435px)]',
 							'leading-[1.2]'
 						)}>
 						Anything is possible when you decide to{' '}
 						<span className='inline-flex'>
 							<span className='font-chronicle-display grid overflow-hidden place-items-start'>
+								<span className='translating-text col-start-1 row-start-1 will-change-transform pr-2.5'>
+									“Manifest it”
+								</span>
 								<span className='translating-text col-start-1 row-start-1 will-change-transform'>
 									“Dream it”
 								</span>
 								<span className='translating-text col-start-1 row-start-1 will-change-transform'>
-									“Be it”
+									“Believe it”
 								</span>
-								<span className='translating-text col-start-1 row-start-1 will-change-transform'>
-									“Do it”
-								</span>
-								<span className='translating-text col-start-1 row-start-1 pr-[10px] will-change-transform'>
-									“Manifest it”
+								<span className='translating-text col-start-1 row-start-1  will-change-transform'>
+									“Create it”
 								</span>
 							</span>
 						</span>
 					</h2>
 					<Paragraph
 						className={cn(
-							'!text-20 text-[#0A182D99] mt-[max(0.75rem,_12px)]',
-							'max-w-[max(36.75rem,_458px)] leading-[1.4]'
+							'text-20! text-[#0A182D99] mt-[max(0.75rem,12px)]',
+							'max-w-[max(38.75rem,458px)] leading-[1.4] tracking-tighter'
 						)}>
-						Manifestation isn&apos;t just an idea, it&apos;s a practice of clarity,
-						belief, and action that helps you create the life you&apos;ve been
-						imagining.
+						The quality of your life is shaped by who you are, how you feel, show up
+						and what you have across all six areas.
 					</Paragraph>
-					<Button bg='blue' className='mt-[max(1.5rem,_20px)]'>
-						Manifest Today
+					<Button bg='blue' className='mt-[max(1.5rem,20px)]'>
+						Create Your Life
 					</Button>
 				</div>
 			</div>
 
-			<div className='mt-[max(6.5rem,_74px)] overflow-hidden'>
+			<div className='mt-[max(6.5rem,74px)] overflow-hidden'>
 				<div className='w-fit' ref={trackRef}>
 					<div
-						className='flex items-center gap-[max(1.5rem,_16px)] '
+						className='flex items-center gap-[max(1.5rem,16px)] '
 						data-selector='track'>
-						<div className='flex items-center gap-[max(1.5rem,_16px)]'>
+						<div className='flex items-center gap-[max(1.5rem,16px)]'>
 							{AWAKEN_CARDS.map((card, i) => (
 								<figure key={card.title}>
 									<Image
@@ -160,12 +159,12 @@ export default function Awaken() {
 										width={360}
 										height={486}
 										alt={`Awaken card ${card.title} - ${card.info}`}
-										className='min-w-[max(220px,_22.5rem)]'
+										className='min-w-[max(220px,22.5rem)]'
 									/>
 								</figure>
 							))}
 						</div>
-						<div className='flex items-center gap-[max(1.5rem,_16px)]'>
+						<div className='flex items-center gap-[max(1.5rem,16px)]'>
 							{AWAKEN_CARDS.map((card, i) => (
 								<figure key={card.title}>
 									<Image
@@ -173,7 +172,7 @@ export default function Awaken() {
 										width={360}
 										height={486}
 										alt={`Awaken card ${card.title} - ${card.info}`}
-										className='min-w-[max(220px,_22.5rem)]'
+										className='min-w-[max(220px,22.5rem)]'
 									/>
 								</figure>
 							))}

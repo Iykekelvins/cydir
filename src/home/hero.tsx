@@ -2,7 +2,7 @@
 
 import { useLenis } from 'lenis/react';
 import { useEffect, useRef, useState } from 'react';
-import { useGSAP } from '@gsap/react';
+// import { useGSAP } from '@gsap/react';
 import { SplitText } from 'gsap/SplitText';
 
 import Button from '@/components/button';
@@ -11,7 +11,7 @@ import gsap from 'gsap';
 gsap.registerPlugin(SplitText);
 
 export default function Hero() {
-	const heroTitle = useRef<HTMLHeadingElement>(null);
+	// const heroTitle = useRef<HTMLHeadingElement>(null);
 	const heroInfo = useRef<HTMLParagraphElement>(null);
 	const heroTl = useRef<GSAPTimeline>(null);
 
