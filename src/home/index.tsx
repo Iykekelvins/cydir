@@ -1,4 +1,5 @@
 import Hero from './hero';
+import Transformation from './transformation';
 import Awaken from './awaken';
 import Breakthrough from './breakthrough';
 import Transform from './transform';
@@ -14,6 +15,7 @@ const Homepage = () => {
 	return (
 		<div>
 			<Hero />
+			<Transformation />
 			<Awaken />
 			<Breakthrough />
 			<Transform />

@@ -13,7 +13,7 @@ export default function JoinUs() {
 	return (
 		<section
 			className='px-gutter bg-[#0A182D] pt-[max(34.075rem,450px)] pb-[max(4.2rem,30px)]
-    mt-[min(-30rem,-400px)] relative z-[12]
+    mt-[min(-30rem,-400px)] relative z-12
     '>
 			<div
 				className='bg-[#EBEBEB] py-[max(4.875rem,36px)]
@@ -21,7 +21,7 @@ export default function JoinUs() {
 				<div className='flex items-center justify-between'>
 					<div
 						className='max-w-[max(30rem,320px)] 
-					min-w-[max(30rem,320px)] w-full'>
+					md:min-w-[max(30rem,320px)] w-full'>
 						<Tag color='blue'>Join Us</Tag>
 						<Words
 							as='h2'
@@ -30,7 +30,7 @@ export default function JoinUs() {
             '>
 							Growth is a journey best taken together.
 						</Words>
-						<Paragraph className='text-base text-[#0A182DCC] leading-[1.5] mt-[max(1rem,14px)]'>
+						<Paragraph className='text-base text-[#0A182DCC] leading-normal mt-[max(1rem,14px)]'>
 							Join our bi-weekly newsletter for practical tools, inspiration, and
 							exclusive invites to events.
 						</Paragraph>

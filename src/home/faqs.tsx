@@ -30,7 +30,7 @@ export default function Faqs() {
 	if (!isMounted) return;
 
 	return (
-		<section className='pt-[max(4.2rem,30px)] relative z-[13]'>
+		<section className='pt-[max(4.2rem,30px)] relative z-13'>
 			<div className='px-gutter'>
 				<Words
 					as='h2'
@@ -46,7 +46,7 @@ export default function Faqs() {
 				py-[max(3.75rem,36px)] px-[max(3.45rem,24px)]
 				mt-[max(2.825rem,30px)]
 				'>
-					<div className='h-[37rem] hidden lg:flex gap-[max(2.75rem,30px)]'>
+					<div className='h-148 hidden lg:flex gap-[max(2.75rem,30px)]'>
 						<Scrollbars
 							data-lenis-prevent
 							renderThumbVertical={() => (
@@ -90,7 +90,7 @@ export default function Faqs() {
 									`}>
 										<button
 											className='h-full w-full flex items-center justify-between px-[max(1rem,14px)]
-										text-base font-medium relative z-[2] text-left
+										text-base font-medium relative z-2 text-left
 										'
 											onClick={() => {
 												setActive(i);
@@ -194,7 +194,7 @@ export default function Faqs() {
 
 											<div className='p-[max(1.5rem,20px)] flex flex-col items-center justify-evenly'>
 												<p
-													className='text-20 text-[#0A182D] font-medium leading-[1.5]
+													className='text-20 text-[#0A182D] font-medium leading-normal
 												w-[95%]
 												'>
 													Most coaching focuses on surface-level motivation or quick
@@ -285,8 +285,8 @@ const Faq = ({
 									${i === active ? 'bg-[#0A182D]' : 'bg-[#F4FAFC]'}
 									`}>
 			<button
-				className='h-[max(4.5rem,55px)] w-full flex items-center justify-between px-[max(1rem,14px)]
-										text-base font-medium relative z-[2] text-left
+				className='min-h-[max(4.5rem,55px)] w-full flex items-center justify-between px-[max(1rem,14px)]
+										text-base font-medium relative z-2 text-left
 										'
 				onClick={() => {
 					setActive(i);
@@ -320,7 +320,7 @@ const Faq = ({
 
 			<div ref={answerRef} className='overflow-hidden h-0'>
 				<p
-					className={`text-20 font-medium leading-[1.5]
+					className={`text-20 font-medium leading-normal
 						transition-colors duration-300 ease-in-out
 						border-t border-t-white border-solid
 						 ${i === active ? 'text-white' : 'text-[#0A182D]'}
