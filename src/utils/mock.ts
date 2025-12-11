@@ -4,7 +4,7 @@ export const NAV_LINKS = [
 	'Transform',
 	'Origin',
 	'Thrive',
-	'Manifest Now',
+	'Schedule Your Call',
 ];
 
 export const AWAKEN_CARDS = [

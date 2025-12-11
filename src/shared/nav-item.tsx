@@ -75,7 +75,7 @@ export default function NavItem({ link }: { link: string }) {
 
 	return (
 		<>
-			{link !== 'Manifest Now' ? (
+			{link !== 'Schedule Your Call' ? (
 				<button
 					className='text-white text-base font-medium overflow-hidden grid place-items-start'
 					data-selector='scramble-link'
