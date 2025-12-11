@@ -94,7 +94,7 @@ export default function NavItem({ link }: { link: string }) {
 					</span>
 				</button>
 			) : (
-				<Button bg='lemon' className='h-[max(2.5rem,_32px)]'>
+				<Button bg='lemon' className='h-[max(2.5rem,32px)]'>
 					{link}
 				</Button>
 			)}

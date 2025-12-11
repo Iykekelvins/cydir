@@ -13,7 +13,7 @@ export default function Navbar() {
 	return (
 		<header
 			className={`fixed top-0 left-0 w-full z-40 
-						px-gutter py-[max(1.7rem,_20px)]
+						px-gutter py-[max(1.7rem,20px)]
 						transition-all duration-300 ease-in-out
 						${
 							scrollDir === 'up'
@@ -28,7 +28,7 @@ export default function Navbar() {
 					<Image src='/logo.svg' width={91.22} height={39} alt='Cydir Logo' />
 				</Link>
 
-				<ul className='hidden lg:flex items-center gap-[max(2.5rem,_32px)]'>
+				<ul className='hidden lg:flex items-center gap-[max(2.5rem,32px)]'>
 					{NAV_LINKS.map((link) => (
 						<li key={link}>
 							<NavItem link={link} />
