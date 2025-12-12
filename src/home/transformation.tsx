@@ -73,7 +73,7 @@ export default function Transformation() {
 				</figure>
 			</div>
 
-			<div className='m-[max(6rem,40px)] flex justify-center'>
+			<div className='mt-[max(6rem,40px)] flex justify-center'>
 				<Paragraph
 					className='text-36 font-medium tracking-tighter leading-normal
 				text-white max-w-[max(43.625rem,380px)] text-center 
