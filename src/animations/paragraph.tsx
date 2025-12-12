@@ -62,6 +62,7 @@ const Paragraph = <T extends React.ElementType = 'p'>({
 										gsap.set(split.lines, {
 											clearProps: 'transform,wilChange,rotate',
 										});
+										split.revert();
 									},
 								});
 

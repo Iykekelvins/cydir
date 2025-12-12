@@ -1,7 +1,5 @@
 'use client';
 
-import { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
 import { cn } from '@/utils';
 import { BREAKTHROUGH_ITEMS } from '@/utils/mock';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -104,7 +102,8 @@ export default function Breakthrough() {
 									width={480}
 									height={480}
 									alt={`Image depicting ${item.title}`}
-									className='rounded-full min-w-120'
+									className='lg:min-w-120 rounded-full
+						max-[49rem]:w-3xl max-sm:w-full'
 								/>
 							</figure>
 
@@ -151,8 +150,6 @@ export default function Breakthrough() {
 					Begin your Emotional Reset
 				</Button>
 			</div>
-
-			{/* <Journey /> */}
 		</section>
 	);
 }
