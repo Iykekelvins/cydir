@@ -2,6 +2,7 @@ import Hero from './hero';
 import Transformation from './transformation';
 import Awaken from './awaken';
 import Breakthrough from './breakthrough';
+import WhatShifts from './what-shifts';
 import Transform from './transform';
 import Origin from './origin';
 import Events from './events';
@@ -18,6 +19,7 @@ const Homepage = () => {
 			<Transformation />
 			<Awaken />
 			<Breakthrough />
+			<WhatShifts />
 			<Transform />
 			<Origin />
 			<Events />
