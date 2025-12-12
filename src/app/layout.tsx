@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import { Inter, Outfit } from 'next/font/google';
 import { Lenis } from 'lenis/react';
+import { AppProvider } from './context';
 import { metaDataOptions } from '@/utils/metadata';
 
 import ScrollWrapper from '@/shared/scroll-wrapper';
 import Navbar from '@/shared/navbar';
+import Service from '@/shared/service';
 import Footer from '@/shared/footer';
 
 import localFont from 'next/font/local';
@@ -51,12 +53,15 @@ export default function RootLayout({
 					options={{
 						wheelMultiplier: 0.9,
 					}}>
-					<body
-						className={`${inter.variable} ${outfit.variable} ${ChronicleDisplay.variable} antialiased`}>
-						<Navbar />
-						<main>{children}</main>
-						<Footer />
-					</body>
+					<AppProvider>
+						<body
+							className={`${inter.variable} ${outfit.variable} ${ChronicleDisplay.variable} antialiased`}>
+							<Navbar />
+							<main>{children}</main>
+							<Service />
+							<Footer />
+						</body>
+					</AppProvider>
 				</Lenis>
 			</ScrollWrapper>
 		</html>

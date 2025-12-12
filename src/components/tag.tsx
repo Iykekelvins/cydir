@@ -12,10 +12,10 @@ export default function Tag({ children, color }: TagProps) {
 		<Scale
 			as='div'
 			className={cn(
-				'flex items-center justify-center gap-[max(0.5rem,_8px)]',
-				'pl-[max(0.75rem,_12px)] pr-[max(1rem,_16px)]',
-				'h-[max(2.325rem,_30px)] text-base rounded-full',
-				'border border-solid w-max',
+				'flex items-center justify-center gap-[max(0.5rem,8px)]',
+				'pl-[max(0.75rem,12px)] pr-[max(1rem,16px)]',
+				'h-[max(2.325rem,30px)] text-base rounded-full',
+				'border border-solid w-max tracking-tighter',
 				color === 'blue' && 'text-blue border-blue',
 				color === 'lemon' && 'text-lemon border-lemon'
 			)}>

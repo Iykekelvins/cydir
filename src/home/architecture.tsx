@@ -209,7 +209,7 @@ const Journey = () => {
 			<div
 				className='flex des:hidden flex-col items-center justify-center text-center'
 				data-selector='release'>
-				<span className='size-[max(2rem,24px)] bg-lemon rounded-full' />
+				<span className='size-[max(1.25rem,20px)] des:size-[max(2rem,24px)] bg-lemon rounded-full' />
 				<div className='mt-[max(1.5rem,18px)]'>
 					<h3 className='text-[max(2.25rem,24px)] text-white font-medium tracking-tight'>
 						1. Release
@@ -279,7 +279,8 @@ const Journey = () => {
 				<div
 					className='flex flex-col items-center justify-center text-center des:opacity-40'
 					data-selector='act'>
-					<span className='size-[max(1.25rem,20px)] bg-lemon rounded-full ball' />
+					<span className='size-[max(1.25rem,20px)] bg-lemon rounded-full ball hidden des:block' />
+					<span className='size-[max(1.25rem,20px)] bg-lemon rounded-full des:hidden' />
 					<div className='mt-[max(1.5rem,18px)]'>
 						<h3 className='text-[max(2.25rem,24px)] text-white font-medium tracking-tight'>
 							3. Act
@@ -303,7 +304,8 @@ const Journey = () => {
         des:opacity-40
         '
 				data-selector='optimize'>
-				<span className='size-[max(1.25rem,20px)] bg-lemon rounded-full ball' />
+				<span className='size-[max(1.25rem,20px)] bg-lemon rounded-full ball hidden des:block' />
+				<span className='size-[max(1.25rem,20px)] bg-lemon rounded-full des:hidden' />
 				<div className='mt-[max(1.5rem,18px)]'>
 					<h3 className='text-[max(2.25rem,24px)] text-white font-medium tracking-tight'>
 						4. Optimize
