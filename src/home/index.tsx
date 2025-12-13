@@ -23,8 +23,8 @@ const Homepage = () => {
 			<WhatShifts />
 			<Architecture />
 			<Transform />
-			<Origin />
 			<Events />
+			<Origin />
 			<Thrive />
 			<Affirmations />
 			<IgFeed />

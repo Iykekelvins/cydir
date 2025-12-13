@@ -6,6 +6,8 @@ import Image from 'next/image';
 import Button from '@/components/button';
 import Words from '@/animations/words';
 import Paragraph from '@/animations/paragraph';
+import Tag from '@/components/tag';
+import { useProvider } from '@/app/context';
 
 const EVENTS = [
 	{
@@ -27,12 +29,33 @@ export default function Events() {
 		Autoplay({ playOnInit: false, delay: 3000 }),
 	]);
 
+	const { setOpenCommForm } = useProvider();
+
 	return (
 		<section
 			className='pt-[max(6.825rem,74px)] bg-[url(/images/events-bg.jpg)] 
-    bg-cover bg-no-repeat relative overflow-hidden pb-[max(3.25rem,40px)] z-[12]'>
-			<div className='relative z-[2]'>
-				<div className='px-gutter'>
+    bg-cover bg-no-repeat relative overflow-hidden pb-[max(3.25rem,40px)] z-12'>
+			<div className='relative z-2'>
+				<div className='flex flex-col items-center justify-center text-center'>
+					<Tag color='lemon'>The Limitless Community</Tag>
+					<Paragraph
+						className='text-36 leading-normal tracking-tighter
+					max-w-[max(51.25rem,550px)] mt-[max(0.75rem,12px)]
+					text-white
+					'>
+						Join Abhinav and the Limitless Community for workshops, retreats, and
+						curated gatherings that combine reflection, conversation, and
+						transformation.
+					</Paragraph>
+					<Button
+						bg='lemon'
+						className='mt-[max(2rem,24px)]'
+						onClick={() => setOpenCommForm(true)}>
+						Join the Limitless Community
+					</Button>
+				</div>
+
+				<div className='px-gutter mt-[max(7.25rem,64px)]'>
 					<Words
 						as='h2'
 						className='text-white text-64 font-medium font-outfit tracking-tight'>
@@ -138,7 +161,7 @@ export default function Events() {
 								<div
 									className={`embla__slide border-[0.3] border-white 
                 border-solid rounded-[max(1.5rem,16px)] overflow-hidden
-                min-w-[31.25rem] bg-white
+                min-w-125 bg-white
                 `}
 									key={ev.title}>
 									<figure className='overflow-hidden'>
@@ -158,7 +181,7 @@ export default function Events() {
 										<p className='text-[#0B192DCC] text-base font-medium tracking-tight mt-[max(0.5rem,8px)]'>
 											By Cydir Inc
 										</p>
-										<p className='text-[#0C0C0CB2] text-20 leading-[1.5] mt-[max(1.25rem,16px)] tracking-tight'>
+										<p className='text-[#0C0C0CB2] text-20 leading-normal mt-[max(1.25rem,16px)] tracking-tight'>
 											{ev.info}
 										</p>
 

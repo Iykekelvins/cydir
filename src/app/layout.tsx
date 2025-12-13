@@ -7,6 +7,7 @@ import { metaDataOptions } from '@/utils/metadata';
 import ScrollWrapper from '@/shared/scroll-wrapper';
 import Navbar from '@/shared/navbar';
 import Service from '@/shared/service';
+import CommunityForm from '@/shared/community-form';
 import Footer from '@/shared/footer';
 
 import localFont from 'next/font/local';
@@ -59,6 +60,7 @@ export default function RootLayout({
 							<Navbar />
 							<main>{children}</main>
 							<Service />
+							<CommunityForm />
 							<Footer />
 						</body>
 					</AppProvider>

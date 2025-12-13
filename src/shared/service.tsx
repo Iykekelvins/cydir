@@ -66,6 +66,7 @@ export default function Service() {
 				className='bg-white w-full  pl-gutter
       pr-[max(3.75rem,20px)] pb-gutter pt-[max(4rem,50px)] relative
       overflow-y-auto hide-scroll h-full max-[65rem]:h-auto max-sm:h-full
+			flex flex-col justify-center
       '
 				ref={modalRef}
 				data-lenis-prevent>
