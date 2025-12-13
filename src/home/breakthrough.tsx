@@ -5,13 +5,13 @@ import { BREAKTHROUGH_ITEMS } from '@/utils/mock';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Tag from '@/components/tag';
-import Image from 'next/image';
 import Button from '@/components/button';
 import gsap from 'gsap';
 import Words from '@/animations/words';
 import Paragraph from '@/animations/paragraph';
 import Scale from '@/animations/scale';
 import Starfield from 'react-starfield';
+import TiltImg from '@/components/tilt-img';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -96,16 +96,15 @@ export default function Breakthrough() {
 				<ul className='mt-[max(5rem,64px)] flex flex-col items-center gap-[max(7.075rem,80px)]'>
 					{BREAKTHROUGH_ITEMS.map((item, i) => (
 						<li key={item.img} className='flex flex-col items-center'>
-							<figure>
-								<Image
-									src={item.img}
-									width={480}
-									height={480}
-									alt={`Image depicting ${item.title}`}
-									className='lg:min-w-120 rounded-full
-						max-[49rem]:w-3xl max-sm:w-full'
-								/>
-							</figure>
+							<TiltImg
+								imgSrc={item.img}
+								width={480}
+								height={480}
+								alt={`Image depicting ${item.title}`}
+								imgClass='lg:min-w-120 rounded-full
+									max-[49rem]:w-3xl max-sm:w-full'
+							/>
+							<figure></figure>
 
 							<div className='mt-[max(2rem,24px)]'>
 								<Words

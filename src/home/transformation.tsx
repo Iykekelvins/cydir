@@ -1,6 +1,6 @@
 import Paragraph from '@/animations/paragraph';
 import Scale from '@/animations/scale';
-import Image from 'next/image';
+import TiltImg from '@/components/tilt-img';
 
 export default function Transformation() {
 	return (
@@ -59,18 +59,15 @@ export default function Transformation() {
 					through effort alone. It begins when the unconscious patterns and emotional
 					blocks that drive your behavior start to shift.
 				</Paragraph>
-
-				<figure>
-					<Image
-						src='/images/transformation.jpg'
-						width={480}
-						height={480}
-						alt='AI generated image of a human head with its brain glowing'
-						className='lg:min-w-120 rounded-full
+				<TiltImg
+					imgSrc='/images/transformation.jpg'
+					width={480}
+					height={480}
+					alt='AI generated image of a human head with its brain glowing'
+					imgClass='lg:min-w-120 rounded-full
 						max-[49rem]:w-3xl max-sm:w-full
 						'
-					/>
-				</figure>
+				/>
 			</div>
 
 			<div className='mt-[max(6rem,40px)] flex justify-center'>
