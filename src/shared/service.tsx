@@ -103,7 +103,7 @@ export default function Service() {
 								<p
 									className='text-20 text-[#0B192DCC] font-medium 
               tracking-tighter leading-[1.4] mt-[max(2.075rem,18px)]
-              max-w-[620px]
+              max-w-[max(38.75rem,620px)]
               '
 									dangerouslySetInnerHTML={{ __html: service!.info }}></p>
 
