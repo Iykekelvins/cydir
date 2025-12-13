@@ -37,7 +37,7 @@ export default function Button({ children, bg, onClick, className }: ButtonProps
 				className
 			)}
 			onClick={onClick}>
-			<span className='z-2'>{children}</span>
+			<span className='z-2 relative'>{children}</span>
 		</button>
 	);
 }
