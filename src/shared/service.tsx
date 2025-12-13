@@ -14,9 +14,15 @@ export default function Service() {
 	const lenis = useLenis();
 
 	const { openServicesModal, setOpenServicesModal, service } = useProvider();
+
+	const containerRef = useRef<HTMLDivElement>(null);
 	const modalRef = useRef<HTMLDivElement>(null);
 
 	useGSAP(() => {
+		gsap.set(containerRef.current, {
+			opacity: 1,
+			delay: 2,
+		});
 		gsap.set(modalRef.current, {
 			clipPath: 'polygon(0% 100.3%, 100.2% 100.3%, 100.2% 100.3%, 0% 100%)',
 		});
@@ -52,10 +58,11 @@ export default function Service() {
 	return (
 		<div
 			className={`fixed top-0 left-0 w-full h-full z-50
-      p-6 flex items-center justify-center ${
+      p-6 flex items-center justify-center opacity-0 ${
 				openServicesModal ? 'pointer-events-auto' : 'pointer-events-none'
 			}
-    `}>
+    `}
+			ref={containerRef}>
 			<div
 				className={`bg-[#0A182D66] transition-opacity duration-500 ease-in-out
           absolute top-0 left-0 w-full h-full

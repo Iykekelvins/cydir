@@ -71,7 +71,7 @@ export default function Thrive() {
 			id='thrive'
 			className='bg-[linear-gradient(180deg,#000000_0%,#0A182D_100%)] 
       px-gutter pt-[max(7.5rem,84px)] pb-[max(5.25rem,48px)]
-			relative z-[12]
+			relative z-12
   '>
 			<Tag color='lemon'>Thrive</Tag>
 
@@ -160,7 +160,7 @@ export default function Thrive() {
 									viewBox='0 0 800 800'
 									xmlns='http://www.w3.org/2000/svg'
 									className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
-								h-full w-full scale-[2.5] -rotate-[80deg]
+								h-full w-full scale-[2.5] -rotate-80
 								'>
 									<circle
 										cx='400'
