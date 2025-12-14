@@ -3,13 +3,14 @@
 import { useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { SplitText } from 'gsap/SplitText';
+import { splitIntoChars } from '@/utils';
 
 import gsap from 'gsap';
 import Paragraph from '@/animations/paragraph';
 import Scale from '@/animations/scale';
+import { SplitText } from 'gsap/SplitText';
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Affirmations() {
 	const targetRef = useRef<HTMLDivElement>(null);
@@ -17,10 +18,12 @@ export default function Affirmations() {
 	const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
 
 	useGSAP(() => {
-		const split = SplitText.create(textRef.current, { type: 'lines,chars' });
+		SplitText.create(textRef.current, { type: 'words' });
+
+		splitIntoChars(textRef.current!);
 
 		const animation = gsap.timeline().fromTo(
-			split.chars,
+			textRef.current!.querySelectorAll('.char'),
 			{
 				color: '#192A4D',
 			},
@@ -55,9 +58,9 @@ export default function Affirmations() {
 	return (
 		<section
 			className='bg-[#0A182D] px-gutter pt-[max(6rem,70px)] 
-    pb-[max(7.5rem,84px)] relative z-[12]'>
+    pb-[max(7.5rem,84px)] relative z-12'>
 			<div className='flex flex-col items-center justify-center'>
-				<div className='hidden des:block' ref={targetRef}>
+				<div className='hidden des:flex flex-col items-center' ref={targetRef}>
 					<Scale
 						as='svg'
 						width='32'
@@ -98,20 +101,20 @@ export default function Affirmations() {
 					<p
 						ref={textRef}
 						className='text-[max(2.25rem,20px)] font-medium tracking-tight 
-          	text-center leading-[1.5] max-w-[max(55rem,600px)] text-[#192A4D]
+          	text-center leading-normal max-w-[max(50rem,600px)] text-[#192A4D]
 						mt-[max(2.625rem,26px)]
 					'>
 						Most people move through life on autopilot. They wake, work, repeat - but
 						never truly awaken. At Cydir, we believe you were born for more: to
-						awaken possibility, to break cycles, to live limitless. <br /> This is
-						your invitation to remember who you are.
+						awaken possibility, to break cycles, to live limitless. This is your
+						invitation to remember who you are.
 					</p>
 				</div>
 
 				<div className='mt-[max(2.625rem,26px)] des:hidden'>
 					<p
 						className='text-[max(2.25rem,20px)] font-medium tracking-tight 
-          text-center leading-[1.5] max-w-[max(55rem,600px)] text-white'>
+          text-center leading-normal max-w-[max(55rem,600px)] text-white'>
 						Most people move through life on autopilot. They wake, work, repeat - but
 						never truly awaken. At Cydir, we believe you were born for more: to
 						awaken possibility, to break cycles, to live limitless. <br /> This is
