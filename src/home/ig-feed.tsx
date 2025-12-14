@@ -10,7 +10,7 @@ import Scale from '@/animations/scale';
 
 export default function IgFeed() {
 	return (
-		<section className='py-[max(5rem,40px)] relative z-[12]'>
+		<section className='py-[max(5rem,40px)] relative z-12'>
 			<div className='px-gutter'>
 				<div
 					className='flex flex-col items-center justify-center 
@@ -58,13 +58,13 @@ export default function IgFeed() {
         tracking-tight leading-[1.3] max-w-[max(35rem,480px)]
         mt-[max(0.875rem,12px)]
         '>
-						The Everyday Work of Becoming
+						The Ongoing Journey of Becoming
 					</Words>
 					<Paragraph
 						className='text-[#0B192DCC] text-20 mt-[max(0.75rem,12px)] 
-          max-w-[max(39.625rem,500px)] leading-[1.3]'>
-						Follow Abhinav on Instagram for real-life reflections, coaching in
-						action, and reminders that growth can start anywhere
+          max-w-[max(41.625rem,500px)] leading-[1.3]'>
+						Join Abhinav for grounded insights, coaching moments, and conscious
+						reminders to keep evolving.
 					</Paragraph>
 				</div>
 			</div>
@@ -109,9 +109,9 @@ const FeedItem = ({ src, className }: { src: string; className?: string }) => {
 			onMouseLeave={() => setPlayVid(false)}>
 			{src.includes('mp4') && (
 				<span
-					className={`flex items-center justify-center gap-[6px] text-base font-medium
-				border border-solid border-[#EFEFEF] rounded-full py-[max(1.1rem,_14px)] 
-        px-[max(1.25rem,_16px)] bg-blue text-lemon absolute top-[max(1.75rem,20px)] 
+					className={`flex items-center justify-center gap-[max(0.375rem,6px)] text-base font-medium
+				border border-solid border-[#EFEFEF] rounded-full py-[max(1.1rem,14px)] 
+        px-[max(1.25rem,16px)] bg-blue text-lemon absolute top-[max(1.75rem,20px)] 
         left-[max(1.375rem,16px)] transition-opacity duration-300 ease-in-out 
         ${playVid ? 'opacity-100' : 'opacity-0'}
         `}>

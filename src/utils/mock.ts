@@ -50,9 +50,8 @@ export const BREAKTHROUGH_ITEMS = [
 export const FEED = [
 	'/videos/ig-1.mp4',
 	'/videos/ig-2.mp4',
-	'/videos/ig-3.mp4',
+	'/images/ig-3.jpg',
 	'/images/ig-4.jpg',
-	'/videos/ig-5.mp4',
 ];
 
 export const FAQS = [
