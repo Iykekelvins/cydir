@@ -124,7 +124,7 @@ export default function Service() {
 							<div>
 								<p
 									className='text-20 text-[#0B192DCC] font-medium 
-              tracking-tighter leading-[1.4] max-w-[576px]'>
+              tracking-tighter leading-[1.4] max-w-[max(36rem,576px)]'>
 									{service?.featuresTitle}
 								</p>
 
