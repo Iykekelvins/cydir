@@ -64,7 +64,7 @@ export default function Thrive() {
 						strokeDasharray: '0 1400',
 					});
 			}
-		}, 4000);
+		}, 16000);
 
 		return () => clearInterval(interval);
 	}, [active]);
@@ -95,7 +95,6 @@ export default function Thrive() {
 							{TESTIMONIALS.map((tes, i) => (
 								<div
 									className={`user-info col-start-1 row-start-1
-								transition-opacity duration-1000 ease-in-out
 								${i == active ? 'opacity-100' : 'opacity-0'}
 								`}
 									key={i}>
