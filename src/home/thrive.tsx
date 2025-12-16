@@ -158,7 +158,7 @@ export default function Thrive() {
 
 									// ISAUTOCHANGING.current = true;
 								}}>
-								{!tes.isVid ? (
+								{!tes.vidUrl ? (
 									<Image
 										src={`/images/tes-${i + 1}.jpg`}
 										width={48}
@@ -167,7 +167,14 @@ export default function Thrive() {
 										className='rounded-full size-[max(3rem,32px)] object-cover object-center'
 									/>
 								) : (
-									<></>
+									<video
+										className='rounded-full size-[max(3rem,32px)] object-cover object-center'
+										autoPlay
+										loop
+										muted
+										playsInline>
+										<source src={tes.vidUrl} type='video/mp4' />
+									</video>
 								)}
 								<svg
 									viewBox='0 0 800 800'
@@ -199,7 +206,7 @@ export default function Thrive() {
 								${i == active ? 'opacity-100' : 'opacity-0'}
 						`}
 							key={i}>
-							{!tes.isVid ? (
+							{!tes.vidUrl ? (
 								<Image
 									src={`/images/tes-${i + 1}.jpg`}
 									width={400}
@@ -209,7 +216,15 @@ export default function Thrive() {
 								object-cover object-center w-[25rem]'
 								/>
 							) : (
-								<></>
+								<video
+									className='rounded-full min-w-[25rem] h-[25rem] 
+								object-cover object-center w-[25rem]'
+									autoPlay
+									loop
+									muted
+									playsInline>
+									<source src={tes.vidUrl} type='video/mp4' />
+								</video>
 							)}
 						</figure>
 					))}
