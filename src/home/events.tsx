@@ -60,102 +60,109 @@ export default function Events() {
 					</Button>
 				</div>
 
-				<div className='px-gutter mt-[max(7.25rem,64px)]'>
-					<Words
-						as='h2'
-						className='text-white text-64 font-medium font-outfit tracking-tight'>
-						Upcoming events
-					</Words>
-					<Paragraph
-						className='text-20 text-white leading-[1.4] tracking-tight 
+				<div
+					className='px-gutter mt-[max(7.25rem,64px)] 
+				flex md:items-end justify-between flex-col md:flex-row
+				gap-[max(1.5rem,24px)]
+				'>
+					<div>
+						<Words
+							as='h2'
+							className='text-white text-64 font-medium font-outfit tracking-tight'>
+							Upcoming events
+						</Words>
+						<Paragraph
+							className='text-20 text-white leading-[1.4] tracking-tight 
           mt-[max(1.25rem,18px)] max-w-[max(34.5rem,400px)]'>
-						I regularly host events open to all types of people, geared towards
-						becoming their best self
-					</Paragraph>
+							I regularly host events open to all types of people, geared towards
+							becoming their best self
+						</Paragraph>
+					</div>
 
-					<div className='flex items-center justify-end mt-[max(2.5rem,32px)]'>
-						{/* <div
+					{/* <div className='flex items-center justify-end mt-[max(2.5rem,32px)]'>
+						<div
 							className='bg-[rgba(27,56,100,0.3)] rounded-ful 
             px-[max(0.938rem,13.5px)] h-[max(2.5rem,36px)]'>
 							<span className='size-10 bg-white'></span>
-						</div> */}
-						<div className='flex items-center gap-[max(0.75rem,12px)]'>
-							<button onClick={() => emblaApi?.scrollPrev()}>
-								<svg
-									width='42'
-									height='42'
-									viewBox='0 0 42 42'
-									fill='none'
-									xmlns='http://www.w3.org/2000/svg'>
-									<circle
-										cx='21'
-										cy='21'
-										r='20.15'
-										fill='#1B3864'
-										fillOpacity='0.28'
-										stroke='white'
-										strokeWidth='0.3'
-									/>
-									<g clipPath='url(#clip0_404_1774)'>
-										<path
-											d='M23.5 27.25L17.25 21L23.5 14.75'
-											stroke='#C8D72C'
-											strokeWidth='1.25'
-											strokeLinecap='round'
-											strokeLinejoin='round'
-										/>
-									</g>
-									<defs>
-										<clipPath id='clip0_404_1774'>
-											<rect
-												width='20'
-												height='20'
-												fill='white'
-												transform='translate(11 11)'
-											/>
-										</clipPath>
-									</defs>
-								</svg>
-							</button>
-
-							<button className='rotate-180' onClick={() => emblaApi?.scrollNext()}>
-								<svg
-									width='42'
-									height='42'
-									viewBox='0 0 42 42'
-									fill='none'
-									xmlns='http://www.w3.org/2000/svg'>
-									<circle
-										cx='21'
-										cy='21'
-										r='20.15'
-										fill='#1B3864'
-										fillOpacity='0.28'
-										stroke='white'
-										strokeWidth='0.3'
-									/>
-									<g clipPath='url(#clip0_404_1774)'>
-										<path
-											d='M23.5 27.25L17.25 21L23.5 14.75'
-											stroke='#C8D72C'
-											strokeWidth='1.25'
-											strokeLinecap='round'
-											strokeLinejoin='round'
-										/>
-									</g>
-									<defs>
-										<clipPath id='clip0_404_1774'>
-											<rect
-												width='20'
-												height='20'
-												fill='white'
-												transform='translate(11 11)'
-											/>
-										</clipPath>
-									</defs>
-								</svg>
-							</button>
 						</div>
+					
+					</div> */}
+					<div className='flex items-center gap-[max(0.75rem,12px)]'>
+						<button onClick={() => emblaApi?.scrollPrev()}>
+							<svg
+								width='42'
+								height='42'
+								viewBox='0 0 42 42'
+								fill='none'
+								xmlns='http://www.w3.org/2000/svg'>
+								<circle
+									cx='21'
+									cy='21'
+									r='20.15'
+									fill='#1B3864'
+									fillOpacity='0.28'
+									stroke='white'
+									strokeWidth='0.3'
+								/>
+								<g clipPath='url(#clip0_404_1774)'>
+									<path
+										d='M23.5 27.25L17.25 21L23.5 14.75'
+										stroke='#C8D72C'
+										strokeWidth='1.25'
+										strokeLinecap='round'
+										strokeLinejoin='round'
+									/>
+								</g>
+								<defs>
+									<clipPath id='clip0_404_1774'>
+										<rect
+											width='20'
+											height='20'
+											fill='white'
+											transform='translate(11 11)'
+										/>
+									</clipPath>
+								</defs>
+							</svg>
+						</button>
+
+						<button className='rotate-180' onClick={() => emblaApi?.scrollNext()}>
+							<svg
+								width='42'
+								height='42'
+								viewBox='0 0 42 42'
+								fill='none'
+								xmlns='http://www.w3.org/2000/svg'>
+								<circle
+									cx='21'
+									cy='21'
+									r='20.15'
+									fill='#1B3864'
+									fillOpacity='0.28'
+									stroke='white'
+									strokeWidth='0.3'
+								/>
+								<g clipPath='url(#clip0_404_1774)'>
+									<path
+										d='M23.5 27.25L17.25 21L23.5 14.75'
+										stroke='#C8D72C'
+										strokeWidth='1.25'
+										strokeLinecap='round'
+										strokeLinejoin='round'
+									/>
+								</g>
+								<defs>
+									<clipPath id='clip0_404_1774'>
+										<rect
+											width='20'
+											height='20'
+											fill='white'
+											transform='translate(11 11)'
+										/>
+									</clipPath>
+								</defs>
+							</svg>
+						</button>
 					</div>
 				</div>
 

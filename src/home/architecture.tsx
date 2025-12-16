@@ -76,7 +76,7 @@ const Journey = () => {
 				scrollTriggerRef.current = ScrollTrigger.create({
 					trigger: sectionRef.current,
 					start: 'top 3.5%',
-					end: `+=${window.innerHeight * 4}`,
+					end: `+=${window.innerHeight * 2}`,
 					scrub: 1,
 					pin: sectionRef.current,
 					animation,

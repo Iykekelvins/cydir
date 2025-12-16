@@ -53,11 +53,11 @@ export default function JoinUs() {
 						</form>
 					</div>
 
-					{/* <div>
+					<div className='hidden md:block'>
 						<video autoPlay muted playsInline loop>
 							<source src={'/videos/blob.mp4'} type='video/mp4' />
 						</video>
-					</div> */}
+					</div>
 				</div>
 			</div>
 		</section>
