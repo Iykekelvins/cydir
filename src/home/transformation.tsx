@@ -1,4 +1,4 @@
-import Paragraph from '@/animations/paragraph';
+// import Paragraph from '@/animations/paragraph';
 import Scale from '@/animations/scale';
 import TiltImg from '@/components/tilt-img';
 
@@ -50,7 +50,7 @@ export default function Transformation() {
 				className='flex items-center justify-between mt-[max(4.625rem,40px)]
 			flex-col-reverse lg:flex-row gap-[max(2.5rem,32px)] des:pr-10
 			'>
-				<Paragraph
+				<p
 					className='text-36 font-medium tracking-tighter leading-normal
 				text-white max-w-[max(43.625rem,380px)] text-center lg:text-left
 				'>
@@ -58,7 +58,7 @@ export default function Transformation() {
 					affirmations, pushing harder. But real transformation doesn&apos;t happen
 					through effort alone. It begins when the unconscious patterns and emotional
 					blocks that drive your behavior start to shift.
-				</Paragraph>
+				</p>
 				<TiltImg
 					imgSrc='/images/transformation.jpg'
 					width={480}
@@ -71,7 +71,7 @@ export default function Transformation() {
 			</div>
 
 			<div className='mt-[max(6rem,40px)] flex justify-center'>
-				<Paragraph
+				<p
 					className='text-36 font-medium tracking-tighter leading-normal
 				text-white max-w-[max(43.625rem,380px)] text-center 
 				'>
@@ -79,7 +79,7 @@ export default function Transformation() {
 					aligned with who you truly are. That&apos;s the essence of our work:
 					guiding you to step into your power as the conscious creator of your life
 					so you can convert your dreams into reality. 
-				</Paragraph>
+				</p>
 			</div>
 		</section>
 	);

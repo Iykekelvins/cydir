@@ -148,7 +148,7 @@ export default function Service() {
 										width={576}
 										height={370}
 										alt={service!.alt}
-										className='h-[max(23.125rem,210px)] w-full'
+										className='h-[max(25.125rem,210px)] w-full object-cover rounded-[max(0.75rem,12px)]'
 									/>
 								</figure>
 							</div>

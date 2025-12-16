@@ -1,5 +1,7 @@
 'use client';
 
+import { useProvider } from '@/app/context';
+
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
@@ -7,7 +9,6 @@ import Button from '@/components/button';
 import Words from '@/animations/words';
 import Paragraph from '@/animations/paragraph';
 import Tag from '@/components/tag';
-import { useProvider } from '@/app/context';
 
 const EVENTS = [
 	{
@@ -38,7 +39,7 @@ export default function Events() {
 			<div className='relative z-2'>
 				<div className='flex flex-col items-center justify-center text-center'>
 					<Tag color='lemon'>The Limitless Community</Tag>
-					<Paragraph
+					<p
 						className='text-36 leading-normal tracking-tighter
 					max-w-[max(51.25rem,550px)] mt-[max(0.75rem,12px)]
 					text-white
@@ -46,7 +47,7 @@ export default function Events() {
 						Join Abhinav and the Limitless Community for workshops, retreats, and
 						curated gatherings that combine reflection, conversation, and
 						transformation.
-					</Paragraph>
+					</p>
 					<Button
 						bg='lemon'
 						className='mt-[max(2rem,24px)]'

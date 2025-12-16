@@ -111,9 +111,14 @@ In 1-on-1 Empowerment Coaching, we translate your breakthroughs into focused act
 
 			<div className='grid md:grid-cols-2 gap-[max(1.5rem,20px)] mt-[max(2.25rem,28px)]'>
 				<div
-					className='relative overflow-hidden rounded-[max(0.75rem,12px)]'
+					className='relative overflow-hidden rounded-[max(0.75rem,12px)] cursor-pointer'
 					onMouseOver={(e) => handleMouseOver(e)}
-					onMouseLeave={(e) => handleMouseLeave(e)}>
+					onMouseLeave={(e) => handleMouseLeave(e)}
+					role='button'
+					onClick={() => {
+						setOpenServicesModal(true);
+						setService(SERVICE_ONE);
+					}}>
 					<figure>
 						<Image
 							src='/images/one-on-one.jpg'
@@ -150,9 +155,14 @@ In 1-on-1 Empowerment Coaching, we translate your breakthroughs into focused act
 				</div>
 
 				<div
-					className='relative overflow-hidden rounded-[max(0.75rem,12px)]'
+					className='relative overflow-hidden rounded-[max(0.75rem,12px)] cursor-pointer'
 					onMouseOver={(e) => handleMouseOver(e)}
-					onMouseLeave={(e) => handleMouseLeave(e)}>
+					onMouseLeave={(e) => handleMouseLeave(e)}
+					role='button'
+					onClick={() => {
+						setOpenServicesModal(true);
+						setService(SERVICE_TWO);
+					}}>
 					<figure>
 						<Image
 							src='/images/event-and-workshops.jpg'

@@ -1,4 +1,3 @@
-import Paragraph from '@/animations/paragraph';
 import Words from '@/animations/words';
 import Tag from '@/components/tag';
 import Image from 'next/image';
@@ -19,14 +18,14 @@ export default function Origin() {
 				className='flex flex-col-reverse md:flex-row
 			 justify-between gap-[max(2rem,24px)] 
 			mt-[max(4.688rem,40px)]'>
-				<Paragraph
+				<p
 					className='text-48 font-outfit tracking-tighter 
 				font-medium leading-[1.3] text-white max-w-[max(50rem,550px)]'>
 					“Most people go through life on autopilot, reacting, repeating, settling.
 					Real change begins the moment you pause, get conscious, and choose
 					differently. This work is an invitation to break patterns, expand
 					possibilities, and live without limits.”
-				</Paragraph>
+				</p>
 
 				<figure>
 					<Image
@@ -53,7 +52,7 @@ export default function Origin() {
 				</figure>
 
 				<div className='max-w-[max(38.625rem,490px)] w-full'>
-					<Paragraph
+					<p
 						className='text-white-80 text-[max(1.375rem,18px)] 
 					tracking-tight leading-[1.6]'>
 						Abhinav&apos;s journey into this work began with a single question, what
@@ -70,7 +69,7 @@ export default function Origin() {
 						bridges inner fulfilment with growth. His work is built on a simple
 						truth: when the mind realigns, life follows. Guided by his belief: Be
 						Limitless.
-					</Paragraph>
+					</p>
 
 					<div className='flex justify-between mt-[max(3rem,44px)] des:mt-0'>
 						<div className='des:mt-[max(3rem,44px)]'>

@@ -7,8 +7,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Tag from '@/components/tag';
 import Button from '@/components/button';
 import gsap from 'gsap';
-import Words from '@/animations/words';
-import Paragraph from '@/animations/paragraph';
 import Scale from '@/animations/scale';
 import Starfield from 'react-starfield';
 import TiltImg from '@/components/tilt-img';
@@ -51,7 +49,7 @@ export default function Breakthrough() {
 							fillOpacity='0.8'
 						/>
 					</Scale>
-					<Words as='p'>Awaken and step into limitless possibilities.</Words>
+					<p>Awaken and step into limitless possibilities.</p>
 					<Scale
 						as='svg'
 						width='61'
@@ -77,21 +75,20 @@ export default function Breakthrough() {
 			<div className='flex flex-col items-center justify-center text-center mt-[max(6rem,54px)]'>
 				<Tag color='lemon'>Breakthrough</Tag>
 
-				<Words
-					as='h2'
+				<h2
 					className='text-60 text-white font-medium font-outfit 
         leading-[1.3] tracking-tight mt-[max(1rem,16px)]'>
 					Recode the Mind
-				</Words>
+				</h2>
 
-				<Paragraph
+				<p
 					className='text-20 text-white-80 tracking-tight leading-[1.4] 
           max-w-[max(34.75rem,380px)] mt-[max(1.25rem,18px)]'>
 					Go beneath the surface to dissolve old patterns, quiet the noise, and
 					awaken your full potential. Every step is guided and grounded, bridging who
 					you are today with the version of you that&apos;s ready to emerge.
 					It&apos;s time to unlock who you&apos;re meant to be.
-				</Paragraph>
+				</p>
 
 				<ul className='mt-[max(5rem,64px)] flex flex-col items-center gap-[max(7.075rem,80px)]'>
 					{BREAKTHROUGH_ITEMS.map((item, i) => (
@@ -104,21 +101,19 @@ export default function Breakthrough() {
 								imgClass='lg:min-w-120 rounded-full
 									max-[49rem]:w-3xl max-sm:w-full'
 							/>
-							<figure></figure>
 
 							<div className='mt-[max(2rem,24px)]'>
-								<Words
-									as='h3'
+								<h3
 									className='text-[max(3rem,28px)] text-white font-outfit 
                 font-medium tracking-tight leading-[1.3]'>
 									{item.title}
-								</Words>
-								<Paragraph
+								</h3>
+								<p
 									className='text-20 text-white-80 leading-normal tracking-tight
                 max-w-[max(41rem,440px)] mt-[max(1.25rem,18px)]
                 '>
 									{item.info}
-								</Paragraph>
+								</p>
 							</div>
 
 							{i == 0 && (
@@ -133,7 +128,7 @@ export default function Breakthrough() {
 
 			<div className='mt-[max(6.563rem,64px)] flex flex-col items-center text-center'>
 				<Tag color='lemon'>Releasing the Emotional Past</Tag>
-				<Paragraph
+				<p
 					className='text-36 tracking-tighter leading-normal font-medium
 				mt-[max(2.7rem,26px)] text-white px-16
 				'>
@@ -143,7 +138,7 @@ export default function Breakthrough() {
 					The process to release the emotions is gentle yet profound. It helps you
 					see new possibilities, gain control over yourself and your reactions, and
 					free yourself from unwarranted negative emotions
-				</Paragraph>
+				</p>
 
 				<Button bg='lemon' className='mt-[max(2.5rem,28px)]'>
 					Begin your Emotional Reset

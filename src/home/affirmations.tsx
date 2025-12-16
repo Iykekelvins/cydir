@@ -1,66 +1,21 @@
 'use client';
 
-import { useRef, useState } from 'react';
-import { useGSAP } from '@gsap/react';
+import { useState } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { splitIntoChars } from '@/utils';
 
 import gsap from 'gsap';
 import Paragraph from '@/animations/paragraph';
 import Scale from '@/animations/scale';
-import { SplitText } from 'gsap/SplitText';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Affirmations() {
-	const targetRef = useRef<HTMLDivElement>(null);
-	const textRef = useRef<HTMLParagraphElement>(null);
-	const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
-
-	useGSAP(() => {
-		SplitText.create(textRef.current, { type: 'words' });
-
-		splitIntoChars(textRef.current!);
-
-		const animation = gsap.timeline().fromTo(
-			textRef.current!.querySelectorAll('.char'),
-			{
-				color: '#192A4D',
-			},
-			{
-				color: '#ffffff',
-				stagger: 0.1,
-			}
-		);
-
-		if (scrollTriggerRef.current) {
-			scrollTriggerRef.current.kill();
-		}
-
-		scrollTriggerRef.current = ScrollTrigger.create({
-			trigger: targetRef.current,
-			start: 'top 40%',
-			end: '+=900',
-			scrub: 1,
-			animation,
-			pin: targetRef.current,
-			pinSpacing: true,
-			anticipatePin: 1,
-		});
-
-		return () => {
-			if (scrollTriggerRef.current) {
-				scrollTriggerRef.current.kill();
-			}
-		};
-	});
-
 	return (
 		<section
 			className='bg-[#0A182D] px-gutter pt-[max(6rem,70px)] 
     pb-[max(7.5rem,84px)] relative z-12'>
 			<div className='flex flex-col items-center justify-center'>
-				<div className='hidden des:flex flex-col items-center' ref={targetRef}>
+				<div className='hidden des:flex flex-col items-center'>
 					<Scale
 						as='svg'
 						width='32'
@@ -99,9 +54,8 @@ export default function Affirmations() {
 						</defs>
 					</Scale>
 					<p
-						ref={textRef}
 						className='text-[max(2.25rem,20px)] font-medium tracking-tight 
-          	text-center leading-normal max-w-[max(50rem,600px)] text-[#192A4D]
+          	text-center leading-normal max-w-[max(50rem,600px)] text-white
 						mt-[max(2.625rem,26px)]
 					'>
 						Most people move through life on autopilot. They wake, work, repeat - but
