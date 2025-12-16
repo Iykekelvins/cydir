@@ -169,7 +169,7 @@ export default function Hero() {
 			z-2'>
 				<h1
 					className='text-white text-[max(5rem,34px)] font-outfit 
-					font-bold tracking-tight leading-[1.2]'>
+					font-semibold tracking-tight leading-[1.2]'>
 					Become a Conscious Creator of Your Life.
 				</h1>
 				<p

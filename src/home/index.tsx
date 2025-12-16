@@ -12,10 +12,12 @@ import Affirmations from './affirmations';
 import IgFeed from './ig-feed';
 import Faqs from './faqs';
 import JoinUs from './join-us';
+import Starfield from 'react-starfield';
 
 const Homepage = () => {
 	return (
 		<div>
+			<Starfield starCount={1000} starColor={[255, 255, 255]} speedFactor={0.05} />
 			<Hero />
 			<Transformation />
 			<Awaken />

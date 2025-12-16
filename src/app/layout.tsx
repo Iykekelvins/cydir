@@ -6,6 +6,7 @@ import { metaDataOptions } from '@/utils/metadata';
 
 import ScrollWrapper from '@/shared/scroll-wrapper';
 import Navbar from '@/shared/navbar';
+import Menu from '@/shared/menu';
 import Service from '@/shared/service';
 import CommunityForm from '@/shared/community-form';
 import Footer from '@/shared/footer';
@@ -13,11 +14,13 @@ import Footer from '@/shared/footer';
 import localFont from 'next/font/local';
 
 import './globals.css';
+import Starfield from 'react-starfield';
 
 const inter = Inter({
 	variable: '--font-inter',
 	subsets: ['latin'],
 	weight: ['400', '500', '600', '700'],
+	style: ['normal', 'italic'],
 });
 
 const outfit = Outfit({
@@ -59,9 +62,15 @@ export default function RootLayout({
 							className={`${inter.variable} ${outfit.variable} ${ChronicleDisplay.variable} antialiased`}>
 							<Navbar />
 							<main>{children}</main>
+							<Menu />
 							<Service />
 							<CommunityForm />
 							<Footer />
+							<Starfield
+								starCount={1000}
+								starColor={[255, 255, 255]}
+								speedFactor={0.05}
+							/>
 						</body>
 					</AppProvider>
 				</Lenis>

@@ -19,6 +19,8 @@ interface ContextProps {
 	setOpenServicesModal: (e: boolean) => void;
 	openCommForm: boolean;
 	setOpenCommForm: (e: boolean) => void;
+	openMenu: boolean;
+	setOpenMenu: (e: boolean) => void;
 	service: Service | null;
 	setService: (e: Service) => void;
 }
@@ -28,6 +30,7 @@ const AppContext = createContext<ContextProps | null>(null);
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
 	const [openServicesModal, setOpenServicesModal] = useState(false);
 	const [openCommForm, setOpenCommForm] = useState(false);
+	const [openMenu, setOpenMenu] = useState(false);
 	const [service, setService] = useState<Service | null>(null);
 
 	return (
@@ -39,6 +42,8 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
 				setService,
 				openCommForm,
 				setOpenCommForm,
+				openMenu,
+				setOpenMenu,
 			}}>
 			{children}
 		</AppContext.Provider>

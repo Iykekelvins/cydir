@@ -8,7 +8,6 @@ import Tag from '@/components/tag';
 import Button from '@/components/button';
 import gsap from 'gsap';
 import Scale from '@/animations/scale';
-import Starfield from 'react-starfield';
 import TiltImg from '@/components/tilt-img';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -22,7 +21,6 @@ export default function Breakthrough() {
 				'bg-[linear-gradient(180deg,#000000_0%,#091529_100%)]',
 				'relative overflow-hidden'
 			)}>
-			<Starfield starCount={1000} starColor={[255, 255, 255]} speedFactor={0.05} />
 			<div className='py-[max(2rem,24px)]'>
 				<h3
 					className={cn(
