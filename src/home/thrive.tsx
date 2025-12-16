@@ -1,8 +1,246 @@
+// 'use client';
+
+// import { useEffect, useRef, useState } from 'react';
+// import { TESTIMONIALS } from '@/utils/mock';
+
+// import Tag from '@/components/tag';
+// import Image from 'next/image';
+// import gsap from 'gsap';
+// import Paragraph from '@/animations/paragraph';
+// import Words from '@/animations/words';
+// import Button from '@/components/button';
+
+// export default function Thrive() {
+// 	const [active, setActive] = useState(0);
+
+// 	const prevActive = useRef(active);
+
+// 	const ISAUTOCHANGING = useRef<boolean | null>(null);
+
+// 	useEffect(() => {
+// 		const USER_INDICATORS = gsap.utils.toArray('.user-indicator') as Element[];
+
+// 		ISAUTOCHANGING.current = true;
+
+// 		const interval = setInterval(() => {
+// 			if (!ISAUTOCHANGING.current) return;
+
+// 			if (active === TESTIMONIALS.length - 1) {
+// 				setActive(0);
+// 				gsap
+// 					.timeline()
+// 					.fromTo(
+// 						USER_INDICATORS[0],
+// 						{
+// 							strokeDasharray: '0 1400',
+// 							display: 'block',
+// 						},
+// 						{
+// 							strokeDasharray: '1457 1400',
+// 							// delay: 0.25,
+// 							duration: 10,
+// 						}
+// 					)
+// 					.set(USER_INDICATORS[0], {
+// 						strokeDasharray: '0 1400',
+// 					});
+// 			} else {
+// 				setActive((prev) => prev + 1);
+// 				gsap
+// 					.timeline()
+// 					.fromTo(
+// 						USER_INDICATORS[active + 1],
+// 						{
+// 							strokeDasharray: '0 1400',
+// 							display: 'block',
+// 						},
+// 						{
+// 							strokeDasharray: '1457 1400',
+// 							// delay: 0.25,
+// 							duration: 10,
+// 						}
+// 					)
+// 					.set(USER_INDICATORS[active + 1], {
+// 						strokeDasharray: '0 1400',
+// 					});
+// 			}
+// 		}, 5000);
+
+// 		return () => clearInterval(interval);
+// 	}, [active]);
+
+// 	return (
+// 		<section
+// 			id='thrive'
+// 			className='bg-[linear-gradient(180deg,#000000_0%,#0A182D_100%)]
+//       px-gutter pt-[max(7.5rem,84px)] pb-[max(5.25rem,48px)]
+// 			relative z-12
+//   '>
+// 			<div className='flex flex-col items-center justify-center'>
+// 				<Tag color='lemon'>Thrive</Tag>
+// 				<Words
+// 					as='h2'
+// 					className='text-60 text-white font-medium font-outfit
+// 					tracking-tighter leading-[1.3]
+// 					mt-[max(1rem,14px)] text-center
+// '>
+// 					Limitless Lives in Action
+// 				</Words>
+// 			</div>
+
+// 			<div className='flex items-start justify-between mt-[max(4.25rem,38px)]'>
+// 				<div className='max-w-[max(52.375rem,430px)]'>
+// 					<div className='mt-[max(2rem,24px)]'>
+// 						<div className='grid'>
+// 							{TESTIMONIALS.map((tes, i) => (
+// 								<div
+// 									className={`user-info col-start-1 row-start-1
+// 								${i == active ? 'opacity-100' : 'opacity-0'}
+// 								`}
+// 									key={i}>
+// 									<Paragraph
+// 										large
+// 										className='text-[max(2.25rem,20px)] text-white
+//                 font-medium tracking-tight leading-[1.3]'
+// 										dangerouslySetInnerHTML={{ __html: tes.info }}></Paragraph>
+
+// 									<div className='mt-[max(1.75rem,18px)]'>
+// 										<h2 className='text-white-80 text-24 tracking-tight'>
+// 											{tes.name}
+// 										</h2>
+// 										{/* <p className='text-[#FFFFFF66] text-base mt-[4px]'>
+// 											Operations Lead at NovaTech
+// 										</p> */}
+// 									</div>
+// 								</div>
+// 							))}
+// 						</div>
+// 					</div>
+
+// 					<div className='flex items-center mt-[max(3rem,32px)] gap-[max(1rem,14px)] w-max'>
+// 						{TESTIMONIALS.map((tes, i) => (
+// 							<button
+// 								className='relative'
+// 								key={i}
+// 								onClick={(e) => {
+// 									setActive(i);
+// 									prevActive.current = i;
+
+// 									const INDICATORS = gsap.utils.toArray(
+// 										'.user-indicator'
+// 									) as Element[];
+
+// 									INDICATORS.forEach((ind) => {
+// 										gsap.set(ind, {
+// 											strokeDasharray: '0 1400',
+// 											display: 'none',
+// 										});
+
+// 										gsap
+// 											.timeline()
+// 											.fromTo(
+// 												e.currentTarget.querySelector('circle'),
+// 												{
+// 													strokeDasharray: '0 1400',
+// 													display: 'block',
+// 												},
+// 												{
+// 													strokeDasharray: '1457 1400',
+// 													// delay: 0.25,
+// 													duration: 10,
+// 												}
+// 											)
+// 											.set(e.currentTarget.querySelector('circle'), {
+// 												strokeDasharray: '0 1400',
+// 											});
+// 									});
+
+// 									// ISAUTOCHANGING.current = true;
+// 								}}>
+// 								{!tes.vidUrl ? (
+// 									<Image
+// 										src={`/images/tes-${i + 1}.jpg`}
+// 										width={48}
+// 										height={48}
+// 										alt={tes.name}
+// 										className='rounded-full size-[max(3rem,32px)] object-cover object-center'
+// 									/>
+// 								) : (
+// 									<video
+// 										className='rounded-full size-[max(3rem,32px)] object-cover object-center'
+// 										autoPlay
+// 										loop
+// 										muted
+// 										playsInline>
+// 										<source src={tes.vidUrl} type='video/mp4' />
+// 									</video>
+// 								)}
+// 								<svg
+// 									viewBox='0 0 800 800'
+// 									xmlns='http://www.w3.org/2000/svg'
+// 									className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
+// 								h-full w-full scale-[2.5] -rotate-80
+// 								'>
+// 									<circle
+// 										cx='400'
+// 										cy='400'
+// 										fill='none'
+// 										r='200'
+// 										strokeWidth='24'
+// 										stroke='#C9D92D'
+// 										strokeDasharray='0 1400'
+// 										className='user-indicator'
+// 									/>
+// 								</svg>
+// 							</button>
+// 						))}
+// 					</div>
+// 				</div>
+
+// 				<div className='hidden md:grid'>
+// 					{TESTIMONIALS.map((tes, i) => (
+// 						<figure
+// 							className={`col-start-1 row-start-1 user-image
+// 						transition-opacity duration-1000 ease-in-out
+// 								${i == active ? 'opacity-100' : 'opacity-0'}
+// 						`}
+// 							key={i}>
+// 							{!tes.vidUrl ? (
+// 								<Image
+// 									src={`/images/tes-${i + 1}.jpg`}
+// 									width={400}
+// 									height={400}
+// 									alt={tes.name}
+// 									className='rounded-full min-w-[25rem] h-[25rem]
+// 								object-cover object-center w-[25rem]'
+// 								/>
+// 							) : (
+// 								<video
+// 									className='rounded-full min-w-[25rem] h-[25rem]
+// 								object-cover object-center w-[25rem]'
+// 									autoPlay
+// 									loop
+// 									muted
+// 									playsInline>
+// 									<source src={tes.vidUrl} type='video/mp4' />
+// 								</video>
+// 							)}
+// 						</figure>
+// 					))}
+// 				</div>
+// 			</div>
+
+// 			<div className='flex justify-center mt-[max(2.25rem,24px)]'>
+// 				<Button bg='lemon'>Begin Your Transformation</Button>
+// 			</div>
+// 		</section>
+// 	);
+// }
+
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
 import { TESTIMONIALS } from '@/utils/mock';
-
 import Tag from '@/components/tag';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -12,105 +250,117 @@ import Button from '@/components/button';
 
 export default function Thrive() {
 	const [active, setActive] = useState(0);
+	const intervalRef = useRef<NodeJS.Timeout | null>(null);
+	const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
-	const prevActive = useRef(active);
-
-	const ISAUTOCHANGING = useRef<boolean | null>(null);
-
-	useEffect(() => {
+	// Function to animate the stroke for a specific index
+	const animateStroke = (index: number) => {
 		const USER_INDICATORS = gsap.utils.toArray('.user-indicator') as Element[];
 
-		ISAUTOCHANGING.current = true;
+		// Kill any existing timeline
+		if (timelineRef.current) {
+			timelineRef.current.kill();
+		}
 
-		const interval = setInterval(() => {
-			if (!ISAUTOCHANGING.current) return;
+		// Reset all indicators
+		USER_INDICATORS.forEach((indicator) => {
+			gsap.set(indicator, {
+				strokeDasharray: '0 1400',
+				display: 'none',
+			});
+		});
 
-			if (active === TESTIMONIALS.length - 1) {
-				setActive(0);
-				gsap
-					.timeline()
-					.fromTo(
-						USER_INDICATORS[0],
-						{
-							strokeDasharray: '0 1400',
-							display: 'block',
-						},
-						{
-							strokeDasharray: '1457 1400',
-							delay: 0.25,
-							duration: 4,
-						}
-					)
-					.set(USER_INDICATORS[0], {
-						strokeDasharray: '0 1400',
-					});
-			} else {
-				setActive((prev) => prev + 1);
-				gsap
-					.timeline()
-					.fromTo(
-						USER_INDICATORS[active + 1],
-						{
-							strokeDasharray: '0 1400',
-							display: 'block',
-						},
-						{
-							strokeDasharray: '1457 1400',
-							delay: 0.25,
-							duration: 4,
-						}
-					)
-					.set(USER_INDICATORS[active + 1], {
-						strokeDasharray: '0 1400',
-					});
+		// Animate the active indicator
+		if (USER_INDICATORS[index]) {
+			timelineRef.current = gsap
+				.timeline()
+				.set(USER_INDICATORS[index], {
+					display: 'block',
+					strokeDasharray: '0 1400',
+				})
+				.to(USER_INDICATORS[index], {
+					strokeDasharray: '1457 1400',
+					duration: 16, // Match the interval duration
+					ease: 'none',
+				});
+		}
+	};
+
+	// Function to start auto-advance
+	const startAutoAdvance = () => {
+		// Clear any existing interval
+		if (intervalRef.current) {
+			clearInterval(intervalRef.current);
+		}
+
+		intervalRef.current = setInterval(() => {
+			setActive((prev) => {
+				const nextIndex = (prev + 1) % TESTIMONIALS.length;
+				return nextIndex;
+			});
+		}, 16000); // 5 seconds interval
+	};
+
+	// Handle manual click
+	const handleClick = (index: number) => {
+		setActive(index);
+		animateStroke(index);
+
+		// Restart auto-advance from this point
+		startAutoAdvance();
+	};
+
+	// Initialize and handle active changes
+	useEffect(() => {
+		animateStroke(active);
+		startAutoAdvance();
+
+		return () => {
+			if (intervalRef.current) {
+				clearInterval(intervalRef.current);
 			}
-		}, 16000);
-
-		return () => clearInterval(interval);
+			if (timelineRef.current) {
+				timelineRef.current.kill();
+			}
+		};
 	}, [active]);
 
 	return (
 		<section
 			id='thrive'
-			className='bg-[linear-gradient(180deg,#000000_0%,#0A182D_100%)] 
-      px-gutter pt-[max(7.5rem,84px)] pb-[max(5.25rem,48px)]
-			relative z-12
-  '>
+			className='bg-gradient-to-b from-black to-blue-950 px-8 pt-20 pb-16 relative z-10'>
 			<div className='flex flex-col items-center justify-center'>
 				<Tag color='lemon'>Thrive</Tag>
 				<Words
 					as='h2'
 					className='text-60 text-white font-medium font-outfit 
-					tracking-tighter leading-[1.3]
-					mt-[max(1rem,14px)] text-center
-'>
+          tracking-tighter leading-[1.3]
+          mt-[max(1rem,14px)] text-center'>
 					Limitless Lives in Action
 				</Words>
 			</div>
 
-			<div className='flex items-start justify-between mt-[max(4.25rem,38px)]'>
+			<div className='flex items-start justify-between mt-[max(4.25rem,38px)] max-w-7xl mx-auto'>
 				<div className='max-w-[max(52.375rem,430px)]'>
 					<div className='mt-[max(2rem,24px)]'>
 						<div className='grid'>
 							{TESTIMONIALS.map((tes, i) => (
 								<div
 									className={`user-info col-start-1 row-start-1
-								${i == active ? 'opacity-100' : 'opacity-0'}
-								`}
+                  ${i === active ? 'opacity-100' : 'opacity-0'}
+                  `}
 									key={i}>
 									<Paragraph
 										large
 										className='text-[max(2.25rem,20px)] text-white 
-                font-medium tracking-tight leading-[1.3]'
-										dangerouslySetInnerHTML={{ __html: tes.info }}></Paragraph>
+                    font-medium tracking-tight leading-[1.3]'
+										dangerouslySetInnerHTML={{ __html: tes.info }}
+									/>
 
 									<div className='mt-[max(1.75rem,18px)]'>
 										<h2 className='text-white-80 text-24 tracking-tight'>
 											{tes.name}
 										</h2>
-										{/* <p className='text-[#FFFFFF66] text-base mt-[4px]'>
-											Operations Lead at NovaTech
-										</p> */}
 									</div>
 								</div>
 							))}
@@ -119,44 +369,7 @@ export default function Thrive() {
 
 					<div className='flex items-center mt-[max(3rem,32px)] gap-[max(1rem,14px)] w-max'>
 						{TESTIMONIALS.map((tes, i) => (
-							<button
-								className='relative'
-								key={i}
-								onClick={(e) => {
-									setActive(i);
-									prevActive.current = i;
-
-									const INDICATORS = gsap.utils.toArray(
-										'.user-indicator'
-									) as Element[];
-
-									INDICATORS.forEach((ind) => {
-										gsap.set(ind, {
-											strokeDasharray: '0 1400',
-											display: 'none',
-										});
-
-										gsap
-											.timeline()
-											.fromTo(
-												e.currentTarget.querySelector('circle'),
-												{
-													strokeDasharray: '0 1400',
-													display: 'block',
-												},
-												{
-													strokeDasharray: '1457 1400',
-													delay: 0.25,
-													duration: 4,
-												}
-											)
-											.set(e.currentTarget.querySelector('circle'), {
-												strokeDasharray: '0 1400',
-											});
-									});
-
-									// ISAUTOCHANGING.current = true;
-								}}>
+							<button className='relative' key={i} onClick={() => handleClick(i)}>
 								{!tes.vidUrl ? (
 									<Image
 										src={`/images/tes-${i + 1}.jpg`}
@@ -179,8 +392,7 @@ export default function Thrive() {
 									viewBox='0 0 800 800'
 									xmlns='http://www.w3.org/2000/svg'
 									className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
-								h-full w-full scale-[2.5] -rotate-80
-								'>
+                  h-full w-full scale-[2.5] -rotate-90'>
 									<circle
 										cx='400'
 										cy='400'
@@ -201,9 +413,9 @@ export default function Thrive() {
 					{TESTIMONIALS.map((tes, i) => (
 						<figure
 							className={`col-start-1 row-start-1 user-image
-						transition-opacity duration-1000 ease-in-out
-								${i == active ? 'opacity-100' : 'opacity-0'}
-						`}
+              transition-opacity duration-1000 ease-in-out
+              ${i === active ? 'opacity-100' : 'opacity-0'}
+              `}
 							key={i}>
 							{!tes.vidUrl ? (
 								<Image
@@ -212,12 +424,12 @@ export default function Thrive() {
 									height={400}
 									alt={tes.name}
 									className='rounded-full min-w-[25rem] h-[25rem] 
-								object-cover object-center w-[25rem]'
+                  object-cover object-center w-[25rem]'
 								/>
 							) : (
 								<video
 									className='rounded-full min-w-[25rem] h-[25rem] 
-								object-cover object-center w-[25rem]'
+                  object-cover object-center w-[25rem]'
 									autoPlay
 									loop
 									muted
