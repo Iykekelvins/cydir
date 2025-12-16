@@ -328,7 +328,7 @@ export default function Thrive() {
 	return (
 		<section
 			id='thrive'
-			className='bg-gradient-to-b from-black to-blue-950 px-8 pt-20 pb-16 relative z-10'>
+			className='bg-gradient-to-b from-black to-[#0A182D] px-8 pt-20 pb-16 relative z-10'>
 			<div className='flex flex-col items-center justify-center'>
 				<Tag color='lemon'>Thrive</Tag>
 				<Words
@@ -350,9 +350,8 @@ export default function Thrive() {
                   ${i === active ? 'opacity-100' : 'opacity-0'}
                   `}
 									key={i}>
-									<Paragraph
-										large
-										className='text-[max(2.25rem,20px)] text-white 
+									<p
+										className='text-[max(2rem,20px)] text-white 
                     font-medium tracking-tight leading-[1.3]'
 										dangerouslySetInnerHTML={{ __html: tes.info }}
 									/>
