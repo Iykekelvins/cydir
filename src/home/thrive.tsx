@@ -1,16 +1,19 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { TESTIMONIALS } from '@/utils/mock';
 
 import Tag from '@/components/tag';
 import Image from 'next/image';
 import gsap from 'gsap';
 import Paragraph from '@/animations/paragraph';
+import Words from '@/animations/words';
+import Button from '@/components/button';
 
 export default function Thrive() {
 	const [active, setActive] = useState(0);
+
 	const prevActive = useRef(active);
-	const LENGTH = 4;
 
 	const ISAUTOCHANGING = useRef<boolean | null>(null);
 
@@ -22,7 +25,7 @@ export default function Thrive() {
 		const interval = setInterval(() => {
 			if (!ISAUTOCHANGING.current) return;
 
-			if (active === LENGTH - 1) {
+			if (active === TESTIMONIALS.length - 1) {
 				setActive(0);
 				gsap
 					.timeline()
@@ -73,13 +76,23 @@ export default function Thrive() {
       px-gutter pt-[max(7.5rem,84px)] pb-[max(5.25rem,48px)]
 			relative z-12
   '>
-			<Tag color='lemon'>Thrive</Tag>
+			<div className='flex flex-col items-center justify-center'>
+				<Tag color='lemon'>Thrive</Tag>
+				<Words
+					as='h2'
+					className='text-60 text-white font-medium font-outfit 
+					tracking-tighter leading-[1.3]
+					mt-[max(1rem,14px)] text-center
+'>
+					Limitless Lives in Action
+				</Words>
+			</div>
 
-			<div className='flex items-start justify-between'>
+			<div className='flex items-start justify-between mt-[max(4.25rem,38px)]'>
 				<div className='max-w-[max(52.375rem,430px)]'>
 					<div className='mt-[max(2rem,24px)]'>
 						<div className='grid'>
-							{[...Array(4)].map((_, i) => (
+							{TESTIMONIALS.map((tes, i) => (
 								<div
 									className={`user-info col-start-1 row-start-1
 								transition-opacity duration-1000 ease-in-out
@@ -89,20 +102,16 @@ export default function Thrive() {
 									<Paragraph
 										large
 										className='text-[max(2.25rem,20px)] text-white 
-                font-medium tracking-tight leading-[1.3]'>
-										“Working with Abinhav was a game-changer for our team. His
-										training went far beyond motivation, it gave us practical tools
-										to shift the way we think, communicate, and approach challenges
-										together.”
-									</Paragraph>
+                font-medium tracking-tight leading-[1.3]'
+										dangerouslySetInnerHTML={{ __html: tes.info }}></Paragraph>
 
 									<div className='mt-[max(1.75rem,18px)]'>
 										<h2 className='text-white-80 text-24 tracking-tight'>
-											Michael Chen
+											{tes.name}
 										</h2>
-										<p className='text-[#FFFFFF66] text-base mt-[4px]'>
+										{/* <p className='text-[#FFFFFF66] text-base mt-[4px]'>
 											Operations Lead at NovaTech
-										</p>
+										</p> */}
 									</div>
 								</div>
 							))}
@@ -110,7 +119,7 @@ export default function Thrive() {
 					</div>
 
 					<div className='flex items-center mt-[max(3rem,32px)] gap-[max(1rem,14px)] w-max'>
-						{[...Array(4)].map((_, i) => (
+						{TESTIMONIALS.map((tes, i) => (
 							<button
 								className='relative'
 								key={i}
@@ -149,13 +158,17 @@ export default function Thrive() {
 
 									// ISAUTOCHANGING.current = true;
 								}}>
-								<Image
-									src={`/images/user-${i + 1}.${i == 0 ? 'jpeg' : 'jpg'}`}
-									width={48}
-									height={48}
-									alt='user image'
-									className='rounded-full size-[max(3rem,32px)] object-cover object-center'
-								/>
+								{!tes.isVid ? (
+									<Image
+										src={`/images/tes-${i + 1}.jpg`}
+										width={48}
+										height={48}
+										alt={tes.name}
+										className='rounded-full size-[max(3rem,32px)] object-cover object-center'
+									/>
+								) : (
+									<></>
+								)}
 								<svg
 									viewBox='0 0 800 800'
 									xmlns='http://www.w3.org/2000/svg'
@@ -179,24 +192,32 @@ export default function Thrive() {
 				</div>
 
 				<div className='hidden md:grid'>
-					{[...Array(4)].map((_, i) => (
+					{TESTIMONIALS.map((tes, i) => (
 						<figure
 							className={`col-start-1 row-start-1 user-image
 						transition-opacity duration-1000 ease-in-out
 								${i == active ? 'opacity-100' : 'opacity-0'}
 						`}
 							key={i}>
-							<Image
-								src={`/images/user-${i + 1}.${i == 0 ? 'jpeg' : 'jpg'}`}
-								width={400}
-								height={400}
-								alt='user image'
-								className='rounded-full min-w-[25rem] h-[25rem] 
+							{!tes.isVid ? (
+								<Image
+									src={`/images/tes-${i + 1}.jpg`}
+									width={400}
+									height={400}
+									alt={tes.name}
+									className='rounded-full min-w-[25rem] h-[25rem] 
 								object-cover object-center w-[25rem]'
-							/>
+								/>
+							) : (
+								<></>
+							)}
 						</figure>
 					))}
 				</div>
+			</div>
+
+			<div className='flex justify-center mt-[max(2.25rem,24px)]'>
+				<Button bg='lemon'>Begin Your Transformation</Button>
 			</div>
 		</section>
 	);

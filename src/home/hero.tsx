@@ -155,7 +155,10 @@ export default function Hero() {
 					loop
 					muted
 					playsInline>
-					<source src='/videos/cydir-hero-video.mp4' type='video/mp4' />
+					<source
+						src='https://res.cloudinary.com/dvgyi0ngj/video/upload/v1765874644/CYDIR_VIDEO_1_a5pgzy.mp4'
+						type='video/mp4'
+					/>
 				</video>
 			</figure>
 

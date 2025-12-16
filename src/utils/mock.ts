@@ -496,3 +496,27 @@ export const PHONE_PLACEHOLDERS = [
 		flag: 'https://flagcdn.com/w20/lu.png',
 	},
 ];
+
+export const TESTIMONIALS = [
+	{
+		info: `
+		“I worked with Abhinav to deal with some personal habits I couldn't shake off that were limiting my growth.  After only a few sessions, we were able to "fix" those issues quickly and effectively. 
+<br/><br/>
+I highly recommend working with Abhinav if you are ready to see change quickly and effectively.”
+		`,
+		name: 'Joel Mandelbaum',
+		isVid: false,
+	},
+	{
+		info: `
+			THRIVE’ was an AMAZING event - the night flew by! The keynote presentation from Abhinav Jindal was highly informative and well delivered with lots of supporting documentation. Every aspect of the event was well executed and professionally delivered, from the catering and location selection, to the event management by Andrea and AV services.
+		`,
+		name: 'Andrew Wells',
+		isVid: false,
+	},
+	{
+		info: `An amazingly smooth process. My physical activity is up. My eating habits have surprisingly improved. I am down 7 pounds and slowly heading down. I highly recommend for any area of life. Abhinav was very seamless and eloquent. My results have been amazing. Looking forward to reconnecting and moving forward with other areas of my life.`,
+		name: 'David Monahan',
+		isVid: true,
+	},
+];
