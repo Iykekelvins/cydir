@@ -17,11 +17,11 @@ export default function JoinUs() {
     '>
 			<div
 				className='bg-[#EBEBEB] py-[max(4.875rem,36px)]
-        rounded-[max(1.25rem,20px)] px-[max(4.5rem,28px)]'>
+        rounded-[max(1.25rem,20px)] px-[max(4.5rem,28px)] overflow-hidden'>
 				<div className='flex items-center justify-between'>
 					<div
 						className='max-w-[max(30rem,320px)] 
-					md:min-w-[max(30rem,320px)] w-full'>
+					md:min-w-[max(30rem,320px)] w-full relative z-2'>
 						<Tag color='blue'>Join Us</Tag>
 						<Words
 							as='h2'
@@ -54,7 +54,7 @@ export default function JoinUs() {
 					</div>
 
 					<div className='hidden md:block'>
-						<video autoPlay muted playsInline loop>
+						<video autoPlay muted playsInline loop className='scale-150'>
 							<source src={'/videos/blob.mp4'} type='video/mp4' />
 						</video>
 					</div>
