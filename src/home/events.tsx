@@ -23,6 +23,10 @@ const EVENTS = [
 		title: 'The Power of Rewiring',
 		info: 'Learn practical NLP strategies to shift limiting beliefs into empowering ones.',
 	},
+	{
+		title: 'The Power of Rewiring',
+		info: 'Learn practical NLP strategies to shift limiting beliefs into empowering ones.',
+	},
 ];
 
 export default function Events() {
@@ -69,12 +73,12 @@ export default function Events() {
 						becoming their best self
 					</Paragraph>
 
-					<div className='flex items-center justify-between mt-[max(2.5rem,32px)]'>
-						<div
+					<div className='flex items-center justify-end mt-[max(2.5rem,32px)]'>
+						{/* <div
 							className='bg-[rgba(27,56,100,0.3)] rounded-ful 
             px-[max(0.938rem,13.5px)] h-[max(2.5rem,36px)]'>
 							<span className='size-10 bg-white'></span>
-						</div>
+						</div> */}
 						<div className='flex items-center gap-[max(0.75rem,12px)]'>
 							<button onClick={() => emblaApi?.scrollPrev()}>
 								<svg
@@ -162,65 +166,74 @@ export default function Events() {
 								<div
 									className={`embla__slide border-[0.3] border-white 
                 border-solid rounded-[max(1.5rem,16px)] overflow-hidden
-                min-w-125 bg-white
+                 bg-white min-w-[22.563rem]
                 `}
-									key={ev.title}>
+									key={i}>
 									<figure className='overflow-hidden'>
 										<Image
-											src={`/images/event-${i + 1}.jpg`}
+											src={`/images/event-${i < 3 ? i + 1 : 3}.jpg`}
 											width={500}
 											height={300}
 											alt={`Poster for event: ${ev.title}`}
-											className='w-full h-[max(18.75rem,280px)] object-cover'
+											className='w-full h-[max(13.538rem,240px)] object-cover'
 										/>
 									</figure>
 
-									<div className='px-[max(1.5rem,20px)] pt-[max(2.625rem,24px)] pb-[max(2.5rem,30px)]'>
-										<h3 className='text-blue text-[max(1.875rem,18px)] font-semibold tracking-tight'>
+									<div className='p-[max(1.5rem,20px)]'>
+										<h3 className='text-blue text-20 font-semibold tracking-tighter'>
 											{ev.title}
 										</h3>
-										<p className='text-[#0B192DCC] text-base font-medium tracking-tight mt-[max(0.5rem,8px)]'>
+										<p
+											className='text-[#0B192DCC] text-[max(0.75rem,11px)] 
+										font-medium tracking-tighter mt-[max(0.5rem,8px)]'>
 											By Cydir Inc
 										</p>
-										<p className='text-[#0C0C0CB2] text-20 leading-normal mt-[max(1.25rem,16px)] tracking-tight'>
+										<p
+											className='text-[#0C0C0CB2] text-14 leading-normal 
+										mt-[max(0.875rem,13px)] tracking-tighter'>
 											{ev.info}
 										</p>
 
-										<div className='flex items-center flex-wrap gap-[24px] justify-between mt-[max(1.5rem,20px)]'>
+										<div
+											className='flex items-center flex-wrap gap-[24px] 
+										 mt-[max(1.5rem,20px)]'>
 											<div>
-												<h4 className='text-[#0C0C0C82] text-14 tracking-tight'>
+												<h4 className='text-[#0C0C0C82] text-[max(0.625rem,10px)] tracking-tighter'>
 													Date
 												</h4>
 												<p
-													className='text-[#0B192DCC] text-base font-medium 
-                        tracking-tight mt-[max(0.25rem,4px)]'>
+													className='text-[#0B192DCC] text-[max(0.75rem,11px)] font-medium 
+                        tracking-tighter mt-[max(0.25rem,4px)]'>
 													Thursday, Sep 11 2025
 												</p>
 											</div>
+
 											<div>
-												<h4 className='text-[#0C0C0C82] text-14 tracking-tight'>
+												<h4 className='text-[#0C0C0C82] text-[max(0.625rem,10px)] tracking-tighter'>
 													Venue
 												</h4>
 												<p
-													className='text-[#0B192DCC] text-base font-medium 
-                        tracking-tight mt-[max(0.25rem,4px)]'>
+													className='text-[#0B192DCC] text-[max(0.75rem,11px)] font-medium 
+                        tracking-tighter mt-[max(0.25rem,4px)]'>
 													Anahiem, California
 												</p>
 											</div>
 
 											<div>
-												<h4 className='text-[#0C0C0C82] text-14 tracking-tight'>
+												<h4 className='text-[#0C0C0C82] text-14 tracking-tighter'>
 													Time
 												</h4>
 												<p
-													className='text-[#0B192DCC] text-base font-medium 
-                        tracking-tight mt-[max(0.25rem,4px)]'>
+													className='text-[#0B192DCC] text-[max(0.75rem,11px)] font-medium 
+                        tracking-tighter mt-[max(0.25rem,4px)]'>
 													5pm GMT+1
 												</p>
 											</div>
 										</div>
 
-										<Button bg='blue' className='mt-[max(2rem,24px)]'>
+										<Button
+											bg='blue'
+											className='mt-[max(2rem,24px)] h-[max(3rem,36px)]'>
 											Learn More
 										</Button>
 									</div>

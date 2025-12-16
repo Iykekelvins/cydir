@@ -158,13 +158,13 @@ export default function Footer() {
 							<div>
 								<h3 className='text-20 text-[#0B192DCC] font-medium'>Contact</h3>
 								<Link
-									href='mailto:cydir@example.com'
+									href='mailto:aj@cydir.com'
 									className='text-[#0B192DCC] text-18 mt-[max(1rem,16px)] block
 									transition-colors duration-300 ease-in hover:text-[#0A182D]
 									'
 									target='_blank'
 									rel='noopener'>
-									cydir@example.com
+									aj@cydir.com
 								</Link>
 							</div>
 
