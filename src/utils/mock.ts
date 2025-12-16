@@ -50,8 +50,8 @@ export const BREAKTHROUGH_ITEMS = [
 export const FEED = [
 	'https://res.cloudinary.com/dvgyi0ngj/video/upload/v1765878940/ig-1_ta5coi.mp4',
 	'https://res.cloudinary.com/dvgyi0ngj/video/upload/v1765878938/ig-2_f6n9vr.mp4',
-	'/images/ig-3.jpg',
-	'/images/ig-4.jpg',
+	'https://res.cloudinary.com/dvgyi0ngj/video/upload/v1765898797/ig-3_in8wti.mp4',
+	'https://res.cloudinary.com/dvgyi0ngj/video/upload/v1765898795/ig-4_vzqpte.mp4',
 ];
 
 export const FAQS = [

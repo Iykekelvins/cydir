@@ -19,8 +19,18 @@ export default function Hero() {
 
 	const [playTl, setPlayTl] = useState(false);
 	const [active, setActive] = useState(0);
+	const [isPlaying, setIsPlaying] = useState(false);
 
 	const videoRef = useRef<HTMLVideoElement>(null);
+
+	const initialHeights = [
+		'max(0.875rem,8px)',
+		'max(1.25rem,14px)',
+		'max(0.625rem,4px)',
+		'max(1.125rem,12px)',
+		'max(0.75rem,7px)',
+		'max(0.625rem,4px)',
+	];
 
 	// useGSAP(() => {
 	// 	const heroTitleSplit = SplitText.create(heroTitle.current, {
@@ -153,12 +163,9 @@ export default function Hero() {
 					className='w-full h-full object-cover'
 					autoPlay
 					loop
-					muted
+					muted={!isPlaying}
 					playsInline>
-					<source
-						src='https://res.cloudinary.com/dvgyi0ngj/video/upload/v1765874644/CYDIR_VIDEO_1_a5pgzy.mp4'
-						type='video/mp4'
-					/>
+					<source src='/videos/hero-vid.mp4' type='video/mp4' />
 				</video>
 			</figure>
 
@@ -189,8 +196,12 @@ export default function Hero() {
 				</div>
 			</div>
 
-			<button className='absolute right-gutter bottom-[max(2.5rem,24px)] z-2'>
-				<svg
+			<button
+				className='absolute right-gutter bottom-[max(2.5rem,24px)] z-2
+			size-[max(3rem,32px)] bg-[#FFFFFF1A] rounded-full
+			'
+				onClick={() => setIsPlaying(!isPlaying)}>
+				{/* <svg
 					width='48'
 					height='48'
 					viewBox='0 0 48 48'
@@ -201,7 +212,22 @@ export default function Hero() {
 						d='M12.75 21C12.3375 21 12 21.3375 12 21.75V26.25C12 26.6625 12.3375 27 12.75 27C13.1625 27 13.5 26.6625 13.5 26.25V21.75C13.5 21.3375 13.1625 21 12.75 21ZM33.75 21C33.3375 21 33 21.3375 33 21.75V26.25C33 26.6625 33.3375 27 33.75 27C34.1625 27 34.5 26.6625 34.5 26.25V21.75C34.5 21.3375 34.1625 21 33.75 21ZM15.75 16.5C15.3375 16.5 15 16.8375 15 17.25V30.75C15 31.1625 15.3375 31.5 15.75 31.5C16.1625 31.5 16.5 31.1625 16.5 30.75V17.25C16.5 16.8375 16.1625 16.5 15.75 16.5ZM18.75 19.5C18.3375 19.5 18 19.8375 18 20.25V27.75C18 28.1625 18.3375 28.5 18.75 28.5C19.1625 28.5 19.5 28.1625 19.5 27.75V20.25C19.5 19.8375 19.1625 19.5 18.75 19.5ZM21.75 22.5C21.3375 22.5 21 22.8375 21 23.25V24.75C21 25.1625 21.3375 25.5 21.75 25.5C22.1625 25.5 22.5 25.1625 22.5 24.75V23.25C22.5 22.8375 22.1625 22.5 21.75 22.5ZM24.75 19.5C24.3375 19.5 24 19.8375 24 20.25V27.75C24 28.1625 24.3375 28.5 24.75 28.5C25.1625 28.5 25.5 28.1625 25.5 27.75V20.25C25.5 19.8375 25.1625 19.5 24.75 19.5ZM27.75 13.5C27.3375 13.5 27 13.8375 27 14.25V33.75C27 34.1625 27.3375 34.5 27.75 34.5C28.1625 34.5 28.5 34.1625 28.5 33.75V14.25C28.5 13.8375 28.1625 13.5 27.75 13.5ZM30.75 16.5C30.3375 16.5 30 16.8375 30 17.25V30.75C30 31.1625 30.3375 31.5 30.75 31.5C31.1625 31.5 31.5 31.1625 31.5 30.75V17.25C31.5 16.8375 31.1625 16.5 30.75 16.5Z'
 						fill='white'
 					/>
-				</svg>
+				</svg> */}
+				<div className='flex items-center justify-center gap-[2px]'>
+					{[...Array(6)].map((_, i) => (
+						<div
+							key={i}
+							className={`w-[2px] bg-white rounded-full ${
+								isPlaying ? 'animate-sound-wave' : 'paused-wave'
+							}`}
+							style={{
+								animationDelay: `${i * 0.15}s`,
+								animationDuration: '2s',
+								height: `${initialHeights[i]}`,
+							}}
+						/>
+					))}
+				</div>
 			</button>
 
 			<div

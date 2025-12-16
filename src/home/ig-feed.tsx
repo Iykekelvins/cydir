@@ -7,6 +7,8 @@ import Image from 'next/image';
 import Words from '@/animations/words';
 import Paragraph from '@/animations/paragraph';
 import Scale from '@/animations/scale';
+import Link from 'next/link';
+import Button from '@/components/button';
 
 export default function IgFeed() {
 	return (
@@ -66,6 +68,16 @@ export default function IgFeed() {
 						Join Abhinav for grounded insights, coaching moments, and conscious
 						reminders to keep evolving.
 					</Paragraph>
+					<Link
+						href={
+							'https://www.instagram.com/abhinavjindal97?igsh=MTdjcGdyZ3JleDY1Zg=='
+						}
+						target='_blank'
+						rel='noopener'>
+						<Button bg='blue' className='mt-[max(1.25rem,18px)]'>
+							Connect with Abhinav
+						</Button>
+					</Link>
 				</div>
 			</div>
 
@@ -108,26 +120,39 @@ const FeedItem = ({ src, className }: { src: string; className?: string }) => {
 			onMouseOver={() => setPlayVid(true)}
 			onMouseLeave={() => setPlayVid(false)}>
 			{src.includes('mp4') && (
-				<span
-					className={`flex items-center justify-center gap-[max(0.375rem,6px)] text-base font-medium
+				<Link
+					href={
+						'https://www.instagram.com/abhinavjindal97?igsh=MTdjcGdyZ3JleDY1Zg=='
+					}
+					target='_blank'
+					rel='noopener'
+					className=' absolute top-[max(1.75rem,20px)] 
+        left-[max(1.375rem,16px)]'>
+					<Button
+						bg='blue'
+						className={`
+							text-base font-medium
 				border border-solid border-[#EFEFEF] rounded-full py-[max(1.1rem,14px)] 
-        px-[max(1.25rem,16px)] bg-blue text-lemon absolute top-[max(1.75rem,20px)] 
-        left-[max(1.375rem,16px)] transition-opacity duration-300 ease-in-out 
+        px-[max(1.25rem,16px)] bg-blue text-lemon 
+				transition-opacity duration-300 ease-in-out z-2
+				[&_span]:flex [&_span]:items-center [&_span]:justify-center 
+				[&_span]:gap-[max(0.375rem,6px)] hover:text-lemon!
         ${playVid ? 'opacity-100' : 'opacity-0'}
         `}>
-					<svg
-						width='24'
-						height='24'
-						viewBox='0 0 24 24'
-						fill='none'
-						xmlns='http://www.w3.org/2000/svg'>
-						<path
-							d='M19.2664 13.5161C19.4979 13.337 19.6853 13.1072 19.8142 12.8444C19.9431 12.5816 20.0101 12.2928 20.0101 12.0001C20.0101 11.7074 19.9431 11.4186 19.8142 11.1558C19.6853 10.893 19.4979 10.6633 19.2664 10.4841C16.2686 8.16528 12.9216 6.33718 9.35042 5.06811L8.69742 4.83611C7.44942 4.39311 6.13042 5.23711 5.96142 6.52611C5.48942 10.1602 5.48942 13.84 5.96142 17.4741C6.13142 18.7631 7.44942 19.6071 8.69742 19.1641L9.35042 18.9321C12.9216 17.663 16.2686 15.8349 19.2664 13.5161Z'
-							fill='#C8D72C'
-						/>
-					</svg>
-					Watch
-				</span>
+						<svg
+							width='24'
+							height='24'
+							viewBox='0 0 24 24'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'>
+							<path
+								d='M19.2664 13.5161C19.4979 13.337 19.6853 13.1072 19.8142 12.8444C19.9431 12.5816 20.0101 12.2928 20.0101 12.0001C20.0101 11.7074 19.9431 11.4186 19.8142 11.1558C19.6853 10.893 19.4979 10.6633 19.2664 10.4841C16.2686 8.16528 12.9216 6.33718 9.35042 5.06811L8.69742 4.83611C7.44942 4.39311 6.13042 5.23711 5.96142 6.52611C5.48942 10.1602 5.48942 13.84 5.96142 17.4741C6.13142 18.7631 7.44942 19.6071 8.69742 19.1641L9.35042 18.9321C12.9216 17.663 16.2686 15.8349 19.2664 13.5161Z'
+								fill='#C8D72C'
+							/>
+						</svg>
+						Watch
+					</Button>
+				</Link>
 			)}
 			{src.includes('mp4') ? (
 				<video

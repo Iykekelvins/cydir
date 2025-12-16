@@ -160,3 +160,28 @@ a {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
 	background-color: #e0e0e0;
 }
+
+@keyframes sound-wave {
+	0%,
+	100% {
+		height: max(0.5rem, 8px);
+	}
+	25% {
+		height: max(1.25rem, 14.5px);
+	}
+	50% {
+		height: max(0.875rem, 8px);
+	}
+	75% {
+		height: max(1.3125rem, 15px);
+	}
+}
+
+.animate-sound-wave {
+	animation: sound-wave 2s ease-in-out infinite;
+}
+
+.paused-wave {
+	animation: sound-wave 2s ease-in-out infinite;
+	animation-play-state: paused;
+}
