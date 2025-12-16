@@ -166,7 +166,7 @@ export default function Hero() {
 				className='flex flex-col items-center justify-center 
 			text-center px-gutter absolute top-1/2 left-1/2
 			-translate-y-1/2 -translate-x-1/2 w-full max-w-[max(60rem,450px)]
-			'>
+			z-2'>
 				<h1
 					className='text-white text-[max(5rem,34px)] font-outfit 
 					font-bold tracking-tight leading-[1.2]'>
@@ -189,7 +189,7 @@ export default function Hero() {
 				</div>
 			</div>
 
-			<button className='absolute right-gutter bottom-[max(2.5rem,24px)]'>
+			<button className='absolute right-gutter bottom-[max(2.5rem,24px)] z-2'>
 				<svg
 					width='48'
 					height='48'
@@ -209,7 +209,7 @@ export default function Hero() {
 			bg-[#FFFFFF1A] rounded-[max(1.5rem,16px)] py-[max(0.5rem,7px)]
 			pl-[max(0.5rem,7px)] pr-[max(1.7rem,16px)] flex items-center
 			gap-[max(0.75rem,8px)] max-w-[max(35.2rem,285px)]
-			max-[22rem]:max-w-[200px]
+			max-[22rem]:max-w-[200px] z-2
 			'>
 				<svg
 					width='48'
@@ -256,6 +256,8 @@ export default function Hero() {
 					</p>
 				</div>
 			</div>
+
+			<div className='bg-[rgba(0,0,0,0.5)] absolute top-0 left-0 w-full h-full pointer-events-none' />
 		</section>
 	);
 }
