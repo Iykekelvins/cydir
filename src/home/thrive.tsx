@@ -370,14 +370,14 @@ export default function Thrive() {
 					<div className='flex items-center mt-[max(3rem,32px)] gap-[max(1rem,14px)] w-max'>
 						{TESTIMONIALS.map((tes, i) => (
 							<button className='relative' key={i} onClick={() => handleClick(i)}>
-								{!tes.vidUrl ? (
-									<Image
-										src={`/images/tes-${i + 1}.jpg`}
-										width={48}
-										height={48}
-										alt={tes.name}
-										className='rounded-full size-[max(3rem,32px)] object-cover object-center'
-									/>
+								<Image
+									src={`/images/tes-${i + 1}.jpg`}
+									width={48}
+									height={48}
+									alt={tes.name}
+									className='rounded-full size-[max(3rem,32px)] object-cover object-center'
+								/>
+								{/* {!tes.vidUrl ? (
 								) : (
 									<video
 										className='rounded-full size-[max(3rem,32px)] object-cover object-center'
@@ -387,7 +387,7 @@ export default function Thrive() {
 										playsInline>
 										<source src={tes.vidUrl} type='video/mp4' />
 									</video>
-								)}
+								)} */}
 								<svg
 									viewBox='0 0 800 800'
 									xmlns='http://www.w3.org/2000/svg'
@@ -417,26 +417,26 @@ export default function Thrive() {
               ${i === active ? 'opacity-100' : 'opacity-0'}
               `}
 							key={i}>
-							{!tes.vidUrl ? (
-								<Image
-									src={`/images/tes-${i + 1}.jpg`}
-									width={400}
-									height={400}
-									alt={tes.name}
-									className='rounded-full min-w-[25rem] h-[25rem] 
+							<Image
+								src={`/images/tes-${i + 1}.jpg`}
+								width={400}
+								height={400}
+								alt={tes.name}
+								className='rounded-full min-w-[25rem] h-[25rem] 
                   object-cover object-center w-[25rem]'
-								/>
-							) : (
-								<video
-									className='rounded-full min-w-[25rem] h-[25rem] 
-                  object-cover object-center w-[25rem]'
-									autoPlay
-									loop
-									muted
-									playsInline>
-									<source src={tes.vidUrl} type='video/mp4' />
-								</video>
-							)}
+							/>
+							{/* {!tes.vidUrl ? (
+							// ) : (
+							// 	<video
+							// 		className='rounded-full min-w-[25rem] h-[25rem] 
+              //     object-cover object-center w-[25rem]'
+							// 		autoPlay
+							// 		loop
+							// 		muted
+							// 		playsInline>
+							// 		<source src={tes.vidUrl} type='video/mp4' />
+							// 	</video>
+							// )} */}
 						</figure>
 					))}
 				</div>

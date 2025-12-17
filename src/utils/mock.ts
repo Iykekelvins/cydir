@@ -515,8 +515,6 @@ I highly recommend working with Abhinav if you are ready to see change quickly a
 	{
 		info: `An amazingly smooth process. My physical activity is up. My eating habits have surprisingly improved. I am down 7 pounds and slowly heading down. I highly recommend for any area of life. Abhinav was very seamless and eloquent. My results have been amazing. Looking forward to reconnecting and moving forward with other areas of my life.`,
 		name: 'David Monahan',
-		vidUrl:
-			'https://res.cloudinary.com/dvgyi0ngj/video/upload/v1765876801/david-testimonial-vid_z8wzsp.mp4',
 	},
 ];
 
