@@ -115,7 +115,7 @@ const Journey = () => {
 							});
 						}
 
-						if (rotation >= 170) {
+						if (rotation >= 165) {
 							gsap.to(OPTIMIZE, {
 								opacity: 1,
 							});
@@ -145,7 +145,7 @@ const Journey = () => {
 							});
 						}
 
-						if (rotation < 170) {
+						if (rotation < 165) {
 							gsap.to(OPTIMIZE, {
 								opacity: 0.4,
 							});
