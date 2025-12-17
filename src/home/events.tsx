@@ -9,25 +9,8 @@ import Button from '@/components/button';
 import Words from '@/animations/words';
 import Paragraph from '@/animations/paragraph';
 import Tag from '@/components/tag';
-
-const EVENTS = [
-	{
-		title: 'Uncover Your Deepest Why',
-		info: 'Get the concrete strategies and tools that have transformed thousands of businesses at every stage. ',
-	},
-	{
-		title: 'The Growth Mindset Workshop',
-		info: 'This event will help you build habits that keep you growing, even when challenges arise.',
-	},
-	{
-		title: 'The Power of Rewiring',
-		info: 'Learn practical NLP strategies to shift limiting beliefs into empowering ones.',
-	},
-	{
-		title: 'The Power of Rewiring',
-		info: 'Learn practical NLP strategies to shift limiting beliefs into empowering ones.',
-	},
-];
+import { EVENTS } from '@/utils/mock';
+import Link from 'next/link';
 
 export default function Events() {
 	const [emblaRef, emblaApi] = useEmblaCarousel({ slidesToScroll: 'auto' }, [
@@ -168,7 +151,7 @@ export default function Events() {
 
 				<div className='embla mt-[max(5rem,48px)]'>
 					<div className='overflow-hidden px-gutter' ref={emblaRef}>
-						<div className='embla__container gap-[16px]'>
+						<div className='embla__container gap-[max(1rem,16px)]'>
 							{EVENTS.map((ev, i) => (
 								<div
 									className={`embla__slide border-[0.3] border-white 
@@ -178,7 +161,7 @@ export default function Events() {
 									key={i}>
 									<figure className='overflow-hidden'>
 										<Image
-											src={`/images/event-${i < 3 ? i + 1 : 3}.jpg`}
+											src={ev.img}
 											width={500}
 											height={300}
 											alt={`Poster for event: ${ev.title}`}
@@ -202,7 +185,7 @@ export default function Events() {
 										</p>
 
 										<div
-											className='flex items-center flex-wrap gap-[24px] 
+											className='flex items-center flex-wrap gap-[max(1.5rem,24px)] 
 										 mt-[max(1.5rem,20px)]'>
 											<div>
 												<h4 className='text-[#0C0C0C82] text-[max(0.625rem,10px)] tracking-tighter'>
@@ -211,7 +194,7 @@ export default function Events() {
 												<p
 													className='text-[#0B192DCC] text-[max(0.75rem,11px)] font-medium 
                         tracking-tighter mt-[max(0.25rem,4px)]'>
-													Thursday, Sep 11 2025
+													{ev.date}
 												</p>
 											</div>
 
@@ -222,7 +205,7 @@ export default function Events() {
 												<p
 													className='text-[#0B192DCC] text-[max(0.75rem,11px)] font-medium 
                         tracking-tighter mt-[max(0.25rem,4px)]'>
-													Anahiem, California
+													{ev.venue}
 												</p>
 											</div>
 
@@ -233,16 +216,27 @@ export default function Events() {
 												<p
 													className='text-[#0B192DCC] text-[max(0.75rem,11px)] font-medium 
                         tracking-tighter mt-[max(0.25rem,4px)]'>
-													5pm GMT+1
+													{ev.time}
 												</p>
 											</div>
 										</div>
 
-										<Button
-											bg='blue'
-											className='mt-[max(2rem,24px)] h-[max(3rem,36px)]'>
-											Learn More
-										</Button>
+										{ev.link ? (
+											<Link href={ev.link} target='_blank' rel='noopener'>
+												<Button
+													bg='blue'
+													className='mt-[max(2rem,24px)] h-[max(3rem,36px)]'>
+													Learn More
+												</Button>
+											</Link>
+										) : (
+											<Button
+												bg='blue'
+												className='mt-[max(2rem,24px)] h-[max(3rem,36px)] disabled:cursor-text!'
+												disabled>
+												Coming Soon
+											</Button>
+										)}
 									</div>
 								</div>
 							))}

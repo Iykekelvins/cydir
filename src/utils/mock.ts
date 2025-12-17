@@ -519,3 +519,40 @@ I highly recommend working with Abhinav if you are ready to see change quickly a
 			'https://res.cloudinary.com/dvgyi0ngj/video/upload/v1765876801/david-testimonial-vid_z8wzsp.mp4',
 	},
 ];
+
+export const EVENTS = [
+	{
+		img: '/images/event-1.jpg',
+		title: 'The Limitless Community Dinner',
+		info: 'An intimate dinner for entrepreneurs and professionals who choose to be limitless.',
+		date: 'Wednesday, Jan 21 2026',
+		venue: 'Terroni, Canada',
+		time: '7:00 PM EST',
+		link: 'https://www.eventbrite.ca/e/the-limitless-community-dinner-tickets-1978194625376?aff=oddtdtcreator',
+	},
+	{
+		img: '/images/event-2.jpg',
+		title: 'Meditation 101',
+		info: 'Learn a gentle, practical path to making meditation part of your everyday life for conscious living.',
+		date: 'Thursday, Sep 11 2025',
+		venue: 'Location TBD',
+		time: '9am EST',
+		link: 'https://www.eventbrite.ca/e/1977920502467?aff=oddtdtcreator',
+	},
+	{
+		img: '/images/event-1.jpg',
+		title: 'The Limitless Community Dinner',
+		info: 'An intimate dinner for entrepreneurs and professionals who choose to be limitless.',
+		date: 'TBD',
+		venue: 'TBD',
+		time: 'TBD',
+	},
+	{
+		img: '/images/event-1.jpg',
+		title: 'The Limitless Community Dinner',
+		info: 'An intimate dinner for entrepreneurs and professionals who choose to be limitless.',
+		date: 'TBD',
+		venue: 'TBD',
+		time: 'TBD',
+	},
+];

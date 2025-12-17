@@ -5,9 +5,16 @@ interface ButtonProps {
 	bg: 'lemon' | 'blue';
 	className?: string;
 	onClick?: () => void;
+	disabled?: boolean;
 }
 
-export default function Button({ children, bg, onClick, className }: ButtonProps) {
+export default function Button({
+	children,
+	bg,
+	onClick,
+	className,
+	disabled,
+}: ButtonProps) {
 	return (
 		<button
 			className={cn(
@@ -36,7 +43,8 @@ export default function Button({ children, bg, onClick, className }: ButtonProps
 				`,
 				className
 			)}
-			onClick={onClick}>
+			onClick={onClick}
+			disabled={disabled}>
 			<span className='z-2 relative'>{children}</span>
 		</button>
 	);
