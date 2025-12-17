@@ -48,7 +48,7 @@ export default function Transformation() {
 
 			<div
 				className='flex items-center justify-between mt-[max(4.625rem,40px)]
-			flex-col-reverse lg:flex-row gap-[max(2.5rem,32px)] des:pr-10
+			flex-col lg:flex-row gap-[max(2.5rem,32px)] des:pr-10
 			'>
 				<p
 					className='text-36 font-medium tracking-tighter leading-normal
