@@ -109,6 +109,9 @@ a {
 	will-change: transform;
 	animation: marquee 40s linear infinite;
 }
+.track:hover {
+	animation-play-state: paused;
+}
 
 .hide-scroll {
 	scrollbar-width: none;
