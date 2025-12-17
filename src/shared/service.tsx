@@ -8,6 +8,7 @@ import { useProvider } from '@/app/context';
 import Tag from '@/components/tag';
 import Button from '@/components/button';
 import Image from 'next/image';
+import Link from 'next/link';
 import gsap from 'gsap';
 
 export default function Service() {
@@ -114,11 +115,16 @@ export default function Service() {
               '
 									dangerouslySetInnerHTML={{ __html: service!.info }}></p>
 
-								<Button
-									bg='blue'
-									className='mt-[max(2.075rem,18px)] hidden md:block'>
-									{service?.btnText}
-								</Button>
+								<Link
+									href='https://calendly.com/aj-cydir/discovery-call'
+									target='_blank'
+									rel='noopener'>
+									<Button
+										bg='blue'
+										className='mt-[max(2.075rem,18px)] hidden md:block'>
+										Begin Your Transformation
+									</Button>
+								</Link>
 							</div>
 
 							<div>

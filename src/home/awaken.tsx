@@ -11,6 +11,7 @@ import Tag from '@/components/tag';
 import Image from 'next/image';
 import gsap from 'gsap';
 import Paragraph from '@/animations/paragraph';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -140,9 +141,13 @@ export default function Awaken() {
 						The quality of your life is shaped by who you are, how you feel, show up
 						and what you have across all six areas.
 					</Paragraph>
-					<Button bg='blue' className='mt-[max(1.5rem,20px)]'>
-						Create Your Life
-					</Button>
+					<Link
+						href='https://calendly.com/aj-cydir/discovery-call'
+						target='_blank'
+						rel='noopener'
+						className='mt-[max(1.5rem,20px)]'>
+						<Button bg='blue'>Create Your Life</Button>
+					</Link>
 				</div>
 			</div>
 

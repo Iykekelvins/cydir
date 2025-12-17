@@ -44,15 +44,15 @@ export default function Input({
 		<div className={`w-full ${className && className}`}>
 			<label
 				htmlFor={name}
-				className={`text-14 font-medium font-satoshi text-blue leading-normal ${
+				className={`text-14 font-medium font-satoshi text-[#192A4D] leading-normal ${
 					labelClass && labelClass
 				}`}>
 				{label}
 			</label>
 
 			<div
-				className={`mt-[max(0.375rem,6px)] border transition-all duration-300 ease-in-out
-					 border-blue border-solid ${
+				className={`mt-[max(0.375rem,6px)] border
+					 border-[#192A4D] border-solid focus-within:border-[1.75px] ${
 							!textArea
 								? 'h-[max(2.75rem,40px)]'
 								: 'h-[max(7.875rem,84px)] pt-[max(0.625rem,10px)]'
@@ -101,7 +101,7 @@ export default function Input({
 											className={`absolute bottom-0 left-0 w-[max(4rem,60px)] transition-all duration-500 ease-in-out
                        overflow-hidden bg-white overflow-y-auto hide-scroll 
                     shadow-lg  p-[max(4px,0.25rem)] rounded-[max(0.25rem,4px)]
-                    border border-blue border-solid  flex flex-col gap-[max(1rem,14px)]
+                    border border-[#192A4D] border-solid  flex flex-col gap-[max(1rem,14px)]
                     ${
 											showDropdown
 												? 'h-[max(14rem,200px)] opacity-100 pointer-events-auto'
@@ -120,7 +120,7 @@ export default function Input({
 												<li key={phone.country}>
 													<button
 														className={`flex items-center gap-[max(4px,0.25rem)] h-full w-full text-14 
-															${selectedCountry !== phone.country ? 'text-gray-900' : 'text-blue'}`}
+															${selectedCountry !== phone.country ? 'text-gray-900' : 'text-[#192A4D]'}`}
 														type='button'
 														onClick={() => {
 															setSelectedCountry(phone.country);
@@ -143,6 +143,7 @@ export default function Input({
 										name={name}
 										id={name}
 										value={value}
+										min={0}
 										placeholder={
 											PHONE_PLACEHOLDERS.find(
 												(item) => item.country === selectedCountry
@@ -151,7 +152,7 @@ export default function Input({
 										required={required}
 										onChange={onChange}
 										className={`border-0 outline-0 flex-1 h-full text-base font-satoshi
-										text-blue placeholder:text-blue
+										text-[#192A4D] placeholder:text-[#192A4D]
               			placeholder:font-satoshi placeholder:text-base`}
 									/>
 								</div>

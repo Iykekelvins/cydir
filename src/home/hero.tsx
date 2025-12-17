@@ -7,6 +7,7 @@ import { SplitText } from 'gsap/SplitText';
 
 import Button from '@/components/button';
 import gsap from 'gsap';
+import Link from 'next/link';
 
 gsap.registerPlugin(SplitText);
 
@@ -190,9 +191,14 @@ export default function Hero() {
 					areas of life.
 				</p>
 				<div className='hero-btn-box  w-max'>
-					<Button bg='lemon' className='mt-[max(1.5rem,20px)]'>
-						Schedule Your Call
-					</Button>
+					<Link
+						href='https://calendly.com/aj-cydir/discovery-call'
+						target='_blank'
+						rel='noopener'>
+						<Button bg='lemon' className='mt-[max(1.5rem,20px)]'>
+							Schedule Your Call
+						</Button>
+					</Link>
 				</div>
 			</div>
 
@@ -213,11 +219,11 @@ export default function Hero() {
 						fill='white'
 					/>
 				</svg> */}
-				<div className='flex items-center justify-center gap-[2px]'>
+				<div className='flex items-center justify-center gap-[max(0.125rem,2px)]'>
 					{[...Array(6)].map((_, i) => (
 						<div
 							key={i}
-							className={`w-[2px] bg-white rounded-full ${
+							className={`w-[max(0.125rem,2px)] bg-white rounded-full ${
 								isPlaying ? 'animate-sound-wave' : 'paused-wave'
 							}`}
 							style={{

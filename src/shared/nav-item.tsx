@@ -7,6 +7,7 @@ import { splitIntoChars } from '@/utils';
 
 import Button from '@/components/button';
 import gsap from 'gsap';
+import Link from 'next/link';
 
 export default function NavItem({ link }: { link: string }) {
 	const lenis = useLenis();
@@ -112,9 +113,14 @@ export default function NavItem({ link }: { link: string }) {
 					</span>
 				</button>
 			) : (
-				<Button bg='lemon' className='h-[max(2.5rem,32px)]'>
-					{link}
-				</Button>
+				<Link
+					href='https://calendly.com/aj-cydir/discovery-call'
+					target='_blank'
+					rel='noopener'>
+					<Button bg='lemon' className='h-[max(2.5rem,32px)]'>
+						{link}
+					</Button>
+				</Link>
 			)}
 		</>
 	);

@@ -247,6 +247,7 @@ import gsap from 'gsap';
 import Paragraph from '@/animations/paragraph';
 import Words from '@/animations/words';
 import Button from '@/components/button';
+import Link from 'next/link';
 
 export default function Thrive() {
 	const [active, setActive] = useState(0);
@@ -442,7 +443,12 @@ export default function Thrive() {
 			</div>
 
 			<div className='flex justify-center mt-[max(2.25rem,24px)]'>
-				<Button bg='lemon'>Begin Your Transformation</Button>
+				<Link
+					href='https://calendly.com/aj-cydir/discovery-call'
+					target='_blank'
+					rel='noopener'>
+					<Button bg='lemon'>Begin Your Transformation</Button>
+				</Link>
 			</div>
 		</section>
 	);

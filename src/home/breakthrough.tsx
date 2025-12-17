@@ -9,6 +9,7 @@ import Button from '@/components/button';
 import gsap from 'gsap';
 import Scale from '@/animations/scale';
 import TiltImg from '@/components/tilt-img';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -115,9 +116,13 @@ export default function Breakthrough() {
 							</div>
 
 							{i == 0 && (
-								<Button bg='lemon' className='mt-[max(3rem,36px)]'>
-									Unleash Your Best
-								</Button>
+								<Link
+									href='https://calendly.com/aj-cydir/discovery-call'
+									target='_blank'
+									rel='noopener'
+									className='mt-[max(3rem,36px)]'>
+									<Button bg='lemon'>Unleash Your Best</Button>
+								</Link>
 							)}
 						</li>
 					))}
@@ -138,9 +143,13 @@ export default function Breakthrough() {
 					free yourself from unwarranted negative emotions
 				</p>
 
-				<Button bg='lemon' className='mt-[max(2.5rem,28px)]'>
-					Begin your Emotional Reset
-				</Button>
+				<Link
+					href='https://calendly.com/aj-cydir/discovery-call'
+					target='_blank'
+					rel='noopener'
+					className='mt-[max(2.5rem,28px)]'>
+					<Button bg='lemon'>Begin your Emotional Reset</Button>
+				</Link>
 			</div>
 		</section>
 	);

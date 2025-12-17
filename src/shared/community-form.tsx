@@ -176,16 +176,29 @@ export default function CommunityForm() {
 
 							<div>
 								<Dropdown
-									options={['Career']}
+									options={[
+										'Career',
+										'Health',
+										'Family',
+										'Relationship',
+										'Spirituality',
+										'Personal Growth and Development',
+									]}
 									value={areas}
 									onSelect={(e) => setAreas(e as string[])}
 									label='What area of life are you most focused on improving right now?'
 									multiSelect
 								/>
-								<p className='text-14 text-gray-500 mt-[6px]'></p>
+								<p className='text-14 text-gray-500 mt-[6px]'>
+									Select all that apply
+								</p>
 							</div>
 							<Dropdown
-								options={['Moderately committed']}
+								options={[
+									'Very committed',
+									'Moderately committed',
+									'Curious but exploring',
+								]}
 								value={howCommitted}
 								onSelect={(val) => setHowCommitted(val as string)}
 								label='How committed are you to your personal transformation?'

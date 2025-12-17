@@ -9,6 +9,7 @@ import Image from 'next/image';
 import Words from '@/animations/words';
 import gsap from 'gsap';
 import Button from '@/components/button';
+import Link from 'next/link';
 
 export default function Architecture() {
 	return (
@@ -41,7 +42,12 @@ export default function Architecture() {
 			<Journey />
 
 			<div className='flex justify-center mt-[max(8.125rem,80px)]'>
-				<Button bg='lemon'>Begin Self Mastery</Button>
+				<Link
+					href='https://calendly.com/aj-cydir/discovery-call'
+					target='_blank'
+					rel='noopener'>
+					<Button bg='lemon'>Begin Self Mastery</Button>
+				</Link>
 			</div>
 		</section>
 	);
@@ -76,7 +82,7 @@ const Journey = () => {
 				scrollTriggerRef.current = ScrollTrigger.create({
 					trigger: sectionRef.current,
 					start: 'top 3.5%',
-					end: `+=${window.innerHeight}`,
+					end: `+=${window.innerHeight * 1.15}`,
 					scrub: 1,
 					pin: sectionRef.current,
 					animation,

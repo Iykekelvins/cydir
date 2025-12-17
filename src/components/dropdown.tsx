@@ -75,7 +75,8 @@ const Dropdown: React.FC<DropdownProps> = ({
 	return (
 		<div className='relative w-full'>
 			{/* Trigger Button */}
-			<h4 className={`text-14 font-medium font-satoshi text-blue leading-normal`}>
+			<h4
+				className={`text-14 font-medium font-satoshi text-[#192A4D] leading-normal`}>
 				{label}
 			</h4>
 			<div
@@ -83,9 +84,10 @@ const Dropdown: React.FC<DropdownProps> = ({
 				onClick={() => setIsOpen(!isOpen)}
 				className={`
           w-full min-h-[max(2.75rem,40px)] text-left border 
-					border-solid border-blue rounded-[max(0.5rem,8px)] 
+					border-solid border-[#192A4D] rounded-[max(0.5rem,8px)] 
 					flex justify-between items-center mt-[max(0.375rem,6px)]
           px-[max(10px,0.625rem)] py-[max(0.5rem,8px)] 
+					${isOpen ? 'border-[1.75px]' : ''}
         `}>
 				<div className='flex-1 flex flex-wrap gap-[max(0.5rem,8px)] items-center'>
 					{multiSelect &&
@@ -95,7 +97,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 							<span
 								key={option}
 								className='inline-flex items-center gap-[max(0.25rem,4px)] 
-								bg-blue text-white px-[max(0.5rem,8px)] py-[max(0.25rem,4px)] rounded text-14'>
+								bg-[#192A4D] text-white px-[max(0.5rem,8px)] py-[max(0.25rem,4px)] rounded text-14'>
 								{option}
 								<button
 									type='button'
@@ -121,7 +123,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 					) : (
 						<span
 							className={`${
-								hasSelection ? 'text-blue' : 'text-[#FFFFFF66]'
+								hasSelection ? 'text-[#192A4D]' : 'text-[#FFFFFF66]'
 							} text-base`}>
 							{getDisplayText()}
 						</span>
@@ -162,14 +164,16 @@ const Dropdown: React.FC<DropdownProps> = ({
                 w-full px-[max(1rem,16px)] py-[max(0.5rem,8px)] text-left
 								 hover:bg-gray-100 focus:bg-gray-100
                 focus:outline-none transition-colors duration-150
-                text-base text-blue flex items-center gap-2
+                text-base text-[#192A4D] flex items-center gap-2
                 ${isSelected(option) ? 'bg-gray-100 font-medium' : ''}
               `}>
 							{multiSelect && (
 								<div
 									className={`w-[max(1rem,16px)] h-[max(1rem,16px)] border-2 
 									rounded flex items-center justify-center shrink-0 ${
-										isSelected(option) ? 'bg-blue border-blue' : 'border-gray-300'
+										isSelected(option)
+											? 'bg-[#192A4D] border-[#192A4D]'
+											: 'border-gray-300'
 									}`}>
 									{isSelected(option) && (
 										<svg width='12' height='12' viewBox='0 0 12 12' fill='none'>
