@@ -9,12 +9,13 @@ import Navbar from '@/shared/navbar';
 import Menu from '@/shared/menu';
 import Service from '@/shared/service';
 import CommunityForm from '@/shared/community-form';
+import Starfield from 'react-starfield';
+import AudioButton from '@/shared/audio-button';
 import Footer from '@/shared/footer';
 
 import localFont from 'next/font/local';
 
 import './globals.css';
-import Starfield from 'react-starfield';
 
 const inter = Inter({
 	variable: '--font-inter',
@@ -65,6 +66,7 @@ export default function RootLayout({
 							<Menu />
 							<Service />
 							<CommunityForm />
+							<AudioButton />
 							<Footer />
 							<Starfield
 								starCount={1000}
