@@ -5,9 +5,9 @@ import Image from 'next/image';
 export default function Origin() {
 	return (
 		<section
-			id='origin'
+			id='about'
 			className='bg-[linear-gradient(180deg,#0A182D_0%,#000000_100%)]
-      px-gutter pt-[max(5.625rem,74px)] pb-[40px] md:pb-0
+      px-gutter pt-[max(5.625rem,74px)] pb-[max(40px,2.5rem)] md:pb-0
 			relative z-12
       '>
 			<div className='flex flex-col items-center justify-center text-center'>
@@ -40,7 +40,7 @@ export default function Origin() {
 
 			<div
 				className='flex flex-col gap-[max(5rem,30px)] md:flex-row lg:items-center 
-			justify-between max-md:mt-0 max-lg:mt-[40px] mt-[max(6.25rem,70px)]'>
+			justify-between max-md:mt-0 max-lg:mt-[max(40px,2.5rem)] mt-[max(6.25rem,70px)]'>
 				<figure>
 					<Image
 						src='/images/origin-img.png'

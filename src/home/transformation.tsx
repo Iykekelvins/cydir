@@ -6,7 +6,8 @@ export default function Transformation() {
 	return (
 		<section
 			className='pt-[max(6rem,56px)] px-gutter pb-[max(9rem,80px)]
-			bg-[linear-gradient(322.88deg,#000000_3.72%,#091529_96.71%)]'>
+			bg-[linear-gradient(322.88deg,#000000_3.72%,#091529_96.71%)]'
+			id='why'>
 			<div className='flex items-center justify-center'>
 				<Scale
 					as='svg'

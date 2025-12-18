@@ -16,7 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Breakthrough() {
 	return (
 		<section
-			id='breakthrough'
+			id='how'
 			className={cn(
 				'px-gutter pb-[max(9rem,80px)]',
 				'bg-[linear-gradient(180deg,#000000_0%,#091529_100%)]',
@@ -72,7 +72,7 @@ export default function Breakthrough() {
 			</div>
 
 			<div className='flex flex-col items-center justify-center text-center mt-[max(6rem,54px)]'>
-				<Tag color='lemon'>Breakthrough</Tag>
+				<Tag color='lemon'>How it works?</Tag>
 
 				<h2
 					className='text-60 text-white font-medium font-outfit 

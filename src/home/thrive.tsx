@@ -328,7 +328,7 @@ export default function Thrive() {
 
 	return (
 		<section
-			id='thrive'
+			id='reviews'
 			className='bg-gradient-to-b from-black to-[#0A182D] px-8 pt-20 pb-16 relative z-10'>
 			<div className='flex flex-col items-center justify-center'>
 				<Tag color='lemon'>Thrive</Tag>

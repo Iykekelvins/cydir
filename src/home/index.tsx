@@ -1,6 +1,6 @@
 import Hero from './hero';
 import Transformation from './transformation';
-import Awaken from './awaken';
+// import Awaken from './awaken';
 import Breakthrough from './breakthrough';
 import WhatShifts from './what-shifts';
 import Architecture from './architecture';
@@ -20,7 +20,7 @@ const Homepage = () => {
 			<Starfield starCount={1000} starColor={[255, 255, 255]} speedFactor={0.05} />
 			<Hero />
 			<Transformation />
-			<Awaken />
+			{/* <Awaken /> */}
 			<Breakthrough />
 			<WhatShifts />
 			<Architecture />

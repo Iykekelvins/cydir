@@ -1,6 +1,7 @@
 'use client';
 
 import { useProvider } from '@/app/context';
+import { EVENTS } from '@/utils/mock';
 
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -9,7 +10,6 @@ import Button from '@/components/button';
 import Words from '@/animations/words';
 import Paragraph from '@/animations/paragraph';
 import Tag from '@/components/tag';
-import { EVENTS } from '@/utils/mock';
 import Link from 'next/link';
 
 export default function Events() {
@@ -22,7 +22,8 @@ export default function Events() {
 	return (
 		<section
 			className='pt-[max(6.825rem,74px)] bg-[url(/images/events-bg.jpg)] 
-    bg-cover bg-no-repeat relative overflow-hidden pb-[max(3.25rem,40px)] z-12'>
+    bg-cover bg-no-repeat relative overflow-hidden pb-[max(3.25rem,40px)] z-12'
+			id='events'>
 			<div className='relative z-2'>
 				<div className='flex flex-col items-center justify-center text-center'>
 					<Tag color='lemon'>The Limitless Community</Tag>

@@ -109,7 +109,7 @@ export default function NavItem({ link }: { link: string }) {
 					<span
 						className='col-start-1 row-start-1 opacity-0 text-lemon font-medium'
 						ref={secondSetRef}>
-						{link === 'Awaken' ? 'Why' : link}
+						{link}
 					</span>
 				</button>
 			) : (

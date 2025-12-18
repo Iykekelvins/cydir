@@ -92,7 +92,7 @@ In 1-on-1 Empowerment Coaching, we translate your breakthroughs into focused act
 			className='px-gutter pt-[max(6.25rem,74px)] pb-[max(5rem,64px)]
 			relative z-12
 			'
-			id='transform'>
+			id='services'>
 			<div className='flex flex-col items-center justify-center text-center'>
 				<Tag color='blue'>Transform</Tag>
 				<Words

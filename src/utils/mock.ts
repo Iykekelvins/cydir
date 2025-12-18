@@ -1,9 +1,10 @@
 export const NAV_LINKS = [
-	'Awaken',
-	'Breakthrough',
-	'Transform',
-	'Origin',
-	'Thrive',
+	'Why',
+	'How',
+	'Services',
+	'Events',
+	'About',
+	'Reviews',
 	'Schedule Your Call',
 ];
 
