@@ -98,7 +98,7 @@ const ClipText = ({ text }: { text: string }) => {
 			onMouseLeave={() => setIsHovered(false)}>
 			<Paragraph
 				as='h2'
-				className='text-[max(10rem,42px)] text-[#192A4D] 
+				className='text-[max(10rem,42px)] text-lemon des:text-[#192A4D] 
       				tracking-tighter font-semibold'>
 				{text}
 			</Paragraph>
