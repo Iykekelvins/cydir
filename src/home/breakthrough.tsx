@@ -72,7 +72,7 @@ export default function Breakthrough() {
 			</div>
 
 			<div className='flex flex-col items-center justify-center text-center mt-[max(6rem,54px)]'>
-				<Tag color='lemon'>How it works?</Tag>
+				<Tag color='lemon'>How</Tag>
 
 				<h2
 					className='text-60 text-white font-medium font-outfit 
