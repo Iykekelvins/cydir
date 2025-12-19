@@ -7,13 +7,8 @@ import { metaDataOptions } from '@/utils/metadata';
 import ScrollWrapper from '@/shared/scroll-wrapper';
 import Head from 'next/head';
 import Script from 'next/script';
-import Navbar from '@/shared/navbar';
 import Menu from '@/shared/menu';
-import Service from '@/shared/service';
-import CommunityForm from '@/shared/community-form';
 import Starfield from 'react-starfield';
-import AudioButton from '@/shared/audio-button';
-import Footer from '@/shared/footer';
 
 import localFont from 'next/font/local';
 
@@ -81,13 +76,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<AppProvider>
 						<body
 							className={`${inter.variable} ${outfit.variable} ${ChronicleDisplay.variable} antialiased`}>
-							<Navbar />
-							<main>{children}</main>
+							{children}
 							<Menu />
-							<Service />
-							<CommunityForm />
-							<AudioButton />
-							<Footer />
 							<Starfield
 								starCount={1000}
 								starColor={[255, 255, 255]}
