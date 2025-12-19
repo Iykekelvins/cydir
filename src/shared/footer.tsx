@@ -10,56 +10,32 @@ export default function Footer() {
 	const lenis = useLenis();
 
 	const SOCIAL_LINKS = [
-		{
-			icon: (
-				<svg
-					width='20'
-					height='20'
-					viewBox='0 0 20 20'
-					fill='none'
-					xmlns='http://www.w3.org/2000/svg'>
-					<g clipPath='url(#clip0_404_2129)'>
-						<path
-							fillRule='evenodd'
-							clipRule='evenodd'
-							d='M13.2879 19.1673L8.66337 12.5757L2.87405 19.1673H0.424805L7.57674 11.0266L0.424805 0.833984H6.71309L11.0717 7.0465L16.5327 0.833984H18.982L12.1619 8.59772L19.5762 19.1673H13.2879ZM16.0154 17.309H14.3665L3.93176 2.69232H5.58092L9.7601 8.54495L10.4828 9.56054L16.0154 17.309Z'
-							fill='#0B192D'
-							fillOpacity='0.8'
-						/>
-					</g>
-					<defs>
-						<clipPath id='clip0_404_2129'>
-							<rect width='20' height='20' fill='white' />
-						</clipPath>
-					</defs>
-				</svg>
-			),
-			href: '',
-		},
-		{
-			icon: (
-				<svg
-					width='20'
-					height='20'
-					viewBox='0 0 20 20'
-					fill='none'
-					xmlns='http://www.w3.org/2000/svg'>
-					<g clipPath='url(#clip0_404_2130)'>
-						<path
-							d='M20 10C20 4.47715 15.5229 0 10 0C4.47715 0 0 4.47715 0 10C0 14.9912 3.65684 19.1283 8.4375 19.8785V12.8906H5.89844V10H8.4375V7.79688C8.4375 5.29063 9.93047 3.90625 12.2146 3.90625C13.3084 3.90625 14.4531 4.10156 14.4531 4.10156V6.5625H13.1922C11.95 6.5625 11.5625 7.3334 11.5625 8.125V10H14.3359L13.8926 12.8906H11.5625V19.8785C16.3432 19.1283 20 14.9912 20 10Z'
-							fill='#0B192D'
-							fillOpacity='0.8'
-						/>
-					</g>
-					<defs>
-						<clipPath id='clip0_404_2130'>
-							<rect width='20' height='20' fill='white' />
-						</clipPath>
-					</defs>
-				</svg>
-			),
-			href: '',
-		},
+		// {
+		// 	icon: (
+		// 		<svg
+		// 			width='20'
+		// 			height='20'
+		// 			viewBox='0 0 20 20'
+		// 			fill='none'
+		// 			xmlns='http://www.w3.org/2000/svg'>
+		// 			<g clipPath='url(#clip0_404_2129)'>
+		// 				<path
+		// 					fillRule='evenodd'
+		// 					clipRule='evenodd'
+		// 					d='M13.2879 19.1673L8.66337 12.5757L2.87405 19.1673H0.424805L7.57674 11.0266L0.424805 0.833984H6.71309L11.0717 7.0465L16.5327 0.833984H18.982L12.1619 8.59772L19.5762 19.1673H13.2879ZM16.0154 17.309H14.3665L3.93176 2.69232H5.58092L9.7601 8.54495L10.4828 9.56054L16.0154 17.309Z'
+		// 					fill='#0B192D'
+		// 					fillOpacity='0.8'
+		// 				/>
+		// 			</g>
+		// 			<defs>
+		// 				<clipPath id='clip0_404_2129'>
+		// 					<rect width='20' height='20' fill='white' />
+		// 				</clipPath>
+		// 			</defs>
+		// 		</svg>
+		// 	),
+		// 	href: '',
+		// },
 		{
 			icon: (
 				<svg
@@ -92,8 +68,35 @@ export default function Footer() {
 					</defs>
 				</svg>
 			),
-			href: '',
+			href: 'https://www.instagram.com/cydirinc/',
 		},
+		{
+			icon: (
+				<svg
+					width='20'
+					height='20'
+					viewBox='0 0 20 20'
+					fill='none'
+					xmlns='http://www.w3.org/2000/svg'>
+					<path
+						fillRule='evenodd'
+						clipRule='evenodd'
+						d='M10.5932 17.3522L10.5822 17.3542L10.5112 17.3892L10.4912 17.3932L10.4772 17.3892L10.4062 17.3542C10.3955 17.3508 10.3875 17.3525 10.3822 17.3592L10.3782 17.3692L10.3612 17.7972L10.3662 17.8172L10.3762 17.8302L10.4802 17.9042L10.4952 17.9082L10.5072 17.9042L10.6112 17.8302L10.6232 17.8142L10.6272 17.7972L10.6102 17.3702C10.6075 17.3595 10.6018 17.3535 10.5932 17.3522ZM10.8582 17.2392L10.8452 17.2412L10.6602 17.3342L10.6502 17.3442L10.6472 17.3552L10.6652 17.7852L10.6702 17.7972L10.6782 17.8042L10.8792 17.8972C10.8918 17.9005 10.9015 17.8978 10.9082 17.8892L10.9122 17.8752L10.8782 17.2612C10.8748 17.2492 10.8682 17.2418 10.8582 17.2392ZM10.1432 17.2412C10.1388 17.2385 10.1335 17.2376 10.1285 17.2388C10.1234 17.2399 10.119 17.2429 10.1162 17.2472L10.1102 17.2612L10.0762 17.8752C10.0768 17.8872 10.0825 17.8952 10.0932 17.8992L10.1082 17.8972L10.3092 17.8042L10.3192 17.7962L10.3232 17.7852L10.3402 17.3552L10.3372 17.3432L10.3272 17.3332L10.1432 17.2412Z'
+						fill='#0B192D'
+						fillOpacity='0.8'
+					/>
+					<path
+						fillRule='evenodd'
+						clipRule='evenodd'
+						d='M10 0C10.855 0 11.732 0.0220001 12.582 0.0580001L13.586 0.106L14.547 0.163L15.447 0.224L16.269 0.288C17.1612 0.355891 18.0008 0.736434 18.64 1.3626C19.2791 1.98877 19.6768 2.8204 19.763 3.711L19.803 4.136L19.878 5.046C19.948 5.989 20 7.017 20 8C20 8.983 19.948 10.011 19.878 10.954L19.803 11.864L19.763 12.289C19.6768 13.1798 19.2789 14.0115 18.6396 14.6377C18.0002 15.2639 17.1604 15.6443 16.268 15.712L15.448 15.775L14.548 15.837L13.586 15.894L12.582 15.942C11.7218 15.9793 10.861 15.9986 10 16C9.13902 15.9986 8.27817 15.9793 7.418 15.942L6.414 15.894L5.453 15.837L4.553 15.775L3.731 15.712C2.83881 15.6441 1.9992 15.2636 1.36004 14.6374C0.720888 14.0112 0.323191 13.1796 0.237 12.289L0.197 11.864L0.122 10.954C0.0458327 9.97112 0.00513964 8.98581 0 8C0 7.017 0.052 5.989 0.122 5.046L0.197 4.136L0.237 3.711C0.323157 2.82055 0.720712 1.98905 1.35966 1.36291C1.99861 0.736759 2.83799 0.356116 3.73 0.288L4.551 0.224L5.451 0.163L6.413 0.106L7.417 0.0580001C8.2775 0.0207272 9.13869 0.00138958 10 0ZM8 5.575V10.425C8 10.887 8.5 11.175 8.9 10.945L13.1 8.52C13.1914 8.46739 13.2673 8.39162 13.3201 8.30033C13.3729 8.20904 13.4007 8.10545 13.4007 8C13.4007 7.89455 13.3729 7.79096 13.3201 7.69967C13.2673 7.60838 13.1914 7.53261 13.1 7.48L8.9 5.056C8.80876 5.00332 8.70526 4.9756 8.5999 4.97562C8.49455 4.97563 8.39106 5.00339 8.29983 5.0561C8.20861 5.1088 8.13287 5.1846 8.08024 5.27587C8.02761 5.36713 7.99993 5.47065 8 5.576V5.575Z'
+						fill='#0B192D'
+						fillOpacity='0.8'
+					/>
+				</svg>
+			),
+			href: 'https://www.youtube.com/channel/UChSe05yg_1LS30OmaJICZCg/featured',
+		},
+
 		{
 			icon: (
 				<svg
@@ -116,14 +119,14 @@ export default function Footer() {
 					</defs>
 				</svg>
 			),
-			href: '',
+			href: 'https://www.linkedin.com/company/40804495',
 		},
 	];
 
 	return (
 		<footer
 			className='bg-[#F6FBFD] px-gutter pt-[max(6.25rem,65px)] 
-      pb-[max(7.375rem,70px)]'>
+      pb-[max(7.375rem,70px)] relative z-12'>
 			<div className='flex flex-col lg:flex-row justify-between'>
 				<Link href='/' aria-label='Cydir logo'>
 					<Image
@@ -134,8 +137,8 @@ export default function Footer() {
 					/>
 				</Link>
 
-				<div className='mt-[64px]  lg:mt-[max(1.5rem,24px)]'>
-					<div className='grid grid-cols-2 gap-[2.5rem] des:gap-[max(10.875rem,80px)]'>
+				<div className='mt-[max(64px,4rem)]  lg:mt-[max(1.5rem,24px)]'>
+					<div className='grid grid-cols-2 gap-[max(2.5rem, 40px)] des:gap-[max(10.875rem,80px)]'>
 						<ul className='grid gap-[max(1rem,16px)]'>
 							{NAV_LINKS.slice(0, NAV_LINKS.length - 1).map((link) => (
 								<li key={link}>
@@ -166,14 +169,38 @@ export default function Footer() {
 									rel='noopener'>
 									aj@cydir.com
 								</Link>
+								<Link
+									href='mailto:info@cydir.com'
+									className='text-[#0B192DCC] text-18 mt-[max(1rem,16px)] block
+									transition-colors duration-300 ease-in hover:text-[#0A182D]
+									'
+									target='_blank'
+									rel='noopener'>
+									info@cydir.com
+								</Link>
+								<Link
+									href='tel:+12894011956'
+									className='text-[#0B192DCC] text-18 mt-[max(1rem,16px)] block
+									transition-colors duration-300 ease-in hover:text-[#0A182D]
+									'
+									target='_blank'
+									rel='noopener'>
+									+1 289 401 1956
+								</Link>
 							</div>
 
 							<ul className='flex items-center gap-[max(1.25rem,16px)]'>
 								{SOCIAL_LINKS.map((link, i) => (
 									<li
 										key={i}
-										className='transition-transform duration-300 ease-in-out des:hover:scale-110'>
-										<Link href={link.href} target='_blank' rel='noopener'>
+										className={`transition-transform duration-300 ease-in-out des:hover:scale-110
+										${i == 1 ? 'mt-[max(4px)]' : ''}
+										`}>
+										<Link
+											href={link.href}
+											target='_blank'
+											rel='noopener'
+											className='[&_svg]:size-[max(1.25rem,16px)]'>
 											{link.icon}
 										</Link>
 									</li>
@@ -183,7 +210,7 @@ export default function Footer() {
 					</div>
 
 					<div
-						className='grid grid-cols-2 gap-[2.5rem] 
+						className='grid grid-cols-2 gap-[max(2.5rem,40px)] 
           des:gap-[max(10.875rem,80px)] mt-[max(4.625rem,54px)]'>
 						<Link
 							href=''
