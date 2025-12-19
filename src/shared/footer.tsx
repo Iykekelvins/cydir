@@ -213,7 +213,7 @@ export default function Footer() {
 						className='grid grid-cols-2 gap-[max(2.5rem,40px)] 
           des:gap-[max(10.875rem,80px)] mt-[max(4.625rem,54px)]'>
 						<Link
-							href=''
+							href='/privacy-policy'
 							className='text-base text-[#0B192DCC]
 						transition-colors duration-300 ease-in hover:text-[#0A182D]
 						'>
