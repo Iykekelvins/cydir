@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://cydir.vercel.app
+
+# Sitemaps
+Sitemap: https://cydir.vercel.app/sitemap.xml
