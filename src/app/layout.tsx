@@ -3,6 +3,7 @@ import { Inter, Outfit } from 'next/font/google';
 import { Lenis } from 'lenis/react';
 import { AppProvider } from './context';
 import { metaDataOptions } from '@/utils/metadata';
+import { Toaster } from 'sonner';
 
 import ScrollWrapper from '@/shared/scroll-wrapper';
 import Head from 'next/head';
@@ -83,6 +84,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								starColor={[255, 255, 255]}
 								speedFactor={0.05}
 							/>
+							<Toaster position='top-right' richColors theme='dark' />
 						</body>
 					</AppProvider>
 				</Lenis>

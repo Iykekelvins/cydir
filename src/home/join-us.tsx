@@ -1,13 +1,45 @@
 'use client';
 
+import { useState } from 'react';
+import { toast } from 'sonner';
+
 import Paragraph from '@/animations/paragraph';
 import Words from '@/animations/words';
 import Button from '@/components/button';
 import Tag from '@/components/tag';
 
 export default function JoinUs() {
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const [email, setEmail] = useState('');
+	const [loading, setLoading] = useState(false);
+
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+
+		setLoading(true);
+
+		try {
+			const response = await fetch('/api/subscribe', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ email }),
+			});
+
+			const data = await response.json();
+
+			if (response.ok) {
+				toast.success('You have been successfully subscribed');
+				setEmail('');
+			} else {
+				toast.error(data.error || 'Something went wrong');
+			}
+		} catch (error) {
+			toast.error('Failed to subscribe. Please try again.');
+			console.log(error);
+		} finally {
+			setLoading(false);
+		}
 	};
 
 	return (
@@ -38,16 +70,22 @@ export default function JoinUs() {
 						<form onSubmit={handleSubmit} className='mt-[max(2.5rem,30px)]'>
 							<div className='flex flex-col sm:flex-row items-center gap-[max(0.5rem,8px)]'>
 								<input
-									type='text'
+									type='email'
 									className='border-[0.5] border-[#1B3864] border-solid rounded-full
                   h-[max(3rem,40px)] bg-[#F4FAFC] p-[max(0.75rem,12px)]
                   placeholder:text-[#222222] text-base font-medium
                   md:flex-[0.9] placeholder:opacity-30 w-full
                   '
-									placeholder='Jessica@email.com'
+									placeholder='jessica@email.com'
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+									required
 								/>
-								<Button bg='blue' className='h-[max(3rem,40px)] max-sm:w-full'>
-									Subscribe
+								<Button
+									bg='blue'
+									className='h-[max(3rem,40px)] max-sm:w-full disabled:opacity-70'
+									disabled={loading}>
+									{!loading ? 'Subscribe' : 'Subscribing...'}
 								</Button>
 							</div>
 						</form>
