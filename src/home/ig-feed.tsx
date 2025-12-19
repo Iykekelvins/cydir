@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FEED } from '@/utils/mock';
 
 import Image from 'next/image';
@@ -87,8 +87,9 @@ export default function IgFeed() {
         overflow-x-auto hide-scroll'>
 					{FEED.map((item, i) => (
 						<FeedItem
-							src={item}
-							key={item}
+							posterSrc={item.posterSrc}
+							videoSrc={item.videoSrc}
+							key={item.posterSrc}
 							className={
 								i === 0 ? 'ml-gutter' : i === FEED.length - 1 ? 'mr-gutter' : ''
 							}
@@ -100,26 +101,37 @@ export default function IgFeed() {
 	);
 }
 
-const FeedItem = ({ src, className }: { src: string; className?: string }) => {
-	const [playVid, setPlayVid] = useState(false);
-	const vidRef = useRef<HTMLVideoElement>(null);
+function useIsMobile() {
+	const [isMobile, setIsMobile] = useState(false);
 
 	useEffect(() => {
-		if (!vidRef.current) return;
+		const mq = window.matchMedia('(max-width: 1024px)');
+		setIsMobile(mq.matches);
 
-		if (playVid) {
-			vidRef.current?.play();
-		} else {
-			vidRef.current?.pause();
-		}
-	}, [playVid]);
+		const handler = () => setIsMobile(mq.matches);
+		mq.addEventListener('change', handler);
 
-	return (
-		<li
-			className={`${className} relative`}
-			onMouseOver={() => setPlayVid(true)}
-			onMouseLeave={() => setPlayVid(false)}>
-			{src.includes('mp4') && (
+		return () => mq.removeEventListener('change', handler);
+	}, []);
+
+	return isMobile;
+}
+
+const FeedItem = ({
+	videoSrc,
+	posterSrc,
+	className,
+}: {
+	videoSrc: string;
+	posterSrc: string;
+	className?: string;
+}) => {
+	const isMobile = useIsMobile();
+	const [showVideo, setShowVideo] = useState(false);
+
+	if (isMobile) {
+		return (
+			<li className={`${className} relative`}>
 				<Link
 					href={
 						'https://www.instagram.com/abhinavjindal97?igsh=MTdjcGdyZ3JleDY1Zg=='
@@ -137,7 +149,7 @@ const FeedItem = ({ src, className }: { src: string; className?: string }) => {
 				transition-opacity duration-300 ease-in-out z-2
 				[&_span]:flex [&_span]:items-center [&_span]:justify-center 
 				[&_span]:gap-[max(0.375rem,6px)] hover:text-lemon!
-        ${playVid ? 'opacity-100' : 'opacity-0'}
+        
         `}>
 						<svg
 							width='24'
@@ -153,24 +165,9 @@ const FeedItem = ({ src, className }: { src: string; className?: string }) => {
 						Watch
 					</Button>
 				</Link>
-			)}
-			{src.includes('mp4') ? (
-				<video
-					className='min-w-[max(22.575rem,240px)] 
-          object-cover rounded-[max(12px,0.75rem)]
-          h-[max(35.563rem,420px)]
-          '
-					ref={vidRef}
-					autoPlay={false}
-					loop
-					muted
-					playsInline>
-					<source src={src} type='video/mp4' />
-				</video>
-			) : (
 				<figure>
 					<Image
-						src={src}
+						src={posterSrc}
 						width={361}
 						height={569}
 						alt='From instagram feed'
@@ -178,7 +175,73 @@ const FeedItem = ({ src, className }: { src: string; className?: string }) => {
             object-cover rounded-[max(12px,0.75rem)]'
 					/>
 				</figure>
+			</li>
+		);
+	}
+
+	return (
+		<li
+			className={`${className} relative`}
+			onMouseEnter={() => setShowVideo(true)}
+			onMouseLeave={() => setShowVideo(false)}>
+			<Link
+				href={'https://www.instagram.com/abhinavjindal97?igsh=MTdjcGdyZ3JleDY1Zg=='}
+				target='_blank'
+				rel='noopener'
+				className=' absolute top-[max(1.75rem,20px)] 
+        left-[max(1.375rem,16px)] z-3'>
+				<Button
+					bg='blue'
+					className={`
+							text-base font-medium
+				border border-solid border-[#EFEFEF] rounded-full py-[max(1.1rem,14px)] 
+        px-[max(1.25rem,16px)] bg-blue text-lemon 
+				transition-opacity duration-300 ease-in-out z-2
+				[&_span]:flex [&_span]:items-center [&_span]:justify-center 
+				[&_span]:gap-[max(0.375rem,6px)] hover:text-lemon!
+        ${showVideo ? 'opacity-100' : 'opacity-0'}
+        `}>
+					<svg
+						width='24'
+						height='24'
+						viewBox='0 0 24 24'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'>
+						<path
+							d='M19.2664 13.5161C19.4979 13.337 19.6853 13.1072 19.8142 12.8444C19.9431 12.5816 20.0101 12.2928 20.0101 12.0001C20.0101 11.7074 19.9431 11.4186 19.8142 11.1558C19.6853 10.893 19.4979 10.6633 19.2664 10.4841C16.2686 8.16528 12.9216 6.33718 9.35042 5.06811L8.69742 4.83611C7.44942 4.39311 6.13042 5.23711 5.96142 6.52611C5.48942 10.1602 5.48942 13.84 5.96142 17.4741C6.13142 18.7631 7.44942 19.6071 8.69742 19.1641L9.35042 18.9321C12.9216 17.663 16.2686 15.8349 19.2664 13.5161Z'
+							fill='#C8D72C'
+						/>
+					</svg>
+					Watch
+				</Button>
+			</Link>
+			{showVideo && (
+				<video
+					className='min-w-[max(22.575rem,240px)] 
+          object-cover rounded-[max(12px,0.75rem)]
+           absolute top-0 left-0 w-full h-full z-2
+          '
+					autoPlay
+					loop
+					muted
+					playsInline
+					preload='none'>
+					<source src={videoSrc} type='video/mp4' />
+				</video>
 			)}
+			<Image
+				src={posterSrc}
+				width={361}
+				height={569}
+				alt='From Instagram feed'
+				className={`min-w-[max(22.575rem,240px)]
+                     h-[max(35.563rem,420px)]
+                     object-cover rounded-[max(12px,0.75rem)]
+										 transition-opacity duration-300 ease-in-out
+										 
+										 `}
+				fetchPriority='low'
+			/>
 		</li>
 	);
 };
