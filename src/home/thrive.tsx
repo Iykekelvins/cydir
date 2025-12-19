@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { TESTIMONIALS } from '@/utils/mock';
 
+import useEmblaCarousel from 'embla-carousel-react';
 import Tag from '@/components/tag';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -14,6 +15,8 @@ export default function Thrive() {
 	const [active, setActive] = useState(0);
 	const intervalRef = useRef<NodeJS.Timeout | null>(null);
 	const timelineRef = useRef<gsap.core.Timeline | null>(null);
+
+	const [emblaRef, emblaApi] = useEmblaCarousel();
 
 	// Function to animate the stroke for a specific index
 	const animateStroke = (index: number) => {
@@ -60,13 +63,14 @@ export default function Thrive() {
 				const nextIndex = (prev + 1) % TESTIMONIALS.length;
 				return nextIndex;
 			});
-		}, 16000); // 5 seconds interval
+		}, 16000);
 	};
 
 	// Handle manual click
 	const handleClick = (index: number) => {
 		setActive(index);
 		animateStroke(index);
+		emblaApi?.scrollTo(index);
 
 		// Restart auto-advance from this point
 		startAutoAdvance();
@@ -76,6 +80,13 @@ export default function Thrive() {
 	useEffect(() => {
 		animateStroke(active);
 		startAutoAdvance();
+		emblaApi?.scrollTo(active);
+
+		emblaApi?.on('scroll', () => {
+			setActive(emblaApi?.selectedScrollSnap());
+			animateStroke(emblaApi?.selectedScrollSnap());
+			startAutoAdvance();
+		});
 
 		return () => {
 			if (intervalRef.current) {
@@ -85,7 +96,7 @@ export default function Thrive() {
 				timelineRef.current.kill();
 			}
 		};
-	}, [active]);
+	}, [active, emblaApi]);
 
 	return (
 		<section
@@ -102,10 +113,15 @@ export default function Thrive() {
 				</Words>
 			</div>
 
-			<div className='flex items-start justify-between mt-[max(4.25rem,38px)] max-w-7xl mx-auto'>
-				<div className='max-w-[max(52.375rem,430px)]'>
+			<div
+				className='flex items-start justify-between 
+			mt-[max(4.25rem,38px)] max-w-7xl mx-auto'>
+				<div
+					className='max-w-[max(52.375rem,430px)]
+				max-[600px]:overflow-hidden max-[600px]:pb-[10px]
+				'>
 					<div className='mt-[max(2rem,24px)]'>
-						<div className='grid'>
+						<div className='hidden md:grid'>
 							{TESTIMONIALS.map((tes, i) => (
 								<div
 									className={`user-info col-start-1 row-start-1
@@ -125,6 +141,32 @@ export default function Thrive() {
 									</div>
 								</div>
 							))}
+						</div>
+
+						<div className='md:hidden'>
+							<div className='overflow-hidden' ref={emblaRef}>
+								<div className='embla__container'>
+									{TESTIMONIALS.map((tes, i) => (
+										<div
+											className='user-info col-start-1 row-start-1
+									embla__slide
+                  '
+											key={i}>
+											<p
+												className='text-[max(2rem,20px)] text-white 
+                    font-medium tracking-tight leading-[1.3]'
+												dangerouslySetInnerHTML={{ __html: tes.info }}
+											/>
+
+											<div className='mt-[max(1.75rem,18px)]'>
+												<h2 className='text-white-80 text-24 tracking-tight'>
+													{tes.name}
+												</h2>
+											</div>
+										</div>
+									))}
+								</div>
+							</div>
 						</div>
 					</div>
 
