@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://cydir.vercel.app
+Host: https://cydir.com
 
 # Sitemaps
-Sitemap: https://cydir.vercel.app/sitemap.xml
+Sitemap: https://cydir.com/sitemap.xml

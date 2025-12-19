@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 	title: 'Cydir - Awaken What’s Possible',
 	description:
 		'Discover the power of manifestation, NLP, and coaching designed to help you break through barriers and create the life you truly desire.',
-	metadataBase: new URL('https://cydir.vercel.app'),
+	metadataBase: new URL('https://cydir.com'),
 	...metaDataOptions,
 };
 

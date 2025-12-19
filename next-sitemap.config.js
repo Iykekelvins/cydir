@@ -1,4 +1,4 @@
 module.exports = {
-	siteUrl: 'https://cydir.vercel.app',
+	siteUrl: 'https://cydir.com',
 	generateRobotsTxt: true,
 };

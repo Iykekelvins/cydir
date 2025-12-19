@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 const title = 'Cydir - Awaken What’s Possible';
 const description =
 	'Discover the power of manifestation, NLP, and coaching designed to help you break through barriers and create the life you truly desire.';
-export const url = 'https://cydir.vercel.app';
+export const url = 'https://cydir.com';
 
 const keywords = [
 	'renewed sense of purpose',
