@@ -350,9 +350,8 @@ const Faq = ({ faq }: { faq: { qstn: string; ans: string } }) => {
 						border-t border-t-white border-solid
 						 ${open ? 'text-white' : 'text-[#0A182D]'}
 						p-[max(1rem,14px)] mt-[max(0.5rem,8px)]
-										`}>
-					{faq.ans}
-				</p>
+										`}
+					dangerouslySetInnerHTML={{ __html: faq.ans }}></p>
 			</div>
 		</li>
 	);
