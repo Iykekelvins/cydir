@@ -525,12 +525,12 @@ I highly recommend working with Abhinav if you are ready to see change quickly a
 	},
 	{
 		info: `
-			THRIVE’ was an AMAZING event - the night flew by! The keynote presentation from Abhinav Jindal was highly informative and well delivered with lots of supporting documentation. Every aspect of the event was well executed and professionally delivered, from the catering and location selection, to the event management by Andrea and AV services.
+			“THRIVE’ was an AMAZING event - the night flew by! The keynote presentation from Abhinav Jindal was highly informative and well delivered with lots of supporting documentation. Every aspect of the event was well executed and professionally delivered, from the catering and location selection, to the event management by Andrea and AV services.”
 		`,
 		name: 'Andrew Wells',
 	},
 	{
-		info: `An amazingly smooth process. My physical activity is up. My eating habits have surprisingly improved. I am down 7 pounds and slowly heading down. I highly recommend for any area of life. Abhinav was very seamless and eloquent. My results have been amazing. Looking forward to reconnecting and moving forward with other areas of my life.`,
+		info: `“An amazingly smooth process. My physical activity is up. My eating habits have surprisingly improved. I am down 7 pounds and slowly heading down. I highly recommend for any area of life. Abhinav was very seamless and eloquent. My results have been amazing. Looking forward to reconnecting and moving forward with other areas of my life.”`,
 		name: 'David Monahan',
 	},
 ];
