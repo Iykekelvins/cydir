@@ -98,7 +98,9 @@ export default function Breakthrough() {
 								height={480}
 								alt={`Image depicting ${item.title}`}
 								imgClass='lg:min-w-120 rounded-full
-									max-[49rem]:w-3xl max-sm:w-full'
+									max-[49rem]:w-3xl max-sm:w-full
+									relative z-12
+									'
 							/>
 
 							<div className='mt-[max(2rem,24px)]'>

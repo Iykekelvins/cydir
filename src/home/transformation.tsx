@@ -1,4 +1,3 @@
-// import Paragraph from '@/animations/paragraph';
 import Scale from '@/animations/scale';
 import TiltImg from '@/components/tilt-img';
 
@@ -6,7 +5,9 @@ export default function Transformation() {
 	return (
 		<section
 			className='pt-[max(6rem,56px)] px-gutter pb-[max(9rem,80px)]
-			bg-[linear-gradient(322.88deg,#000000_3.72%,#091529_96.71%)]'
+			bg-[linear-gradient(322.88deg,#000000_3.72%,#091529_96.71%)]
+			
+			'
 			id='why'>
 			<div className='flex items-center justify-center'>
 				<Scale
@@ -67,6 +68,7 @@ export default function Transformation() {
 					alt='AI generated image of a human head with its brain glowing'
 					imgClass='lg:min-w-120 rounded-full
 						max-[49rem]:w-3xl max-sm:w-full
+						relative z-12
 						'
 				/>
 			</div>
