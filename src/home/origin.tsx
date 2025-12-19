@@ -11,7 +11,7 @@ export default function Origin() {
 			relative z-12
       '>
 			<div className='flex flex-col items-center justify-center text-center'>
-				<Tag color='lemon'>The Origin</Tag>
+				<Tag color='lemon'>About</Tag>
 			</div>
 
 			<div

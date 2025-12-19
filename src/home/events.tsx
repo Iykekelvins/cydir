@@ -26,7 +26,7 @@ export default function Events() {
 			id='events'>
 			<div className='relative z-2'>
 				<div className='flex flex-col items-center justify-center text-center'>
-					<Tag color='lemon'>The Limitless Community</Tag>
+					<Tag color='lemon'>Events</Tag>
 					<p
 						className='text-36 leading-normal tracking-tighter
 					max-w-[max(51.25rem,550px)] mt-[max(0.75rem,12px)]

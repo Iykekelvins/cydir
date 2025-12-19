@@ -92,7 +92,7 @@ export default function Thrive() {
 			id='reviews'
 			className='bg-gradient-to-b from-black to-[#0A182D] px-8 pt-20 pb-16 relative z-10'>
 			<div className='flex flex-col items-center justify-center'>
-				<Tag color='lemon'>Thrive</Tag>
+				<Tag color='lemon'>Reviews</Tag>
 				<Words
 					as='h2'
 					className='text-60 text-white font-medium font-outfit 
