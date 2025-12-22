@@ -31,3 +31,41 @@ export function splitIntoChars(element: HTMLElement) {
 
 	return chars;
 }
+
+export const formatDate = (date: string | Date | null): string => {
+	const months: string[] = [
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December',
+	];
+
+	const getOrdinal = (day: number): string => {
+		if (day > 3 && day < 21) return 'th';
+		switch (day % 10) {
+			case 1:
+				return 'st';
+			case 2:
+				return 'nd';
+			case 3:
+				return 'rd';
+			default:
+				return 'th';
+		}
+	};
+
+	const d = new Date(date!);
+	const day: number = d.getDate();
+	const month: string = months[d.getMonth()];
+	const year: number = d.getFullYear();
+
+	return `${day}${getOrdinal(day)} ${month}, ${year}`;
+};

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import { useLenis } from 'lenis/react';
 import { useProvider } from '@/app/context';
+import { toast } from 'sonner';
 
 import Tag from '@/components/tag';
 import Button from '@/components/button';
@@ -31,6 +32,41 @@ export default function CommunityForm() {
 
 	const [areas, setAreas] = useState<string[]>([]);
 	const [howCommitted, setHowCommitted] = useState('');
+	const [errors, setErrors] = useState<Record<string, string>>({});
+	const [loading, setLoading] = useState(false);
+
+	// // Check if all fields are filled
+	// const isFormValid = () => {
+	// 	return Object.values(payload).every((value) => value.trim() !== '');
+	// };
+
+	// Validate and show errors for empty fields
+	const validateForm = () => {
+		const newErrors: Record<string, string> = {};
+
+		Object.keys(payload).forEach((key) => {
+			if (payload[key as keyof typeof payload].trim() === '') {
+				// Convert snake_case to Title Case for error messages
+				const fieldName = key
+					.split('_')
+					.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+					.join(' ');
+				newErrors[key] = `${fieldName} is required`;
+			}
+		});
+
+		if (areas.length === 0) {
+			newErrors.areas = 'Please select at least one area';
+		}
+
+		// Validate howCommitted
+		if (howCommitted.trim() === '') {
+			newErrors.howCommitted = 'How committed is required';
+		}
+
+		setErrors(newErrors);
+		return Object.keys(newErrors).length === 0;
+	};
 
 	const handlePayload = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -41,6 +77,81 @@ export default function CommunityForm() {
 			...prev,
 			[name]: value,
 		}));
+
+		if (errors[name]) {
+			setErrors((prev) => {
+				const newErrors = { ...prev };
+				delete newErrors[name];
+				return newErrors;
+			});
+		}
+	};
+
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault();
+
+		if (!validateForm()) {
+			return;
+		}
+
+		try {
+			setLoading(true);
+
+			const res = await fetch('/api/send', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					body: {
+						'Full Name': payload.full_name,
+						Email: payload.email,
+						'Phone Number': payload.phone_number,
+						Company: payload.company,
+						'Linkedin Profile URL': payload.linkedin_profile_url,
+						'What areas of life are you most focused on improving right now?': areas
+							.map((area) => area)
+							.join(', '),
+						'How committed are you to your personal transformation': howCommitted,
+						'What are you consciously creating or manifesting in your life right now?':
+							payload.consciously_creating,
+						'Why do you want to join the limitless community?':
+							payload.reason_to_join,
+					},
+				}),
+			});
+
+			const response = await res.json();
+
+			if (res.ok) {
+				toast.success(response?.message);
+
+				setPayload({
+					full_name: '',
+					email: '',
+					phone_number: '',
+					company: '',
+					linkedin_profile_url: '',
+					consciously_creating: '',
+					reason_to_join: '',
+				});
+				setAreas([]);
+				setHowCommitted('');
+				setErrors({});
+			} else {
+				toast.error(response?.message);
+			}
+
+			setLoading(false);
+
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		} catch (error: any) {
+			console.log(error);
+
+			toast.error(error?.message);
+		} finally {
+			setLoading(false);
+		}
 	};
 
 	useGSAP(() => {
@@ -129,7 +240,7 @@ export default function CommunityForm() {
 					</h2>
 				</div>
 
-				<form>
+				<form onSubmit={handleSubmit}>
 					<div
 						className='grid md:grid-cols-2 mt-[max(1.875rem,24px)]
         gap-[max(11.5rem,40px)] max-[65rem]:gap-[max(2.5rem,40px)]
@@ -142,6 +253,8 @@ export default function CommunityForm() {
 									placeholder='Full name'
 									name='full_name'
 									onChange={handlePayload}
+									labelClass={`${errors.full_name ? 'text-red-500' : ''}`}
+									inputClass={`${errors.full_name ? 'border-red-500' : ''}`}
 								/>
 								<Input
 									value={payload.email}
@@ -149,6 +262,8 @@ export default function CommunityForm() {
 									placeholder='you@company.com'
 									name='email'
 									onChange={handlePayload}
+									labelClass={`${errors.email ? 'text-red-500' : ''}`}
+									inputClass={`${errors.email ? 'border-red-500' : ''}`}
 								/>
 							</div>
 
@@ -158,6 +273,8 @@ export default function CommunityForm() {
 								placeholder='Enter phone number'
 								value={payload.phone_number}
 								onChange={handlePayload}
+								labelClass={`${errors.phone_number ? 'text-red-500' : ''}`}
+								inputClass={`${errors.phone_number ? 'border-red-500' : ''}`}
 							/>
 							<Input
 								name='company'
@@ -165,6 +282,8 @@ export default function CommunityForm() {
 								placeholder='you@company.com'
 								value={payload.company}
 								onChange={handlePayload}
+								labelClass={`${errors.company ? 'text-red-500' : ''}`}
+								inputClass={`${errors.company ? 'border-red-500' : ''}`}
 							/>
 							<Input
 								name='linkedin_profile_url'
@@ -172,6 +291,8 @@ export default function CommunityForm() {
 								placeholder='https://linkedin.com/in/john-doe'
 								value={payload.linkedin_profile_url}
 								onChange={handlePayload}
+								labelClass={`${errors.linkedin_profile_url ? 'text-red-500' : ''}`}
+								inputClass={`${errors.linkedin_profile_url ? 'border-red-500' : ''}`}
 							/>
 
 							<div>
@@ -182,14 +303,24 @@ export default function CommunityForm() {
 										'Family',
 										'Relationship',
 										'Spirituality',
-										'Personal Growth and Development',
+										'Personal Growth and Development',
 									]}
 									value={areas}
-									onSelect={(e) => setAreas(e as string[])}
+									onSelect={(e) => {
+										setAreas(e as string[]);
+										if (errors.areas) {
+											setErrors((prev) => {
+												const newErrors = { ...prev };
+												delete newErrors.areas;
+												return newErrors;
+											});
+										}
+									}}
 									label='What area of life are you most focused on improving right now?'
 									multiSelect
+									err={errors.areas ? true : false}
 								/>
-								<p className='text-14 text-gray-500 mt-[6px]'>
+								<p className='text-14 text-gray-500 mt-[max(6px)]'>
 									Select all that apply
 								</p>
 							</div>
@@ -197,11 +328,22 @@ export default function CommunityForm() {
 								options={[
 									'Very committed',
 									'Moderately committed',
-									'Curious but exploring',
+									'Curious but exploring',
 								]}
 								value={howCommitted}
-								onSelect={(val) => setHowCommitted(val as string)}
+								onSelect={(val) => {
+									setHowCommitted(val as string);
+
+									if (errors.howCommitted) {
+										setErrors((prev) => {
+											const newErrors = { ...prev };
+											delete newErrors.howCommitted;
+											return newErrors;
+										});
+									}
+								}}
 								label='How committed are you to your personal transformation?'
+								err={errors.howCommitted ? true : false}
 							/>
 						</div>
 
@@ -213,6 +355,8 @@ export default function CommunityForm() {
 								placeholder='Short Answer'
 								name='consciously_creating'
 								textArea
+								labelClass={`${errors.consciously_creating ? 'text-red-500' : ''}`}
+								inputClass={`${errors.consciously_creating ? 'border-red-500' : ''}`}
 							/>
 
 							<Input
@@ -223,10 +367,15 @@ export default function CommunityForm() {
 								name='reason_to_join'
 								textArea
 								className='mt-[max(2.125rem,20px)]'
+								labelClass={`${errors.reason_to_join ? 'text-red-500' : ''}`}
+								inputClass={`${errors.reason_to_join ? 'border-red-500' : ''}`}
 							/>
 
-							<Button bg='blue' className='mt-[max(2.875rem,30px)] w-full md:w-max'>
-								Join the Limitless Community
+							<Button
+								bg='blue'
+								className='mt-[max(2.875rem,30px)] w-full md:w-max'
+								disabled={loading}>
+								{!loading ? 'Join the Limitless Community' : 'Submitting'}
 							</Button>
 						</div>
 					</div>

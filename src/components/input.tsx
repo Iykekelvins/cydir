@@ -67,7 +67,7 @@ export default function Input({
 								id={name}
 								value={value}
 								placeholder={placeholder}
-								required={required}
+								// required={required}
 								onChange={onChange}
 								className={`border-0 outline-0 w-full h-full text-base font-satoshi
              placeholder:text-blue placeholder:font-satoshi placeholder:text-base
@@ -149,7 +149,7 @@ export default function Input({
 												(item) => item.country === selectedCountry
 											)?.placeholder
 										}
-										required={required}
+										// required={required}
 										onChange={onChange}
 										className={`border-0 outline-0 flex-1 h-full text-base font-satoshi
 										text-[#192A4D] placeholder:text-[#192A4D]
@@ -165,7 +165,7 @@ export default function Input({
 						id={name}
 						value={value}
 						onChange={onChange}
-						required={required}
+						// required={required}
 						placeholder={placeholder}
 						className={`h-full w-full outline-0 text-base font-satoshi
 								 placeholder:font-satoshi placeholder:text-base

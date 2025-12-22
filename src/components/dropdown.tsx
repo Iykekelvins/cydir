@@ -6,6 +6,7 @@ interface DropdownProps {
 	onSelect?: (option: string | string[]) => void;
 	placeholder?: string;
 	multiSelect?: boolean;
+	err?: boolean;
 	label: string;
 }
 
@@ -16,6 +17,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 	placeholder = 'Select an option',
 	multiSelect = false,
 	label,
+	err,
 }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedOption, setSelectedOption] = useState<string | string[]>(value);
@@ -76,7 +78,9 @@ const Dropdown: React.FC<DropdownProps> = ({
 		<div className='relative w-full'>
 			{/* Trigger Button */}
 			<h4
-				className={`text-14 font-medium font-satoshi text-[#192A4D] leading-normal`}>
+				className={`text-14 font-medium font-satoshi leading-normal
+				${!err ? 'text-[#192A4D]' : 'text-red-500'}
+				`}>
 				{label}
 			</h4>
 			<div
@@ -87,7 +91,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 					border-solid border-[#192A4D] rounded-[max(0.5rem,8px)] 
 					flex justify-between items-center mt-[max(0.375rem,6px)]
           px-[max(10px,0.625rem)] py-[max(0.5rem,8px)] 
-					${isOpen ? 'border-[1.75px]' : ''}
+					${isOpen ? 'border-[1.75px]' : ''} ${err ? 'border-red-500' : ''}
         `}>
 				<div className='flex-1 flex flex-wrap gap-[max(0.5rem,8px)] items-center'>
 					{multiSelect &&
