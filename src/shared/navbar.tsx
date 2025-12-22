@@ -25,8 +25,13 @@ export default function Navbar() {
 								? 'bg-transparent -translate-y-full'
 								: ''
 						}
-						`}>
-			<nav className='flex items-center justify-between'>
+						`}
+			style={{
+				background: openMenu
+					? 'linear-gradient(322.88deg, #000000 3.72%, #091529 96.71%)'
+					: '',
+			}}>
+			<nav className='flex items-center justify-between relative'>
 				<Link href='/' aria-label='Go to homepage'>
 					<Image src='/logo.svg' width={91.22} height={39} alt='Cydir Logo' />
 				</Link>
@@ -57,6 +62,9 @@ export default function Navbar() {
 						`}
 					/>
 				</button>
+				{openMenu && (
+					<span className='absolute h-px w-full -bottom-[max(20px,1.25rem)] left-0 bg-white' />
+				)}
 			</nav>
 		</header>
 	);
