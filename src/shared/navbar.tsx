@@ -63,7 +63,7 @@ export default function Navbar() {
 					/>
 				</button>
 				{openMenu && (
-					<span className='absolute h-px w-full -bottom-[max(20px,1.25rem)] left-0 bg-white' />
+					<span className='absolute h-px w-full -bottom-[max(20px,1.25rem)] left-0 bg-white lg:hidden' />
 				)}
 			</nav>
 		</header>
