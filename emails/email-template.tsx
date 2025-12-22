@@ -107,7 +107,7 @@ export default function ContactFormEmail({ title, formData, date }: EmailProps) 
 							borderTop: '8px solid #C8D72C',
 							padding: '23px 32px',
 							backgroundImage:
-								'url(https://res.cloudinary.com/dvgyi0ngj/image/upload/v1766405416/cydir-email-header_tsbjsw.jpg)',
+								'url(https://res.cloudinary.com/dvgyi0ngj/image/upload/v1766422414/cydir-email-header_owyixy.jpg)',
 							backgroundSize: 'cover',
 							backgroundRepeat: 'no-repeat',
 							height: '110px',
@@ -123,7 +123,7 @@ export default function ContactFormEmail({ title, formData, date }: EmailProps) 
 								zIndex: 2,
 							}}>
 							<Img
-								src='https://res.cloudinary.com/dvgyi0ngj/image/upload/v1766414871/cydir-logo_vzpfgn.jpg'
+								src='https://res.cloudinary.com/dvgyi0ngj/image/upload/v1766422413/cydir-logo_qgzgxa.svg'
 								width={91.32}
 								height={39}
 							/>
