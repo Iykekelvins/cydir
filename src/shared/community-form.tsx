@@ -244,11 +244,15 @@ export default function CommunityForm() {
 
 				<div>
 					<Tag color='blue'>The Limitless Community</Tag>
-					<h2
-						className='text-blue text-36 font-medium font-outfit 
-          tracking-tighter leading-[1.3] mt-[max(0.75rem,12px)]'>
-						Kindly fill this form
-					</h2>
+					<p
+						className='text-blue text-20 font-medium 
+          tracking-tighter leading-[1.3] mt-[max(0.75rem,12px)]
+					max-w-[max(40rem)]
+					'>
+						Learn, connect and grow with a community of like minded entrepreneurs who
+						are on the journey to create success and fulfillment in their life.{' '}
+						<br /> Apply here to Join the Limitless Community.
+					</p>
 				</div>
 
 				<form onSubmit={handleSubmit}>
@@ -388,7 +392,7 @@ export default function CommunityForm() {
 								bg='blue'
 								className='mt-[max(2.875rem,30px)] w-full md:w-max'
 								disabled={loading}>
-								{!loading ? 'Join the Limitless Community' : 'Submitting'}
+								{!loading ? 'Apply Now' : 'Submitting'}
 							</Button>
 						</div>
 					</div>

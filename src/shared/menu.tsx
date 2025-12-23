@@ -43,7 +43,7 @@ export default function Menu() {
 					<li key={link}>
 						{NAV_LINKS.length - i !== 1 ? (
 							<button
-								className='text-white text-[36px] font-semibold tracking-tighter italic'
+								className='text-white text-[36px] font-semibold tracking-tighter'
 								onClick={() => {
 									setOpenMenu(false);
 									setTimeout(() => {

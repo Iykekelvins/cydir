@@ -46,7 +46,7 @@ export default function Origin() {
 						src='/images/origin-img.png'
 						width={574}
 						height={800}
-						alt='Abinhav - Manifestation Coach'
+						alt=' Abhinav Jindal - Manifestation Coach'
 						className='min-w-[35.875rem]'
 					/>
 				</figure>
@@ -76,12 +76,12 @@ export default function Origin() {
 							<Words
 								as='h3'
 								className='text-white text-28 font-medium tracking-tight'>
-								Abinhav
+								Abhinav Jindal
 							</Words>
 							<Words
 								as='p'
 								className='text-20 text-[#D3D3D3] font-medium tracking-tight mt-[max(0.25rem,4px)]'>
-								Manifestation Coach
+								Empowerment Coach
 							</Words>
 						</div>
 					</div>

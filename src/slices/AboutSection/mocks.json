@@ -1,0 +1,81 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"info": {
+				"__TYPE__": "FieldContent",
+				"value": "leg",
+				"type": "Text"
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
+					"width": 3168,
+					"height": 4752
+				},
+				"url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
+				"width": 3168,
+				"height": 4752,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "officer",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"bio_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
+					"width": 4000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
+				"width": 4000,
+				"height": 4000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "tribe",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"bio_info": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Veniam aliqua amet laboris irure reprehenderit minim tempor adipisicing laborum sint tempor ut. Ea laboris reprehenderit velit eiusmod deserunt qui cupidatat laborum qui magna et magna id irure ipsum. Proident incididunt laboris proident tempor adipisicing officia culpa fugiat fugiat deserunt."
+						}
+					}
+				]
+			},
+			"name": {
+				"__TYPE__": "FieldContent",
+				"value": "turn",
+				"type": "Text"
+			},
+			"occupation": {
+				"__TYPE__": "FieldContent",
+				"value": "milk",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

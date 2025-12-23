@@ -5,7 +5,7 @@ export const NAV_LINKS = [
 	'Events',
 	'About',
 	'Reviews',
-	'Schedule Your Call',
+	'Schedule Discovery Call',
 ];
 
 export const AWAKEN_CARDS = [

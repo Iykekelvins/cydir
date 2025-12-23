@@ -1,8 +1,11 @@
 import { Metadata } from 'next';
 
 const title = 'Cydir - Awaken What’s Possible';
-const description =
-	'Discover the power of manifestation, NLP, and coaching designed to help you break through barriers and create the life you truly desire.';
+const description = `We are a transformational coaching and events brand that empowers purpose driven
+entrepreneurs and professionals to break through inner barriers and step into their limitless
+potential. With a foundation in advanced coaching and breakthroughs Cydir provides
+science-backed methods for deep, lasting change.
+`;
 export const url = 'https://cydir.com';
 
 const keywords = [

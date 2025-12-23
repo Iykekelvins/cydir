@@ -229,8 +229,8 @@ export default function Hero({ hero }: { hero: HeroSliceDefaultPrimary }) {
 					{hero?.switching_texts?.map((text, i) => (
 						<p
 							key={i}
-							className={`col-start-1 row-start-1 transition-opacity duration-1000 ease-in-out
-						${active === i ? 'opacity-100' : 'opacity-0'}
+							className={`col-start-1 row-start-1
+						${active === i ? '' : 'hidden'}
 						`}>
 							{text.text}
 						</p>

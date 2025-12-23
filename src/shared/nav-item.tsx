@@ -93,7 +93,7 @@ export default function NavItem({ link }: { link: string }) {
 
 	return (
 		<>
-			{link !== 'Schedule Your Call' ? (
+			{link !== 'Schedule Discovery Call' ? (
 				<button
 					className='text-white text-base font-medium overflow-hidden grid place-items-start
 					'

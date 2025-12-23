@@ -63,8 +63,8 @@ export default function JoinUs() {
 							Growth is a journey best taken together.
 						</Words>
 						<Paragraph className='text-base text-[#0A182DCC] leading-normal mt-[max(1rem,14px)]'>
-							Join our bi-weekly newsletter for practical tools, inspiration, and
-							exclusive invites to events.
+							Join our bi-weekly newsletter for practical tools, inspiration,
+							upcoming event updates and exclusive invites to events.
 						</Paragraph>
 
 						<form onSubmit={handleSubmit} className='mt-[max(2.5rem,30px)]'>
