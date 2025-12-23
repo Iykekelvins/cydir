@@ -1,0 +1,99 @@
+{
+  "id": "events_section",
+  "type": "SharedSlice",
+  "name": "EventsSection",
+  "description": "EventsSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "intro_info": {
+          "type": "Text",
+          "config": {
+            "label": "Intro Info",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "info": {
+          "type": "Text",
+          "config": {
+            "label": "Info",
+            "placeholder": ""
+          }
+        },
+        "events": {
+          "type": "Group",
+          "config": {
+            "label": "Events",
+            "repeat": true,
+            "fields": {
+              "banner": {
+                "type": "Image",
+                "config": {
+                  "label": "Banner",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "info": {
+                "type": "Text",
+                "config": {
+                  "label": "Info",
+                  "placeholder": ""
+                }
+              },
+              "venue": {
+                "type": "Text",
+                "config": {
+                  "label": "Venue",
+                  "placeholder": ""
+                }
+              },
+              "date": {
+                "type": "Date",
+                "config": {
+                  "label": "Date",
+                  "placeholder": ""
+                }
+              },
+              "time": {
+                "type": "Text",
+                "config": {
+                  "label": "Time",
+                  "placeholder": ""
+                }
+              },
+              "event_link": {
+                "type": "Text",
+                "config": {
+                  "label": "Event Link",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -6,6 +6,7 @@ export const components = {
   architectureof_change_section: dynamic(
     () => import("./ArchitectureofChangeSection"),
   ),
+  events_section: dynamic(() => import("./EventsSection")),
   hero: dynamic(() => import("./Hero")),
   how_section: dynamic(() => import("./HowSection")),
   services_section: dynamic(() => import("./ServicesSection")),

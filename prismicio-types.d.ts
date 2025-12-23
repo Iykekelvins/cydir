@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomepageDocumentDataSlicesSlice =
+  | EventsSectionSlice
   | ServicesSectionSlice
   | ArchitectureofChangeSectionSlice
   | WhatShiftsSectionSlice
@@ -203,6 +204,158 @@ type ArchitectureofChangeSectionSliceVariation =
 export type ArchitectureofChangeSectionSlice = prismic.SharedSlice<
   "architectureof_change_section",
   ArchitectureofChangeSectionSliceVariation
+>;
+
+/**
+ * Item in *EventsSection → Default → Primary → Events*
+ */
+export interface EventsSectionSliceDefaultPrimaryEventsItem {
+  /**
+   * Banner field in *EventsSection → Default → Primary → Events*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_section.default.primary.events[].banner
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  banner: prismic.ImageField<never>;
+
+  /**
+   * Title field in *EventsSection → Default → Primary → Events*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_section.default.primary.events[].title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Info field in *EventsSection → Default → Primary → Events*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_section.default.primary.events[].info
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  info: prismic.KeyTextField;
+
+  /**
+   * Venue field in *EventsSection → Default → Primary → Events*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_section.default.primary.events[].venue
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  venue: prismic.KeyTextField;
+
+  /**
+   * Date field in *EventsSection → Default → Primary → Events*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_section.default.primary.events[].date
+   * - **Documentation**: https://prismic.io/docs/fields/date
+   */
+  date: prismic.DateField;
+
+  /**
+   * Time field in *EventsSection → Default → Primary → Events*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_section.default.primary.events[].time
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  time: prismic.KeyTextField;
+
+  /**
+   * Event Link field in *EventsSection → Default → Primary → Events*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_section.default.primary.events[].event_link
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  event_link: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *EventsSection → Default → Primary*
+ */
+export interface EventsSectionSliceDefaultPrimary {
+  /**
+   * Intro Info field in *EventsSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_section.default.primary.intro_info
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  intro_info: prismic.KeyTextField;
+
+  /**
+   * Title field in *EventsSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Info field in *EventsSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_section.default.primary.info
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  info: prismic.KeyTextField;
+
+  /**
+   * Events field in *EventsSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_section.default.primary.events[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  events: prismic.GroupField<
+    Simplify<EventsSectionSliceDefaultPrimaryEventsItem>
+  >;
+}
+
+/**
+ * Default variation for EventsSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type EventsSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<EventsSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *EventsSection*
+ */
+type EventsSectionSliceVariation = EventsSectionSliceDefault;
+
+/**
+ * EventsSection Shared Slice
+ *
+ * - **API ID**: `events_section`
+ * - **Description**: EventsSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type EventsSectionSlice = prismic.SharedSlice<
+  "events_section",
+  EventsSectionSliceVariation
 >;
 
 /**
@@ -775,6 +928,11 @@ declare module "@prismicio/client" {
       ArchitectureofChangeSectionSliceDefaultPrimary,
       ArchitectureofChangeSectionSliceVariation,
       ArchitectureofChangeSectionSliceDefault,
+      EventsSectionSlice,
+      EventsSectionSliceDefaultPrimaryEventsItem,
+      EventsSectionSliceDefaultPrimary,
+      EventsSectionSliceVariation,
+      EventsSectionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimarySwitchingTextsItem,
       HeroSliceDefaultPrimary,

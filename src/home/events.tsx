@@ -1,7 +1,7 @@
 'use client';
 
 import { useProvider } from '@/app/context';
-import { EVENTS } from '@/utils/mock';
+import { EventsSectionSliceDefaultPrimary } from '../../prismicio-types';
 
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -12,13 +12,16 @@ import Paragraph from '@/animations/paragraph';
 import Tag from '@/components/tag';
 import Link from 'next/link';
 
-export default function Events() {
+export default function Events({
+	events,
+}: {
+	events: EventsSectionSliceDefaultPrimary;
+}) {
 	const [emblaRef, emblaApi] = useEmblaCarousel({ slidesToScroll: 'auto' }, [
 		Autoplay({ playOnInit: false, delay: 3000 }),
 	]);
 
 	const { setOpenCommForm } = useProvider();
-
 	return (
 		<section
 			className='pt-[max(6.825rem,74px)] bg-[url(/images/events-bg.jpg)] 
@@ -32,9 +35,7 @@ export default function Events() {
 					max-w-[max(51.25rem,550px)] mt-[max(0.75rem,12px)]
 					text-white
 					'>
-						Join Abhinav and the Limitless Community for workshops, retreats, and
-						curated gatherings that combine reflection, conversation, and
-						transformation.
+						{events.intro_info}
 					</p>
 					<Button
 						bg='lemon'
@@ -53,13 +54,12 @@ export default function Events() {
 						<Words
 							as='h2'
 							className='text-white text-64 font-medium font-outfit tracking-tight'>
-							Upcoming events
+							{events.title}
 						</Words>
 						<Paragraph
 							className='text-20 text-white leading-[1.4] tracking-tight 
           mt-[max(1.25rem,18px)] max-w-[max(34.5rem,400px)]'>
-							I regularly host events open to all types of people, geared towards
-							becoming their best self
+							{events.info}
 						</Paragraph>
 					</div>
 
@@ -153,7 +153,7 @@ export default function Events() {
 				<div className='embla mt-[max(5rem,48px)]'>
 					<div className='overflow-hidden px-gutter' ref={emblaRef}>
 						<div className='embla__container gap-[max(1rem,16px)]'>
-							{EVENTS.map((ev, i) => (
+							{events.events.map((ev, i) => (
 								<div
 									className={`embla__slide border-[0.3] border-white 
                 border-solid rounded-[max(1.5rem,16px)] overflow-hidden
@@ -162,7 +162,7 @@ export default function Events() {
 									key={i}>
 									<figure className='overflow-hidden'>
 										<Image
-											src={ev.img}
+											src={ev.banner.url as string}
 											width={500}
 											height={300}
 											alt={`Poster for event: ${ev.title}`}
@@ -177,7 +177,7 @@ export default function Events() {
 										<p
 											className='text-[#0B192DCC] text-[max(0.75rem,11px)] 
 										font-medium tracking-tighter mt-[max(0.5rem,8px)]'>
-											By Cydir Inc
+											By Cydir Inc
 										</p>
 										<p
 											className='text-[#0C0C0CB2] text-14 leading-normal 
@@ -195,7 +195,17 @@ export default function Events() {
 												<p
 													className='text-[#0B192DCC] text-[max(0.75rem,11px)] font-medium 
                         tracking-tighter mt-[max(0.25rem,4px)]'>
-													{ev.date}
+													{ev.date
+														? new Date(ev.date as string).toLocaleDateString(
+																'en-US',
+																{
+																	weekday: 'long',
+																	month: 'short',
+																	day: '2-digit',
+																	year: 'numeric',
+																}
+															)
+														: 'TBD'}
 												</p>
 											</div>
 
@@ -206,24 +216,24 @@ export default function Events() {
 												<p
 													className='text-[#0B192DCC] text-[max(0.75rem,11px)] font-medium 
                         tracking-tighter mt-[max(0.25rem,4px)]'>
-													{ev.venue}
+													{ev.venue || 'TBD'}
 												</p>
 											</div>
 
 											<div>
-												<h4 className='text-[#0C0C0C82] text-14 tracking-tighter'>
+												<h4 className='text-[#0C0C0C82] text-[max(0.625rem,10px)] tracking-tighter'>
 													Time
 												</h4>
 												<p
 													className='text-[#0B192DCC] text-[max(0.75rem,11px)] font-medium 
                         tracking-tighter mt-[max(0.25rem,4px)]'>
-													{ev.time}
+													{ev.time ? ev.time : 'TBD'}
 												</p>
 											</div>
 										</div>
 
-										{ev.link ? (
-											<Link href={ev.link} target='_blank' rel='noopener'>
+										{ev.event_link ? (
+											<Link href={ev.event_link} target='_blank' rel='noopener'>
 												<Button
 													bg='blue'
 													className='mt-[max(2rem,24px)] h-[max(3rem,36px)]'>

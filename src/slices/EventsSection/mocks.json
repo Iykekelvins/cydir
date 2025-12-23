@@ -1,0 +1,108 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"intro_info": {
+				"__TYPE__": "FieldContent",
+				"value": "leave",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "birds",
+				"type": "Text"
+			},
+			"info": {
+				"__TYPE__": "FieldContent",
+				"value": "realize",
+				"type": "Text"
+			},
+			"events": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"banner",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+										"width": 2747,
+										"height": 4120
+									},
+									"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+									"width": 2747,
+									"height": 4120,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "steam",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "interest",
+									"type": "Text"
+								}
+							],
+							[
+								"info",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "bicycle",
+									"type": "Text"
+								}
+							],
+							[
+								"venue",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "asleep",
+									"type": "Text"
+								}
+							],
+							[
+								"date",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Date",
+									"value": "2023-10-14"
+								}
+							],
+							[
+								"time",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "victory",
+									"type": "Text"
+								}
+							],
+							[
+								"event_link",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "individual",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
