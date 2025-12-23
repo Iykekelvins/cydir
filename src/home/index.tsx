@@ -1,7 +1,7 @@
 import Hero from './hero';
 import Why from './why';
 // import Awaken from './awaken';
-import Breakthrough from './breakthrough';
+import How from './how';
 import WhatShifts from './what-shifts';
 import Architecture from './architecture';
 import Transform from './transform';
@@ -34,7 +34,7 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 			<Hero hero={heroSection} />
 			<Why why={whySection} />
 			{/* <Awaken /> */}
-			<Breakthrough />
+			<How />
 			<WhatShifts />
 			<Architecture />
 			<Transform />

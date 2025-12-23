@@ -13,7 +13,7 @@ import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Breakthrough() {
+export default function How() {
 	return (
 		<section
 			id='how'

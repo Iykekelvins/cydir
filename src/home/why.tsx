@@ -3,11 +3,7 @@ import { WhySectionSliceDefaultPrimary } from '../../prismicio-types';
 import Tag from '@/components/tag';
 import TiltImg from '@/components/tilt-img';
 
-export default function Transformation({
-	why,
-}: {
-	why: WhySectionSliceDefaultPrimary;
-}) {
+export default function Why({ why }: { why: WhySectionSliceDefaultPrimary }) {
 	return (
 		<section
 			className='pt-[max(6rem,56px)] px-gutter pb-[max(9rem,80px)]
