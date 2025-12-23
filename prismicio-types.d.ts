@@ -69,7 +69,7 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice = WhySectionSlice | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -184,6 +184,71 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *WhySection → Default → Primary*
+ */
+export interface WhySectionSliceDefaultPrimary {
+  /**
+   * Left Text field in *WhySection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_section.default.primary.left_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  left_text: prismic.KeyTextField;
+
+  /**
+   * Image field in *WhySection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_section.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Central Text field in *WhySection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_section.default.primary.central_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  central_text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for WhySection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type WhySectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WhySectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *WhySection*
+ */
+type WhySectionSliceVariation = WhySectionSliceDefault;
+
+/**
+ * WhySection Shared Slice
+ *
+ * - **API ID**: `why_section`
+ * - **Description**: WhySection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type WhySectionSlice = prismic.SharedSlice<
+  "why_section",
+  WhySectionSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -214,6 +279,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      WhySectionSlice,
+      WhySectionSliceDefaultPrimary,
+      WhySectionSliceVariation,
+      WhySectionSliceDefault,
     };
   }
 }

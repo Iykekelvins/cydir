@@ -1,0 +1,41 @@
+{
+  "id": "why_section",
+  "type": "SharedSlice",
+  "name": "WhySection",
+  "description": "WhySection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "left_text": {
+          "type": "Text",
+          "config": {
+            "label": "Left Text",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "central_text": {
+          "type": "Text",
+          "config": {
+            "label": "Central Text",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

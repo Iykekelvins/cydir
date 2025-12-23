@@ -12,11 +12,7 @@ import Link from 'next/link';
 
 gsap.registerPlugin(SplitText);
 
-export default function Hero({
-	hero,
-}: {
-	hero: HeroSliceDefaultPrimary | undefined;
-}) {
+export default function Hero({ hero }: { hero: HeroSliceDefaultPrimary }) {
 	// const heroTitle = useRef<HTMLHeadingElement>(null);
 	const heroInfo = useRef<HTMLParagraphElement>(null);
 	const heroTl = useRef<GSAPTimeline>(null);

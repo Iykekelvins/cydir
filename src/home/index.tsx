@@ -1,5 +1,5 @@
 import Hero from './hero';
-import Transformation from './transformation';
+import Why from './why';
 // import Awaken from './awaken';
 import Breakthrough from './breakthrough';
 import WhatShifts from './what-shifts';
@@ -14,17 +14,25 @@ import Faqs from './faqs';
 import JoinUs from './join-us';
 import Starfield from 'react-starfield';
 
-import { HomepageDocument } from '../../prismicio-types';
+import {
+	HeroSliceDefaultPrimary,
+	HomepageDocument,
+	WhySectionSliceDefaultPrimary,
+} from '../../prismicio-types';
 
 const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 	const heroSection = homepage[0]?.data?.slices?.find(
 		(slice) => slice?.slice_type === 'hero'
-	)?.primary;
+	)?.primary as HeroSliceDefaultPrimary;
+
+	const whySection = homepage[0]?.data?.slices?.find(
+		(slice) => slice?.slice_type === 'why_section'
+	)?.primary as WhySectionSliceDefaultPrimary;
 
 	return (
 		<div>
 			<Hero hero={heroSection} />
-			<Transformation />
+			<Why why={whySection} />
 			{/* <Awaken /> */}
 			<Breakthrough />
 			<WhatShifts />
