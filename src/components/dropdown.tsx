@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface DropdownProps {
 	options: string[];
@@ -8,6 +8,7 @@ interface DropdownProps {
 	multiSelect?: boolean;
 	err?: boolean;
 	label: string;
+	onComplete?: boolean;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -18,6 +19,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 	multiSelect = false,
 	label,
 	err,
+	onComplete,
 }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedOption, setSelectedOption] = useState<string | string[]>(value);
@@ -73,6 +75,16 @@ const Dropdown: React.FC<DropdownProps> = ({
 	const hasSelection = multiSelect
 		? Array.isArray(selectedOption) && selectedOption.length > 0
 		: typeof selectedOption === 'string' && selectedOption !== '';
+
+	useEffect(() => {
+		if (onComplete) {
+			if (multiSelect) {
+				setSelectedOption([]);
+			} else {
+				setSelectedOption('');
+			}
+		}
+	}, [onComplete, multiSelect]);
 
 	return (
 		<div className='relative w-full'>

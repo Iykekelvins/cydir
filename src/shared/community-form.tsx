@@ -34,6 +34,7 @@ export default function CommunityForm() {
 	const [howCommitted, setHowCommitted] = useState('');
 	const [errors, setErrors] = useState<Record<string, string>>({});
 	const [loading, setLoading] = useState(false);
+	const [onComplete, setOnComplete] = useState(false);
 
 	// // Check if all fields are filled
 	// const isFormValid = () => {
@@ -138,6 +139,8 @@ export default function CommunityForm() {
 				setAreas([]);
 				setHowCommitted('');
 				setErrors({});
+				setOpenCommForm(false);
+				setOnComplete(true);
 			} else {
 				toast.error(response?.message);
 			}
@@ -191,6 +194,14 @@ export default function CommunityForm() {
 			});
 		}
 	}, [openCommForm, lenis]);
+
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			if (onComplete) setOnComplete(false);
+		}, 1000);
+
+		return () => clearTimeout(timeout);
+	}, [onComplete]);
 
 	return (
 		<div
@@ -319,6 +330,7 @@ export default function CommunityForm() {
 									label='What area of life are you most focused on improving right now?'
 									multiSelect
 									err={errors.areas ? true : false}
+									onComplete={onComplete}
 								/>
 								<p className='text-14 text-gray-500 mt-[max(6px)]'>
 									Select all that apply
@@ -344,6 +356,7 @@ export default function CommunityForm() {
 								}}
 								label='How committed are you to your personal transformation?'
 								err={errors.howCommitted ? true : false}
+								onComplete={onComplete}
 							/>
 						</div>
 
