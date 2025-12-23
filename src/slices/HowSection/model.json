@@ -1,0 +1,87 @@
+{
+  "id": "how_section",
+  "type": "SharedSlice",
+  "name": "HowSection",
+  "description": "HowSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "top_text": {
+          "type": "Text",
+          "config": {
+            "label": "Top Text",
+            "placeholder": ""
+          }
+        },
+        "intro_title": {
+          "type": "Text",
+          "config": {
+            "label": "Intro Title",
+            "placeholder": ""
+          }
+        },
+        "intro_text": {
+          "type": "Text",
+          "config": {
+            "label": "Intro Text",
+            "placeholder": ""
+          }
+        },
+        "how_items": {
+          "type": "Group",
+          "config": {
+            "label": "How Items",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "info": {
+                "type": "Text",
+                "config": {
+                  "label": "Info",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "extra_section_tag_text": {
+          "type": "Text",
+          "config": {
+            "label": "Extra Section Tag Text",
+            "placeholder": ""
+          }
+        },
+        "extra_section_info": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Extra Section Info",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"top_text": {
+				"__TYPE__": "FieldContent",
+				"value": "machine",
+				"type": "Text"
+			},
+			"how_items": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
+										"width": 3277,
+										"height": 4092
+									},
+									"url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
+									"width": 3277,
+									"height": 4092,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "spell",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "recent",
+									"type": "Text"
+								}
+							],
+							[
+								"info",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "get",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"extra_section_tag_text": {
+				"__TYPE__": "FieldContent",
+				"value": "anywhere",
+				"type": "Text"
+			},
+			"extra_section_info": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Id aliquip laboris tempor labore ex non officia ipsum voluptate. Aute duis excepteur dolore nulla laboris officia proident quis sit officia minim reprehenderit tempor aute. Proident sint excepteur irure eu irure deserunt et aute aliqua."
+						}
+					}
+				]
+			},
+			"intro_title": {
+				"__TYPE__": "FieldContent",
+				"value": "mountain",
+				"type": "Text"
+			},
+			"intro_text": {
+				"__TYPE__": "FieldContent",
+				"value": "thee",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

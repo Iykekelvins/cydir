@@ -1,19 +1,26 @@
 'use client';
 
 import { cn } from '@/utils';
-import { BREAKTHROUGH_ITEMS } from '@/utils/mock';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { HowSectionSliceDefaultPrimary } from '../../prismicio-types';
+import { PrismicRichText } from '@prismicio/react';
 
 import Tag from '@/components/tag';
 import Button from '@/components/button';
-import gsap from 'gsap';
 import Scale from '@/animations/scale';
 import TiltImg from '@/components/tilt-img';
 import Link from 'next/link';
 
-gsap.registerPlugin(ScrollTrigger);
+export default function How({ how }: { how: HowSectionSliceDefaultPrimary }) {
+	const components = {
+		paragraph: ({ children }: { children: React.ReactNode }) => (
+			<p
+				className='text-36 tracking-tighter leading-normal font-medium
+				mt-[max(2.7rem,26px)] text-white px-16'>
+				{children}
+			</p>
+		),
+	};
 
-export default function How() {
 	return (
 		<section
 			id='how'
@@ -48,7 +55,7 @@ export default function How() {
 							fillOpacity='0.8'
 						/>
 					</Scale>
-					<p>Awaken and step into limitless possibilities.</p>
+					<p>{how.top_text}</p>
 					<Scale
 						as='svg'
 						width='61'
@@ -77,23 +84,20 @@ export default function How() {
 				<h2
 					className='text-60 text-white font-medium font-outfit 
         leading-[1.3] tracking-tight mt-[max(1rem,16px)]'>
-					Recode the Mind
+					{how.intro_title}
 				</h2>
 
 				<p
 					className='text-20 text-white-80 tracking-tight leading-[1.4] 
           max-w-[max(34.75rem,380px)] mt-[max(1.25rem,18px)]'>
-					Go beneath the surface to dissolve old patterns, quiet the noise, and
-					awaken your full potential. Every step is guided and grounded, bridging who
-					you are today with the version of you that&apos;s ready to emerge.
-					It&apos;s time to unlock who you&apos;re meant to be.
+					{how.intro_text}
 				</p>
 
 				<ul className='mt-[max(5rem,64px)] flex flex-col items-center gap-[max(7.075rem,80px)]'>
-					{BREAKTHROUGH_ITEMS.map((item, i) => (
-						<li key={item.img} className='flex flex-col items-center'>
+					{how.how_items.map((item, i) => (
+						<li key={item.image.url} className='flex flex-col items-center'>
 							<TiltImg
-								imgSrc={item.img}
+								imgSrc={item.image.url as string}
 								width={480}
 								height={480}
 								alt={`Image depicting ${item.title}`}
@@ -132,18 +136,8 @@ export default function How() {
 			</div>
 
 			<div className='mt-[max(6.563rem,64px)] flex flex-col items-center text-center'>
-				<Tag color='lemon'>Releasing the Emotional Past</Tag>
-				<p
-					className='text-36 tracking-tighter leading-normal font-medium
-				mt-[max(2.7rem,26px)] text-white px-16
-				'>
-					Emotions that haven&apos;t been expressed don&apos;t disappear. They settle
-					in the body and shape how we live, driving inappropriate reactions and
-					behaviours that harm the body and hold us back from moving forward. <br />{' '}
-					The process to release the emotions is gentle yet profound. It helps you
-					see new possibilities, gain control over yourself and your reactions, and
-					free yourself from unwarranted negative emotions
-				</p>
+				<Tag color='lemon'>{how.extra_section_tag_text}</Tag>
+				<PrismicRichText field={how.extra_section_info} components={components} />
 
 				<Link
 					href='https://calendly.com/aj-cydir/discovery-call'

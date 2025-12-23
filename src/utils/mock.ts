@@ -35,19 +35,6 @@ export const AWAKEN_CARDS = [
 	},
 ];
 
-export const BREAKTHROUGH_ITEMS = [
-	{
-		img: '/images/nlp.jpeg',
-		title: 'Why Unconscious Change',
-		info: 'All transformation is unconscious. It’s the part of the mind that holds your memories, emotions, and patterns, quietly shaping the way you think, feel, and act every day. When you try to change only the conscious level, it rarely lasts. But when you shift the unconscious programming, the transformation becomes effortless, natural, and permanent.',
-	},
-	{
-		img: '/images/mer.jpeg',
-		title: 'Reprogramming the Mind',
-		info: 'Abhinav applies his techniques to reprogram the unconscious mind - It’s the part driving 95% of our life on autopilot, according to neuroscience. Shaping our actions, behaviors, and the results we experience in life.',
-	},
-];
-
 export const FEED = [
 	{
 		videoSrc:

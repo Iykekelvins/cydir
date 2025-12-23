@@ -69,7 +69,10 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type HomepageDocumentDataSlicesSlice = WhySectionSlice | HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | HowSectionSlice
+  | WhySectionSlice
+  | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -185,6 +188,138 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *HowSection → Default → Primary → How Items*
+ */
+export interface HowSectionSliceDefaultPrimaryHowItemsItem {
+  /**
+   * Image field in *HowSection → Default → Primary → How Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: how_section.default.primary.how_items[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *HowSection → Default → Primary → How Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: how_section.default.primary.how_items[].title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Info field in *HowSection → Default → Primary → How Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: how_section.default.primary.how_items[].info
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  info: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *HowSection → Default → Primary*
+ */
+export interface HowSectionSliceDefaultPrimary {
+  /**
+   * Top Text field in *HowSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: how_section.default.primary.top_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  top_text: prismic.KeyTextField;
+
+  /**
+   * Intro Title field in *HowSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: how_section.default.primary.intro_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  intro_title: prismic.KeyTextField;
+
+  /**
+   * Intro Text field in *HowSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: how_section.default.primary.intro_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  intro_text: prismic.KeyTextField;
+
+  /**
+   * How Items field in *HowSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: how_section.default.primary.how_items[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  how_items: prismic.GroupField<
+    Simplify<HowSectionSliceDefaultPrimaryHowItemsItem>
+  >;
+
+  /**
+   * Extra Section Tag Text field in *HowSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: how_section.default.primary.extra_section_tag_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  extra_section_tag_text: prismic.KeyTextField;
+
+  /**
+   * Extra Section Info field in *HowSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: how_section.default.primary.extra_section_info
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  extra_section_info: prismic.RichTextField;
+}
+
+/**
+ * Default variation for HowSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HowSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HowSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HowSection*
+ */
+type HowSectionSliceVariation = HowSectionSliceDefault;
+
+/**
+ * HowSection Shared Slice
+ *
+ * - **API ID**: `how_section`
+ * - **Description**: HowSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HowSectionSlice = prismic.SharedSlice<
+  "how_section",
+  HowSectionSliceVariation
+>;
+
+/**
  * Primary content in *WhySection → Default → Primary*
  */
 export interface WhySectionSliceDefaultPrimary {
@@ -279,6 +414,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HowSectionSlice,
+      HowSectionSliceDefaultPrimaryHowItemsItem,
+      HowSectionSliceDefaultPrimary,
+      HowSectionSliceVariation,
+      HowSectionSliceDefault,
       WhySectionSlice,
       WhySectionSliceDefaultPrimary,
       WhySectionSliceVariation,

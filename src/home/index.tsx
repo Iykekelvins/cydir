@@ -17,6 +17,7 @@ import Starfield from 'react-starfield';
 import {
 	HeroSliceDefaultPrimary,
 	HomepageDocument,
+	HowSectionSliceDefaultPrimary,
 	WhySectionSliceDefaultPrimary,
 } from '../../prismicio-types';
 
@@ -29,12 +30,16 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 		(slice) => slice?.slice_type === 'why_section'
 	)?.primary as WhySectionSliceDefaultPrimary;
 
+	const howSection = homepage[0]?.data?.slices?.find(
+		(slice) => slice?.slice_type === 'how_section'
+	)?.primary as HowSectionSliceDefaultPrimary;
+
 	return (
 		<div>
 			<Hero hero={heroSection} />
 			<Why why={whySection} />
 			{/* <Awaken /> */}
-			<How />
+			<How how={howSection} />
 			<WhatShifts />
 			<Architecture />
 			<Transform />
