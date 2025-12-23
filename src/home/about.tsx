@@ -1,8 +1,15 @@
+import { AboutSectionSliceDefaultPrimary } from '../../prismicio-types';
+import { PrismicRichText } from '@prismicio/react';
+
 import Words from '@/animations/words';
 import Tag from '@/components/tag';
 import Image from 'next/image';
 
-export default function Origin() {
+export default function About({
+	about,
+}: {
+	about: AboutSectionSliceDefaultPrimary;
+}) {
 	return (
 		<section
 			id='about'
@@ -21,18 +28,15 @@ export default function Origin() {
 				<p
 					className='text-48 font-outfit tracking-tighter 
 				font-medium leading-[1.3] text-white max-w-[max(50rem,550px)]'>
-					“Most people go through life on autopilot, reacting, repeating, settling.
-					Real change begins the moment you pause, get conscious, and choose
-					differently. This work is an invitation to break patterns, expand
-					possibilities, and live without limits.”
+					{about.info}
 				</p>
 
 				<figure>
 					<Image
-						src='/images/origin-circle.jpg'
+						src={about.image.url as string}
 						width={412}
 						height={412}
-						alt='Abinhav - Manifestation Coach'
+						alt={about.image.alt as string}
 						className='rounded-full min-w-[25.75rem]'
 					/>
 				</figure>
@@ -43,45 +47,39 @@ export default function Origin() {
 			justify-between max-md:mt-0 max-lg:mt-[max(40px,2.5rem)] mt-[max(6.25rem,70px)]'>
 				<figure>
 					<Image
-						src='/images/origin-img.png'
+						src={about.bio_image.url as string}
 						width={574}
 						height={800}
-						alt=' Abhinav Jindal - Manifestation Coach'
+						alt={about.bio_image.alt as string}
 						className='min-w-[35.875rem]'
 					/>
 				</figure>
 
 				<div className='max-w-[max(38.625rem,490px)] w-full'>
-					<p
-						className='text-white-80 text-[max(1.375rem,18px)] 
+					<PrismicRichText
+						field={about.bio_info}
+						components={{
+							paragraph: ({ children }: { children: React.ReactNode }) => (
+								<p
+									className='text-white-80 text-[max(1.375rem,18px)] 
 					tracking-tight leading-[1.6]'>
-						Abhinav&apos;s journey into this work began with a single question, what
-						does it take to manifest life? What started as a search for clarity
-						became a deep exploration of the mind and the emotions that shape every
-						choice we make. Along the way, he discovered that transformation is not
-						only about making conscious changes but making changes at the unconscious
-						level. Having lived this shift himself, Abhinav now guides others to
-						experience the same - to release what&apos;s been holding them back and
-						reconnect with a sense of purpose that feels natural, not forced. His
-						approach blends structure with empathy, bringing the science of the mind
-						and the art of human understanding into one seamless process. With years
-						of experience leading companies and developing high-performing teams, he
-						bridges inner fulfilment with growth. His work is built on a simple
-						truth: when the mind realigns, life follows. Guided by his belief: Be
-						Limitless.
-					</p>
+									{children}
+								</p>
+							),
+						}}
+					/>
 
 					<div className='flex justify-between mt-[max(3rem,44px)] des:mt-0'>
 						<div className='des:mt-[max(3rem,44px)]'>
 							<Words
 								as='h3'
 								className='text-white text-28 font-medium tracking-tight'>
-								Abhinav Jindal
+								{about.name}
 							</Words>
 							<Words
 								as='p'
 								className='text-20 text-[#D3D3D3] font-medium tracking-tight mt-[max(0.25rem,4px)]'>
-								Empowerment Coach
+								{about.occupation}
 							</Words>
 						</div>
 					</div>

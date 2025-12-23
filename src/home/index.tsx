@@ -5,7 +5,7 @@ import How from './how';
 import WhatShifts from './what-shifts';
 import Architecture from './architecture';
 import Services from './services';
-import Origin from './origin';
+import About from './about';
 import Events from './events';
 import Thrive from './thrive';
 import Affirmations from './affirmations';
@@ -15,6 +15,7 @@ import JoinUs from './join-us';
 import Starfield from 'react-starfield';
 
 import {
+	AboutSectionSliceDefaultPrimary,
 	ArchitectureofChangeSectionSliceDefaultPrimary,
 	EventsSectionSliceDefaultPrimary,
 	HeroSliceDefaultPrimary,
@@ -54,6 +55,10 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 		(slice) => slice?.slice_type === 'events_section'
 	)?.primary as EventsSectionSliceDefaultPrimary;
 
+	const aboutSection = homepage[0]?.data?.slices?.find(
+		(slice) => slice?.slice_type === 'about_section'
+	)?.primary as AboutSectionSliceDefaultPrimary;
+
 	return (
 		<div>
 			<Hero hero={heroSection} />
@@ -64,7 +69,7 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 			<Architecture aoc={aocSection} />
 			<Services services={servicesSection} />
 			<Events events={eventsSection} />
-			<Origin />
+			<About about={aboutSection} />
 			<Thrive />
 			<Affirmations />
 			<IgFeed />
