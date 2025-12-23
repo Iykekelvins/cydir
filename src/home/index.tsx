@@ -14,11 +14,16 @@ import Faqs from './faqs';
 import JoinUs from './join-us';
 import Starfield from 'react-starfield';
 
-const Homepage = () => {
+import { HomepageDocument } from '../../prismicio-types';
+
+const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
+	const heroSection = homepage[0]?.data?.slices?.find(
+		(slice) => slice?.slice_type === 'hero'
+	)?.primary;
+
 	return (
 		<div>
-			<Starfield starCount={1000} starColor={[255, 255, 255]} speedFactor={0.05} />
-			<Hero />
+			<Hero hero={heroSection} />
 			<Transformation />
 			{/* <Awaken /> */}
 			<Breakthrough />
@@ -32,6 +37,7 @@ const Homepage = () => {
 			<IgFeed />
 			<Faqs />
 			<JoinUs />
+			<Starfield starCount={1000} starColor={[255, 255, 255]} speedFactor={0.05} />
 		</div>
 	);
 };

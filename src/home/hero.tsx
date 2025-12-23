@@ -4,6 +4,7 @@ import { useLenis } from 'lenis/react';
 import { useEffect, useRef, useState } from 'react';
 // import { useGSAP } from '@gsap/react';
 import { SplitText } from 'gsap/SplitText';
+import { HeroSliceDefaultPrimary } from '../../prismicio-types';
 
 import Button from '@/components/button';
 import gsap from 'gsap';
@@ -11,7 +12,11 @@ import Link from 'next/link';
 
 gsap.registerPlugin(SplitText);
 
-export default function Hero() {
+export default function Hero({
+	hero,
+}: {
+	hero: HeroSliceDefaultPrimary | undefined;
+}) {
 	// const heroTitle = useRef<HTMLHeadingElement>(null);
 	const heroInfo = useRef<HTMLParagraphElement>(null);
 	const heroTl = useRef<GSAPTimeline>(null);
@@ -140,11 +145,11 @@ export default function Hero() {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setActive((prev) => (prev === 0 ? 1 : 0));
+			setActive((prev) => (prev + 1) % hero!.switching_texts.length);
 		}, 4000);
 
 		return () => clearInterval(interval);
-	}, []);
+	}, [, hero]);
 
 	return (
 		<section id='hero' className='relative overflow-hidden z-12'>
@@ -168,17 +173,14 @@ export default function Hero() {
 				<h1
 					className='text-white text-[max(5rem,34px)] font-outfit 
 					font-semibold tracking-tight leading-[1.2]'>
-					Become a Conscious Creator of Your Life.
+					{hero?.title}
 				</h1>
 				<p
 					className='text-20 text-white leading-[1.4] tracking-tight 
 					mt-[max(0.5rem,8px)]
 					'
 					ref={heroInfo}>
-					Real transformation happens at the unconscious level. We empower you to
-					shift the beliefs, emotions, and patterns that shape how you think, feel,
-					and act. Creating change that drives success & fulfillment across all six
-					areas of life.
+					{hero?.info}
 				</p>
 				<div className='hero-btn-box  w-max'>
 					<Link
@@ -228,20 +230,15 @@ export default function Hero() {
 					className='grid text-white tracking-tighter leading-[1.4] text-20
 				place-items-center
 				'>
-					<p
-						className={`col-start-1 row-start-1 transition-opacity duration-1000 ease-in-out
-						${active === 0 ? 'opacity-100' : 'opacity-0'}
+					{hero?.switching_texts?.map((text, i) => (
+						<p
+							key={i}
+							className={`col-start-1 row-start-1 transition-opacity duration-1000 ease-in-out
+						${active === i ? 'opacity-100' : 'opacity-0'}
 						`}>
-						For purpose driven entrepreneurs, professionals, and leaders ready for
-						real, sustainable change.
-					</p>
-					<p
-						className={`col-start-1 row-start-1 transition-opacity duration-1000 ease-in-out
-						${active === 0 ? 'opacity-0' : 'opacity-100'}
-						`}>
-						You&apos;ve done the work, but haven&apos;t seen the results. Let&apos;s
-						change that
-					</p>
+							{text.text}
+						</p>
+					))}
 				</div>
 			</div>
 
