@@ -1,0 +1,110 @@
+{
+  "id": "services_section",
+  "type": "SharedSlice",
+  "name": "ServicesSection",
+  "description": "ServicesSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "info": {
+          "type": "Text",
+          "config": {
+            "label": "Info",
+            "placeholder": ""
+          }
+        },
+        "services": {
+          "type": "Group",
+          "config": {
+            "label": "Services",
+            "repeat": true,
+            "fields": {
+              "card_title": {
+                "type": "Text",
+                "config": {
+                  "label": "Card Title",
+                  "placeholder": ""
+                }
+              },
+              "card_info": {
+                "type": "Text",
+                "config": {
+                  "label": "Card Info",
+                  "placeholder": ""
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "tag_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Tag Text",
+                  "placeholder": ""
+                }
+              },
+              "full_title": {
+                "type": "Text",
+                "config": {
+                  "label": "Full Title",
+                  "placeholder": ""
+                }
+              },
+              "full_info": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Full Info",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "features_title": {
+                "type": "Text",
+                "config": {
+                  "label": "Features Title",
+                  "placeholder": ""
+                }
+              },
+              "features_list": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Features List",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "button_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Button Text",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,18 +1,7 @@
 'use client';
 
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
-
-interface Service {
-	tag: string;
-	title: string;
-	info: string;
-	featuresTitle: string;
-	features: string[];
-	btnText: string;
-	bookingLink: string;
-	img: string;
-	alt: string;
-}
+import { ServicesSectionSliceDefaultPrimaryServicesItem } from '../../prismicio-types';
 
 interface ContextProps {
 	openServicesModal: boolean;
@@ -23,8 +12,8 @@ interface ContextProps {
 	setOpenMenu: (e: boolean) => void;
 	isPlaying: boolean;
 	setIsPlaying: (e: boolean) => void;
-	service: Service | null;
-	setService: (e: Service) => void;
+	service: ServicesSectionSliceDefaultPrimaryServicesItem | null;
+	setService: (e: ServicesSectionSliceDefaultPrimaryServicesItem) => void;
 }
 
 const AppContext = createContext<ContextProps | null>(null);
@@ -33,7 +22,8 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
 	const [openServicesModal, setOpenServicesModal] = useState(false);
 	const [openCommForm, setOpenCommForm] = useState(false);
 	const [openMenu, setOpenMenu] = useState(false);
-	const [service, setService] = useState<Service | null>(null);
+	const [service, setService] =
+		useState<ServicesSectionSliceDefaultPrimaryServicesItem | null>(null);
 	const [isPlaying, setIsPlaying] = useState(false);
 
 	const audio = useRef<HTMLAudioElement>(null);

@@ -8,6 +8,7 @@ export const components = {
   ),
   hero: dynamic(() => import("./Hero")),
   how_section: dynamic(() => import("./HowSection")),
+  services_section: dynamic(() => import("./ServicesSection")),
   what_shifts_section: dynamic(() => import("./WhatShiftsSection")),
   why_section: dynamic(() => import("./WhySection")),
 };

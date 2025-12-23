@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomepageDocumentDataSlicesSlice =
+  | ServicesSectionSlice
   | ArchitectureofChangeSectionSlice
   | WhatShiftsSectionSlice
   | HowSectionSlice
@@ -416,6 +417,168 @@ export type HowSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *ServicesSection → Default → Primary → Services*
+ */
+export interface ServicesSectionSliceDefaultPrimaryServicesItem {
+  /**
+   * Card Title field in *ServicesSection → Default → Primary → Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_section.default.primary.services[].card_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  card_title: prismic.KeyTextField;
+
+  /**
+   * Card Info field in *ServicesSection → Default → Primary → Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_section.default.primary.services[].card_info
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  card_info: prismic.KeyTextField;
+
+  /**
+   * Image field in *ServicesSection → Default → Primary → Services*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_section.default.primary.services[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Tag Text field in *ServicesSection → Default → Primary → Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_section.default.primary.services[].tag_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  tag_text: prismic.KeyTextField;
+
+  /**
+   * Full Title field in *ServicesSection → Default → Primary → Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_section.default.primary.services[].full_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  full_title: prismic.KeyTextField;
+
+  /**
+   * Full Info field in *ServicesSection → Default → Primary → Services*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_section.default.primary.services[].full_info
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  full_info: prismic.RichTextField;
+
+  /**
+   * Features Title field in *ServicesSection → Default → Primary → Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_section.default.primary.services[].features_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  features_title: prismic.KeyTextField;
+
+  /**
+   * Features List field in *ServicesSection → Default → Primary → Services*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_section.default.primary.services[].features_list
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  features_list: prismic.RichTextField;
+
+  /**
+   * Button Text field in *ServicesSection → Default → Primary → Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_section.default.primary.services[].button_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  button_text: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ServicesSection → Default → Primary*
+ */
+export interface ServicesSectionSliceDefaultPrimary {
+  /**
+   * Title field in *ServicesSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Info field in *ServicesSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_section.default.primary.info
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  info: prismic.KeyTextField;
+
+  /**
+   * Services field in *ServicesSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_section.default.primary.services[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  services: prismic.GroupField<
+    Simplify<ServicesSectionSliceDefaultPrimaryServicesItem>
+  >;
+}
+
+/**
+ * Default variation for ServicesSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServicesSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServicesSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ServicesSection*
+ */
+type ServicesSectionSliceVariation = ServicesSectionSliceDefault;
+
+/**
+ * ServicesSection Shared Slice
+ *
+ * - **API ID**: `services_section`
+ * - **Description**: ServicesSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServicesSectionSlice = prismic.SharedSlice<
+  "services_section",
+  ServicesSectionSliceVariation
+>;
+
+/**
  * Item in *WhatShiftsSection → Default → Primary → Dropdown Items*
  */
 export interface WhatShiftsSectionSliceDefaultPrimaryDropdownItemsItem {
@@ -622,6 +785,11 @@ declare module "@prismicio/client" {
       HowSectionSliceDefaultPrimary,
       HowSectionSliceVariation,
       HowSectionSliceDefault,
+      ServicesSectionSlice,
+      ServicesSectionSliceDefaultPrimaryServicesItem,
+      ServicesSectionSliceDefaultPrimary,
+      ServicesSectionSliceVariation,
+      ServicesSectionSliceDefault,
       WhatShiftsSectionSlice,
       WhatShiftsSectionSliceDefaultPrimaryDropdownItemsItem,
       WhatShiftsSectionSliceDefaultPrimary,

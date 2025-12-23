@@ -1,0 +1,131 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "married",
+				"type": "Text"
+			},
+			"info": {
+				"__TYPE__": "FieldContent",
+				"value": "story",
+				"type": "Text"
+			},
+			"services": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"card_title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "leather",
+									"type": "Text"
+								}
+							],
+							[
+								"card_info",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "coming",
+									"type": "Text"
+								}
+							],
+							[
+								"full_title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "partly",
+									"type": "Text"
+								}
+							],
+							[
+								"full_info",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Sint reprehenderit tempor consequat officia elit culpa qui pariatur ut duis culpa deserunt cupidatat."
+											}
+										}
+									]
+								}
+							],
+							[
+								"features_title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "four",
+									"type": "Text"
+								}
+							],
+							[
+								"features_list",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "In adipisicing aute magna irure enim nisi dolore ad tempor magna tempor nisi dolor. Non tempor deserunt commodo."
+											}
+										}
+									]
+								}
+							],
+							[
+								"image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a",
+										"width": 3024,
+										"height": 3778
+									},
+									"url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a",
+									"width": 3024,
+									"height": 3778,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "missing",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"tag_text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "paid",
+									"type": "Text"
+								}
+							],
+							[
+								"button_text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "trouble",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

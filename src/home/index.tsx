@@ -4,7 +4,7 @@ import Why from './why';
 import How from './how';
 import WhatShifts from './what-shifts';
 import Architecture from './architecture';
-import Transform from './transform';
+import Services from './services';
 import Origin from './origin';
 import Events from './events';
 import Thrive from './thrive';
@@ -19,6 +19,7 @@ import {
 	HeroSliceDefaultPrimary,
 	HomepageDocument,
 	HowSectionSliceDefaultPrimary,
+	ServicesSectionSliceDefaultPrimary,
 	WhatShiftsSectionSliceDefaultPrimary,
 	WhySectionSliceDefaultPrimary,
 } from '../../prismicio-types';
@@ -44,6 +45,10 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 		(slice) => slice?.slice_type === 'architectureof_change_section'
 	)?.primary as ArchitectureofChangeSectionSliceDefaultPrimary;
 
+	const servicesSection = homepage[0]?.data?.slices?.find(
+		(slice) => slice?.slice_type === 'services_section'
+	)?.primary as ServicesSectionSliceDefaultPrimary;
+
 	return (
 		<div>
 			<Hero hero={heroSection} />
@@ -52,7 +57,7 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 			<How how={howSection} />
 			<WhatShifts what_shifts={whatShiftsSection} />
 			<Architecture aoc={aocSection} />
-			<Transform />
+			<Services services={servicesSection} />
 			<Events />
 			<Origin />
 			<Thrive />

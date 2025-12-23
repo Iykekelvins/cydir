@@ -10,6 +10,7 @@ import Button from '@/components/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import gsap from 'gsap';
+import { PrismicRichText } from '@prismicio/react';
 
 export default function Service() {
 	const lenis = useLenis();
@@ -97,7 +98,7 @@ export default function Service() {
 
 				{service && (
 					<>
-						<Tag color='blue'>{service?.tag}</Tag>
+						<Tag color='blue'>{service?.tag_text}</Tag>
 
 						<div className='grid md:grid-cols-[1.2fr_1fr] gap-gutter'>
 							<div>
@@ -105,15 +106,23 @@ export default function Service() {
 									className='text-60 text-blue font-medium font-outfit
               tracking-tighter leading-[1.3] mt-[max(0.75rem,12px)]
               '>
-									{service?.title}
+									{service?.full_title}
 								</h2>
 
-								<p
-									className='text-20 text-[#0B192DCC] font-medium 
+								<PrismicRichText
+									field={service.full_info}
+									components={{
+										paragraph: ({ children }: { children: React.ReactNode }) => (
+											<p
+												className='text-20 text-[#0B192DCC] font-medium 
               tracking-tighter leading-[1.4] mt-[max(2.075rem,18px)]
               max-w-[max(38.75rem,620px)]
-              '
-									dangerouslySetInnerHTML={{ __html: service!.info }}></p>
+              '>
+												{children}
+											</p>
+										),
+									}}
+								/>
 
 								<Link
 									href='https://calendly.com/aj-cydir/discovery-call'
@@ -122,7 +131,7 @@ export default function Service() {
 									<Button
 										bg='blue'
 										className='mt-[max(2.075rem,18px)] hidden md:block'>
-										Begin Your Transformation
+										{service.button_text}
 									</Button>
 								</Link>
 							</div>
@@ -132,7 +141,7 @@ export default function Service() {
 									className='text-20 text-[#0B192DCC] font-extrabold 
               tracking-tighter leading-[1.4] max-w-[max(36rem,576px)]
 							'>
-									{service?.featuresTitle}
+									{service?.features_title}
 								</p>
 
 								<ul
@@ -140,21 +149,30 @@ export default function Service() {
               tracking-tighter leading-[1.4] list-disc
               ml-[max(2rem,14px)]
               '>
-									{service?.features?.map((item) => (
-										<li key={item}>{item}</li>
-									))}
+									<PrismicRichText
+										field={service.features_list}
+										components={{
+											listItem: ({ children }: { children: React.ReactNode }) => (
+												<li className='list-disc'>{children}</li>
+											),
+										}}
+									/>
 								</ul>
 
-								<Button bg='blue' className='mt-[max(2.075rem,18px)]  md:hidden'>
-									{service?.btnText}
-								</Button>
+								<Link
+									className='mt-[max(2.075rem,18px)]  md:hidden'
+									href='https://calendly.com/aj-cydir/discovery-call'
+									target='_blank'
+									rel='noopener'>
+									<Button bg='blue'>{service?.button_text}</Button>
+								</Link>
 
 								<figure className='mt-[max(2.075rem,18px)]'>
 									<Image
-										src={service!.img}
+										src={service!.image.url as string}
 										width={576}
 										height={370}
-										alt={service!.alt}
+										alt={service.image.alt as string}
 										className='h-[max(25.125rem,210px)] w-full object-cover rounded-[max(0.75rem,12px)]'
 									/>
 								</figure>
