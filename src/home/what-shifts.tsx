@@ -42,10 +42,10 @@ export default function WhatShifts({
 				</ul>
 				<figure>
 					<Image
-						src='/images/what-shifts.jpg'
+						src={what_shifts.image.url as string}
 						width={604}
 						height={618}
-						alt='AI generated image of a human brain connected to the human heart'
+						alt={what_shifts.image.alt as string}
 						className='min-[90rem]:min-h-[max(38.625rem,600px)] object-cover 
             rounded-[max(1.5rem,18px)] w-full'
 					/>

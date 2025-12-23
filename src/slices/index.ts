@@ -3,6 +3,9 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  architectureof_change_section: dynamic(
+    () => import("./ArchitectureofChangeSection"),
+  ),
   hero: dynamic(() => import("./Hero")),
   how_section: dynamic(() => import("./HowSection")),
   what_shifts_section: dynamic(() => import("./WhatShiftsSection")),

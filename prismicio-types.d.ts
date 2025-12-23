@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomepageDocumentDataSlicesSlice =
+  | ArchitectureofChangeSectionSlice
   | WhatShiftsSectionSlice
   | HowSectionSlice
   | WhySectionSlice
@@ -108,6 +109,100 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes = HomepageDocument;
+
+/**
+ * Item in *ArchitectureofChangeSection → Default → Primary → Circular Timeline Items*
+ */
+export interface ArchitectureofChangeSectionSliceDefaultPrimaryCircularTimelineItemsItem {
+  /**
+   * Title field in *ArchitectureofChangeSection → Default → Primary → Circular Timeline Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: architectureof_change_section.default.primary.circular_timeline_items[].title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Info field in *ArchitectureofChangeSection → Default → Primary → Circular Timeline Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: architectureof_change_section.default.primary.circular_timeline_items[].info
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  info: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ArchitectureofChangeSection → Default → Primary*
+ */
+export interface ArchitectureofChangeSectionSliceDefaultPrimary {
+  /**
+   * Title field in *ArchitectureofChangeSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: architectureof_change_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Info field in *ArchitectureofChangeSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: architectureof_change_section.default.primary.info
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  info: prismic.KeyTextField;
+
+  /**
+   * Circular Timeline Items field in *ArchitectureofChangeSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: architectureof_change_section.default.primary.circular_timeline_items[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  circular_timeline_items: prismic.GroupField<
+    Simplify<ArchitectureofChangeSectionSliceDefaultPrimaryCircularTimelineItemsItem>
+  >;
+}
+
+/**
+ * Default variation for ArchitectureofChangeSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ArchitectureofChangeSectionSliceDefault =
+  prismic.SharedSliceVariation<
+    "default",
+    Simplify<ArchitectureofChangeSectionSliceDefaultPrimary>,
+    never
+  >;
+
+/**
+ * Slice variation for *ArchitectureofChangeSection*
+ */
+type ArchitectureofChangeSectionSliceVariation =
+  ArchitectureofChangeSectionSliceDefault;
+
+/**
+ * ArchitectureofChangeSection Shared Slice
+ *
+ * - **API ID**: `architectureof_change_section`
+ * - **Description**: ArchitectureofChangeSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ArchitectureofChangeSectionSlice = prismic.SharedSlice<
+  "architectureof_change_section",
+  ArchitectureofChangeSectionSliceVariation
+>;
 
 /**
  * Item in *Hero → Default → Primary → Switching Texts*
@@ -512,6 +607,11 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      ArchitectureofChangeSectionSlice,
+      ArchitectureofChangeSectionSliceDefaultPrimaryCircularTimelineItemsItem,
+      ArchitectureofChangeSectionSliceDefaultPrimary,
+      ArchitectureofChangeSectionSliceVariation,
+      ArchitectureofChangeSectionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimarySwitchingTextsItem,
       HeroSliceDefaultPrimary,

@@ -15,6 +15,7 @@ import JoinUs from './join-us';
 import Starfield from 'react-starfield';
 
 import {
+	ArchitectureofChangeSectionSliceDefaultPrimary,
 	HeroSliceDefaultPrimary,
 	HomepageDocument,
 	HowSectionSliceDefaultPrimary,
@@ -39,6 +40,10 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 		(slice) => slice?.slice_type === 'what_shifts_section'
 	)?.primary as WhatShiftsSectionSliceDefaultPrimary;
 
+	const aocSection = homepage[0]?.data?.slices?.find(
+		(slice) => slice?.slice_type === 'architectureof_change_section'
+	)?.primary as ArchitectureofChangeSectionSliceDefaultPrimary;
+
 	return (
 		<div>
 			<Hero hero={heroSection} />
@@ -46,7 +51,7 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 			{/* <Awaken /> */}
 			<How how={howSection} />
 			<WhatShifts what_shifts={whatShiftsSection} />
-			<Architecture />
+			<Architecture aoc={aocSection} />
 			<Transform />
 			<Events />
 			<Origin />

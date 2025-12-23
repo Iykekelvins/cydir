@@ -3,6 +3,8 @@
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ArchitectureofChangeSectionSliceDefaultPrimary } from '../../prismicio-types';
+import { KeyTextField } from '@prismicio/client';
 
 import Paragraph from '@/animations/paragraph';
 import Image from 'next/image';
@@ -11,7 +13,11 @@ import gsap from 'gsap';
 import Button from '@/components/button';
 import Link from 'next/link';
 
-export default function Architecture() {
+export default function Architecture({
+	aoc,
+}: {
+	aoc: ArchitectureofChangeSectionSliceDefaultPrimary;
+}) {
 	return (
 		<section
 			className='px-gutter pt-[max(9.375rem,64px)] pb-[max(6.26rem,74px)]
@@ -24,22 +30,19 @@ export default function Architecture() {
 				<Words
 					as='h2'
 					className='text-white text-60 font-medium font-outfit
-        tracking-tighter leading-[1.11]
+        tracking-tighter leading-[1.11] max-w-[max(30rem,280px)]
         '>
-					The Architecture of <br /> Change
+					{aoc.title}
 				</Words>
 				<Paragraph
 					className='text-[#FFFFFFCC] text-20 tracking-tighter leading-[1.4]
         md:text-right max-w-[max(35.825rem,320px)]
         '>
-					Transformation unfolds through a simple yet powerful structure, one that
-					integrates both the unconscious and conscious mind. Abhinav&apos;s approach
-					to coaching is built around four core requisites for empowerment and change
-					that create lasting results.
+					{aoc.info}
 				</Paragraph>
 			</div>
 
-			<Journey />
+			<Journey tl={aoc.circular_timeline_items} />
 
 			<div className='flex justify-center mt-[max(8.125rem,80px)]'>
 				<Link
@@ -53,7 +56,14 @@ export default function Architecture() {
 	);
 }
 
-const Journey = () => {
+const Journey = ({
+	tl,
+}: {
+	tl: {
+		title: KeyTextField;
+		info: KeyTextField;
+	}[];
+}) => {
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
 
@@ -200,14 +210,12 @@ const Journey = () => {
 				<span className='size-[max(1.25rem,20px)] bg-lemon rounded-full ball' />
 				<div className='mt-[max(1.5rem,18px)]'>
 					<h3 className='text-[max(2.25rem,24px)] text-white font-medium tracking-tight'>
-						2. Create
+						2. {tl[1].title}
 					</h3>
 					<p
 						className='text-white-80 text-20 leading-normal tracking-tight
           max-w-[max(28.75rem,300px)] mt-[max(0.625rem,10px)]'>
-						Design a compelling future and align the unconscious patterns that
-						support it. By shifting the inner blueprint, your thoughts, emotions, and
-						actions begin to move in harmony with what you truly want.
+						{tl[1].info}
 					</p>
 				</div>
 			</div>
@@ -218,14 +226,12 @@ const Journey = () => {
 				<span className='size-[max(1.25rem,20px)] des:size-[max(2rem,24px)] bg-lemon rounded-full' />
 				<div className='mt-[max(1.5rem,18px)]'>
 					<h3 className='text-[max(2.25rem,24px)] text-white font-medium tracking-tight'>
-						1. Release
+						1. {tl[0].title}
 					</h3>
 					<p
 						className='text-white-80 text-20 leading-normal tracking-tight
           max-w-[max(24.875rem,300px)] mt-[max(0.625rem,10px)]'>
-						Let go of negative emotions, limiting beliefs, and the weight of old
-						experiences. This is where deep integration happens, dissolving what no
-						longer serves you and creating space for empowerment.
+						{tl[0].info}
 					</p>
 				</div>
 			</div>
@@ -240,14 +246,12 @@ const Journey = () => {
 					<span className='size-[max(2rem,24px)] bg-lemon rounded-full' />
 					<div className='mt-[max(1.5rem,18px)]'>
 						<h3 className='text-[max(2.25rem,24px)] text-white font-medium tracking-tight'>
-							1. Release
+							1. {tl[0].title}
 						</h3>
 						<p
 							className='text-white-80 text-20 leading-normal tracking-tight
           max-w-[max(24.875rem,300px)] mt-[max(0.625rem,10px)]'>
-							Let go of negative emotions, limiting beliefs, and the weight of old
-							experiences. This is where deep integration happens, dissolving what no
-							longer serves you and creating space for empowerment.
+							{tl[0].info}
 						</p>
 					</div>
 				</div>
@@ -258,14 +262,12 @@ const Journey = () => {
 					<span className='size-[max(1.25rem,20px)] bg-lemon rounded-full ball' />
 					<div className='mt-[max(1.5rem,18px)]'>
 						<h3 className='text-[max(2.25rem,24px)] text-white font-medium tracking-tight'>
-							2. Create
+							2. {tl[1].title}
 						</h3>
 						<p
 							className='text-white-80 text-20 leading-normal tracking-tight
           max-w-[max(28.75rem,300px)] mt-[max(0.625rem,10px)]'>
-							Design a compelling future and align the unconscious patterns that
-							support it. By shifting the inner blueprint, your thoughts, emotions,
-							and actions begin to move in harmony with what you truly want.
+							{tl[1].info}
 						</p>
 					</div>
 				</div>
@@ -289,14 +291,12 @@ const Journey = () => {
 					<span className='size-[max(1.25rem,20px)] bg-lemon rounded-full des:hidden' />
 					<div className='mt-[max(1.5rem,18px)]'>
 						<h3 className='text-[max(2.25rem,24px)] text-white font-medium tracking-tight'>
-							3. Act
+							3. {tl[2].title}
 						</h3>
 						<p
 							className='text-white-80 text-20 leading-normal tracking-tight
           max-w-[max(24.875rem,300px)] mt-[max(0.625rem,10px)]'>
-							Achieve the results you desire through purposeful action and focus.
-							Setting boundaries, maintaining alignment, and directing attention
-							toward what you want.
+							{tl[2].info}
 						</p>
 					</div>
 				</div>
@@ -314,14 +314,12 @@ const Journey = () => {
 				<span className='size-[max(1.25rem,20px)] bg-lemon rounded-full des:hidden' />
 				<div className='mt-[max(1.5rem,18px)]'>
 					<h3 className='text-[max(2.25rem,24px)] text-white font-medium tracking-tight'>
-						4. Optimize
+						4. {tl[3].title}
 					</h3>
 					<p
 						className='text-white-80 text-20 leading-normal tracking-tight
           max-w-[max(28.75rem,300px)] mt-[max(0.625rem,10px)]'>
-						Stay positive and focused on your path of becoming who you&apos;re meant
-						to be, doing what you&apos;re meant to do, having what you desire, and
-						experiencing what you&apos;re meant to experience in this lifetime.
+						{tl[3].info}
 					</p>
 				</div>
 			</div>
