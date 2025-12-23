@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomepageDocumentDataSlicesSlice =
+  | WhatShiftsSectionSlice
   | HowSectionSlice
   | WhySectionSlice
   | HeroSlice;
@@ -320,6 +321,108 @@ export type HowSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *WhatShiftsSection → Default → Primary → Dropdown Items*
+ */
+export interface WhatShiftsSectionSliceDefaultPrimaryDropdownItemsItem {
+  /**
+   * Title field in *WhatShiftsSection → Default → Primary → Dropdown Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_shifts_section.default.primary.dropdown_items[].title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Info field in *WhatShiftsSection → Default → Primary → Dropdown Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_shifts_section.default.primary.dropdown_items[].info
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  info: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *WhatShiftsSection → Default → Primary*
+ */
+export interface WhatShiftsSectionSliceDefaultPrimary {
+  /**
+   * Title field in *WhatShiftsSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_shifts_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Info field in *WhatShiftsSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_shifts_section.default.primary.info
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  info: prismic.KeyTextField;
+
+  /**
+   * Dropdown Items field in *WhatShiftsSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_shifts_section.default.primary.dropdown_items[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  dropdown_items: prismic.GroupField<
+    Simplify<WhatShiftsSectionSliceDefaultPrimaryDropdownItemsItem>
+  >;
+
+  /**
+   * Image field in *WhatShiftsSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: what_shifts_section.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for WhatShiftsSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type WhatShiftsSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WhatShiftsSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *WhatShiftsSection*
+ */
+type WhatShiftsSectionSliceVariation = WhatShiftsSectionSliceDefault;
+
+/**
+ * WhatShiftsSection Shared Slice
+ *
+ * - **API ID**: `what_shifts_section`
+ * - **Description**: WhatShiftsSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type WhatShiftsSectionSlice = prismic.SharedSlice<
+  "what_shifts_section",
+  WhatShiftsSectionSliceVariation
+>;
+
+/**
  * Primary content in *WhySection → Default → Primary*
  */
 export interface WhySectionSliceDefaultPrimary {
@@ -419,6 +522,11 @@ declare module "@prismicio/client" {
       HowSectionSliceDefaultPrimary,
       HowSectionSliceVariation,
       HowSectionSliceDefault,
+      WhatShiftsSectionSlice,
+      WhatShiftsSectionSliceDefaultPrimaryDropdownItemsItem,
+      WhatShiftsSectionSliceDefaultPrimary,
+      WhatShiftsSectionSliceVariation,
+      WhatShiftsSectionSliceDefault,
       WhySectionSlice,
       WhySectionSliceDefaultPrimary,
       WhySectionSliceVariation,

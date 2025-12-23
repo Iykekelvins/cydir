@@ -89,37 +89,6 @@ export const FAQS = [
 	},
 ];
 
-export const FEATURES = [
-	{
-		title: 'Renewed sense of purpose',
-		info: 'Create your future with clarity and reconnect with what truly matters.',
-	},
-	{
-		title: 'Emotional Lightness',
-		info: 'Release what’s been weighing you down and experience a sense of calm that feels effortless.',
-	},
-	{
-		title: 'Upgraded Inner Blueprint',
-		info: 'Replace limiting beliefs with empowering beliefs.',
-	},
-	{
-		title: 'Inner Strength and Ownership',
-		info: 'Develop the confidence to take aligned action and sustain meaningful change.',
-	},
-	{
-		title: 'Holistic Success',
-		info: 'Experience growth that touches every part of life: personal, professional, and spiritual.',
-	},
-	{
-		title: 'Fulfillment',
-		info: 'Experience a deep sense of fulfillment as you follow you life’s purpose. ',
-	},
-	{
-		title: 'Build Positive Habits',
-		info: 'Build positive habits naturally when the old programs that sabotaged progress no longer run the show.',
-	},
-];
-
 export const PHONE_PLACEHOLDERS = [
 	{
 		country: 'US',

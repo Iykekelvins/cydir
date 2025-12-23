@@ -1,14 +1,19 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { FEATURES } from '@/utils/mock';
+import { WhatShiftsSectionSliceDefaultPrimary } from '../../prismicio-types';
+import { KeyTextField } from '@prismicio/client';
 
 import Paragraph from '@/animations/paragraph';
 import Words from '@/animations/words';
 import gsap from 'gsap';
 import Image from 'next/image';
 
-export default function WhatShifts() {
+export default function WhatShifts({
+	what_shifts,
+}: {
+	what_shifts: WhatShiftsSectionSliceDefaultPrimary;
+}) {
 	return (
 		<section className='relative z-20 px-gutter pt-[max(6rem,56px)] pb-[max(12.2rem,85px)]'>
 			<div className='flex flex-col items-center justify-center text-center'>
@@ -17,14 +22,12 @@ export default function WhatShifts() {
 					className='text-blue text-60 font-medium font-outfit tracking-tighter leading-[1.11]
           max-w-[max(46.625rem,500px)]
           '>
-					What Shifts When You Work with Abhinav
+					{what_shifts.title}
 				</Words>
 				<Paragraph
 					className='text-20 tracking-tighter max-w-[max(35.75rem,320px)] 
         mt-[max(1.875rem,20px)] leading-[1.4]'>
-					Change begins beneath the surface. As emotional weight lifts and old
-					patterns dissolve, new possibilities open not just in one area of life, but
-					across all of it.
+					{what_shifts.info}
 				</Paragraph>
 			</div>
 
@@ -33,7 +36,7 @@ export default function WhatShifts() {
       mt-[max(5rem,42px)] gap-[max(3rem,32px)] 
       '>
 				<ul className='grid gap-[max(0.75rem,12px)]'>
-					{FEATURES.map((feature) => (
+					{what_shifts.dropdown_items.map((feature) => (
 						<Feature key={feature.title} {...feature} />
 					))}
 				</ul>
@@ -52,7 +55,7 @@ export default function WhatShifts() {
 	);
 }
 
-const Feature = ({ title, info }: { title: string; info: string }) => {
+const Feature = ({ title, info }: { title: KeyTextField; info: KeyTextField }) => {
 	const infoRef = useRef<HTMLDivElement>(null);
 	const [open, setOpen] = useState(false);
 
@@ -61,11 +64,13 @@ const Feature = ({ title, info }: { title: string; info: string }) => {
 			gsap.to(infoRef.current, {
 				height: 'auto',
 				ease: 'none',
+				duration: 0.3,
 			});
 		} else {
 			gsap.to(infoRef.current, {
 				height: 0,
 				ease: 'none',
+				duration: 0.3,
 			});
 		}
 	}, [open]);

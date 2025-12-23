@@ -18,6 +18,7 @@ import {
 	HeroSliceDefaultPrimary,
 	HomepageDocument,
 	HowSectionSliceDefaultPrimary,
+	WhatShiftsSectionSliceDefaultPrimary,
 	WhySectionSliceDefaultPrimary,
 } from '../../prismicio-types';
 
@@ -34,13 +35,17 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 		(slice) => slice?.slice_type === 'how_section'
 	)?.primary as HowSectionSliceDefaultPrimary;
 
+	const whatShiftsSection = homepage[0]?.data?.slices?.find(
+		(slice) => slice?.slice_type === 'what_shifts_section'
+	)?.primary as WhatShiftsSectionSliceDefaultPrimary;
+
 	return (
 		<div>
 			<Hero hero={heroSection} />
 			<Why why={whySection} />
 			{/* <Awaken /> */}
 			<How how={howSection} />
-			<WhatShifts />
+			<WhatShifts what_shifts={whatShiftsSection} />
 			<Architecture />
 			<Transform />
 			<Events />

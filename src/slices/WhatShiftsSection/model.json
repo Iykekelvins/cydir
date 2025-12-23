@@ -1,0 +1,64 @@
+{
+  "id": "what_shifts_section",
+  "type": "SharedSlice",
+  "name": "WhatShiftsSection",
+  "description": "WhatShiftsSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "info": {
+          "type": "Text",
+          "config": {
+            "label": "Info",
+            "placeholder": ""
+          }
+        },
+        "dropdown_items": {
+          "type": "Group",
+          "config": {
+            "label": "Dropdown Items",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "info": {
+                "type": "Text",
+                "config": {
+                  "label": "Info",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

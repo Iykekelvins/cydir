@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "what_shifts_section": {
+              "type": "SharedSlice"
+            },
             "how_section": {
               "type": "SharedSlice"
             },
