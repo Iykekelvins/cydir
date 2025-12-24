@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { FEED } from '@/utils/mock';
+import { IgFeedSectionSliceDefaultPrimary } from '../../prismicio-types';
+import { KeyTextField } from '@prismicio/client';
 
 import Image from 'next/image';
 import Words from '@/animations/words';
@@ -10,7 +11,11 @@ import Scale from '@/animations/scale';
 import Link from 'next/link';
 import Button from '@/components/button';
 
-export default function IgFeed() {
+export default function IgFeed({
+	igFeedSection,
+}: {
+	igFeedSection: IgFeedSectionSliceDefaultPrimary;
+}) {
 	return (
 		<section className='py-[max(5rem,40px)] relative z-12'>
 			<div className='px-gutter'>
@@ -60,13 +65,12 @@ export default function IgFeed() {
         tracking-tight leading-[1.3] max-w-[max(35rem,480px)]
         mt-[max(0.875rem,12px)]
         '>
-						The Ongoing Journey of Becoming
+						{igFeedSection.title}
 					</Words>
 					<Paragraph
 						className='text-[#0B192DCC] text-20 mt-[max(0.75rem,12px)] 
           max-w-[max(41.625rem,500px)] leading-[1.3]'>
-						Join Abhinav for grounded insights, coaching moments, and conscious
-						reminders to keep evolving.
+						{igFeedSection.info}
 					</Paragraph>
 					<Link
 						href={
@@ -85,13 +89,18 @@ export default function IgFeed() {
 				<ul
 					className='flex items-center gap-[max(1.5rem,16px)] 
         overflow-x-auto hide-scroll'>
-					{FEED.map((item, i) => (
+					{igFeedSection.feed.map((item, i) => (
 						<FeedItem
-							posterSrc={item.posterSrc}
-							videoSrc={item.videoSrc}
-							key={item.posterSrc}
+							posterSrc={item.poster.url as string}
+							videoSrc={item.video_url}
+							igVidSrc={item.ig_video_url || ''}
+							key={item.poster.url}
 							className={
-								i === 0 ? 'ml-gutter' : i === FEED.length - 1 ? 'mr-gutter' : ''
+								i === 0
+									? 'ml-gutter'
+									: i === igFeedSection.feed.length - 1
+										? 'mr-gutter'
+										: ''
 							}
 						/>
 					))}
@@ -121,10 +130,12 @@ const FeedItem = ({
 	videoSrc,
 	posterSrc,
 	className,
+	igVidSrc,
 }: {
-	videoSrc: string;
-	posterSrc: string;
+	videoSrc: KeyTextField;
+	posterSrc: KeyTextField;
 	className?: string;
+	igVidSrc?: KeyTextField;
 }) => {
 	const isMobile = useIsMobile();
 	const [showVideo, setShowVideo] = useState(false);
@@ -134,6 +145,7 @@ const FeedItem = ({
 			<li className={`${className} relative`}>
 				<Link
 					href={
+						igVidSrc ||
 						'https://www.instagram.com/abhinavjindal97?igsh=MTdjcGdyZ3JleDY1Zg=='
 					}
 					target='_blank'
@@ -167,7 +179,7 @@ const FeedItem = ({
 				</Link>
 				<figure>
 					<Image
-						src={posterSrc}
+						src={posterSrc as string}
 						width={361}
 						height={569}
 						alt='From instagram feed'
@@ -226,11 +238,11 @@ const FeedItem = ({
 					muted
 					playsInline
 					preload='none'>
-					<source src={videoSrc} type='video/mp4' />
+					<source src={videoSrc as string} type='video/mp4' />
 				</video>
 			)}
 			<Image
-				src={posterSrc}
+				src={posterSrc as string}
 				width={361}
 				height={569}
 				alt='From Instagram feed'

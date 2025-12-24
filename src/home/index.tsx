@@ -22,6 +22,7 @@ import {
 	HeroSliceDefaultPrimary,
 	HomepageDocument,
 	HowSectionSliceDefaultPrimary,
+	IgFeedSectionSliceDefaultPrimary,
 	ReviewsSectionSliceDefaultPrimary,
 	ServicesSectionSliceDefaultPrimary,
 	WhatShiftsSectionSliceDefaultPrimary,
@@ -69,6 +70,10 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 		(slice) => slice?.slice_type === 'affirmations_section'
 	)?.primary as AffirmationsSectionSliceDefaultPrimary;
 
+	const igFeedSection = homepage[0]?.data?.slices?.find(
+		(slice) => slice?.slice_type === 'ig_feed_section'
+	)?.primary as IgFeedSectionSliceDefaultPrimary;
+
 	return (
 		<div>
 			<Hero hero={heroSection} />
@@ -82,7 +87,7 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 			<About about={aboutSection} />
 			<Reviews reviews={reviewsSection} />
 			<Affirmations affirmationsSection={affirmationsSection} />
-			<IgFeed />
+			<IgFeed igFeedSection={igFeedSection} />
 			<Faqs />
 			<JoinUs />
 			<Starfield starCount={1000} starColor={[255, 255, 255]} speedFactor={0.05} />

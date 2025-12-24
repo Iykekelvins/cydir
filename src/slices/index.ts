@@ -11,6 +11,7 @@ export const components = {
   events_section: dynamic(() => import("./EventsSection")),
   hero: dynamic(() => import("./Hero")),
   how_section: dynamic(() => import("./HowSection")),
+  ig_feed_section: dynamic(() => import("./IgFeedSection")),
   reviews_section: dynamic(() => import("./ReviewsSection")),
   services_section: dynamic(() => import("./ServicesSection")),
   what_shifts_section: dynamic(() => import("./WhatShiftsSection")),

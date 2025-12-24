@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomepageDocumentDataSlicesSlice =
+  | IgFeedSectionSlice
   | AffirmationsSectionSlice
   | ReviewsSectionSlice
   | AboutSectionSlice
@@ -740,6 +741,106 @@ export type HowSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *IgFeedSection → Default → Primary → Feed*
+ */
+export interface IgFeedSectionSliceDefaultPrimaryFeedItem {
+  /**
+   * Poster field in *IgFeedSection → Default → Primary → Feed*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ig_feed_section.default.primary.feed[].poster
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  poster: prismic.ImageField<never>;
+
+  /**
+   * Video Url field in *IgFeedSection → Default → Primary → Feed*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ig_feed_section.default.primary.feed[].video_url
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  video_url: prismic.KeyTextField;
+
+  /**
+   * IG Video Url field in *IgFeedSection → Default → Primary → Feed*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ig_feed_section.default.primary.feed[].ig_video_url
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  ig_video_url: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *IgFeedSection → Default → Primary*
+ */
+export interface IgFeedSectionSliceDefaultPrimary {
+  /**
+   * Title field in *IgFeedSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ig_feed_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Info field in *IgFeedSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ig_feed_section.default.primary.info
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  info: prismic.KeyTextField;
+
+  /**
+   * Feed field in *IgFeedSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ig_feed_section.default.primary.feed[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  feed: prismic.GroupField<Simplify<IgFeedSectionSliceDefaultPrimaryFeedItem>>;
+}
+
+/**
+ * Default variation for IgFeedSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type IgFeedSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IgFeedSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *IgFeedSection*
+ */
+type IgFeedSectionSliceVariation = IgFeedSectionSliceDefault;
+
+/**
+ * IgFeedSection Shared Slice
+ *
+ * - **API ID**: `ig_feed_section`
+ * - **Description**: IgFeedSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type IgFeedSectionSlice = prismic.SharedSlice<
+  "ig_feed_section",
+  IgFeedSectionSliceVariation
+>;
+
+/**
  * Item in *ReviewsSection → Default → Primary → Reviews*
  */
 export interface ReviewsSectionSliceDefaultPrimaryReviewsItem {
@@ -1214,6 +1315,11 @@ declare module "@prismicio/client" {
       HowSectionSliceDefaultPrimary,
       HowSectionSliceVariation,
       HowSectionSliceDefault,
+      IgFeedSectionSlice,
+      IgFeedSectionSliceDefaultPrimaryFeedItem,
+      IgFeedSectionSliceDefaultPrimary,
+      IgFeedSectionSliceVariation,
+      IgFeedSectionSliceDefault,
       ReviewsSectionSlice,
       ReviewsSectionSliceDefaultPrimaryReviewsItem,
       ReviewsSectionSliceDefaultPrimary,

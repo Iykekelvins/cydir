@@ -35,29 +35,6 @@ export const AWAKEN_CARDS = [
 	},
 ];
 
-export const FEED = [
-	{
-		videoSrc:
-			'https://res.cloudinary.com/dvgyi0ngj/video/upload/v1765878940/ig-1_ta5coi.mp4',
-		posterSrc: '/images/ig-1.jpg',
-	},
-	{
-		videoSrc:
-			'https://res.cloudinary.com/dvgyi0ngj/video/upload/v1765878938/ig-2_f6n9vr.mp4',
-		posterSrc: '/images/ig-2.jpg',
-	},
-	{
-		videoSrc:
-			'https://res.cloudinary.com/dvgyi0ngj/video/upload/v1765903609/ig-3_makops.mp4',
-		posterSrc: '/images/ig-3.jpg',
-	},
-	{
-		videoSrc:
-			'https://res.cloudinary.com/dvgyi0ngj/video/upload/v1765903609/ig-4_ln0tmt.mp4',
-		posterSrc: '/images/ig-4.jpg',
-	},
-];
-
 export const FAQS = [
 	{
 		qstn: 'Can one session really create lasting change?',

@@ -1,0 +1,64 @@
+{
+  "id": "ig_feed_section",
+  "type": "SharedSlice",
+  "name": "IgFeedSection",
+  "description": "IgFeedSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "info": {
+          "type": "Text",
+          "config": {
+            "label": "Info",
+            "placeholder": ""
+          }
+        },
+        "feed": {
+          "type": "Group",
+          "config": {
+            "label": "Feed",
+            "repeat": true,
+            "fields": {
+              "poster": {
+                "type": "Image",
+                "config": {
+                  "label": "Poster",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "video_url": {
+                "type": "Text",
+                "config": {
+                  "label": "Video Url",
+                  "placeholder": ""
+                }
+              },
+              "ig_video_url": {
+                "type": "Text",
+                "config": {
+                  "label": "IG Video Url",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

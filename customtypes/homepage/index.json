@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "ig_feed_section": {
+              "type": "SharedSlice"
+            },
             "affirmations_section": {
               "type": "SharedSlice"
             },

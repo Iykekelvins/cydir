@@ -98,7 +98,7 @@ const ClipText = ({ text }: { text: KeyTextField }) => {
 				className='text-[max(10rem,42px)] text-lemon
       				tracking-tighter font-semibold
 							absolute top-0 left-0 transition-all 
-							duration-[2000ms] ease-out
+							duration-2000 ease-out
 							'
 				style={{
 					clipPath: isHovered ? 'circle(150% at 50% 50%)' : 'circle(0% at 50% 100%)',
