@@ -10,8 +10,8 @@ export async function POST(request: NextRequest) {
 		const { title, ...rest } = await request.json();
 
 		const { error } = await resend.emails.send({
-			from: 'Cydir <submissions@cydir.com>',
-			to: ['info@cydir.com'],
+			from: 'Cydir <onboarding@resend.dev>',
+			to: ['kelvinochubili@gmail.com'],
 			react: EmailTemplate({
 				title,
 				formData: rest.body,
