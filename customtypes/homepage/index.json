@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "awaken_section": {
+              "type": "SharedSlice"
+            },
             "faqs_section": {
               "type": "SharedSlice"
             },

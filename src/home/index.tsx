@@ -1,6 +1,6 @@
 import Hero from './hero';
 import Why from './why';
-// import Awaken from './awaken';
+import Awaken from './awaken';
 import How from './how';
 import WhatShifts from './what-shifts';
 import Architecture from './architecture';
@@ -18,6 +18,7 @@ import {
 	AboutSectionSliceDefaultPrimary,
 	AffirmationsSectionSliceDefaultPrimary,
 	ArchitectureofChangeSectionSliceDefaultPrimary,
+	AwakenSectionSliceDefaultPrimary,
 	EventsSectionSliceDefaultPrimary,
 	FaqsSectionSliceDefaultPrimary,
 	HeroSliceDefaultPrimary,
@@ -79,11 +80,15 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 		(slice) => slice?.slice_type === 'faqs_section'
 	)?.primary as FaqsSectionSliceDefaultPrimary;
 
+	const awakenSection = homepage[0]?.data?.slices?.find(
+		(slice) => slice?.slice_type === 'awaken_section'
+	)?.primary as AwakenSectionSliceDefaultPrimary;
+
 	return (
 		<div>
 			<Hero hero={heroSection} />
 			<Why why={whySection} />
-			{/* <Awaken /> */}
+			<Awaken awakenSection={awakenSection} />
 			<How how={howSection} />
 			<WhatShifts what_shifts={whatShiftsSection} />
 			<Architecture aoc={aocSection} />

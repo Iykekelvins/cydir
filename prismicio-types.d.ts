@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomepageDocumentDataSlicesSlice =
+  | AwakenSectionSlice
   | FaqsSectionSlice
   | IgFeedSectionSlice
   | AffirmationsSectionSlice
@@ -376,6 +377,115 @@ type ArchitectureofChangeSectionSliceVariation =
 export type ArchitectureofChangeSectionSlice = prismic.SharedSlice<
   "architectureof_change_section",
   ArchitectureofChangeSectionSliceVariation
+>;
+
+/**
+ * Item in *AwakenSection → Default → Primary → Translating Texts*
+ */
+export interface AwakenSectionSliceDefaultPrimaryTranslatingTextsItem {
+  /**
+   * Text field in *AwakenSection → Default → Primary → Translating Texts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: awaken_section.default.primary.translating_texts[].text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Item in *AwakenSection → Default → Primary → Card Carousel*
+ */
+export interface AwakenSectionSliceDefaultPrimaryCardCarouselItem {
+  /**
+   * Image field in *AwakenSection → Default → Primary → Card Carousel*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: awaken_section.default.primary.card_carousel[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *AwakenSection → Default → Primary*
+ */
+export interface AwakenSectionSliceDefaultPrimary {
+  /**
+   * Title field in *AwakenSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: awaken_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Info field in *AwakenSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: awaken_section.default.primary.info
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  info: prismic.KeyTextField;
+
+  /**
+   * Translating Texts field in *AwakenSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: awaken_section.default.primary.translating_texts[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  translating_texts: prismic.GroupField<
+    Simplify<AwakenSectionSliceDefaultPrimaryTranslatingTextsItem>
+  >;
+
+  /**
+   * Card Carousel field in *AwakenSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: awaken_section.default.primary.card_carousel[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  card_carousel: prismic.GroupField<
+    Simplify<AwakenSectionSliceDefaultPrimaryCardCarouselItem>
+  >;
+}
+
+/**
+ * Default variation for AwakenSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AwakenSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AwakenSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AwakenSection*
+ */
+type AwakenSectionSliceVariation = AwakenSectionSliceDefault;
+
+/**
+ * AwakenSection Shared Slice
+ *
+ * - **API ID**: `awaken_section`
+ * - **Description**: AwakenSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AwakenSectionSlice = prismic.SharedSlice<
+  "awaken_section",
+  AwakenSectionSliceVariation
 >;
 
 /**
@@ -1381,6 +1491,12 @@ declare module "@prismicio/client" {
       ArchitectureofChangeSectionSliceDefaultPrimary,
       ArchitectureofChangeSectionSliceVariation,
       ArchitectureofChangeSectionSliceDefault,
+      AwakenSectionSlice,
+      AwakenSectionSliceDefaultPrimaryTranslatingTextsItem,
+      AwakenSectionSliceDefaultPrimaryCardCarouselItem,
+      AwakenSectionSliceDefaultPrimary,
+      AwakenSectionSliceVariation,
+      AwakenSectionSliceDefault,
       EventsSectionSlice,
       EventsSectionSliceDefaultPrimaryEventsItem,
       EventsSectionSliceDefaultPrimary,

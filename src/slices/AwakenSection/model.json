@@ -1,0 +1,66 @@
+{
+  "id": "awaken_section",
+  "type": "SharedSlice",
+  "name": "AwakenSection",
+  "description": "AwakenSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "info": {
+          "type": "Text",
+          "config": {
+            "label": "Info",
+            "placeholder": ""
+          }
+        },
+        "translating_texts": {
+          "type": "Group",
+          "config": {
+            "label": "Translating Texts",
+            "repeat": true,
+            "fields": {
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Text",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "card_carousel": {
+          "type": "Group",
+          "config": {
+            "label": "Card Carousel",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

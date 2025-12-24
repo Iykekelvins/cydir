@@ -3,8 +3,8 @@
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { cn } from '@/utils';
-import { AWAKEN_CARDS } from '@/utils/mock';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { AwakenSectionSliceDefaultPrimary } from '../../prismicio-types';
 
 import Button from '@/components/button';
 import Tag from '@/components/tag';
@@ -15,7 +15,11 @@ import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Awaken() {
+export default function Awaken({
+	awakenSection,
+}: {
+	awakenSection: AwakenSectionSliceDefaultPrimary;
+}) {
 	const secionRef = useRef<HTMLElement>(null);
 	const trackRef = useRef<HTMLDivElement>(null);
 
@@ -115,21 +119,19 @@ export default function Awaken() {
 							'mt-[max(1rem,16px)] max-w-[max(52.5rem,435px)]',
 							'leading-[1.2]'
 						)}>
-						Anything is possible when you decide to{' '}
+						{awakenSection.title}{' '}
 						<span className='inline-flex'>
-							<span className='font-chronicle-display grid overflow-hidden place-items-start'>
-								<span className='translating-text col-start-1 row-start-1 will-change-transform pr-2.5'>
-									“Manifest it”
-								</span>
-								<span className='translating-text col-start-1 row-start-1 will-change-transform'>
-									“Dream it”
-								</span>
-								<span className='translating-text col-start-1 row-start-1 will-change-transform'>
-									“Believe it”
-								</span>
-								<span className='translating-text col-start-1 row-start-1  will-change-transform'>
-									“Create it”
-								</span>
+							<span
+								className='font-chronicle-display grid overflow-hidden 
+							place-items-start'>
+								{awakenSection.translating_texts.map((text) => (
+									<span
+										className='translating-text col-start-1 
+										row-start-1 will-change-transform pr-2.5'
+										key={text.text}>
+										{text.text}
+									</span>
+								))}
 							</span>
 						</span>
 					</h2>
@@ -138,8 +140,7 @@ export default function Awaken() {
 							'text-20! text-[#0A182D99] mt-[max(0.75rem,12px)]',
 							'max-w-[max(38.75rem,458px)] leading-[1.4] tracking-tighter'
 						)}>
-						The quality of your life is shaped by who you are, how you feel, show up
-						and what you have across all six areas.
+						{awakenSection.info}
 					</Paragraph>
 					<Link
 						href='https://calendly.com/aj-cydir/discovery-call'
@@ -157,26 +158,26 @@ export default function Awaken() {
 						className='flex items-center gap-[max(1.5rem,16px)] '
 						data-selector='track'>
 						<div className='flex items-center gap-[max(1.5rem,16px)]'>
-							{AWAKEN_CARDS.map((card, i) => (
-								<figure key={card.title}>
+							{awakenSection.card_carousel.map((card) => (
+								<figure key={card.image.id}>
 									<Image
-										src={`/images/awaken-card-${i + 1}.jpg`}
+										src={card.image.url as string}
 										width={360}
 										height={486}
-										alt={`Awaken card ${card.title} - ${card.info}`}
+										alt={`Area of life - ${card.image.alt}`}
 										className='min-w-[max(220px,22.5rem)]'
 									/>
 								</figure>
 							))}
 						</div>
 						<div className='flex items-center gap-[max(1.5rem,16px)]'>
-							{AWAKEN_CARDS.map((card, i) => (
-								<figure key={card.title}>
+							{awakenSection.card_carousel.map((card) => (
+								<figure key={card.image.id}>
 									<Image
-										src={`/images/awaken-card-${i + 1}.jpg`}
+										src={card.image.url as string}
 										width={360}
 										height={486}
-										alt={`Awaken card ${card.title} - ${card.info}`}
+										alt={`Area of life - ${card.image.alt}`}
 										className='min-w-[max(220px,22.5rem)]'
 									/>
 								</figure>

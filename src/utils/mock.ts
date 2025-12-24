@@ -8,33 +8,6 @@ export const NAV_LINKS = [
 	'Schedule Discovery Call',
 ];
 
-export const AWAKEN_CARDS = [
-	{
-		title: 'Family',
-		info: 'Those who you are most connected to.',
-	},
-	{
-		title: 'Sprituality',
-		info: 'Connection to Spirit Source, Energy and God.',
-	},
-	{
-		title: 'Relationship',
-		info: 'Your Most Intimate/ Romantic Relationship',
-	},
-	{
-		title: 'Growth',
-		info: 'Growth isn’t a ladder it’s a return to self.',
-	},
-	{
-		title: 'Career',
-		info: 'Where you bring in your income/wealth',
-	},
-	{
-		title: 'Health',
-		info: 'Your Physical and Mental State',
-	},
-];
-
 export const PHONE_PLACEHOLDERS = [
 	{
 		country: 'US',

@@ -8,6 +8,7 @@ export const components = {
   architectureof_change_section: dynamic(
     () => import("./ArchitectureofChangeSection"),
   ),
+  awaken_section: dynamic(() => import("./AwakenSection")),
   events_section: dynamic(() => import("./EventsSection")),
   faqs_section: dynamic(() => import("./FaqsSection")),
   hero: dynamic(() => import("./Hero")),
