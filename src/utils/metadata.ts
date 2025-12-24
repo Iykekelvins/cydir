@@ -75,12 +75,12 @@ export const metaDataOptions: Metadata = {
 		type: 'website',
 	},
 	icons: {
-		icon: '/icon.jpg',
-		shortcut: '/icon.jpg',
-		apple: '/icon.jpg',
+		icon: '/favicon.jpeg',
+		shortcut: '/favicon.jpeg',
+		apple: '/favicon.jpeg',
 		other: {
 			rel: 'apple-touch-icon-precomposed',
-			url: '/icon.jpg',
+			url: '/favicon.jpeg',
 		},
 	},
 	twitter: {
