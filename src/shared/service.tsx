@@ -160,14 +160,14 @@ export default function Service() {
 								</ul>
 
 								<Link
-									className='mt-[max(2.075rem,18px)]  md:hidden'
+									className='mt-[max(2.075rem,24px)] block md:hidden'
 									href='https://calendly.com/aj-cydir/discovery-call'
 									target='_blank'
 									rel='noopener'>
 									<Button bg='blue'>{service?.button_text}</Button>
 								</Link>
 
-								<figure className='mt-[max(2.075rem,18px)]'>
+								<figure className='mt-[max(2.075rem,24px)]'>
 									<Image
 										src={service!.image.url as string}
 										width={576}
