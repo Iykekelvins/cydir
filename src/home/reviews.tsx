@@ -137,7 +137,8 @@ export default function Reviews({
 				<button
 					onClick={() => emblaApi?.scrollPrev()}
 					disabled={!canScrollPrev}
-					className='disabled:opacity-60 disabled:cursor-text!'>
+					className='disabled:opacity-60 disabled:cursor-text!'
+					aria-label='Scroll reviews carousel to the left'>
 					<svg
 						width='42'
 						height='42'
@@ -178,7 +179,8 @@ export default function Reviews({
 				<button
 					className='rotate-180 disabled:opacity-60 disabled:cursor-text!'
 					onClick={() => emblaApi?.scrollNext()}
-					disabled={!canScrollNext}>
+					disabled={!canScrollNext}
+					aria-label='Scroll reviews carousel to the right'>
 					<svg
 						width='42'
 						height='42'

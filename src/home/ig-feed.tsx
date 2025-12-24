@@ -78,7 +78,7 @@ export default function IgFeed({
 						}
 						target='_blank'
 						rel='noopener'>
-						<Button bg='blue' className='mt-[max(1.25rem,18px)]'>
+						<Button bg='blue' className='mt-[max(2rem,24px)]'>
 							Connect with Abhinav
 						</Button>
 					</Link>
@@ -99,8 +99,8 @@ export default function IgFeed({
 								i === 0
 									? 'ml-gutter'
 									: i === igFeedSection.feed.length - 1
-										? 'mr-gutter'
-										: ''
+									? 'mr-gutter'
+									: ''
 							}
 						/>
 					))}

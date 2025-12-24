@@ -81,7 +81,8 @@ export default function Events({
 						<button
 							onClick={() => emblaApi?.scrollPrev()}
 							disabled={!canScrollPrev}
-							className='disabled:opacity-60 disabled:cursor-text!'>
+							className='disabled:opacity-60 disabled:cursor-text!'
+							aria-label='Scroll events carousel to the left'>
 							<svg
 								width='42'
 								height='42'
@@ -122,7 +123,8 @@ export default function Events({
 						<button
 							className='rotate-180 disabled:opacity-60 disabled:cursor-text!'
 							onClick={() => emblaApi?.scrollNext()}
-							disabled={!canScrollNext}>
+							disabled={!canScrollNext}
+							aria-label='Scroll events carousel to the right'>
 							<svg
 								width='42'
 								height='42'
@@ -201,7 +203,7 @@ export default function Events({
 											className='flex items-center flex-wrap gap-[max(1.5rem,24px)] 
 										 mt-[max(1.5rem,20px)]'>
 											<div>
-												<h4 className='text-[#0C0C0C82] text-[max(0.625rem,10px)] tracking-tighter'>
+												<h4 className='text-[#0C0C0C82] font-medium text-[max(0.625rem,10px)] tracking-tighter'>
 													Date
 												</h4>
 												<p
@@ -216,13 +218,13 @@ export default function Events({
 																	day: '2-digit',
 																	year: 'numeric',
 																}
-															)
+														  )
 														: 'TBD'}
 												</p>
 											</div>
 
 											<div>
-												<h4 className='text-[#0C0C0C82] text-[max(0.625rem,10px)] tracking-tighter'>
+												<h4 className='text-[#0C0C0C82] font-medium text-[max(0.625rem,10px)] tracking-tighter'>
 													Venue
 												</h4>
 												<p
@@ -233,7 +235,7 @@ export default function Events({
 											</div>
 
 											<div>
-												<h4 className='text-[#0C0C0C82] text-[max(0.625rem,10px)] tracking-tighter'>
+												<h4 className='text-[#0C0C0C82] font-medium text-[max(0.625rem,10px)] tracking-tighter'>
 													Time
 												</h4>
 												<p
@@ -245,13 +247,15 @@ export default function Events({
 										</div>
 
 										{ev.event_link ? (
-											<Link href={ev.event_link} target='_blank' rel='noopener'>
-												<Button
-													bg='blue'
-													className='mt-[max(2rem,24px)] h-[max(3rem,36px)]'>
-													Learn More
-												</Button>
-											</Link>
+											<Button
+												href={ev.event_link}
+												target='_blank'
+												rel='noopener'
+												as='link'
+												bg='blue'
+												className='mt-[max(2rem,24px)] h-[max(3rem,36px)]'>
+												Learn More
+											</Button>
 										) : (
 											<Button
 												bg='blue'

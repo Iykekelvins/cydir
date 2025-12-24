@@ -45,7 +45,8 @@ export default function Navbar() {
 				</ul>
 				<button
 					className='flex flex-col items-center justify-center gap-[4px] lg:hidden'
-					onClick={() => setOpenMenu(!openMenu)}>
+					onClick={() => setOpenMenu(!openMenu)}
+					aria-label='toggle mobile menu'>
 					<span
 						className={`min-h-[1.75px] bg-white w-[16.5px] rounded-[1.5px]
 						transition-all duration-500 ease ${openMenu ? 'rotate-45 absolute' : ''}

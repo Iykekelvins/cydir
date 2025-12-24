@@ -238,7 +238,8 @@ export default function CommunityForm() {
 				data-lenis-prevent>
 				<button
 					onClick={() => setOpenCommForm(false)}
-					className='absolute top-[max(2.5rem,16px)] right-[max(2.5rem,16px)]'>
+					className='absolute top-[max(2.5rem,16px)] right-[max(2.5rem,16px)]'
+					aria-label='Close the limitless community form modal'>
 					<svg
 						width='60'
 						height='60'
@@ -422,7 +423,9 @@ export default function CommunityForm() {
 									</svg>
 								</div>
 								<span
-									className={`text-base flex ${errors.notChecked ? 'text-red-500' : ''}`}>
+									className={`text-base flex ${
+										errors.notChecked ? 'text-red-500' : ''
+									}`}>
 									You agree to receiving newsletters and event updates.
 								</span>
 							</label>
@@ -465,3 +468,4 @@ export default function CommunityForm() {
 		</div>
 	);
 }
+s;

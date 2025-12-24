@@ -81,7 +81,8 @@ export default function Service() {
 				data-lenis-prevent>
 				<button
 					onClick={() => setOpenServicesModal(false)}
-					className='absolute top-[max(2.5rem,16px)] right-[max(2.5rem,16px)]'>
+					className='absolute top-[max(2.5rem,16px)] right-[max(2.5rem,16px)]'
+					aria-label='Close the modal displaying more info about the selected service'>
 					<svg
 						width='60'
 						height='60'

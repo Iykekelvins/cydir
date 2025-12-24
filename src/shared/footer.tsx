@@ -69,6 +69,7 @@ export default function Footer() {
 				</svg>
 			),
 			href: 'https://www.instagram.com/cydirinc/',
+			name: 'Instagram',
 		},
 		{
 			icon: (
@@ -95,6 +96,7 @@ export default function Footer() {
 				</svg>
 			),
 			href: 'https://www.youtube.com/channel/UChSe05yg_1LS30OmaJICZCg/featured',
+			name: 'YouTube',
 		},
 
 		{
@@ -120,6 +122,7 @@ export default function Footer() {
 				</svg>
 			),
 			href: 'https://www.linkedin.com/company/40804495',
+			name: 'LinkedIn',
 		},
 	];
 
@@ -191,7 +194,8 @@ export default function Footer() {
 											href={link.href}
 											target='_blank'
 											rel='noopener'
-											className='[&_svg]:size-[max(1.25rem,16px)]'>
+											className='[&_svg]:size-[max(1.25rem,16px)]'
+											aria-label={`Social profile link for Cydir's ${link.name} page`}>
 											{link.icon}
 										</Link>
 									</li>

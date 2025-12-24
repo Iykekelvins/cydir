@@ -20,7 +20,8 @@ export default function AudioButton() {
 			size-[max(3rem,32px)] bg-[#FFFFFF1A] rounded-full
       mix-blend-difference
 			'
-			onClick={() => setIsPlaying(!isPlaying)}>
+			onClick={() => setIsPlaying(!isPlaying)}
+			aria-label='toggle music sound on the website'>
 			<div className='flex items-center justify-center gap-[max(0.125rem,2px)]'>
 				{[...Array(6)].map((_, i) => (
 					<div

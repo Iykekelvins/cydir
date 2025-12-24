@@ -42,14 +42,15 @@ export default function Hero({ hero }: { hero: HeroSliceDefaultPrimary }) {
 					{hero.info}
 				</p>
 				<div className='hero-btn-box  w-max'>
-					<Link
+					<Button
+						bg='lemon'
+						className='mt-[max(1.5rem,20px)]'
+						as='link'
 						href='https://calendly.com/aj-cydir/discovery-call'
 						target='_blank'
 						rel='noopener'>
-						<Button bg='lemon' className='mt-[max(1.5rem,20px)]'>
-							Schedule Your Call
-						</Button>
-					</Link>
+						Schedule Your Call
+					</Button>
 				</div>
 			</div>
 
