@@ -259,7 +259,7 @@ export default function CommunityForm() {
 					<p
 						className='text-blue text-20 font-medium 
           tracking-tighter leading-[1.3] mt-[max(0.75rem,12px)]
-					max-w-[max(40rem)]
+					max-w-[max(40rem,560px)]
 					'>
 						Kindly fill this form to apply to be part of the Limitless Community.
 					</p>
@@ -409,12 +409,12 @@ export default function CommunityForm() {
 									className='peer hidden'
 								/>
 								<div
-									className='size-[max(1.25rem,20px)] rounded-[max(0.375rem,6px)] 
+									className='size-[max(1.25rem,24px)] rounded-[max(0.375rem,6px)] 
 									border border-gray-300 peer-checked:bg-blue 
 									peer-checked:border-blue flex items-center justify-center
 									'>
 									<svg
-										className='text-white peer-checked:block'
+										className='text-white peer-checked:block size-[max(1.5rem,24px)]'
 										fill='none'
 										stroke='currentColor'
 										strokeWidth='3'
@@ -430,7 +430,9 @@ export default function CommunityForm() {
 
 							<Button
 								bg='blue'
-								className='mt-[max(2.875rem,30px)] w-full md:w-max disabled:opacity-60 disabled:cursor-text!'
+								className='mt-[max(2.875rem,30px)] w-full md:w-max 
+								disabled:opacity-60 disabled:cursor-text!'
+								type='submit'
 								disabled={loading || !checked}>
 								{!loading ? 'Apply Now' : 'Submitting'}
 							</Button>

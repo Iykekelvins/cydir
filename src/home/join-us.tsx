@@ -85,7 +85,8 @@ export default function JoinUs() {
 								<Button
 									bg='blue'
 									className='h-[max(3rem,40px)] max-sm:w-full disabled:opacity-70'
-									disabled={loading}>
+									disabled={loading}
+									type='submit'>
 									{!loading ? 'Subscribe' : 'Subscribing...'}
 								</Button>
 							</div>
