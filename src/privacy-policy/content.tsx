@@ -146,24 +146,33 @@ export default function Content() {
 							className='text-[#000000B2] text-24 tracking-tight leading-[1.9]
             mt-[max(1rem,16px)]
             '>
-							If you feel that we are not abiding by this privacy policy, you should
-							contact us immediately via telephone at{' '}
+							This privacy notice discloses the privacy practices for{' '}
 							<Link
-								href='tel:+14372454547'
+								href='www.cydir.com'
 								target='_blank'
 								rel='noopener'
 								className='border-b border-b-[#000000B2] border-solid'>
-								+1 4372454547
+								www.cydir.com
+							</Link>{' '}
+							& it&apos;s subdomains. If you feel that we are not abiding by this
+							privacy policy, you should contact us immediately via telephone at{' '}
+							<Link
+								href='tel:+12894011956'
+								target='_blank'
+								rel='noopener'
+								className='border-b border-b-[#000000B2] border-solid'>
+								+12894011956
 							</Link>{' '}
 							or via email at{' '}
 							<Link
-								href='mailto:aj@cydir.ca'
+								href='mailto:info@cydir.com'
 								target='_blank'
 								rel='noopener'
 								className='border-b border-b-[#000000B2] border-solid'>
-								aj@cydir.ca
-							</Link>{' '}
-							. <br /> CYDIR Inc. 19 Bumblebee Crescent Brampton Ontario L6R2J6{' '}
+								info@cydir.com
+							</Link>
+							.
+							<br /> CYDIR Inc. 41 George St S, Brampton, ON L6Y 2E1.
 							<br /> Last updated: 19/12/2025
 						</p>
 					</article>
