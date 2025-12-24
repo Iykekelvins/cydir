@@ -241,7 +241,7 @@ export default function Reviews({
 										stroke='white'
 										strokeWidth='0.3'
 									/>
-									<g clip-path='url(#clip0_1122_4879)'>
+									<g clipPath='url(#clip0_1122_4879)'>
 										<path
 											d='M22.7998 26.5498L16.5498 20.2998L22.7998 14.0498'
 											stroke='#C8D72C'
@@ -284,7 +284,7 @@ export default function Reviews({
 										stroke='white'
 										strokeWidth='0.3'
 									/>
-									<g clip-path='url(#clip0_1122_4879)'>
+									<g clipPath='url(#clip0_1122_4879)'>
 										<path
 											d='M22.7998 26.5498L16.5498 20.2998L22.7998 14.0498'
 											stroke='#C8D72C'
