@@ -7,7 +7,7 @@ import Architecture from './architecture';
 import Services from './services';
 import About from './about';
 import Events from './events';
-import Thrive from './thrive';
+import Reviews from './reviews';
 import Affirmations from './affirmations';
 import IgFeed from './ig-feed';
 import Faqs from './faqs';
@@ -21,6 +21,7 @@ import {
 	HeroSliceDefaultPrimary,
 	HomepageDocument,
 	HowSectionSliceDefaultPrimary,
+	ReviewsSectionSliceDefaultPrimary,
 	ServicesSectionSliceDefaultPrimary,
 	WhatShiftsSectionSliceDefaultPrimary,
 	WhySectionSliceDefaultPrimary,
@@ -59,6 +60,10 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 		(slice) => slice?.slice_type === 'about_section'
 	)?.primary as AboutSectionSliceDefaultPrimary;
 
+	const reviewsSection = homepage[0]?.data?.slices?.find(
+		(slice) => slice?.slice_type === 'reviews_section'
+	)?.primary as ReviewsSectionSliceDefaultPrimary;
+
 	return (
 		<div>
 			<Hero hero={heroSection} />
@@ -70,7 +75,7 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 			<Services services={servicesSection} />
 			<Events events={eventsSection} />
 			<About about={aboutSection} />
-			<Thrive />
+			<Reviews reviews={reviewsSection} />
 			<Affirmations />
 			<IgFeed />
 			<Faqs />

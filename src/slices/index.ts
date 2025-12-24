@@ -10,6 +10,7 @@ export const components = {
   events_section: dynamic(() => import("./EventsSection")),
   hero: dynamic(() => import("./Hero")),
   how_section: dynamic(() => import("./HowSection")),
+  reviews_section: dynamic(() => import("./ReviewsSection")),
   services_section: dynamic(() => import("./ServicesSection")),
   what_shifts_section: dynamic(() => import("./WhatShiftsSection")),
   why_section: dynamic(() => import("./WhySection")),

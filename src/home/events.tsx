@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { useProvider } from '@/app/context';
 import { EventsSectionSliceDefaultPrimary } from '../../prismicio-types';
 
@@ -22,6 +23,19 @@ export default function Events({
 	]);
 
 	const { setOpenCommForm } = useProvider();
+
+	const [canScrollNext, setCanScrollNext] = useState(true);
+	const [canScrollPrev, setCanScrollPrev] = useState(false);
+
+	useEffect(() => {
+		if (!emblaApi) return;
+
+		emblaApi?.on('scroll', () => {
+			setCanScrollNext(emblaApi?.canScrollNext());
+			setCanScrollPrev(emblaApi?.canScrollPrev());
+		});
+	}, [emblaApi]);
+
 	return (
 		<section
 			className='pt-[max(6.825rem,74px)] bg-[url(/images/events-bg.jpg)] 
@@ -63,16 +77,11 @@ export default function Events({
 						</Paragraph>
 					</div>
 
-					{/* <div className='flex items-center justify-end mt-[max(2.5rem,32px)]'>
-						<div
-							className='bg-[rgba(27,56,100,0.3)] rounded-ful 
-            px-[max(0.938rem,13.5px)] h-[max(2.5rem,36px)]'>
-							<span className='size-10 bg-white'></span>
-						</div>
-					
-					</div> */}
 					<div className='flex items-center gap-[max(0.75rem,12px)]'>
-						<button onClick={() => emblaApi?.scrollPrev()}>
+						<button
+							onClick={() => emblaApi?.scrollPrev()}
+							disabled={!canScrollPrev}
+							className='disabled:opacity-60 disabled:cursor-text!'>
 							<svg
 								width='42'
 								height='42'
@@ -110,7 +119,10 @@ export default function Events({
 							</svg>
 						</button>
 
-						<button className='rotate-180' onClick={() => emblaApi?.scrollNext()}>
+						<button
+							className='rotate-180 disabled:opacity-60 disabled:cursor-text!'
+							onClick={() => emblaApi?.scrollNext()}
+							disabled={!canScrollNext}>
 							<svg
 								width='42'
 								height='42'

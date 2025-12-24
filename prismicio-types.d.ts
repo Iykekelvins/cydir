@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomepageDocumentDataSlicesSlice =
+  | ReviewsSectionSlice
   | AboutSectionSlice
   | EventsSectionSlice
   | ServicesSectionSlice
@@ -666,6 +667,98 @@ export type HowSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *ReviewsSection → Default → Primary → Reviews*
+ */
+export interface ReviewsSectionSliceDefaultPrimaryReviewsItem {
+  /**
+   * Info field in *ReviewsSection → Default → Primary → Reviews*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_section.default.primary.reviews[].info
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  info: prismic.RichTextField;
+
+  /**
+   * Name field in *ReviewsSection → Default → Primary → Reviews*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_section.default.primary.reviews[].name
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Image field in *ReviewsSection → Default → Primary → Reviews*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_section.default.primary.reviews[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *ReviewsSection → Default → Primary*
+ */
+export interface ReviewsSectionSliceDefaultPrimary {
+  /**
+   * Title field in *ReviewsSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Reviews field in *ReviewsSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_section.default.primary.reviews[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  reviews: prismic.GroupField<
+    Simplify<ReviewsSectionSliceDefaultPrimaryReviewsItem>
+  >;
+}
+
+/**
+ * Default variation for ReviewsSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ReviewsSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ReviewsSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ReviewsSection*
+ */
+type ReviewsSectionSliceVariation = ReviewsSectionSliceDefault;
+
+/**
+ * ReviewsSection Shared Slice
+ *
+ * - **API ID**: `reviews_section`
+ * - **Description**: ReviewsSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ReviewsSectionSlice = prismic.SharedSlice<
+  "reviews_section",
+  ReviewsSectionSliceVariation
+>;
+
+/**
  * Item in *ServicesSection → Default → Primary → Services*
  */
 export interface ServicesSectionSliceDefaultPrimaryServicesItem {
@@ -1043,6 +1136,11 @@ declare module "@prismicio/client" {
       HowSectionSliceDefaultPrimary,
       HowSectionSliceVariation,
       HowSectionSliceDefault,
+      ReviewsSectionSlice,
+      ReviewsSectionSliceDefaultPrimaryReviewsItem,
+      ReviewsSectionSliceDefaultPrimary,
+      ReviewsSectionSliceVariation,
+      ReviewsSectionSliceDefault,
       ServicesSectionSlice,
       ServicesSectionSliceDefaultPrimaryServicesItem,
       ServicesSectionSliceDefaultPrimary,
