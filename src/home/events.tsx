@@ -11,7 +11,6 @@ import Button from '@/components/button';
 import Words from '@/animations/words';
 import Paragraph from '@/animations/paragraph';
 import Tag from '@/components/tag';
-import Link from 'next/link';
 
 export default function Events({
 	events,
@@ -218,7 +217,7 @@ export default function Events({
 																	day: '2-digit',
 																	year: 'numeric',
 																}
-														  )
+															)
 														: 'TBD'}
 												</p>
 											</div>

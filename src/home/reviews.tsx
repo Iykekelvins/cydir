@@ -131,94 +131,6 @@ export default function Reviews({
 				</Words>
 			</div>
 
-			<div
-				className='flex items-center justify-end mt-[max(1.5rem,20px)] 
-			gap-[max(0.75rem,12px)]'>
-				<button
-					onClick={() => emblaApi?.scrollPrev()}
-					disabled={!canScrollPrev}
-					className='disabled:opacity-60 disabled:cursor-text!'
-					aria-label='Scroll reviews carousel to the left'>
-					<svg
-						width='42'
-						height='42'
-						viewBox='0 0 42 42'
-						fill='none'
-						xmlns='http://www.w3.org/2000/svg'>
-						<circle
-							cx='21'
-							cy='21'
-							r='20.15'
-							fill='#1B3864'
-							fillOpacity='0.28'
-							stroke='white'
-							strokeWidth='0.3'
-						/>
-						<g clipPath='url(#clip0_404_1774)'>
-							<path
-								d='M23.5 27.25L17.25 21L23.5 14.75'
-								stroke='#C8D72C'
-								strokeWidth='1.25'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							/>
-						</g>
-						<defs>
-							<clipPath id='clip0_404_1774'>
-								<rect
-									width='20'
-									height='20'
-									fill='white'
-									transform='translate(11 11)'
-								/>
-							</clipPath>
-						</defs>
-					</svg>
-				</button>
-
-				<button
-					className='rotate-180 disabled:opacity-60 disabled:cursor-text!'
-					onClick={() => emblaApi?.scrollNext()}
-					disabled={!canScrollNext}
-					aria-label='Scroll reviews carousel to the right'>
-					<svg
-						width='42'
-						height='42'
-						viewBox='0 0 42 42'
-						fill='none'
-						xmlns='http://www.w3.org/2000/svg'>
-						<circle
-							cx='21'
-							cy='21'
-							r='20.15'
-							fill='#1B3864'
-							fillOpacity='0.28'
-							stroke='white'
-							strokeWidth='0.3'
-						/>
-						<g clipPath='url(#clip0_404_1774)'>
-							<path
-								d='M23.5 27.25L17.25 21L23.5 14.75'
-								stroke='#C8D72C'
-								strokeWidth='1.25'
-								strokeLinecap='round'
-								strokeLinejoin='round'
-							/>
-						</g>
-						<defs>
-							<clipPath id='clip0_404_1774'>
-								<rect
-									width='20'
-									height='20'
-									fill='white'
-									transform='translate(11 11)'
-								/>
-							</clipPath>
-						</defs>
-					</svg>
-				</button>
-			</div>
-
 			<div className='mt-[max(4.25rem,38px)]'>
 				<div
 					className='
@@ -307,6 +219,93 @@ export default function Reviews({
 								</svg>
 							</button>
 						))}
+						<div className='flex items-center gap-[max(0.75rem,12px)]'>
+							<button
+								onClick={() => emblaApi?.scrollPrev()}
+								disabled={!canScrollPrev}
+								className='disabled:opacity-60 disabled:cursor-text!'
+								aria-label='Scroll reviews carousel to the left'>
+								<svg
+									width='41'
+									height='41'
+									viewBox='0 0 41 41'
+									fill='none'
+									xmlns='http://www.w3.org/2000/svg'
+									className='size-[max(2.5rem,32px)]'>
+									<circle
+										cx='20.2998'
+										cy='20.2998'
+										r='20.15'
+										fill='#F6FBFD'
+										fillOpacity='0.28'
+										stroke='white'
+										strokeWidth='0.3'
+									/>
+									<g clip-path='url(#clip0_1122_4879)'>
+										<path
+											d='M22.7998 26.5498L16.5498 20.2998L22.7998 14.0498'
+											stroke='#C8D72C'
+											strokeWidth='1.25'
+											strokeLinecap='round'
+											strokeLinejoin='round'
+										/>
+									</g>
+									<defs>
+										<clipPath id='clip0_1122_4879'>
+											<rect
+												width='20'
+												height='20'
+												fill='white'
+												transform='translate(10.2998 10.2998)'
+											/>
+										</clipPath>
+									</defs>
+								</svg>
+							</button>
+
+							<button
+								className='rotate-180 disabled:opacity-60 disabled:cursor-text!'
+								onClick={() => emblaApi?.scrollNext()}
+								disabled={!canScrollNext}
+								aria-label='Scroll reviews carousel to the right'>
+								<svg
+									width='41'
+									height='41'
+									viewBox='0 0 41 41'
+									fill='none'
+									xmlns='http://www.w3.org/2000/svg'
+									className='size-[max(2.5rem,32px)]'>
+									<circle
+										cx='20.2998'
+										cy='20.2998'
+										r='20.15'
+										fill='#F6FBFD'
+										fillOpacity='0.28'
+										stroke='white'
+										strokeWidth='0.3'
+									/>
+									<g clip-path='url(#clip0_1122_4879)'>
+										<path
+											d='M22.7998 26.5498L16.5498 20.2998L22.7998 14.0498'
+											stroke='#C8D72C'
+											strokeWidth='1.25'
+											strokeLinecap='round'
+											strokeLinejoin='round'
+										/>
+									</g>
+									<defs>
+										<clipPath id='clip0_1122_4879'>
+											<rect
+												width='20'
+												height='20'
+												fill='white'
+												transform='translate(10.2998 10.2998)'
+											/>
+										</clipPath>
+									</defs>
+								</svg>
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
