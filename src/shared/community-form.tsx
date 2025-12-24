@@ -423,9 +423,7 @@ export default function CommunityForm() {
 									</svg>
 								</div>
 								<span
-									className={`text-base flex ${
-										errors.notChecked ? 'text-red-500' : ''
-									}`}>
+									className={`text-base flex ${errors.notChecked ? 'text-red-500' : ''}`}>
 									You agree to receiving newsletters and event updates.
 								</span>
 							</label>
@@ -468,4 +466,3 @@ export default function CommunityForm() {
 		</div>
 	);
 }
-s;
