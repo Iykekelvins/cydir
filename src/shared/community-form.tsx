@@ -125,7 +125,10 @@ export default function CommunityForm() {
 			const response = await res.json();
 
 			if (res.ok) {
-				toast.success(response?.message);
+				toast.success(
+					`Thank you for applying to be a part of the Limitless Community. 
+					We will get back to you in the next 48 hrs with the next steps. Be limitless!`
+				);
 
 				setPayload({
 					full_name: '',
@@ -139,8 +142,11 @@ export default function CommunityForm() {
 				setAreas([]);
 				setHowCommitted('');
 				setErrors({});
-				setOpenCommForm(false);
 				setOnComplete(true);
+
+				setTimeout(() => {
+					setOpenCommForm(false);
+				}, 800);
 			} else {
 				toast.error(response?.message);
 			}
@@ -249,9 +255,7 @@ export default function CommunityForm() {
           tracking-tighter leading-[1.3] mt-[max(0.75rem,12px)]
 					max-w-[max(40rem)]
 					'>
-						Learn, connect and grow with a community of like minded entrepreneurs who
-						are on the journey to create success and fulfillment in their life.{' '}
-						<br /> Apply here to Join the Limitless Community.
+						Kindly fill this form to apply to be part of the Limitless Community.
 					</p>
 				</div>
 
@@ -294,7 +298,7 @@ export default function CommunityForm() {
 							<Input
 								name='company'
 								label='Company'
-								placeholder='you@company.com'
+								placeholder='Company name'
 								value={payload.company}
 								onChange={handlePayload}
 								labelClass={`${errors.company ? 'text-red-500' : ''}`}
