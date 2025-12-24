@@ -30,6 +30,13 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
 
 	useEffect(() => {
 		audio.current = new Audio('/audio/cydir-audio.mp3');
+		if (!audio.current) return;
+
+		const audio_ = audio.current;
+
+		audio.current.addEventListener('loadedmetadata', () => {
+			audio_.currentTime = Math.min(audio_.currentTime + 5, audio_.duration);
+		});
 	}, []);
 
 	useEffect(() => {
