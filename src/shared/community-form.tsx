@@ -35,6 +35,7 @@ export default function CommunityForm() {
 	const [errors, setErrors] = useState<Record<string, string>>({});
 	const [loading, setLoading] = useState(false);
 	const [onComplete, setOnComplete] = useState(false);
+	const [checked, setChecked] = useState(false);
 
 	// // Check if all fields are filled
 	// const isFormValid = () => {
@@ -63,6 +64,10 @@ export default function CommunityForm() {
 		// Validate howCommitted
 		if (howCommitted.trim() === '') {
 			newErrors.howCommitted = 'How committed is required';
+		}
+
+		if (!checked) {
+			newErrors.notChecked = 'Please agree';
 		}
 
 		setErrors(newErrors);
@@ -392,10 +397,40 @@ export default function CommunityForm() {
 								inputClass={`${errors.reason_to_join ? 'border-red-500' : ''}`}
 							/>
 
+							<label
+								className='flex items-center gap-[max(0.75rem,12px)] cursor-pointer
+							mt-[max(2.125rem,20px)]
+							'>
+								<input
+									type='checkbox'
+									checked={checked}
+									onChange={() => setChecked(!checked)}
+									className='peer hidden'
+								/>
+								<div
+									className='size-[max(1.25rem,20px)] rounded-[max(0.375rem,6px)] 
+									border border-gray-300 peer-checked:bg-blue 
+									peer-checked:border-blue flex items-center justify-center
+									'>
+									<svg
+										className='text-white peer-checked:block'
+										fill='none'
+										stroke='currentColor'
+										strokeWidth='3'
+										viewBox='0 0 24 24'>
+										<path d='M5 13l4 4L19 7' />
+									</svg>
+								</div>
+								<span
+									className={`text-base flex ${errors.notChecked ? 'text-red-500' : ''}`}>
+									You agree to receiving newsletters and event updates.
+								</span>
+							</label>
+
 							<Button
 								bg='blue'
-								className='mt-[max(2.875rem,30px)] w-full md:w-max'
-								disabled={loading}>
+								className='mt-[max(2.875rem,30px)] w-full md:w-max disabled:opacity-60 disabled:cursor-text!'
+								disabled={loading || !checked}>
 								{!loading ? 'Apply Now' : 'Submitting'}
 							</Button>
 						</div>
