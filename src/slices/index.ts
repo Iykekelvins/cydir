@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 export const components = {
   about_section: dynamic(() => import("./AboutSection")),
+  affirmations_section: dynamic(() => import("./AffirmationsSection")),
   architectureof_change_section: dynamic(
     () => import("./ArchitectureofChangeSection"),
   ),

@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomepageDocumentDataSlicesSlice =
+  | AffirmationsSectionSlice
   | ReviewsSectionSlice
   | AboutSectionSlice
   | EventsSectionSlice
@@ -207,6 +208,78 @@ type AboutSectionSliceVariation = AboutSectionSliceDefault;
 export type AboutSectionSlice = prismic.SharedSlice<
   "about_section",
   AboutSectionSliceVariation
+>;
+
+/**
+ * Item in *AffirmationsSection → Default → Primary → Affirmation Texts*
+ */
+export interface AffirmationsSectionSliceDefaultPrimaryAffirmationTextsItem {
+  /**
+   * Text field in *AffirmationsSection → Default → Primary → Affirmation Texts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: affirmations_section.default.primary.affirmation_texts[].text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *AffirmationsSection → Default → Primary*
+ */
+export interface AffirmationsSectionSliceDefaultPrimary {
+  /**
+   * Intro Info field in *AffirmationsSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: affirmations_section.default.primary.intro_info
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  intro_info: prismic.KeyTextField;
+
+  /**
+   * Affirmation Texts field in *AffirmationsSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: affirmations_section.default.primary.affirmation_texts[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  affirmation_texts: prismic.GroupField<
+    Simplify<AffirmationsSectionSliceDefaultPrimaryAffirmationTextsItem>
+  >;
+}
+
+/**
+ * Default variation for AffirmationsSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AffirmationsSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AffirmationsSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AffirmationsSection*
+ */
+type AffirmationsSectionSliceVariation = AffirmationsSectionSliceDefault;
+
+/**
+ * AffirmationsSection Shared Slice
+ *
+ * - **API ID**: `affirmations_section`
+ * - **Description**: AffirmationsSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AffirmationsSectionSlice = prismic.SharedSlice<
+  "affirmations_section",
+  AffirmationsSectionSliceVariation
 >;
 
 /**
@@ -1116,6 +1189,11 @@ declare module "@prismicio/client" {
       AboutSectionSliceDefaultPrimary,
       AboutSectionSliceVariation,
       AboutSectionSliceDefault,
+      AffirmationsSectionSlice,
+      AffirmationsSectionSliceDefaultPrimaryAffirmationTextsItem,
+      AffirmationsSectionSliceDefaultPrimary,
+      AffirmationsSectionSliceVariation,
+      AffirmationsSectionSliceDefault,
       ArchitectureofChangeSectionSlice,
       ArchitectureofChangeSectionSliceDefaultPrimaryCircularTimelineItemsItem,
       ArchitectureofChangeSectionSliceDefaultPrimary,

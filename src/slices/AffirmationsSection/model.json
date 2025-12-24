@@ -1,0 +1,42 @@
+{
+  "id": "affirmations_section",
+  "type": "SharedSlice",
+  "name": "AffirmationsSection",
+  "description": "AffirmationsSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "intro_info": {
+          "type": "Text",
+          "config": {
+            "label": "Intro Info",
+            "placeholder": ""
+          }
+        },
+        "affirmation_texts": {
+          "type": "Group",
+          "config": {
+            "label": "Affirmation Texts",
+            "repeat": true,
+            "fields": {
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Text",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

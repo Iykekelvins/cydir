@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "affirmations_section": {
+              "type": "SharedSlice"
+            },
             "reviews_section": {
               "type": "SharedSlice"
             },

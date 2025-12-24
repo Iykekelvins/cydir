@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { AffirmationsSectionSliceDefaultPrimary } from '../../prismicio-types';
+import { KeyTextField } from '@prismicio/client';
 
 import gsap from 'gsap';
 import Paragraph from '@/animations/paragraph';
@@ -9,7 +11,11 @@ import Scale from '@/animations/scale';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Affirmations() {
+export default function Affirmations({
+	affirmationsSection,
+}: {
+	affirmationsSection: AffirmationsSectionSliceDefaultPrimary;
+}) {
 	return (
 		<section
 			className='bg-[#0A182D] px-gutter pt-[max(6rem,70px)] 
@@ -58,37 +64,23 @@ export default function Affirmations() {
           	text-center leading-normal max-w-[max(50rem,600px)] text-white
 						mt-[max(2.625rem,26px)]
 					'>
-						Most people move through life on autopilot. They wake, work, repeat - but
-						never truly awaken. At Cydir, we believe you were born for more: to
-						awaken possibility, to break cycles, to live limitless. This is your
-						invitation to remember who you are.
-					</p>
-				</div>
-
-				<div className='mt-[max(2.625rem,26px)] des:hidden'>
-					<p
-						className='text-[max(2.25rem,20px)] font-medium tracking-tight 
-          text-center leading-normal max-w-[max(55rem,600px)] text-white'>
-						Most people move through life on autopilot. They wake, work, repeat - but
-						never truly awaken. At Cydir, we believe you were born for more: to
-						awaken possibility, to break cycles, to live limitless. <br /> This is
-						your invitation to remember who you are.
+						{affirmationsSection.intro_info}
 					</p>
 				</div>
 
 				<div
 					className='mt-[max(3.375rem,36px)] flex flex-col items-center 
   				justify-center text-center gap-[max(1.25rem,16px)]'>
-					<ClipText text='You are not stuck' />
-					<ClipText text='You are not broken' />
-					<ClipText text='You are limitless' />
+					{affirmationsSection.affirmation_texts.map((text) => (
+						<ClipText text={text.text} key={text.text} />
+					))}
 				</div>
 			</div>
 		</section>
 	);
 }
 
-const ClipText = ({ text }: { text: string }) => {
+const ClipText = ({ text }: { text: KeyTextField }) => {
 	const [isHovered, setIsHovered] = useState(false);
 
 	return (
