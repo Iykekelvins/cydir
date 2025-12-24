@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "faqs_section": {
+              "type": "SharedSlice"
+            },
             "ig_feed_section": {
               "type": "SharedSlice"
             },

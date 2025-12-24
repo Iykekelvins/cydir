@@ -19,6 +19,7 @@ import {
 	AffirmationsSectionSliceDefaultPrimary,
 	ArchitectureofChangeSectionSliceDefaultPrimary,
 	EventsSectionSliceDefaultPrimary,
+	FaqsSectionSliceDefaultPrimary,
 	HeroSliceDefaultPrimary,
 	HomepageDocument,
 	HowSectionSliceDefaultPrimary,
@@ -74,6 +75,10 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 		(slice) => slice?.slice_type === 'ig_feed_section'
 	)?.primary as IgFeedSectionSliceDefaultPrimary;
 
+	const faqsSection = homepage[0]?.data?.slices?.find(
+		(slice) => slice?.slice_type === 'faqs_section'
+	)?.primary as FaqsSectionSliceDefaultPrimary;
+
 	return (
 		<div>
 			<Hero hero={heroSection} />
@@ -88,7 +93,7 @@ const Homepage = ({ homepage }: { homepage: HomepageDocument[] }) => {
 			<Reviews reviews={reviewsSection} />
 			<Affirmations affirmationsSection={affirmationsSection} />
 			<IgFeed igFeedSection={igFeedSection} />
-			<Faqs />
+			<Faqs faqsSection={faqsSection} />
 			<JoinUs />
 			<Starfield starCount={1000} starColor={[255, 255, 255]} speedFactor={0.05} />
 		</div>

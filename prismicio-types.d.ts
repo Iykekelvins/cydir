@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomepageDocumentDataSlicesSlice =
+  | FaqsSectionSlice
   | IgFeedSectionSlice
   | AffirmationsSectionSlice
   | ReviewsSectionSlice
@@ -527,6 +528,86 @@ type EventsSectionSliceVariation = EventsSectionSliceDefault;
 export type EventsSectionSlice = prismic.SharedSlice<
   "events_section",
   EventsSectionSliceVariation
+>;
+
+/**
+ * Item in *FaqsSection → Default → Primary → Faqs*
+ */
+export interface FaqsSectionSliceDefaultPrimaryFaqsItem {
+  /**
+   * Question field in *FaqsSection → Default → Primary → Faqs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs_section.default.primary.faqs[].question
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * Answer field in *FaqsSection → Default → Primary → Faqs*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs_section.default.primary.faqs[].answer
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *FaqsSection → Default → Primary*
+ */
+export interface FaqsSectionSliceDefaultPrimary {
+  /**
+   * Title field in *FaqsSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Faqs field in *FaqsSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs_section.default.primary.faqs[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  faqs: prismic.GroupField<Simplify<FaqsSectionSliceDefaultPrimaryFaqsItem>>;
+}
+
+/**
+ * Default variation for FaqsSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FaqsSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqsSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FaqsSection*
+ */
+type FaqsSectionSliceVariation = FaqsSectionSliceDefault;
+
+/**
+ * FaqsSection Shared Slice
+ *
+ * - **API ID**: `faqs_section`
+ * - **Description**: FaqsSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FaqsSectionSlice = prismic.SharedSlice<
+  "faqs_section",
+  FaqsSectionSliceVariation
 >;
 
 /**
@@ -1305,6 +1386,11 @@ declare module "@prismicio/client" {
       EventsSectionSliceDefaultPrimary,
       EventsSectionSliceVariation,
       EventsSectionSliceDefault,
+      FaqsSectionSlice,
+      FaqsSectionSliceDefaultPrimaryFaqsItem,
+      FaqsSectionSliceDefaultPrimary,
+      FaqsSectionSliceVariation,
+      FaqsSectionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimarySwitchingTextsItem,
       HeroSliceDefaultPrimary,

@@ -1,21 +1,19 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { FAQS } from '@/utils/mock';
+import { FaqsSectionSliceDefaultPrimary } from '../../prismicio-types';
+import { PrismicRichText } from '@prismicio/react';
+import { KeyTextField, RichTextField } from '@prismicio/client';
 
 import gsap from 'gsap';
 import Words from '@/animations/words';
 
-export default function Faqs() {
+export default function Faqs({
+	faqsSection,
+}: {
+	faqsSection: FaqsSectionSliceDefaultPrimary;
+}) {
 	const [active, setActive] = useState(0);
-
-	const [isMounted, setIsMounted] = useState(false);
-
-	useEffect(() => {
-		setIsMounted(true);
-	}, []);
-
-	if (!isMounted) return;
 
 	return (
 		<section className='pt-[max(4.2rem,30px)] relative z-13'>
@@ -25,7 +23,7 @@ export default function Faqs() {
 					className='text-56 text-blue font-medium 
         font-outfit tracking-tight text-center 
         leading-[1.2]'>
-					Frequently Asked <br /> Questions
+					{faqsSection.title}
 				</Words>
 
 				<div
@@ -35,14 +33,14 @@ export default function Faqs() {
 				mt-[max(2.825rem,30px)]
 				'>
 					<div className=' hidden lg:grid grid-cols-[1.2fr_1fr] gap-[max(2.75rem,30px)]'>
-						{FAQS.length > 6 ? (
+						{faqsSection.faqs.length > 6 ? (
 							<div
 								className='max-h-148 overflow-auto custom-scrollbar'
 								data-lenis-prevent>
 								<ul
 									className='flex flex-col gap-[max(1rem,14px)] 
 								'>
-									{FAQS.map((faq, i) => (
+									{faqsSection.faqs.map((faq, i) => (
 										<li
 											key={i}
 											className={`bg-[#F4FAFC] flex
@@ -68,7 +66,7 @@ export default function Faqs() {
 													className={`transition-colors duration-300 ease-in-out ${
 														i === active ? 'text-white' : 'text-[#0A182D'
 													}`}>
-													{faq.qstn}
+													{faq.question}
 												</span>
 
 												<svg
@@ -99,7 +97,7 @@ export default function Faqs() {
 								<ul
 									className='flex flex-col gap-[max(1rem,14px)] 
 								'>
-									{FAQS.map((faq, i) => (
+									{faqsSection.faqs.map((faq, i) => (
 										<li
 											key={i}
 											className={`bg-[#F4FAFC] flex
@@ -125,7 +123,7 @@ export default function Faqs() {
 													className={`transition-colors duration-300 ease-in-out ${
 														i === active ? 'text-white' : 'text-[#0A182D'
 													}`}>
-													{faq.qstn}
+													{faq.question}
 												</span>
 
 												<svg
@@ -216,15 +214,23 @@ export default function Faqs() {
 
 								<div className='p-[max(1.5rem,20px)] flex flex-col items-center justify-between'>
 									<div className='grid'>
-										{FAQS.map((faq, i) => (
-											<p
-												className={`text-20 text-[#0A182D] font-medium leading-normal
+										{faqsSection.faqs.map((faq, i) => (
+											<PrismicRichText
+												key={i}
+												field={faq.answer}
+												components={{
+													paragraph: ({ children }) => (
+														<p
+															className={`text-20 text-[#0A182D] font-medium leading-normal
 												 transition-opacity duration-300 ease-in-out
 												col-start-1 row-start-1 
 												${i === active ? 'opacity-100' : 'opacity-0'}
-												`}
-												key={faq.ans}
-												dangerouslySetInnerHTML={{ __html: faq.ans }}></p>
+												`}>
+															{children}
+														</p>
+													),
+												}}
+											/>
 										))}
 									</div>
 
@@ -258,8 +264,8 @@ export default function Faqs() {
 					<ul
 						className='flex flex-col gap-[max(1rem,14px)] 
 							 w-full lg:hidden'>
-						{FAQS.map((faq) => (
-							<Faq faq={faq} key={faq.qstn} />
+						{faqsSection.faqs.map((faq) => (
+							<Faq faq={faq} key={faq.question} />
 						))}
 					</ul>
 				</div>
@@ -268,7 +274,11 @@ export default function Faqs() {
 	);
 }
 
-const Faq = ({ faq }: { faq: { qstn: string; ans: string } }) => {
+const Faq = ({
+	faq,
+}: {
+	faq: { question: KeyTextField; answer: RichTextField };
+}) => {
 	const [open, setOpen] = useState(false);
 
 	const answerRef = useRef<HTMLDivElement>(null);
@@ -306,7 +316,7 @@ const Faq = ({ faq }: { faq: { qstn: string; ans: string } }) => {
 					className={`transition-colors duration-300 ease-in-out ${
 						open ? 'text-white' : 'text-[#0A182D]'
 					}`}>
-					{faq.qstn}
+					{faq.question}
 				</span>
 
 				<div className='grid'>
@@ -344,14 +354,22 @@ const Faq = ({ faq }: { faq: { qstn: string; ans: string } }) => {
 			</button>
 
 			<div ref={answerRef} className='overflow-hidden h-0'>
-				<p
-					className={`text-20 font-medium leading-normal
+				<PrismicRichText
+					field={faq.answer}
+					components={{
+						paragraph: ({ children }) => (
+							<p
+								className={`text-20 font-medium leading-normal
 						transition-colors duration-300 ease-in-out
 						border-t border-t-white border-solid
 						 ${open ? 'text-white' : 'text-[#0A182D]'}
 						p-[max(1rem,14px)] mt-[max(0.5rem,8px)]
-										`}
-					dangerouslySetInnerHTML={{ __html: faq.ans }}></p>
+										`}>
+								{children}
+							</p>
+						),
+					}}
+				/>
 			</div>
 		</li>
 	);

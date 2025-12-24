@@ -35,37 +35,6 @@ export const AWAKEN_CARDS = [
 	},
 ];
 
-export const FAQS = [
-	{
-		qstn: 'Can one session really create lasting change?',
-		ans: 'Yes, because Abhinav works with the unconscious mind, even a single session can create rapid and lasting change by releasing the root cause instead of just managing symptoms.',
-	},
-	{
-		qstn: 'Does this process work for both personal and professional goals?',
-		ans: 'Yes this work can be applied for all 6 areas of life.',
-	},
-	{
-		qstn: 'Is there a difference between in-person and online results?',
-		ans: 'None, you can achieve the same results online or in person',
-	},
-	{
-		qstn: 'What makes your coaching process unique?',
-		ans: `
-		There are two main components that make my coaching unique. <br/>
-		1. With my guidance my clients create change at the unconscious level which is driving their life on autopilot.<br/>
-		2. We work on all 4 requisites of change which is required to create permanent change and achieve the desired utcomes.
-		`,
-	},
-	{
-		qstn: 'What is the responsibility of a Coach? ',
-		ans: 'Discover, clarify and align with what the client wants to achieve. Encourage client self-discovery and guide them to become the best version of themselves. Utilize tools and techniques to assist the client in achieving their goal. Hold the client responsible and accountable.',
-	},
-	{
-		qstn: 'What is the difference between a Coach and Mentor? ',
-		ans: 'A coach helps you uncover your own answers and guide you to achieve what you want, while a mentor tells you what to do using their personal experience and expertise.',
-	},
-];
-
 export const PHONE_PLACEHOLDERS = [
 	{
 		country: 'US',
